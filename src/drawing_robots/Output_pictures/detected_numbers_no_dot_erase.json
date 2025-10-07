@@ -1,0 +1,4306 @@
+{
+  "detection_method": "Multi-Threshold OCR with Consensus Voting (No Dot Erasure)",
+  "total_segments": 84,
+  "total_numbers_found": 260,
+  "segments": [
+    {
+      "segment_name": "tile_r0_c5",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r0_c5.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 9,
+          "pixel_x": 193,
+          "pixel_y": 130,
+          "bbox": [
+            186,
+            122,
+            14,
+            16
+          ],
+          "confidence": 76,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 1
+    },
+    {
+      "segment_name": "tile_r0_c6",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r0_c6.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 93,
+          "pixel_x": 130,
+          "pixel_y": 95,
+          "bbox": [
+            118,
+            85,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 94.11764705882352
+        },
+        {
+          "number": 94,
+          "pixel_x": 160,
+          "pixel_y": 80,
+          "bbox": [
+            148,
+            68,
+            24,
+            24
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r0_c7",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r0_c7.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 9,
+          "pixel_x": 98,
+          "pixel_y": 131,
+          "bbox": [
+            94,
+            124,
+            9,
+            15
+          ],
+          "confidence": 94,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 10,
+          "pixel_x": 117,
+          "pixel_y": 108,
+          "bbox": [
+            110,
+            101,
+            15,
+            14
+          ],
+          "confidence": 95,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 20,
+          "pixel_x": 8,
+          "pixel_y": 129,
+          "bbox": [
+            0,
+            121,
+            17,
+            16
+          ],
+          "confidence": 94,
+          "vote_percentage": 88.88888888888889
+        },
+        {
+          "number": 93,
+          "pixel_x": 31,
+          "pixel_y": 97,
+          "bbox": [
+            18,
+            85,
+            26,
+            24
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 94,
+          "pixel_x": 61,
+          "pixel_y": 82,
+          "bbox": [
+            48,
+            68,
+            27,
+            28
+          ],
+          "confidence": 99,
+          "vote_percentage": 78.57142857142857
+        },
+        {
+          "number": 97,
+          "pixel_x": 144,
+          "pixel_y": 20,
+          "bbox": [
+            133,
+            9,
+            22,
+            22
+          ],
+          "confidence": 99,
+          "vote_percentage": 94.44444444444444
+        },
+        {
+          "number": 98,
+          "pixel_x": 151,
+          "pixel_y": 84,
+          "bbox": [
+            139,
+            74,
+            25,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 77.77777777777779
+        },
+        {
+          "number": 99,
+          "pixel_x": 187,
+          "pixel_y": 51,
+          "bbox": [
+            176,
+            42,
+            22,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 68.75
+        }
+      ],
+      "total_numbers": 8
+    },
+    {
+      "segment_name": "tile_r0_c8",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r0_c8.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 2,
+          "pixel_x": 57,
+          "pixel_y": 135,
+          "bbox": [
+            44,
+            127,
+            26,
+            16
+          ],
+          "confidence": 80,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 10,
+          "pixel_x": 17,
+          "pixel_y": 106,
+          "bbox": [
+            5,
+            96,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 11,
+          "pixel_x": 49,
+          "pixel_y": 114,
+          "bbox": [
+            37,
+            105,
+            25,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 77.77777777777779
+        },
+        {
+          "number": 12,
+          "pixel_x": 95,
+          "pixel_y": 112,
+          "bbox": [
+            84,
+            103,
+            23,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 92.3076923076923
+        },
+        {
+          "number": 97,
+          "pixel_x": 43,
+          "pixel_y": 20,
+          "bbox": [
+            33,
+            10,
+            21,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 92.3076923076923
+        },
+        {
+          "number": 98,
+          "pixel_x": 51,
+          "pixel_y": 85,
+          "bbox": [
+            38,
+            75,
+            26,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 90.0
+        },
+        {
+          "number": 99,
+          "pixel_x": 87,
+          "pixel_y": 51,
+          "bbox": [
+            75,
+            41,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 66.66666666666666
+        },
+        {
+          "number": 100,
+          "pixel_x": 99,
+          "pixel_y": 85,
+          "bbox": [
+            83,
+            74,
+            33,
+            22
+          ],
+          "confidence": 99,
+          "vote_percentage": 63.63636363636363
+        }
+      ],
+      "total_numbers": 8
+    },
+    {
+      "segment_name": "tile_r0_c9",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r0_c9.jpg",
+      "image_dimensions": {
+        "width": 100,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 42,
+          "pixel_x": 12,
+          "pixel_y": 148,
+          "bbox": [
+            4,
+            142,
+            16,
+            13
+          ],
+          "confidence": 86,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 1
+    },
+    {
+      "segment_name": "tile_r1_c0",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r1_c0.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 80,
+          "pixel_x": 176,
+          "pixel_y": 140,
+          "bbox": [
+            164,
+            130,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 88.88888888888889
+        },
+        {
+          "number": 70,
+          "pixel_x": 135,
+          "pixel_y": 149,
+          "bbox": [
+            126,
+            143,
+            18,
+            12
+          ],
+          "confidence": 91,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r1_c1",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r1_c1.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 70,
+          "pixel_x": 35,
+          "pixel_y": 148,
+          "bbox": [
+            23,
+            141,
+            24,
+            14
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 81,
+          "pixel_x": 104,
+          "pixel_y": 139,
+          "bbox": [
+            92,
+            129,
+            24,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 82,
+          "pixel_x": 140,
+          "pixel_y": 118,
+          "bbox": [
+            129,
+            108,
+            23,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 86.36363636363636
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r1_c2",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r1_c2.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 8,
+          "pixel_x": 193,
+          "pixel_y": 121,
+          "bbox": [
+            188,
+            113,
+            11,
+            16
+          ],
+          "confidence": 82,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 31,
+          "pixel_x": 8,
+          "pixel_y": 139,
+          "bbox": [
+            0,
+            130,
+            16,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 94.11764705882352
+        },
+        {
+          "number": 82,
+          "pixel_x": 41,
+          "pixel_y": 118,
+          "bbox": [
+            30,
+            109,
+            23,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 86.66666666666667
+        },
+        {
+          "number": 83,
+          "pixel_x": 95,
+          "pixel_y": 107,
+          "bbox": [
+            83,
+            95,
+            24,
+            24
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 84,
+          "pixel_x": 153,
+          "pixel_y": 108,
+          "bbox": [
+            144,
+            101,
+            18,
+            15
+          ],
+          "confidence": 94,
+          "vote_percentage": 77.77777777777779
+        }
+      ],
+      "total_numbers": 5
+    },
+    {
+      "segment_name": "tile_r1_c3",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r1_c3.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 84,
+          "pixel_x": 53,
+          "pixel_y": 110,
+          "bbox": [
+            40,
+            99,
+            26,
+            22
+          ],
+          "confidence": 99,
+          "vote_percentage": 90.0
+        },
+        {
+          "number": 85,
+          "pixel_x": 95,
+          "pixel_y": 121,
+          "bbox": [
+            83,
+            111,
+            25,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 84.61538461538461
+        },
+        {
+          "number": 86,
+          "pixel_x": 144,
+          "pixel_y": 134,
+          "bbox": [
+            132,
+            124,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 85.71428571428571
+        },
+        {
+          "number": 87,
+          "pixel_x": 190,
+          "pixel_y": 141,
+          "bbox": [
+            181,
+            132,
+            18,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        }
+      ],
+      "total_numbers": 4
+    },
+    {
+      "segment_name": "tile_r1_c4",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r1_c4.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 86,
+          "pixel_x": 44,
+          "pixel_y": 134,
+          "bbox": [
+            32,
+            124,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 90.0
+        },
+        {
+          "number": 87,
+          "pixel_x": 91,
+          "pixel_y": 140,
+          "bbox": [
+            79,
+            130,
+            25,
+            21
+          ],
+          "confidence": 100,
+          "vote_percentage": 93.33333333333333
+        },
+        {
+          "number": 88,
+          "pixel_x": 141,
+          "pixel_y": 139,
+          "bbox": [
+            128,
+            129,
+            26,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 93.33333333333333
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r1_c5",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r1_c5.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 9,
+          "pixel_x": 193,
+          "pixel_y": 52,
+          "bbox": [
+            187,
+            45,
+            13,
+            15
+          ],
+          "confidence": 65,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 88,
+          "pixel_x": 47,
+          "pixel_y": 139,
+          "bbox": [
+            31,
+            130,
+            32,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 89,
+          "pixel_x": 132,
+          "pixel_y": 120,
+          "bbox": [
+            121,
+            111,
+            22,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 80.0
+        },
+        {
+          "number": 90,
+          "pixel_x": 154,
+          "pixel_y": 101,
+          "bbox": [
+            142,
+            91,
+            25,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 88.23529411764706
+        },
+        {
+          "number": 91,
+          "pixel_x": 173,
+          "pixel_y": 82,
+          "bbox": [
+            162,
+            73,
+            23,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 70.0
+        }
+      ],
+      "total_numbers": 5
+    },
+    {
+      "segment_name": "tile_r1_c6",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r1_c6.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 7,
+          "pixel_x": 128,
+          "pixel_y": 134,
+          "bbox": [
+            124,
+            127,
+            8,
+            15
+          ],
+          "confidence": 95,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 89,
+          "pixel_x": 32,
+          "pixel_y": 120,
+          "bbox": [
+            21,
+            110,
+            22,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 90,
+          "pixel_x": 56,
+          "pixel_y": 104,
+          "bbox": [
+            42,
+            91,
+            29,
+            27
+          ],
+          "confidence": 99,
+          "vote_percentage": 73.33333333333333
+        },
+        {
+          "number": 93,
+          "pixel_x": 130,
+          "pixel_y": 20,
+          "bbox": [
+            118,
+            8,
+            25,
+            25
+          ],
+          "confidence": 99,
+          "vote_percentage": 92.85714285714286
+        },
+        {
+          "number": 9,
+          "pixel_x": 78,
+          "pixel_y": 83,
+          "bbox": [
+            64,
+            75,
+            28,
+            16
+          ],
+          "confidence": 58,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 5
+    },
+    {
+      "segment_name": "tile_r1_c7",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r1_c7.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 7,
+          "pixel_x": 28,
+          "pixel_y": 134,
+          "bbox": [
+            24,
+            127,
+            8,
+            15
+          ],
+          "confidence": 96,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 9,
+          "pixel_x": 98,
+          "pixel_y": 54,
+          "bbox": [
+            94,
+            47,
+            9,
+            15
+          ],
+          "confidence": 96,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 10,
+          "pixel_x": 118,
+          "pixel_y": 30,
+          "bbox": [
+            107,
+            21,
+            22,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 85.71428571428571
+        },
+        {
+          "number": 11,
+          "pixel_x": 148,
+          "pixel_y": 37,
+          "bbox": [
+            136,
+            28,
+            25,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 75.0
+        },
+        {
+          "number": 20,
+          "pixel_x": 8,
+          "pixel_y": 52,
+          "bbox": [
+            0,
+            43,
+            17,
+            18
+          ],
+          "confidence": 93,
+          "vote_percentage": 70.0
+        },
+        {
+          "number": 21,
+          "pixel_x": 121,
+          "pixel_y": 106,
+          "bbox": [
+            111,
+            95,
+            21,
+            22
+          ],
+          "confidence": 99,
+          "vote_percentage": 76.19047619047619
+        },
+        {
+          "number": 93,
+          "pixel_x": 30,
+          "pixel_y": 19,
+          "bbox": [
+            18,
+            8,
+            25,
+            22
+          ],
+          "confidence": 99,
+          "vote_percentage": 91.66666666666666
+        },
+        {
+          "number": 98,
+          "pixel_x": 151,
+          "pixel_y": 8,
+          "bbox": [
+            140,
+            0,
+            23,
+            17
+          ],
+          "confidence": 100,
+          "vote_percentage": 60.0
+        },
+        {
+          "number": 1,
+          "pixel_x": 194,
+          "pixel_y": 36,
+          "bbox": [
+            188,
+            29,
+            12,
+            14
+          ],
+          "confidence": 62,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 9
+    },
+    {
+      "segment_name": "tile_r1_c8",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r1_c8.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 10,
+          "pixel_x": 17,
+          "pixel_y": 29,
+          "bbox": [
+            6,
+            19,
+            22,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 11,
+          "pixel_x": 48,
+          "pixel_y": 35,
+          "bbox": [
+            36,
+            25,
+            25,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 72.72727272727273
+        },
+        {
+          "number": 12,
+          "pixel_x": 96,
+          "pixel_y": 34,
+          "bbox": [
+            84,
+            24,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 53.333333333333336
+        },
+        {
+          "number": 13,
+          "pixel_x": 111,
+          "pixel_y": 72,
+          "bbox": [
+            99,
+            63,
+            24,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 92.3076923076923
+        },
+        {
+          "number": 21,
+          "pixel_x": 22,
+          "pixel_y": 108,
+          "bbox": [
+            10,
+            94,
+            24,
+            28
+          ],
+          "confidence": 99,
+          "vote_percentage": 79.16666666666666
+        },
+        {
+          "number": 98,
+          "pixel_x": 50,
+          "pixel_y": 9,
+          "bbox": [
+            38,
+            0,
+            25,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 100,
+          "pixel_x": 99,
+          "pixel_y": 9,
+          "bbox": [
+            83,
+            0,
+            33,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 58.333333333333336
+        },
+        {
+          "number": 5,
+          "pixel_x": 132,
+          "pixel_y": 122,
+          "bbox": [
+            119,
+            113,
+            26,
+            19
+          ],
+          "confidence": 72,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 8
+    },
+    {
+      "segment_name": "tile_r1_c9",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r1_c9.jpg",
+      "image_dimensions": {
+        "width": 100,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 10,
+          "pixel_x": 8,
+          "pixel_y": 8,
+          "bbox": [
+            0,
+            0,
+            16,
+            17
+          ],
+          "confidence": 99,
+          "vote_percentage": 58.333333333333336
+        },
+        {
+          "number": 13,
+          "pixel_x": 11,
+          "pixel_y": 72,
+          "bbox": [
+            0,
+            62,
+            23,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 96.55172413793103
+        },
+        {
+          "number": 5,
+          "pixel_x": 32,
+          "pixel_y": 122,
+          "bbox": [
+            19,
+            113,
+            26,
+            19
+          ],
+          "confidence": 49,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r2_c0",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r2_c0.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 79,
+          "pixel_x": 134,
+          "pixel_y": 73,
+          "bbox": [
+            122,
+            63,
+            24,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 60.0
+        },
+        {
+          "number": 80,
+          "pixel_x": 176,
+          "pixel_y": 64,
+          "bbox": [
+            164,
+            54,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r2_c1",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r2_c1.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 79,
+          "pixel_x": 34,
+          "pixel_y": 74,
+          "bbox": [
+            21,
+            63,
+            27,
+            22
+          ],
+          "confidence": 99,
+          "vote_percentage": 62.5
+        },
+        {
+          "number": 82,
+          "pixel_x": 141,
+          "pixel_y": 43,
+          "bbox": [
+            129,
+            31,
+            24,
+            24
+          ],
+          "confidence": 99,
+          "vote_percentage": 88.0
+        },
+        {
+          "number": 63,
+          "pixel_x": 107,
+          "pixel_y": 117,
+          "bbox": [
+            94,
+            110,
+            27,
+            15
+          ],
+          "confidence": 48,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r2_c2",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r2_c2.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 8,
+          "pixel_x": 194,
+          "pixel_y": 44,
+          "bbox": [
+            188,
+            36,
+            12,
+            16
+          ],
+          "confidence": 78,
+          "vote_percentage": 60.0
+        },
+        {
+          "number": 31,
+          "pixel_x": 7,
+          "pixel_y": 66,
+          "bbox": [
+            0,
+            53,
+            15,
+            27
+          ],
+          "confidence": 99,
+          "vote_percentage": 84.21052631578947
+        },
+        {
+          "number": 63,
+          "pixel_x": 12,
+          "pixel_y": 116,
+          "bbox": [
+            0,
+            106,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 84.0
+        },
+        {
+          "number": 82,
+          "pixel_x": 41,
+          "pixel_y": 45,
+          "bbox": [
+            29,
+            31,
+            25,
+            29
+          ],
+          "confidence": 99,
+          "vote_percentage": 82.35294117647058
+        },
+        {
+          "number": 83,
+          "pixel_x": 95,
+          "pixel_y": 31,
+          "bbox": [
+            83,
+            18,
+            25,
+            27
+          ],
+          "confidence": 99,
+          "vote_percentage": 92.85714285714286
+        },
+        {
+          "number": 84,
+          "pixel_x": 152,
+          "pixel_y": 35,
+          "bbox": [
+            139,
+            21,
+            27,
+            29
+          ],
+          "confidence": 99,
+          "vote_percentage": 86.66666666666667
+        }
+      ],
+      "total_numbers": 6
+    },
+    {
+      "segment_name": "tile_r2_c3",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r2_c3.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 84,
+          "pixel_x": 53,
+          "pixel_y": 31,
+          "bbox": [
+            44,
+            24,
+            18,
+            15
+          ],
+          "confidence": 94,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 85,
+          "pixel_x": 96,
+          "pixel_y": 44,
+          "bbox": [
+            88,
+            37,
+            17,
+            14
+          ],
+          "confidence": 96,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 86,
+          "pixel_x": 144,
+          "pixel_y": 58,
+          "bbox": [
+            132,
+            48,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 88.88888888888889
+        },
+        {
+          "number": 87,
+          "pixel_x": 191,
+          "pixel_y": 64,
+          "bbox": [
+            183,
+            57,
+            17,
+            15
+          ],
+          "confidence": 96,
+          "vote_percentage": 100.0
+        }
+      ],
+      "total_numbers": 4
+    },
+    {
+      "segment_name": "tile_r2_c4",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r2_c4.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 86,
+          "pixel_x": 44,
+          "pixel_y": 58,
+          "bbox": [
+            36,
+            51,
+            17,
+            15
+          ],
+          "confidence": 96,
+          "vote_percentage": 83.33333333333334
+        },
+        {
+          "number": 87,
+          "pixel_x": 92,
+          "pixel_y": 70,
+          "bbox": [
+            83,
+            57,
+            18,
+            26
+          ],
+          "confidence": 80,
+          "vote_percentage": 50.0
+        },
+        {
+          "number": 88,
+          "pixel_x": 141,
+          "pixel_y": 64,
+          "bbox": [
+            128,
+            53,
+            27,
+            22
+          ],
+          "confidence": 99,
+          "vote_percentage": 66.66666666666666
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r2_c5",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r2_c5.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 88,
+          "pixel_x": 48,
+          "pixel_y": 65,
+          "bbox": [
+            29,
+            50,
+            38,
+            30
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 89,
+          "pixel_x": 132,
+          "pixel_y": 42,
+          "bbox": [
+            121,
+            33,
+            23,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 90,
+          "pixel_x": 154,
+          "pixel_y": 24,
+          "bbox": [
+            142,
+            13,
+            25,
+            22
+          ],
+          "confidence": 99,
+          "vote_percentage": 78.94736842105263
+        },
+        {
+          "number": 34,
+          "pixel_x": 177,
+          "pixel_y": 126,
+          "bbox": [
+            158,
+            112,
+            39,
+            28
+          ],
+          "confidence": 47,
+          "vote_percentage": 100
+        },
+        {
+          "number": 7,
+          "pixel_x": 178,
+          "pixel_y": 7,
+          "bbox": [
+            164,
+            0,
+            28,
+            14
+          ],
+          "confidence": 37,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 5
+    },
+    {
+      "segment_name": "tile_r2_c6",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r2_c6.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 1,
+          "pixel_x": 130,
+          "pixel_y": 101,
+          "bbox": [
+            116,
+            87,
+            28,
+            29
+          ],
+          "confidence": 72,
+          "vote_percentage": 66.66666666666666
+        },
+        {
+          "number": 2,
+          "pixel_x": 12,
+          "pixel_y": 102,
+          "bbox": [
+            4,
+            93,
+            16,
+            19
+          ],
+          "confidence": 100,
+          "vote_percentage": 85.71428571428571
+        },
+        {
+          "number": 5,
+          "pixel_x": 97,
+          "pixel_y": 86,
+          "bbox": [
+            87,
+            73,
+            21,
+            27
+          ],
+          "confidence": 99,
+          "vote_percentage": 62.5
+        },
+        {
+          "number": 8,
+          "pixel_x": 154,
+          "pixel_y": 81,
+          "bbox": [
+            143,
+            67,
+            22,
+            28
+          ],
+          "confidence": 99,
+          "vote_percentage": 75.0
+        },
+        {
+          "number": 89,
+          "pixel_x": 32,
+          "pixel_y": 43,
+          "bbox": [
+            21,
+            33,
+            22,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 81.81818181818183
+        },
+        {
+          "number": 90,
+          "pixel_x": 54,
+          "pixel_y": 24,
+          "bbox": [
+            43,
+            15,
+            23,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 83.33333333333334
+        },
+        {
+          "number": 4,
+          "pixel_x": 89,
+          "pixel_y": 123,
+          "bbox": [
+            82,
+            113,
+            15,
+            20
+          ],
+          "confidence": 39,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 7
+    },
+    {
+      "segment_name": "tile_r2_c7",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r2_c7.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 6,
+          "pixel_x": 34,
+          "pixel_y": 104,
+          "bbox": [
+            28,
+            96,
+            12,
+            17
+          ],
+          "confidence": 99,
+          "vote_percentage": 55.55555555555556
+        },
+        {
+          "number": 19,
+          "pixel_x": 184,
+          "pixel_y": 115,
+          "bbox": [
+            173,
+            105,
+            23,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 80.76923076923077
+        },
+        {
+          "number": 20,
+          "pixel_x": 150,
+          "pixel_y": 84,
+          "bbox": [
+            138,
+            72,
+            24,
+            24
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 21,
+          "pixel_x": 122,
+          "pixel_y": 30,
+          "bbox": [
+            111,
+            18,
+            22,
+            25
+          ],
+          "confidence": 99,
+          "vote_percentage": 77.27272727272727
+        },
+        {
+          "number": 22,
+          "pixel_x": 98,
+          "pixel_y": 131,
+          "bbox": [
+            87,
+            120,
+            23,
+            22
+          ],
+          "confidence": 99,
+          "vote_percentage": 77.77777777777779
+        }
+      ],
+      "total_numbers": 5
+    },
+    {
+      "segment_name": "tile_r2_c8",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r2_c8.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 2,
+          "pixel_x": 4,
+          "pixel_y": 130,
+          "bbox": [
+            0,
+            123,
+            8,
+            15
+          ],
+          "confidence": 100,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 17,
+          "pixel_x": 136,
+          "pixel_y": 96,
+          "bbox": [
+            125,
+            85,
+            23,
+            22
+          ],
+          "confidence": 99,
+          "vote_percentage": 66.66666666666666
+        },
+        {
+          "number": 18,
+          "pixel_x": 116,
+          "pixel_y": 116,
+          "bbox": [
+            105,
+            107,
+            23,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 58.333333333333336
+        },
+        {
+          "number": 19,
+          "pixel_x": 84,
+          "pixel_y": 114,
+          "bbox": [
+            72,
+            104,
+            24,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 91.66666666666666
+        },
+        {
+          "number": 20,
+          "pixel_x": 49,
+          "pixel_y": 85,
+          "bbox": [
+            38,
+            74,
+            23,
+            22
+          ],
+          "confidence": 99,
+          "vote_percentage": 94.44444444444444
+        },
+        {
+          "number": 21,
+          "pixel_x": 22,
+          "pixel_y": 32,
+          "bbox": [
+            11,
+            18,
+            22,
+            28
+          ],
+          "confidence": 99,
+          "vote_percentage": 76.19047619047619
+        },
+        {
+          "number": 5,
+          "pixel_x": 132,
+          "pixel_y": 45,
+          "bbox": [
+            119,
+            36,
+            26,
+            19
+          ],
+          "confidence": 76,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 7
+    },
+    {
+      "segment_name": "tile_r2_c9",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r2_c9.jpg",
+      "image_dimensions": {
+        "width": 100,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 48,
+          "pixel_x": 14,
+          "pixel_y": 112,
+          "bbox": [
+            2,
+            100,
+            24,
+            24
+          ],
+          "confidence": 48,
+          "vote_percentage": 100
+        },
+        {
+          "number": 5,
+          "pixel_x": 32,
+          "pixel_y": 45,
+          "bbox": [
+            19,
+            36,
+            26,
+            19
+          ],
+          "confidence": 58,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r3_c0",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r3_c0.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 4,
+          "pixel_x": 141,
+          "pixel_y": 4,
+          "bbox": [
+            130,
+            0,
+            22,
+            8
+          ],
+          "confidence": 4,
+          "vote_percentage": 66.66666666666666
+        }
+      ],
+      "total_numbers": 1
+    },
+    {
+      "segment_name": "tile_r3_c1",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r3_c1.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 61,
+          "pixel_x": 107,
+          "pixel_y": 110,
+          "bbox": [
+            97,
+            102,
+            21,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 70.0
+        },
+        {
+          "number": 62,
+          "pixel_x": 104,
+          "pixel_y": 71,
+          "bbox": [
+            91,
+            61,
+            26,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 70.0
+        },
+        {
+          "number": 63,
+          "pixel_x": 111,
+          "pixel_y": 40,
+          "bbox": [
+            98,
+            30,
+            26,
+            20
+          ],
+          "confidence": 95,
+          "vote_percentage": 71.42857142857143
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r3_c2",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r3_c2.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 51,
+          "pixel_x": 9,
+          "pixel_y": 109,
+          "bbox": [
+            0,
+            99,
+            19,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 66.66666666666666
+        },
+        {
+          "number": 52,
+          "pixel_x": 8,
+          "pixel_y": 71,
+          "bbox": [
+            0,
+            61,
+            17,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 69.23076923076923
+        },
+        {
+          "number": 63,
+          "pixel_x": 12,
+          "pixel_y": 39,
+          "bbox": [
+            0,
+            29,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 81.81818181818183
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r3_c5",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r3_c5.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 4,
+          "pixel_x": 189,
+          "pixel_y": 46,
+          "bbox": [
+            182,
+            36,
+            14,
+            20
+          ],
+          "confidence": 63,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 1
+    },
+    {
+      "segment_name": "tile_r3_c6",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r3_c6.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 2,
+          "pixel_x": 11,
+          "pixel_y": 25,
+          "bbox": [
+            4,
+            16,
+            15,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 66.66666666666666
+        },
+        {
+          "number": 3,
+          "pixel_x": 99,
+          "pixel_y": 12,
+          "bbox": [
+            85,
+            0,
+            29,
+            25
+          ],
+          "confidence": 98,
+          "vote_percentage": 75.0
+        },
+        {
+          "number": 8,
+          "pixel_x": 158,
+          "pixel_y": 9,
+          "bbox": [
+            151,
+            0,
+            14,
+            18
+          ],
+          "confidence": 100,
+          "vote_percentage": 83.33333333333334
+        },
+        {
+          "number": 23,
+          "pixel_x": 168,
+          "pixel_y": 116,
+          "bbox": [
+            157,
+            107,
+            23,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 68.75
+        },
+        {
+          "number": 4,
+          "pixel_x": 89,
+          "pixel_y": 46,
+          "bbox": [
+            82,
+            36,
+            15,
+            20
+          ],
+          "confidence": 58,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 5
+    },
+    {
+      "segment_name": "tile_r3_c7",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r3_c7.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 8,
+          "pixel_x": 58,
+          "pixel_y": 8,
+          "bbox": [
+            52,
+            0,
+            12,
+            17
+          ],
+          "confidence": 99,
+          "vote_percentage": 84.61538461538461
+        },
+        {
+          "number": 19,
+          "pixel_x": 184,
+          "pixel_y": 37,
+          "bbox": [
+            172,
+            26,
+            24,
+            22
+          ],
+          "confidence": 100,
+          "vote_percentage": 96.0
+        },
+        {
+          "number": 20,
+          "pixel_x": 149,
+          "pixel_y": 10,
+          "bbox": [
+            138,
+            0,
+            23,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 95.65217391304348
+        },
+        {
+          "number": 23,
+          "pixel_x": 67,
+          "pixel_y": 116,
+          "bbox": [
+            55,
+            106,
+            25,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 53.84615384615385
+        }
+      ],
+      "total_numbers": 4
+    },
+    {
+      "segment_name": "tile_r3_c8",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r3_c8.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 2,
+          "pixel_x": 4,
+          "pixel_y": 54,
+          "bbox": [
+            0,
+            46,
+            8,
+            16
+          ],
+          "confidence": 100,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 17,
+          "pixel_x": 138,
+          "pixel_y": 19,
+          "bbox": [
+            127,
+            10,
+            22,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 77.77777777777779
+        },
+        {
+          "number": 18,
+          "pixel_x": 116,
+          "pixel_y": 38,
+          "bbox": [
+            104,
+            29,
+            24,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 75.0
+        },
+        {
+          "number": 19,
+          "pixel_x": 85,
+          "pixel_y": 37,
+          "bbox": [
+            73,
+            25,
+            24,
+            24
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 20,
+          "pixel_x": 49,
+          "pixel_y": 10,
+          "bbox": [
+            37,
+            0,
+            24,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 93.33333333333333
+        }
+      ],
+      "total_numbers": 5
+    },
+    {
+      "segment_name": "tile_r3_c9",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r3_c9.jpg",
+      "image_dimensions": {
+        "width": 100,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 18,
+          "pixel_x": 17,
+          "pixel_y": 39,
+          "bbox": [
+            9,
+            32,
+            16,
+            15
+          ],
+          "confidence": 96,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 1
+    },
+    {
+      "segment_name": "tile_r4_c0",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r4_c0.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 68,
+          "pixel_x": 132,
+          "pixel_y": 139,
+          "bbox": [
+            120,
+            129,
+            24,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 89.47368421052632
+        },
+        {
+          "number": 6,
+          "pixel_x": 196,
+          "pixel_y": 98,
+          "bbox": [
+            192,
+            91,
+            8,
+            15
+          ],
+          "confidence": 56,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r4_c1",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r4_c1.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 61,
+          "pixel_x": 107,
+          "pixel_y": 33,
+          "bbox": [
+            96,
+            25,
+            22,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 70.0
+        },
+        {
+          "number": 68,
+          "pixel_x": 32,
+          "pixel_y": 139,
+          "bbox": [
+            20,
+            129,
+            24,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 83.33333333333334
+        },
+        {
+          "number": 69,
+          "pixel_x": 15,
+          "pixel_y": 96,
+          "bbox": [
+            3,
+            85,
+            24,
+            22
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r4_c2",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r4_c2.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 4,
+          "pixel_x": 194,
+          "pixel_y": 144,
+          "bbox": [
+            188,
+            137,
+            12,
+            14
+          ],
+          "confidence": 86,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 51,
+          "pixel_x": 9,
+          "pixel_y": 32,
+          "bbox": [
+            0,
+            22,
+            19,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 80.0
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r4_c3",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r4_c3.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 43,
+          "pixel_x": 96,
+          "pixel_y": 144,
+          "bbox": [
+            88,
+            137,
+            17,
+            14
+          ],
+          "confidence": 97,
+          "vote_percentage": 87.5
+        }
+      ],
+      "total_numbers": 1
+    },
+    {
+      "segment_name": "tile_r4_c4",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r4_c4.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [],
+      "total_numbers": 0
+    },
+    {
+      "segment_name": "tile_r4_c5",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r4_c5.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [],
+      "total_numbers": 0
+    },
+    {
+      "segment_name": "tile_r4_c6",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r4_c6.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 23,
+          "pixel_x": 168,
+          "pixel_y": 39,
+          "bbox": [
+            156,
+            29,
+            24,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 66.66666666666666
+        },
+        {
+          "number": 24,
+          "pixel_x": 158,
+          "pixel_y": 110,
+          "bbox": [
+            145,
+            103,
+            27,
+            14
+          ],
+          "confidence": 54,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r4_c7",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r4_c7.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 23,
+          "pixel_x": 68,
+          "pixel_y": 40,
+          "bbox": [
+            57,
+            31,
+            22,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 62.5
+        },
+        {
+          "number": 24,
+          "pixel_x": 61,
+          "pixel_y": 109,
+          "bbox": [
+            46,
+            98,
+            30,
+            22
+          ],
+          "confidence": 90,
+          "vote_percentage": 76.92307692307693
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r5_c0",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r5_c0.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 5,
+          "pixel_x": 193,
+          "pixel_y": 126,
+          "bbox": [
+            187,
+            119,
+            13,
+            15
+          ],
+          "confidence": 84,
+          "vote_percentage": 83.33333333333334
+        },
+        {
+          "number": 6,
+          "pixel_x": 196,
+          "pixel_y": 21,
+          "bbox": [
+            192,
+            14,
+            8,
+            14
+          ],
+          "confidence": 95,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 68,
+          "pixel_x": 132,
+          "pixel_y": 62,
+          "bbox": [
+            120,
+            52,
+            24,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 70,
+          "pixel_x": 98,
+          "pixel_y": 98,
+          "bbox": [
+            90,
+            91,
+            17,
+            14
+          ],
+          "confidence": 96,
+          "vote_percentage": 82.35294117647058
+        },
+        {
+          "number": 69,
+          "pixel_x": 115,
+          "pixel_y": 18,
+          "bbox": [
+            106,
+            11,
+            18,
+            15
+          ],
+          "confidence": 96,
+          "vote_percentage": 100
+        },
+        {
+          "number": 71,
+          "pixel_x": 92,
+          "pixel_y": 18,
+          "bbox": [
+            84,
+            10,
+            16,
+            16
+          ],
+          "confidence": 89,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 6
+    },
+    {
+      "segment_name": "tile_r5_c1",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r5_c1.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 50,
+          "pixel_x": 160,
+          "pixel_y": 139,
+          "bbox": [
+            152,
+            132,
+            17,
+            15
+          ],
+          "confidence": 96,
+          "vote_percentage": 50.0
+        },
+        {
+          "number": 68,
+          "pixel_x": 32,
+          "pixel_y": 62,
+          "bbox": [
+            20,
+            52,
+            24,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 91.66666666666666
+        },
+        {
+          "number": 69,
+          "pixel_x": 15,
+          "pixel_y": 18,
+          "bbox": [
+            3,
+            7,
+            24,
+            22
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r5_c2",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r5_c2.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 4,
+          "pixel_x": 194,
+          "pixel_y": 66,
+          "bbox": [
+            188,
+            59,
+            12,
+            15
+          ],
+          "confidence": 96,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 30,
+          "pixel_x": 8,
+          "pixel_y": 125,
+          "bbox": [
+            0,
+            116,
+            17,
+            19
+          ],
+          "confidence": 88,
+          "vote_percentage": 80.0
+        },
+        {
+          "number": 44,
+          "pixel_x": 146,
+          "pixel_y": 121,
+          "bbox": [
+            137,
+            114,
+            19,
+            15
+          ],
+          "confidence": 99,
+          "vote_percentage": 50.0
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r5_c3",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r5_c3.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 4,
+          "pixel_x": 195,
+          "pixel_y": 81,
+          "bbox": [
+            191,
+            74,
+            9,
+            15
+          ],
+          "confidence": 96,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 43,
+          "pixel_x": 97,
+          "pixel_y": 66,
+          "bbox": [
+            86,
+            57,
+            22,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 44,
+          "pixel_x": 45,
+          "pixel_y": 121,
+          "bbox": [
+            34,
+            112,
+            23,
+            18
+          ],
+          "confidence": 82,
+          "vote_percentage": 50.0
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r5_c4",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r5_c4.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 42,
+          "pixel_x": 100,
+          "pixel_y": 82,
+          "bbox": [
+            92,
+            75,
+            17,
+            14
+          ],
+          "confidence": 96,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 44,
+          "pixel_x": 175,
+          "pixel_y": 89,
+          "bbox": [
+            168,
+            82,
+            15,
+            14
+          ],
+          "confidence": 81,
+          "vote_percentage": 50.0
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r5_c5",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r5_c5.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 2,
+          "pixel_x": 6,
+          "pixel_y": 77,
+          "bbox": [
+            0,
+            63,
+            12,
+            28
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 40,
+          "pixel_x": 146,
+          "pixel_y": 77,
+          "bbox": [
+            134,
+            67,
+            24,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 41,
+          "pixel_x": 75,
+          "pixel_y": 89,
+          "bbox": [
+            68,
+            82,
+            15,
+            14
+          ],
+          "confidence": 73,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r5_c6",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r5_c6.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 24,
+          "pixel_x": 162,
+          "pixel_y": 33,
+          "bbox": [
+            151,
+            24,
+            23,
+            18
+          ],
+          "confidence": 98,
+          "vote_percentage": 53.84615384615385
+        },
+        {
+          "number": 31,
+          "pixel_x": 116,
+          "pixel_y": 110,
+          "bbox": [
+            106,
+            101,
+            21,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 88.88888888888889
+        },
+        {
+          "number": 40,
+          "pixel_x": 45,
+          "pixel_y": 76,
+          "bbox": [
+            34,
+            67,
+            23,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 85.71428571428571
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r5_c7",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r5_c7.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 24,
+          "pixel_x": 59,
+          "pixel_y": 33,
+          "bbox": [
+            45,
+            26,
+            28,
+            15
+          ],
+          "confidence": 81,
+          "vote_percentage": 60.0
+        },
+        {
+          "number": 25,
+          "pixel_x": 138,
+          "pixel_y": 143,
+          "bbox": [
+            127,
+            134,
+            22,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 31,
+          "pixel_x": 16,
+          "pixel_y": 109,
+          "bbox": [
+            6,
+            100,
+            21,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 76.0
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r5_c8",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r5_c8.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 25,
+          "pixel_x": 37,
+          "pixel_y": 144,
+          "bbox": [
+            25,
+            135,
+            24,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 87.5
+        }
+      ],
+      "total_numbers": 1
+    },
+    {
+      "segment_name": "tile_r6_c0",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r6_c0.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 5,
+          "pixel_x": 193,
+          "pixel_y": 49,
+          "bbox": [
+            187,
+            42,
+            13,
+            15
+          ],
+          "confidence": 88,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 70,
+          "pixel_x": 98,
+          "pixel_y": 21,
+          "bbox": [
+            90,
+            14,
+            17,
+            15
+          ],
+          "confidence": 96,
+          "vote_percentage": 94.73684210526315
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r6_c1",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r6_c1.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 57,
+          "pixel_x": 61,
+          "pixel_y": 98,
+          "bbox": [
+            49,
+            89,
+            25,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 50.0
+        },
+        {
+          "number": 51,
+          "pixel_x": 139,
+          "pixel_y": 102,
+          "bbox": [
+            126,
+            95,
+            27,
+            15
+          ],
+          "confidence": 62,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r6_c2",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r6_c2.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 30,
+          "pixel_x": 10,
+          "pixel_y": 49,
+          "bbox": [
+            0,
+            39,
+            20,
+            20
+          ],
+          "confidence": 80,
+          "vote_percentage": 62.5
+        },
+        {
+          "number": 45,
+          "pixel_x": 136,
+          "pixel_y": 91,
+          "bbox": [
+            119,
+            81,
+            34,
+            21
+          ],
+          "confidence": 92,
+          "vote_percentage": 63.63636363636363
+        },
+        {
+          "number": 51,
+          "pixel_x": 40,
+          "pixel_y": 102,
+          "bbox": [
+            24,
+            93,
+            33,
+            19
+          ],
+          "confidence": 73,
+          "vote_percentage": 68.75
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r6_c3",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r6_c3.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 4,
+          "pixel_x": 195,
+          "pixel_y": 6,
+          "bbox": [
+            191,
+            0,
+            8,
+            12
+          ],
+          "confidence": 96,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 45,
+          "pixel_x": 36,
+          "pixel_y": 92,
+          "bbox": [
+            18,
+            80,
+            36,
+            24
+          ],
+          "confidence": 77,
+          "vote_percentage": 76.92307692307693
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r6_c4",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r6_c4.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 41,
+          "pixel_x": 175,
+          "pixel_y": 10,
+          "bbox": [
+            164,
+            0,
+            22,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 85.0
+        },
+        {
+          "number": 42,
+          "pixel_x": 101,
+          "pixel_y": 6,
+          "bbox": [
+            90,
+            0,
+            23,
+            13
+          ],
+          "confidence": 99,
+          "vote_percentage": 77.77777777777779
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r6_c5",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r6_c5.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 32,
+          "pixel_x": 187,
+          "pixel_y": 114,
+          "bbox": [
+            175,
+            104,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 80.0
+        },
+        {
+          "number": 41,
+          "pixel_x": 84,
+          "pixel_y": 9,
+          "bbox": [
+            63,
+            -4,
+            43,
+            27
+          ],
+          "confidence": 99,
+          "vote_percentage": 72.72727272727273
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r6_c6",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r6_c6.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 30,
+          "pixel_x": 175,
+          "pixel_y": 92,
+          "bbox": [
+            163,
+            82,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 96.0
+        },
+        {
+          "number": 31,
+          "pixel_x": 117,
+          "pixel_y": 32,
+          "bbox": [
+            107,
+            23,
+            20,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 90.9090909090909
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r6_c7",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r6_c7.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 25,
+          "pixel_x": 136,
+          "pixel_y": 66,
+          "bbox": [
+            124,
+            56,
+            25,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 68.42105263157895
+        },
+        {
+          "number": 30,
+          "pixel_x": 75,
+          "pixel_y": 92,
+          "bbox": [
+            64,
+            82,
+            23,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 31,
+          "pixel_x": 16,
+          "pixel_y": 31,
+          "bbox": [
+            5,
+            20,
+            22,
+            22
+          ],
+          "confidence": 99,
+          "vote_percentage": 64.0
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r6_c8",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r6_c8.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 25,
+          "pixel_x": 37,
+          "pixel_y": 66,
+          "bbox": [
+            24,
+            56,
+            26,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 68.75
+        }
+      ],
+      "total_numbers": 1
+    },
+    {
+      "segment_name": "tile_r7_c0",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r7_c0.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [],
+      "total_numbers": 0
+    },
+    {
+      "segment_name": "tile_r7_c1",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r7_c1.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 51,
+          "pixel_x": 139,
+          "pixel_y": 25,
+          "bbox": [
+            126,
+            18,
+            27,
+            15
+          ],
+          "confidence": 82,
+          "vote_percentage": 66.66666666666666
+        },
+        {
+          "number": 52,
+          "pixel_x": 126,
+          "pixel_y": 72,
+          "bbox": [
+            114,
+            62,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 90.0
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r7_c2",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r7_c2.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 51,
+          "pixel_x": 39,
+          "pixel_y": 25,
+          "bbox": [
+            23,
+            16,
+            33,
+            19
+          ],
+          "confidence": 88,
+          "vote_percentage": 58.82352941176471
+        },
+        {
+          "number": 52,
+          "pixel_x": 26,
+          "pixel_y": 72,
+          "bbox": [
+            14,
+            62,
+            24,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 91.66666666666666
+        },
+        {
+          "number": 45,
+          "pixel_x": 136,
+          "pixel_y": 16,
+          "bbox": [
+            122,
+            9,
+            28,
+            15
+          ],
+          "confidence": 55,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r7_c3",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r7_c3.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 45,
+          "pixel_x": 36,
+          "pixel_y": 16,
+          "bbox": [
+            19,
+            6,
+            34,
+            20
+          ],
+          "confidence": 85,
+          "vote_percentage": 50.0
+        }
+      ],
+      "total_numbers": 1
+    },
+    {
+      "segment_name": "tile_r7_c4",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r7_c4.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [],
+      "total_numbers": 0
+    },
+    {
+      "segment_name": "tile_r7_c5",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r7_c5.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 33,
+          "pixel_x": 180,
+          "pixel_y": 83,
+          "bbox": [
+            168,
+            73,
+            25,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 83.33333333333334
+        },
+        {
+          "number": 34,
+          "pixel_x": 177,
+          "pixel_y": 126,
+          "bbox": [
+            165,
+            116,
+            24,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 76.92307692307693
+        },
+        {
+          "number": 32,
+          "pixel_x": 183,
+          "pixel_y": 38,
+          "bbox": [
+            169,
+            31,
+            28,
+            14
+          ],
+          "confidence": 36,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r7_c6",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r7_c6.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 29,
+          "pixel_x": 165,
+          "pixel_y": 144,
+          "bbox": [
+            154,
+            134,
+            23,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 30,
+          "pixel_x": 177,
+          "pixel_y": 16,
+          "bbox": [
+            167,
+            7,
+            20,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 96.15384615384616
+        },
+        {
+          "number": 32,
+          "pixel_x": 87,
+          "pixel_y": 38,
+          "bbox": [
+            75,
+            28,
+            24,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 77.77777777777779
+        },
+        {
+          "number": 33,
+          "pixel_x": 80,
+          "pixel_y": 83,
+          "bbox": [
+            68,
+            73,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 68.75
+        },
+        {
+          "number": 90,
+          "pixel_x": 13,
+          "pixel_y": 123,
+          "bbox": [
+            0,
+            114,
+            26,
+            19
+          ],
+          "confidence": 96,
+          "vote_percentage": 90.0
+        },
+        {
+          "number": 34,
+          "pixel_x": 72,
+          "pixel_y": 127,
+          "bbox": [
+            59,
+            120,
+            27,
+            14
+          ],
+          "confidence": 45,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 6
+    },
+    {
+      "segment_name": "tile_r7_c7",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r7_c7.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 29,
+          "pixel_x": 66,
+          "pixel_y": 144,
+          "bbox": [
+            55,
+            135,
+            22,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 63.63636363636363
+        },
+        {
+          "number": 30,
+          "pixel_x": 75,
+          "pixel_y": 15,
+          "bbox": [
+            64,
+            5,
+            23,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 88.0
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r8_c0",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r8_c0.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 55,
+          "pixel_x": 167,
+          "pixel_y": 134,
+          "bbox": [
+            157,
+            125,
+            21,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 73.07692307692307
+        },
+        {
+          "number": 56,
+          "pixel_x": 147,
+          "pixel_y": 90,
+          "bbox": [
+            135,
+            80,
+            24,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 71.42857142857143
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r8_c1",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r8_c1.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 4,
+          "pixel_x": 193,
+          "pixel_y": 87,
+          "bbox": [
+            187,
+            80,
+            13,
+            14
+          ],
+          "confidence": 89,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 54,
+          "pixel_x": 127,
+          "pixel_y": 116,
+          "bbox": [
+            112,
+            109,
+            30,
+            14
+          ],
+          "confidence": 81,
+          "vote_percentage": 85.71428571428571
+        },
+        {
+          "number": 55,
+          "pixel_x": 67,
+          "pixel_y": 133,
+          "bbox": [
+            57,
+            124,
+            21,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 70.83333333333334
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r8_c2",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r8_c2.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 46,
+          "pixel_x": 173,
+          "pixel_y": 87,
+          "bbox": [
+            161,
+            77,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 71.42857142857143
+        },
+        {
+          "number": 48,
+          "pixel_x": 113,
+          "pixel_y": 132,
+          "bbox": [
+            101,
+            122,
+            24,
+            21
+          ],
+          "confidence": 100,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 49,
+          "pixel_x": 95,
+          "pixel_y": 86,
+          "bbox": [
+            83,
+            76,
+            25,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 83.33333333333334
+        },
+        {
+          "number": 53,
+          "pixel_x": 18,
+          "pixel_y": 83,
+          "bbox": [
+            2,
+            73,
+            33,
+            21
+          ],
+          "confidence": 97,
+          "vote_percentage": 80.95238095238095
+        },
+        {
+          "number": 54,
+          "pixel_x": 32,
+          "pixel_y": 115,
+          "bbox": [
+            20,
+            105,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 91.66666666666666
+        }
+      ],
+      "total_numbers": 5
+    },
+    {
+      "segment_name": "tile_r8_c3",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r8_c3.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 46,
+          "pixel_x": 73,
+          "pixel_y": 87,
+          "bbox": [
+            61,
+            78,
+            24,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 77.77777777777779
+        },
+        {
+          "number": 48,
+          "pixel_x": 13,
+          "pixel_y": 133,
+          "bbox": [
+            2,
+            124,
+            22,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 87.5
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r8_c4",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r8_c4.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [],
+      "total_numbers": 0
+    },
+    {
+      "segment_name": "tile_r8_c5",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r8_c5.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 37,
+          "pixel_x": 139,
+          "pixel_y": 137,
+          "bbox": [
+            131,
+            130,
+            17,
+            14
+          ],
+          "confidence": 96,
+          "vote_percentage": 93.33333333333333
+        },
+        {
+          "number": 38,
+          "pixel_x": 120,
+          "pixel_y": 99,
+          "bbox": [
+            108,
+            88,
+            24,
+            22
+          ],
+          "confidence": 99,
+          "vote_percentage": 50.0
+        },
+        {
+          "number": 34,
+          "pixel_x": 172,
+          "pixel_y": 50,
+          "bbox": [
+            159,
+            43,
+            27,
+            14
+          ],
+          "confidence": 73,
+          "vote_percentage": 100
+        },
+        {
+          "number": 53,
+          "pixel_x": 176,
+          "pixel_y": 7,
+          "bbox": [
+            163,
+            0,
+            27,
+            14
+          ],
+          "confidence": 53,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 4
+    },
+    {
+      "segment_name": "tile_r8_c6",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r8_c6.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 29,
+          "pixel_x": 166,
+          "pixel_y": 67,
+          "bbox": [
+            154,
+            57,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 88.88888888888889
+        },
+        {
+          "number": 33,
+          "pixel_x": 79,
+          "pixel_y": 8,
+          "bbox": [
+            67,
+            0,
+            24,
+            16
+          ],
+          "confidence": 92,
+          "vote_percentage": 57.14285714285714
+        },
+        {
+          "number": 35,
+          "pixel_x": 96,
+          "pixel_y": 94,
+          "bbox": [
+            83,
+            84,
+            26,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 66.66666666666666
+        },
+        {
+          "number": 36,
+          "pixel_x": 107,
+          "pixel_y": 122,
+          "bbox": [
+            95,
+            112,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 94.11764705882352
+        },
+        {
+          "number": 37,
+          "pixel_x": 39,
+          "pixel_y": 137,
+          "bbox": [
+            30,
+            130,
+            18,
+            15
+          ],
+          "confidence": 95,
+          "vote_percentage": 55.55555555555556
+        },
+        {
+          "number": 38,
+          "pixel_x": 20,
+          "pixel_y": 100,
+          "bbox": [
+            9,
+            90,
+            23,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 50.0
+        },
+        {
+          "number": 90,
+          "pixel_x": 12,
+          "pixel_y": 46,
+          "bbox": [
+            0,
+            36,
+            25,
+            20
+          ],
+          "confidence": 95,
+          "vote_percentage": 63.63636363636363
+        },
+        {
+          "number": 34,
+          "pixel_x": 72,
+          "pixel_y": 49,
+          "bbox": [
+            58,
+            42,
+            28,
+            15
+          ],
+          "confidence": 88,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 8
+    },
+    {
+      "segment_name": "tile_r8_c7",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r8_c7.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 27,
+          "pixel_x": 112,
+          "pixel_y": 126,
+          "bbox": [
+            101,
+            117,
+            23,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 57.14285714285714
+        },
+        {
+          "number": 29,
+          "pixel_x": 66,
+          "pixel_y": 67,
+          "bbox": [
+            54,
+            57,
+            24,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 91.66666666666666
+        },
+        {
+          "number": 36,
+          "pixel_x": 9,
+          "pixel_y": 122,
+          "bbox": [
+            0,
+            111,
+            19,
+            22
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r8_c8",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r8_c8.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 155
+      },
+      "numbers": [
+        {
+          "number": 27,
+          "pixel_x": 12,
+          "pixel_y": 126,
+          "bbox": [
+            0,
+            117,
+            24,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 26,
+          "pixel_x": 19,
+          "pixel_y": 88,
+          "bbox": [
+            0,
+            81,
+            38,
+            15
+          ],
+          "confidence": 59,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r9_c0",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r9_c0.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 80
+      },
+      "numbers": [
+        {
+          "number": 55,
+          "pixel_x": 168,
+          "pixel_y": 56,
+          "bbox": [
+            157,
+            47,
+            22,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 95.65217391304348
+        },
+        {
+          "number": 56,
+          "pixel_x": 147,
+          "pixel_y": 13,
+          "bbox": [
+            135,
+            3,
+            24,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 50.0
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r9_c1",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r9_c1.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 80
+      },
+      "numbers": [
+        {
+          "number": 4,
+          "pixel_x": 193,
+          "pixel_y": 10,
+          "bbox": [
+            187,
+            3,
+            13,
+            15
+          ],
+          "confidence": 90,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 54,
+          "pixel_x": 132,
+          "pixel_y": 38,
+          "bbox": [
+            120,
+            28,
+            25,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 80.95238095238095
+        },
+        {
+          "number": 55,
+          "pixel_x": 67,
+          "pixel_y": 56,
+          "bbox": [
+            56,
+            46,
+            23,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 79.16666666666666
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r9_c2",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r9_c2.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 80
+      },
+      "numbers": [
+        {
+          "number": 46,
+          "pixel_x": 173,
+          "pixel_y": 11,
+          "bbox": [
+            162,
+            2,
+            23,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 90.0
+        },
+        {
+          "number": 48,
+          "pixel_x": 113,
+          "pixel_y": 55,
+          "bbox": [
+            101,
+            45,
+            24,
+            20
+          ],
+          "confidence": 100,
+          "vote_percentage": 85.71428571428571
+        },
+        {
+          "number": 49,
+          "pixel_x": 95,
+          "pixel_y": 9,
+          "bbox": [
+            83,
+            0,
+            25,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 88.88888888888889
+        },
+        {
+          "number": 53,
+          "pixel_x": 17,
+          "pixel_y": 8,
+          "bbox": [
+            0,
+            0,
+            34,
+            17
+          ],
+          "confidence": 90,
+          "vote_percentage": 50.0
+        },
+        {
+          "number": 54,
+          "pixel_x": 32,
+          "pixel_y": 38,
+          "bbox": [
+            20,
+            28,
+            25,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 85.71428571428571
+        }
+      ],
+      "total_numbers": 5
+    },
+    {
+      "segment_name": "tile_r9_c3",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r9_c3.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 80
+      },
+      "numbers": [
+        {
+          "number": 46,
+          "pixel_x": 73,
+          "pixel_y": 11,
+          "bbox": [
+            62,
+            2,
+            23,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 91.66666666666666
+        },
+        {
+          "number": 48,
+          "pixel_x": 13,
+          "pixel_y": 55,
+          "bbox": [
+            1,
+            43,
+            25,
+            24
+          ],
+          "confidence": 100,
+          "vote_percentage": 94.11764705882352
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r9_c5",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r9_c5.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 80
+      },
+      "numbers": [
+        {
+          "number": 37,
+          "pixel_x": 139,
+          "pixel_y": 60,
+          "bbox": [
+            131,
+            53,
+            17,
+            15
+          ],
+          "confidence": 96,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 38,
+          "pixel_x": 119,
+          "pixel_y": 22,
+          "bbox": [
+            108,
+            12,
+            23,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 55.55555555555556
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r9_c6",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r9_c6.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 80
+      },
+      "numbers": [
+        {
+          "number": 35,
+          "pixel_x": 96,
+          "pixel_y": 17,
+          "bbox": [
+            84,
+            7,
+            25,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 60.0
+        },
+        {
+          "number": 36,
+          "pixel_x": 107,
+          "pixel_y": 45,
+          "bbox": [
+            95,
+            35,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 89.47368421052632
+        },
+        {
+          "number": 37,
+          "pixel_x": 39,
+          "pixel_y": 60,
+          "bbox": [
+            30,
+            52,
+            18,
+            16
+          ],
+          "confidence": 95,
+          "vote_percentage": 90.0
+        },
+        {
+          "number": 38,
+          "pixel_x": 20,
+          "pixel_y": 23,
+          "bbox": [
+            9,
+            13,
+            23,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 80.0
+        }
+      ],
+      "total_numbers": 4
+    },
+    {
+      "segment_name": "tile_r9_c7",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r9_c7.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 80
+      },
+      "numbers": [
+        {
+          "number": 27,
+          "pixel_x": 112,
+          "pixel_y": 50,
+          "bbox": [
+            101,
+            40,
+            23,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 78.57142857142857
+        },
+        {
+          "number": 36,
+          "pixel_x": 9,
+          "pixel_y": 45,
+          "bbox": [
+            0,
+            35,
+            19,
+            20
+          ],
+          "confidence": 99,
+          "vote_percentage": 88.88888888888889
+        },
+        {
+          "number": 26,
+          "pixel_x": 130,
+          "pixel_y": 11,
+          "bbox": [
+            121,
+            4,
+            18,
+            15
+          ],
+          "confidence": 96,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r9_c8",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r9_c8.jpg",
+      "image_dimensions": {
+        "width": 200,
+        "height": 80
+      },
+      "numbers": [
+        {
+          "number": 27,
+          "pixel_x": 12,
+          "pixel_y": 49,
+          "bbox": [
+            0,
+            39,
+            24,
+            21
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        }
+      ],
+      "total_numbers": 1
+    }
+  ]
+}

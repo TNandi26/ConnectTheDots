@@ -335,21 +335,6 @@ def calculate_optimal_output_size(corners):
     return avg_width, avg_height
 
 
-def apply_adaptive_perspective_transform(image, corners):
-    """
-    Apply perspective transformation with automatically calculated output size
-    """
-    if len(corners) != 4:
-        logging.error(f"Need exactly 4 corners for perspective transform, got {len(corners)}")
-        return image
-    
-    # Calculate optimal output size
-    output_width, output_height = calculate_optimal_output_size(corners)
-    
-    # Apply transformation with calculated size
-    return apply_perspective_transform(image, corners, output_width, output_height)
-
-
 if __name__ == "__main__":
 
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
@@ -396,7 +381,7 @@ if __name__ == "__main__":
         # Corner detection with coordinates
         output_picture_folder = os.path.join(base_path, "Output_pictures/step_07_masked_original.jpg")
         image_corner, corner_coordinates = locate_corners_white_paper(output_picture_folder)
-        save_step(image_corner, "corners", 1000)
+        save_step(image_corner, "corners", 14)
         # Log corner coordinates for use in other parts of code
         if len(corner_coordinates) == 4:
             logging.info("=== CORNER COORDINATES ===")
@@ -410,126 +395,25 @@ if __name__ == "__main__":
 
         logging.info("Applying standard A4 perspective transform...")
         corrected_standard = apply_perspective_transform(masked_original, corner_coordinates)
-        save_step(corrected_standard, "perspective_A4", 1900)
+        save_step(corrected_standard, "perspective_A4", 9)
         
         # Apply adaptive transformation (maintains original proportions)
-        logging.info("Applying adaptive perspective transform...")
-        corrected_adaptive = apply_adaptive_perspective_transform(masked_original, corner_coordinates)
-        save_step(corrected_adaptive, "perspective_adaptive", 2000)
-        
+        logging.info("Applying perspective transform...")
+
         # Also apply transform to grayscale for better processing
         grayscale_cropped = convert_to_grayscale(masked_original)
-        save_step(grayscale_cropped, "before_transform_gray", 2100)
+        save_step(grayscale_cropped, "before_transform_gray", 10)
         
         corrected_gray_standard = apply_perspective_transform(grayscale_cropped, corner_coordinates)
-        save_step(corrected_gray_standard, "perspective_A4_gray", 2200)
+        save_step(corrected_gray_standard, "perspective_A4_gray", 11)
         
-        corrected_gray_adaptive = apply_adaptive_perspective_transform(grayscale_cropped, corner_coordinates)
-        save_step(corrected_gray_adaptive, "perspective_adaptive_gray", 2300)
+        corrected_image = apply_perspective_transform(masked_original, corner_coordinates, output_width=1240, output_height=1754)
+        save_step(corrected_image, "smaller_resolution", 12)
 
-
-
-
-
-
-        #Crop paper only (with padding)
-        cropped_paper = crop_paper_only(base_image, a4_contour)
-        save_step(cropped_paper, "cropped_paper", 9)
-
-        #Tight crop (exact bounds)
-        tight_cropped = crop_paper_tight(base_image, a4_contour)
-        save_step(tight_cropped, "tight_cropped", 10)
+        corrected_image = apply_perspective_transform(masked_original, corner_coordinates, output_width=1654, output_height=2339)
+        save_step(corrected_image, "bigger_resolution", 13)
 
     else:
         logging.error("FAILED: Could not detect A4 paper")
         logging.error("Try adjusting the area threshold in detect_a4_contour function")
         sys.exit()
-
-    output_picture_folder = os.path.join(base_path, "Output_pictures/step_10_tight_cropped.jpg")
-    check_resolution(output_picture_folder)
-
-    # Second run on cropped image to detect corners
-    logging.info("Starting corner detection on cropped image...")
-    output_picture_folder = os.path.join(base_path, "Output_pictures/step_09_cropped_paper.jpg")
-
-    base_image = load_image(output_picture_folder)
-
-    grayscale_image = convert_to_grayscale(cropped_paper)
-    save_step(grayscale_image, "grayscale", 12)
-
-    # Apply blur
-    blurred_image = apply_blur(grayscale_image)
-    save_step(blurred_image, "blurred", 13)
-
-    # Threshold
-    threshold_image = apply_adaptive_threshold(blurred_image)
-    save_step(threshold_image, "threshold", 14)
-
-    # Detect A4 contour again
-    a4_contour = detect_a4_contour(threshold_image)
-    if a4_contour is not None:
-        logging.info("A4 paper detected successfully in cropped image!")
-        
-        # Create mask from contour
-        paper_mask = create_mask_from_contour(a4_contour, threshold_image.shape)
-        save_step(paper_mask, "paper_mask", 15)
-        
-        # Apply mask to original image
-        masked_original = apply_mask_to_original(base_image, paper_mask)
-        save_step(masked_original, "masked_original", 16)
-        
-        # Visualize detected contour
-        contour_visualization = visualize_contour(base_image, a4_contour)
-        save_step(contour_visualization, "contour_detected", 17)
-
-        # Corner detection with coordinates
-        image_corner, corner_coordinates = locate_corners_white_paper(output_picture_folder)
-        save_step(image_corner, "corners", 18)
-        
-        # Log corner coordinates for use in other parts of code
-        if len(corner_coordinates) == 4:
-            logging.info("=== CORNER COORDINATES ===")
-            logging.info(f"Top-Left corner: {corner_coordinates[0]}")
-            logging.info(f"Top-Right corner: {corner_coordinates[1]}")
-            logging.info(f"Bottom-Right corner: {corner_coordinates[2]}")
-            logging.info(f"Bottom-Left corner: {corner_coordinates[3]}")
-            logging.info("===========================")
-            
-            # Apply perspective transformation to correct document perspective
-            logging.info("Starting perspective transformation...")
-            
-            # Load original cropped image for transformation
-            original_cropped = load_image(output_picture_folder)
-            
-            # Apply standard A4 transformation
-            logging.info("Applying standard A4 perspective transform...")
-            corrected_standard = apply_perspective_transform(original_cropped, corner_coordinates)
-            save_step(corrected_standard, "perspective_A4", 19)
-            
-            # Apply adaptive transformation (maintains original proportions)
-            logging.info("Applying adaptive perspective transform...")
-            corrected_adaptive = apply_adaptive_perspective_transform(original_cropped, corner_coordinates)
-            save_step(corrected_adaptive, "perspective_adaptive", 20)
-            
-            # Also apply transform to grayscale for better processing
-            grayscale_cropped = convert_to_grayscale(original_cropped)
-            save_step(grayscale_cropped, "before_transform_gray", 21)
-            
-            corrected_gray_standard = apply_perspective_transform(grayscale_cropped, corner_coordinates)
-            save_step(corrected_gray_standard, "perspective_A4_gray", 22)
-            
-            corrected_gray_adaptive = apply_adaptive_perspective_transform(grayscale_cropped, corner_coordinates)
-            save_step(corrected_gray_adaptive, "perspective_adaptive_gray", 23)
-            
-            logging.info("Perspective transformation completed successfully!")
-            logging.info("Results saved:")
-            logging.info("  step_110: Standard A4 size (595x842)")
-            logging.info("  step_111: Adaptive size (maintains proportions)")
-            logging.info("  step_113: A4 grayscale version")
-            logging.info("  step_114: Adaptive grayscale version")
-            
-        else:
-            logging.warning(f"Expected 4 corners, found {len(corner_coordinates)}: {corner_coordinates}")
-            logging.warning("Skipping perspective transformation")
-    else:
-        logging.error("FAILED: Could not detect A4 paper in cropped image")
