@@ -5,6 +5,8 @@ from rclpy.node import Node
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 import cv2
+import os
+import datetime
 
 
 class RealSenseCameraSubscriber(Node):
@@ -36,7 +38,6 @@ class RealSenseCameraSubscriber(Node):
         
         self.get_logger().info(f'Subscribed to camera topic: {camera_topic}')
         
-        # Frame counter
         self.frame_count = 0
     
     def image_callback(self, msg):
@@ -60,36 +61,9 @@ class RealSenseCameraSubscriber(Node):
             if self.show_image:
                 cv2.imshow('RealSense D405 Camera', cv_image)
                 cv2.waitKey(1)
-            
-            # Add your custom image processing here
-            # Example: self.process_image(cv_image, msg.header)
-            
+
         except Exception as e:
             self.get_logger().error(f'Error processing image: {str(e)}')
-    
-    def process_image(self, cv_image, header):
-        """
-        Custom processing for camera images
-        Add your image processing logic here
-        
-        Args:
-            cv_image: OpenCV image (numpy array)
-            header: ROS message header with timestamp and frame_id
-        """
-        # Example: Access timestamp
-        timestamp = header.stamp.sec + header.stamp.nanosec * 1e-9
-        
-        # Example: Simple image analysis
-        height, width = cv_image.shape[:2]
-        
-        # Add your processing here
-        # - Object detection
-        # - Feature extraction
-        # - Color segmentation
-        # - etc.
-        
-        pass
-
 
 def main(args=None):
     rclpy.init(args=args)

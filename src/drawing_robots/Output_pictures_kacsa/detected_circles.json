@@ -1,0 +1,2210 @@
+{
+  "detection_method": "Multi-Method Improved",
+  "total_segments": 33,
+  "total_circles_found": 263,
+  "segments": [
+    {
+      "segment_name": "tile_r0_c1",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r0_c1.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 125,
+          "pixel_y": 158,
+          "radius": 4,
+          "intensity": 26
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 161,
+          "pixel_y": 123,
+          "radius": 4,
+          "intensity": 1
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 161,
+          "pixel_y": 124,
+          "radius": 4,
+          "intensity": 1
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 126,
+          "pixel_y": 158,
+          "radius": 5,
+          "intensity": 3
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 148,
+          "pixel_y": 119,
+          "radius": 3,
+          "intensity": 34
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 160,
+          "pixel_y": 123,
+          "radius": 4,
+          "intensity": 8
+        },
+        {
+          "local_id": 7,
+          "pixel_x": 125,
+          "pixel_y": 157,
+          "radius": 4,
+          "intensity": 8
+        }
+      ],
+      "total_circles": 7
+    },
+    {
+      "segment_name": "tile_r0_c2",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r0_c2.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 6,
+          "pixel_y": 158,
+          "radius": 4,
+          "intensity": 29
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 42,
+          "pixel_y": 123,
+          "radius": 4,
+          "intensity": 5
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 140,
+          "pixel_y": 109,
+          "radius": 4,
+          "intensity": 14
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 84,
+          "pixel_y": 102,
+          "radius": 4,
+          "intensity": 9
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 42,
+          "pixel_y": 124,
+          "radius": 4,
+          "intensity": 3
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 140,
+          "pixel_y": 108,
+          "radius": 4,
+          "intensity": 15
+        },
+        {
+          "local_id": 7,
+          "pixel_x": 83,
+          "pixel_y": 102,
+          "radius": 4,
+          "intensity": 4
+        },
+        {
+          "local_id": 8,
+          "pixel_x": 7,
+          "pixel_y": 158,
+          "radius": 5,
+          "intensity": 4
+        },
+        {
+          "local_id": 9,
+          "pixel_x": 29,
+          "pixel_y": 119,
+          "radius": 3,
+          "intensity": 41
+        },
+        {
+          "local_id": 10,
+          "pixel_x": 139,
+          "pixel_y": 107,
+          "radius": 5,
+          "intensity": 2
+        },
+        {
+          "local_id": 11,
+          "pixel_x": 83,
+          "pixel_y": 101,
+          "radius": 5,
+          "intensity": 0
+        },
+        {
+          "local_id": 12,
+          "pixel_x": 41,
+          "pixel_y": 123,
+          "radius": 4,
+          "intensity": 2
+        },
+        {
+          "local_id": 13,
+          "pixel_x": 6,
+          "pixel_y": 157,
+          "radius": 4,
+          "intensity": 8
+        }
+      ],
+      "total_circles": 13
+    },
+    {
+      "segment_name": "tile_r0_c3",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r0_c3.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 131,
+          "pixel_y": 175,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 82,
+          "pixel_y": 132,
+          "radius": 4,
+          "intensity": 11
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 82,
+          "pixel_y": 131,
+          "radius": 5,
+          "intensity": 9
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 130,
+          "pixel_y": 174,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 81,
+          "pixel_y": 131,
+          "radius": 4,
+          "intensity": 4
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 20,
+          "pixel_y": 107,
+          "radius": 5,
+          "intensity": 5
+        }
+      ],
+      "total_circles": 6
+    },
+    {
+      "segment_name": "tile_r0_c4",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r0_c4.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 12,
+          "pixel_y": 175,
+          "radius": 4,
+          "intensity": 13
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 11,
+          "pixel_y": 174,
+          "radius": 4,
+          "intensity": 0
+        }
+      ],
+      "total_circles": 2
+    },
+    {
+      "segment_name": "tile_r0_c5",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r0_c5.jpg",
+      "image_dimensions": {
+        "width": 141,
+        "height": 238
+      },
+      "circles": [],
+      "total_circles": 0
+    },
+    {
+      "segment_name": "tile_r1_c0",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r1_c0.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 83,
+          "pixel_y": 211,
+          "radius": 4,
+          "intensity": 8
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 114,
+          "pixel_y": 206,
+          "radius": 4,
+          "intensity": 13
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 113,
+          "pixel_y": 205,
+          "radius": 5,
+          "intensity": 4
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 113,
+          "pixel_y": 206,
+          "radius": 5,
+          "intensity": 8
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 82,
+          "pixel_y": 210,
+          "radius": 4,
+          "intensity": 11
+        }
+      ],
+      "total_circles": 5
+    },
+    {
+      "segment_name": "tile_r1_c1",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r1_c1.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 130,
+          "pixel_y": 206,
+          "radius": 4,
+          "intensity": 12
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 126,
+          "pixel_y": 4,
+          "radius": 4,
+          "intensity": 2
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 129,
+          "pixel_y": 206,
+          "radius": 5,
+          "intensity": 4
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 129,
+          "pixel_y": 205,
+          "radius": 4,
+          "intensity": 5
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 125,
+          "pixel_y": 3,
+          "radius": 4,
+          "intensity": 13
+        }
+      ],
+      "total_circles": 5
+    },
+    {
+      "segment_name": "tile_r1_c2",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r1_c2.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 7,
+          "pixel_y": 4,
+          "radius": 4,
+          "intensity": 8
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 10,
+          "pixel_y": 206,
+          "radius": 5,
+          "intensity": 16
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 6,
+          "pixel_y": 4,
+          "radius": 5,
+          "intensity": 13
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 10,
+          "pixel_y": 205,
+          "radius": 4,
+          "intensity": 10
+        }
+      ],
+      "total_circles": 4
+    },
+    {
+      "segment_name": "tile_r1_c3",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r1_c3.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 131,
+          "pixel_y": 22,
+          "radius": 3,
+          "intensity": 5
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 153,
+          "pixel_y": 168,
+          "radius": 4,
+          "intensity": 5
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 124,
+          "pixel_y": 140,
+          "radius": 4,
+          "intensity": 17
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 142,
+          "pixel_y": 86,
+          "radius": 4,
+          "intensity": 12
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 131,
+          "pixel_y": 21,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 152,
+          "pixel_y": 167,
+          "radius": 5,
+          "intensity": 0
+        },
+        {
+          "local_id": 7,
+          "pixel_x": 123,
+          "pixel_y": 139,
+          "radius": 4,
+          "intensity": 14
+        },
+        {
+          "local_id": 8,
+          "pixel_x": 141,
+          "pixel_y": 85,
+          "radius": 5,
+          "intensity": 13
+        },
+        {
+          "local_id": 9,
+          "pixel_x": 130,
+          "pixel_y": 20,
+          "radius": 4,
+          "intensity": 4
+        }
+      ],
+      "total_circles": 9
+    },
+    {
+      "segment_name": "tile_r1_c4",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r1_c4.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 34,
+          "pixel_y": 167,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 70,
+          "pixel_y": 168,
+          "radius": 4,
+          "intensity": 2
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 34,
+          "pixel_y": 168,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 90,
+          "pixel_y": 139,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 172,
+          "pixel_y": 128,
+          "radius": 4,
+          "intensity": 15
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 23,
+          "pixel_y": 86,
+          "radius": 4,
+          "intensity": 18
+        },
+        {
+          "local_id": 7,
+          "pixel_x": 12,
+          "pixel_y": 21,
+          "radius": 4,
+          "intensity": 3
+        },
+        {
+          "local_id": 8,
+          "pixel_x": 4,
+          "pixel_y": 140,
+          "radius": 4,
+          "intensity": 4
+        },
+        {
+          "local_id": 9,
+          "pixel_x": 172,
+          "pixel_y": 127,
+          "radius": 4,
+          "intensity": 1
+        },
+        {
+          "local_id": 10,
+          "pixel_x": 128,
+          "pixel_y": 124,
+          "radius": 4,
+          "intensity": 14
+        },
+        {
+          "local_id": 11,
+          "pixel_x": 129,
+          "pixel_y": 125,
+          "radius": 5,
+          "intensity": 7
+        },
+        {
+          "local_id": 12,
+          "pixel_x": 69,
+          "pixel_y": 168,
+          "radius": 5,
+          "intensity": 11
+        },
+        {
+          "local_id": 13,
+          "pixel_x": 33,
+          "pixel_y": 167,
+          "radius": 5,
+          "intensity": 0
+        },
+        {
+          "local_id": 14,
+          "pixel_x": 4,
+          "pixel_y": 139,
+          "radius": 4,
+          "intensity": 4
+        },
+        {
+          "local_id": 15,
+          "pixel_x": 135,
+          "pixel_y": 109,
+          "radius": 3,
+          "intensity": 44
+        },
+        {
+          "local_id": 16,
+          "pixel_x": 22,
+          "pixel_y": 85,
+          "radius": 4,
+          "intensity": 8
+        },
+        {
+          "local_id": 17,
+          "pixel_x": 11,
+          "pixel_y": 20,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 18,
+          "pixel_x": 171,
+          "pixel_y": 127,
+          "radius": 4,
+          "intensity": 12
+        },
+        {
+          "local_id": 19,
+          "pixel_x": 89,
+          "pixel_y": 138,
+          "radius": 4,
+          "intensity": 19
+        },
+        {
+          "local_id": 20,
+          "pixel_x": 69,
+          "pixel_y": 167,
+          "radius": 4,
+          "intensity": 0
+        }
+      ],
+      "total_circles": 20
+    },
+    {
+      "segment_name": "tile_r1_c5",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r1_c5.jpg",
+      "image_dimensions": {
+        "width": 141,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 87,
+          "pixel_y": 156,
+          "radius": 4,
+          "intensity": 14
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 9,
+          "pixel_y": 125,
+          "radius": 4,
+          "intensity": 7
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 107,
+          "pixel_y": 90,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 10,
+          "pixel_y": 125,
+          "radius": 4,
+          "intensity": 6
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 9,
+          "pixel_y": 124,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 86,
+          "pixel_y": 156,
+          "radius": 5,
+          "intensity": 5
+        },
+        {
+          "local_id": 7,
+          "pixel_x": 86,
+          "pixel_y": 155,
+          "radius": 4,
+          "intensity": 5
+        },
+        {
+          "local_id": 8,
+          "pixel_x": 16,
+          "pixel_y": 109,
+          "radius": 3,
+          "intensity": 46
+        },
+        {
+          "local_id": 9,
+          "pixel_x": 106,
+          "pixel_y": 89,
+          "radius": 4,
+          "intensity": 14
+        },
+        {
+          "local_id": 10,
+          "pixel_x": 52,
+          "pixel_y": 127,
+          "radius": 4,
+          "intensity": 8
+        }
+      ],
+      "total_circles": 10
+    },
+    {
+      "segment_name": "tile_r2_c0",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r2_c0.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 113,
+          "pixel_y": 208,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 117,
+          "pixel_y": 86,
+          "radius": 4,
+          "intensity": 9
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 93,
+          "pixel_y": 85,
+          "radius": 4,
+          "intensity": 8
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 83,
+          "pixel_y": 57,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 114,
+          "pixel_y": 52,
+          "radius": 4,
+          "intensity": 4
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 92,
+          "pixel_y": 85,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 7,
+          "pixel_x": 113,
+          "pixel_y": 52,
+          "radius": 4,
+          "intensity": 9
+        },
+        {
+          "local_id": 8,
+          "pixel_x": 112,
+          "pixel_y": 208,
+          "radius": 4,
+          "intensity": 9
+        },
+        {
+          "local_id": 9,
+          "pixel_x": 116,
+          "pixel_y": 86,
+          "radius": 5,
+          "intensity": 0
+        },
+        {
+          "local_id": 10,
+          "pixel_x": 83,
+          "pixel_y": 56,
+          "radius": 5,
+          "intensity": 11
+        },
+        {
+          "local_id": 11,
+          "pixel_x": 113,
+          "pixel_y": 51,
+          "radius": 5,
+          "intensity": 5
+        },
+        {
+          "local_id": 12,
+          "pixel_x": 112,
+          "pixel_y": 207,
+          "radius": 4,
+          "intensity": 3
+        },
+        {
+          "local_id": 13,
+          "pixel_x": 129,
+          "pixel_y": 87,
+          "radius": 3,
+          "intensity": 73
+        },
+        {
+          "local_id": 14,
+          "pixel_x": 116,
+          "pixel_y": 85,
+          "radius": 4,
+          "intensity": 9
+        },
+        {
+          "local_id": 15,
+          "pixel_x": 92,
+          "pixel_y": 84,
+          "radius": 5,
+          "intensity": 0
+        },
+        {
+          "local_id": 16,
+          "pixel_x": 82,
+          "pixel_y": 56,
+          "radius": 4,
+          "intensity": 14
+        }
+      ],
+      "total_circles": 16
+    },
+    {
+      "segment_name": "tile_r2_c1",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r2_c1.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 93,
+          "pixel_y": 231,
+          "radius": 4,
+          "intensity": 6
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 96,
+          "pixel_y": 100,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 130,
+          "pixel_y": 52,
+          "radius": 4,
+          "intensity": 5
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 91,
+          "pixel_y": 196,
+          "radius": 4,
+          "intensity": 12
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 0,
+          "pixel_y": 87,
+          "radius": 4,
+          "intensity": 3
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 129,
+          "pixel_y": 52,
+          "radius": 5,
+          "intensity": 2
+        },
+        {
+          "local_id": 7,
+          "pixel_x": 92,
+          "pixel_y": 230,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 8,
+          "pixel_x": 90,
+          "pixel_y": 195,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 9,
+          "pixel_x": 10,
+          "pixel_y": 87,
+          "radius": 3,
+          "intensity": 66
+        },
+        {
+          "local_id": 10,
+          "pixel_x": 129,
+          "pixel_y": 51,
+          "radius": 4,
+          "intensity": 5
+        },
+        {
+          "local_id": 11,
+          "pixel_x": 95,
+          "pixel_y": 100,
+          "radius": 5,
+          "intensity": 3
+        }
+      ],
+      "total_circles": 11
+    },
+    {
+      "segment_name": "tile_r2_c2",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r2_c2.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 11,
+          "pixel_y": 52,
+          "radius": 4,
+          "intensity": 16
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 10,
+          "pixel_y": 52,
+          "radius": 5,
+          "intensity": 0
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 10,
+          "pixel_y": 51,
+          "radius": 4,
+          "intensity": 0
+        }
+      ],
+      "total_circles": 3
+    },
+    {
+      "segment_name": "tile_r2_c3",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r2_c3.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 153,
+          "pixel_y": 14,
+          "radius": 4,
+          "intensity": 7
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 152,
+          "pixel_y": 13,
+          "radius": 5,
+          "intensity": 0
+        }
+      ],
+      "total_circles": 2
+    },
+    {
+      "segment_name": "tile_r2_c4",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r2_c4.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 70,
+          "pixel_y": 14,
+          "radius": 4,
+          "intensity": 8
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 34,
+          "pixel_y": 14,
+          "radius": 4,
+          "intensity": 13
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 69,
+          "pixel_y": 14,
+          "radius": 5,
+          "intensity": 12
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 33,
+          "pixel_y": 13,
+          "radius": 5,
+          "intensity": 3
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 69,
+          "pixel_y": 13,
+          "radius": 4,
+          "intensity": 0
+        }
+      ],
+      "total_circles": 5
+    },
+    {
+      "segment_name": "tile_r2_c5",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r2_c5.jpg",
+      "image_dimensions": {
+        "width": 141,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 76,
+          "pixel_y": 175,
+          "radius": 4,
+          "intensity": 7
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 86,
+          "pixel_y": 103,
+          "radius": 4,
+          "intensity": 9
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 87,
+          "pixel_y": 2,
+          "radius": 4,
+          "intensity": 21
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 77,
+          "pixel_y": 176,
+          "radius": 4,
+          "intensity": 6
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 87,
+          "pixel_y": 103,
+          "radius": 4,
+          "intensity": 22
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 87,
+          "pixel_y": 104,
+          "radius": 5,
+          "intensity": 3
+        },
+        {
+          "local_id": 7,
+          "pixel_x": 76,
+          "pixel_y": 176,
+          "radius": 5,
+          "intensity": 0
+        },
+        {
+          "local_id": 8,
+          "pixel_x": 86,
+          "pixel_y": 2,
+          "radius": 4,
+          "intensity": 9
+        }
+      ],
+      "total_circles": 8
+    },
+    {
+      "segment_name": "tile_r3_c0",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r3_c0.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 76,
+          "pixel_y": 193,
+          "radius": 4,
+          "intensity": 16
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 111,
+          "pixel_y": 86,
+          "radius": 4,
+          "intensity": 13
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 42,
+          "pixel_y": 200,
+          "radius": 4,
+          "intensity": 6
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 34,
+          "pixel_y": 155,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 110,
+          "pixel_y": 86,
+          "radius": 4,
+          "intensity": 5
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 113,
+          "pixel_y": 54,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 7,
+          "pixel_x": 76,
+          "pixel_y": 192,
+          "radius": 4,
+          "intensity": 16
+        },
+        {
+          "local_id": 8,
+          "pixel_x": 33,
+          "pixel_y": 155,
+          "radius": 4,
+          "intensity": 23
+        },
+        {
+          "local_id": 9,
+          "pixel_x": 112,
+          "pixel_y": 54,
+          "radius": 4,
+          "intensity": 15
+        },
+        {
+          "local_id": 10,
+          "pixel_x": 41,
+          "pixel_y": 199,
+          "radius": 4,
+          "intensity": 12
+        },
+        {
+          "local_id": 11,
+          "pixel_x": 75,
+          "pixel_y": 192,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 12,
+          "pixel_x": 63,
+          "pixel_y": 166,
+          "radius": 5,
+          "intensity": 4
+        },
+        {
+          "local_id": 13,
+          "pixel_x": 33,
+          "pixel_y": 154,
+          "radius": 5,
+          "intensity": 29
+        },
+        {
+          "local_id": 14,
+          "pixel_x": 110,
+          "pixel_y": 85,
+          "radius": 5,
+          "intensity": 0
+        },
+        {
+          "local_id": 15,
+          "pixel_x": 112,
+          "pixel_y": 53,
+          "radius": 4,
+          "intensity": 15
+        }
+      ],
+      "total_circles": 15
+    },
+    {
+      "segment_name": "tile_r3_c1",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r3_c1.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 160,
+          "pixel_y": 125,
+          "radius": 4,
+          "intensity": 14
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 93,
+          "pixel_y": 77,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 91,
+          "pixel_y": 42,
+          "radius": 4,
+          "intensity": 1
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 157,
+          "pixel_y": 141,
+          "radius": 3,
+          "intensity": 91
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 159,
+          "pixel_y": 124,
+          "radius": 4,
+          "intensity": 15
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 92,
+          "pixel_y": 76,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 7,
+          "pixel_x": 90,
+          "pixel_y": 41,
+          "radius": 4,
+          "intensity": 2
+        }
+      ],
+      "total_circles": 7
+    },
+    {
+      "segment_name": "tile_r3_c2",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r3_c2.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 179,
+          "pixel_y": 167,
+          "radius": 4,
+          "intensity": 11
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 41,
+          "pixel_y": 125,
+          "radius": 4,
+          "intensity": 19
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 179,
+          "pixel_y": 168,
+          "radius": 5,
+          "intensity": 8
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 178,
+          "pixel_y": 167,
+          "radius": 5,
+          "intensity": 7
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 38,
+          "pixel_y": 141,
+          "radius": 3,
+          "intensity": 93
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 40,
+          "pixel_y": 124,
+          "radius": 4,
+          "intensity": 9
+        },
+        {
+          "local_id": 7,
+          "pixel_x": 129,
+          "pixel_y": 164,
+          "radius": 4,
+          "intensity": 18
+        }
+      ],
+      "total_circles": 7
+    },
+    {
+      "segment_name": "tile_r3_c3",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r3_c3.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 60,
+          "pixel_y": 167,
+          "radius": 4,
+          "intensity": 18
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 11,
+          "pixel_y": 164,
+          "radius": 4,
+          "intensity": 11
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 151,
+          "pixel_y": 160,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 59,
+          "pixel_y": 167,
+          "radius": 4,
+          "intensity": 19
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 150,
+          "pixel_y": 159,
+          "radius": 5,
+          "intensity": 0
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 10,
+          "pixel_y": 164,
+          "radius": 4,
+          "intensity": 18
+        }
+      ],
+      "total_circles": 6
+    },
+    {
+      "segment_name": "tile_r3_c4",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r3_c4.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 32,
+          "pixel_y": 160,
+          "radius": 4,
+          "intensity": 8
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 31,
+          "pixel_y": 159,
+          "radius": 5,
+          "intensity": 14
+        }
+      ],
+      "total_circles": 2
+    },
+    {
+      "segment_name": "tile_r3_c5",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r3_c5.jpg",
+      "image_dimensions": {
+        "width": 141,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 76,
+          "pixel_y": 21,
+          "radius": 4,
+          "intensity": 7
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 77,
+          "pixel_y": 22,
+          "radius": 5,
+          "intensity": 1
+        }
+      ],
+      "total_circles": 2
+    },
+    {
+      "segment_name": "tile_r4_c0",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r4_c0.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 63,
+          "pixel_y": 12,
+          "radius": 3,
+          "intensity": 3
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 168,
+          "pixel_y": 215,
+          "radius": 4,
+          "intensity": 15
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 165,
+          "pixel_y": 174,
+          "radius": 4,
+          "intensity": 12
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 64,
+          "pixel_y": 12,
+          "radius": 4,
+          "intensity": 2
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 34,
+          "pixel_y": 1,
+          "radius": 4,
+          "intensity": 2
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 165,
+          "pixel_y": 173,
+          "radius": 4,
+          "intensity": 7
+        },
+        {
+          "local_id": 7,
+          "pixel_x": 42,
+          "pixel_y": 46,
+          "radius": 4,
+          "intensity": 16
+        },
+        {
+          "local_id": 8,
+          "pixel_x": 76,
+          "pixel_y": 38,
+          "radius": 4,
+          "intensity": 16
+        },
+        {
+          "local_id": 9,
+          "pixel_x": 169,
+          "pixel_y": 215,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 10,
+          "pixel_x": 34,
+          "pixel_y": 2,
+          "radius": 4,
+          "intensity": 6
+        },
+        {
+          "local_id": 11,
+          "pixel_x": 166,
+          "pixel_y": 174,
+          "radius": 5,
+          "intensity": 5
+        },
+        {
+          "local_id": 12,
+          "pixel_x": 41,
+          "pixel_y": 45,
+          "radius": 4,
+          "intensity": 8
+        },
+        {
+          "local_id": 13,
+          "pixel_x": 75,
+          "pixel_y": 38,
+          "radius": 4,
+          "intensity": 1
+        },
+        {
+          "local_id": 14,
+          "pixel_x": 168,
+          "pixel_y": 214,
+          "radius": 5,
+          "intensity": 3
+        },
+        {
+          "local_id": 15,
+          "pixel_x": 33,
+          "pixel_y": 2,
+          "radius": 4,
+          "intensity": 7
+        }
+      ],
+      "total_circles": 15
+    },
+    {
+      "segment_name": "tile_r4_c1",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r4_c1.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 46,
+          "pixel_y": 174,
+          "radius": 4,
+          "intensity": 12
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 174,
+          "pixel_y": 139,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 46,
+          "pixel_y": 173,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 47,
+          "pixel_y": 174,
+          "radius": 5,
+          "intensity": 16
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 50,
+          "pixel_y": 215,
+          "radius": 5,
+          "intensity": 0
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 173,
+          "pixel_y": 138,
+          "radius": 5,
+          "intensity": 10
+        },
+        {
+          "local_id": 7,
+          "pixel_x": 49,
+          "pixel_y": 214,
+          "radius": 5,
+          "intensity": 17
+        }
+      ],
+      "total_circles": 7
+    },
+    {
+      "segment_name": "tile_r4_c2",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r4_c2.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 75,
+          "pixel_y": 165,
+          "radius": 3,
+          "intensity": 6
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 141,
+          "pixel_y": 172,
+          "radius": 4,
+          "intensity": 7
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 74,
+          "pixel_y": 164,
+          "radius": 4,
+          "intensity": 15
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 126,
+          "pixel_y": 148,
+          "radius": 4,
+          "intensity": 12
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 55,
+          "pixel_y": 139,
+          "radius": 4,
+          "intensity": 1
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 142,
+          "pixel_y": 103,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 7,
+          "pixel_x": 113,
+          "pixel_y": 96,
+          "radius": 4,
+          "intensity": 4
+        },
+        {
+          "local_id": 8,
+          "pixel_x": 179,
+          "pixel_y": 13,
+          "radius": 4,
+          "intensity": 5
+        },
+        {
+          "local_id": 9,
+          "pixel_x": 130,
+          "pixel_y": 10,
+          "radius": 4,
+          "intensity": 12
+        },
+        {
+          "local_id": 10,
+          "pixel_x": 141,
+          "pixel_y": 171,
+          "radius": 4,
+          "intensity": 2
+        },
+        {
+          "local_id": 11,
+          "pixel_x": 142,
+          "pixel_y": 102,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 12,
+          "pixel_x": 75,
+          "pixel_y": 164,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 13,
+          "pixel_x": 142,
+          "pixel_y": 172,
+          "radius": 5,
+          "intensity": 13
+        },
+        {
+          "local_id": 14,
+          "pixel_x": 74,
+          "pixel_y": 165,
+          "radius": 5,
+          "intensity": 7
+        },
+        {
+          "local_id": 15,
+          "pixel_x": 143,
+          "pixel_y": 103,
+          "radius": 5,
+          "intensity": 11
+        },
+        {
+          "local_id": 16,
+          "pixel_x": 113,
+          "pixel_y": 97,
+          "radius": 5,
+          "intensity": 9
+        },
+        {
+          "local_id": 17,
+          "pixel_x": 178,
+          "pixel_y": 13,
+          "radius": 5,
+          "intensity": 15
+        },
+        {
+          "local_id": 18,
+          "pixel_x": 125,
+          "pixel_y": 147,
+          "radius": 5,
+          "intensity": 11
+        },
+        {
+          "local_id": 19,
+          "pixel_x": 54,
+          "pixel_y": 138,
+          "radius": 5,
+          "intensity": 4
+        },
+        {
+          "local_id": 20,
+          "pixel_x": 112,
+          "pixel_y": 96,
+          "radius": 4,
+          "intensity": 13
+        },
+        {
+          "local_id": 21,
+          "pixel_x": 129,
+          "pixel_y": 10,
+          "radius": 4,
+          "intensity": 17
+        }
+      ],
+      "total_circles": 21
+    },
+    {
+      "segment_name": "tile_r4_c3",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r4_c3.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 139,
+          "pixel_y": 197,
+          "radius": 4,
+          "intensity": 11
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 22,
+          "pixel_y": 172,
+          "radius": 4,
+          "intensity": 12
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 7,
+          "pixel_y": 148,
+          "radius": 4,
+          "intensity": 10
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 24,
+          "pixel_y": 103,
+          "radius": 4,
+          "intensity": 4
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 11,
+          "pixel_y": 10,
+          "radius": 4,
+          "intensity": 2
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 151,
+          "pixel_y": 6,
+          "radius": 4,
+          "intensity": 12
+        },
+        {
+          "local_id": 7,
+          "pixel_x": 101,
+          "pixel_y": 179,
+          "radius": 4,
+          "intensity": 2
+        },
+        {
+          "local_id": 8,
+          "pixel_x": 22,
+          "pixel_y": 171,
+          "radius": 4,
+          "intensity": 12
+        },
+        {
+          "local_id": 9,
+          "pixel_x": 23,
+          "pixel_y": 102,
+          "radius": 4,
+          "intensity": 12
+        },
+        {
+          "local_id": 10,
+          "pixel_x": 101,
+          "pixel_y": 178,
+          "radius": 5,
+          "intensity": 6
+        },
+        {
+          "local_id": 11,
+          "pixel_x": 23,
+          "pixel_y": 103,
+          "radius": 5,
+          "intensity": 4
+        },
+        {
+          "local_id": 12,
+          "pixel_x": 153,
+          "pixel_y": 147,
+          "radius": 3,
+          "intensity": 96
+        },
+        {
+          "local_id": 13,
+          "pixel_x": 126,
+          "pixel_y": 151,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 14,
+          "pixel_x": 6,
+          "pixel_y": 147,
+          "radius": 5,
+          "intensity": 19
+        },
+        {
+          "local_id": 15,
+          "pixel_x": 59,
+          "pixel_y": 13,
+          "radius": 4,
+          "intensity": 7
+        },
+        {
+          "local_id": 16,
+          "pixel_x": 150,
+          "pixel_y": 5,
+          "radius": 5,
+          "intensity": 4
+        },
+        {
+          "local_id": 17,
+          "pixel_x": 10,
+          "pixel_y": 10,
+          "radius": 5,
+          "intensity": 16
+        },
+        {
+          "local_id": 18,
+          "pixel_x": 138,
+          "pixel_y": 196,
+          "radius": 4,
+          "intensity": 11
+        }
+      ],
+      "total_circles": 18
+    },
+    {
+      "segment_name": "tile_r4_c4",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r4_c4.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 238
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 20,
+          "pixel_y": 197,
+          "radius": 4,
+          "intensity": 14
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 8,
+          "pixel_y": 152,
+          "radius": 4,
+          "intensity": 12
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 32,
+          "pixel_y": 6,
+          "radius": 4,
+          "intensity": 8
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 34,
+          "pixel_y": 146,
+          "radius": 3,
+          "intensity": 29
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 7,
+          "pixel_y": 151,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 31,
+          "pixel_y": 5,
+          "radius": 5,
+          "intensity": 0
+        },
+        {
+          "local_id": 7,
+          "pixel_x": 19,
+          "pixel_y": 196,
+          "radius": 4,
+          "intensity": 0
+        }
+      ],
+      "total_circles": 7
+    },
+    {
+      "segment_name": "tile_r5_c0",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r5_c0.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 182
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 166,
+          "pixel_y": 20,
+          "radius": 3,
+          "intensity": 6
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 168,
+          "pixel_y": 61,
+          "radius": 4,
+          "intensity": 10
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 165,
+          "pixel_y": 20,
+          "radius": 4,
+          "intensity": 13
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 165,
+          "pixel_y": 19,
+          "radius": 4,
+          "intensity": 10
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 169,
+          "pixel_y": 61,
+          "radius": 5,
+          "intensity": 17
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 168,
+          "pixel_y": 60,
+          "radius": 5,
+          "intensity": 2
+        }
+      ],
+      "total_circles": 6
+    },
+    {
+      "segment_name": "tile_r5_c1",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r5_c1.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 182
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 49,
+          "pixel_y": 61,
+          "radius": 4,
+          "intensity": 13
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 46,
+          "pixel_y": 20,
+          "radius": 4,
+          "intensity": 13
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 46,
+          "pixel_y": 19,
+          "radius": 4,
+          "intensity": 12
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 50,
+          "pixel_y": 61,
+          "radius": 5,
+          "intensity": 3
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 47,
+          "pixel_y": 20,
+          "radius": 5,
+          "intensity": 0
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 181,
+          "pixel_y": 30,
+          "radius": 3,
+          "intensity": 62
+        },
+        {
+          "local_id": 7,
+          "pixel_x": 49,
+          "pixel_y": 60,
+          "radius": 5,
+          "intensity": 14
+        }
+      ],
+      "total_circles": 7
+    },
+    {
+      "segment_name": "tile_r5_c2",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r5_c2.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 182
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 74,
+          "pixel_y": 11,
+          "radius": 4,
+          "intensity": 5
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 141,
+          "pixel_y": 17,
+          "radius": 4,
+          "intensity": 5
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 74,
+          "pixel_y": 10,
+          "radius": 4,
+          "intensity": 14
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 142,
+          "pixel_y": 18,
+          "radius": 5,
+          "intensity": 9
+        }
+      ],
+      "total_circles": 4
+    },
+    {
+      "segment_name": "tile_r5_c3",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r5_c3.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 182
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 139,
+          "pixel_y": 43,
+          "radius": 4,
+          "intensity": 8
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 102,
+          "pixel_y": 25,
+          "radius": 4,
+          "intensity": 5
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 22,
+          "pixel_y": 18,
+          "radius": 4,
+          "intensity": 3
+        },
+        {
+          "local_id": 4,
+          "pixel_x": 23,
+          "pixel_y": 18,
+          "radius": 4,
+          "intensity": 13
+        },
+        {
+          "local_id": 5,
+          "pixel_x": 22,
+          "pixel_y": 17,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 6,
+          "pixel_x": 127,
+          "pixel_y": 1,
+          "radius": 3,
+          "intensity": 10
+        },
+        {
+          "local_id": 7,
+          "pixel_x": 101,
+          "pixel_y": 25,
+          "radius": 4,
+          "intensity": 0
+        },
+        {
+          "local_id": 8,
+          "pixel_x": 128,
+          "pixel_y": 1,
+          "radius": 5,
+          "intensity": 9
+        },
+        {
+          "local_id": 9,
+          "pixel_x": 101,
+          "pixel_y": 24,
+          "radius": 4,
+          "intensity": 3
+        },
+        {
+          "local_id": 10,
+          "pixel_x": 138,
+          "pixel_y": 42,
+          "radius": 4,
+          "intensity": 11
+        }
+      ],
+      "total_circles": 10
+    },
+    {
+      "segment_name": "tile_r5_c4",
+      "segment_path": "c:\\ConnectTheDots\\src\\drawing_robots\\Segments\\SegmentsOverlap\\tile_r5_c4.jpg",
+      "image_dimensions": {
+        "width": 184,
+        "height": 182
+      },
+      "circles": [
+        {
+          "local_id": 1,
+          "pixel_x": 8,
+          "pixel_y": 0,
+          "radius": 3,
+          "intensity": 6
+        },
+        {
+          "local_id": 2,
+          "pixel_x": 8,
+          "pixel_y": 1,
+          "radius": 3,
+          "intensity": 8
+        },
+        {
+          "local_id": 3,
+          "pixel_x": 19,
+          "pixel_y": 42,
+          "radius": 4,
+          "intensity": 4
+        }
+      ],
+      "total_circles": 3
+    }
+  ]
+}

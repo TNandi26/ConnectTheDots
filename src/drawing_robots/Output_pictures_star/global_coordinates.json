@@ -1,0 +1,150 @@
+{
+  "detection_method": "Multi-Method Improved",
+  "coordinate_space": "global (main image)",
+  "total_circles": 11,
+  "circles": [
+    {
+      "segment_name": "tile_r0_c1.jpg",
+      "local_coordinates": {
+        "x": 160,
+        "y": 188
+      },
+      "global_coordinates": {
+        "x": 300,
+        "y": 188
+      },
+      "radius": 3,
+      "intensity": 0
+    },
+    {
+      "segment_name": "tile_r1_c0.jpg",
+      "local_coordinates": {
+        "x": 57,
+        "y": 177
+      },
+      "global_coordinates": {
+        "x": 57,
+        "y": 363
+      },
+      "radius": 2,
+      "intensity": 5
+    },
+    {
+      "segment_name": "tile_r1_c1.jpg",
+      "local_coordinates": {
+        "x": 102,
+        "y": 177
+      },
+      "global_coordinates": {
+        "x": 242,
+        "y": 363
+      },
+      "radius": 2,
+      "intensity": 10
+    },
+    {
+      "segment_name": "tile_r1_c2.jpg",
+      "local_coordinates": {
+        "x": 76,
+        "y": 177
+      },
+      "global_coordinates": {
+        "x": 356,
+        "y": 363
+      },
+      "radius": 2,
+      "intensity": 0
+    },
+    {
+      "segment_name": "tile_r1_c3.jpg",
+      "local_coordinates": {
+        "x": 121,
+        "y": 177
+      },
+      "global_coordinates": {
+        "x": 541,
+        "y": 363
+      },
+      "radius": 2,
+      "intensity": 11
+    },
+    {
+      "segment_name": "tile_r2_c2.jpg",
+      "local_coordinates": {
+        "x": 20,
+        "y": 170
+      },
+      "global_coordinates": {
+        "x": 300,
+        "y": 542
+      },
+      "radius": 3,
+      "intensity": 0
+    },
+    {
+      "segment_name": "tile_r2_c1.jpg",
+      "local_coordinates": {
+        "x": 67,
+        "y": 103
+      },
+      "global_coordinates": {
+        "x": 207,
+        "y": 475
+      },
+      "radius": 3,
+      "intensity": 0
+    },
+    {
+      "segment_name": "tile_r2_c1.jpg",
+      "local_coordinates": {
+        "x": 159,
+        "y": 189
+      },
+      "global_coordinates": {
+        "x": 299,
+        "y": 561
+      },
+      "radius": 2,
+      "intensity": 83
+    },
+    {
+      "segment_name": "tile_r2_c2.jpg",
+      "local_coordinates": {
+        "x": 114,
+        "y": 103
+      },
+      "global_coordinates": {
+        "x": 394,
+        "y": 475
+      },
+      "radius": 3,
+      "intensity": 0
+    },
+    {
+      "segment_name": "tile_r3_c0.jpg",
+      "local_coordinates": {
+        "x": 151,
+        "y": 89
+      },
+      "global_coordinates": {
+        "x": 151,
+        "y": 647
+      },
+      "radius": 2,
+      "intensity": 0
+    },
+    {
+      "segment_name": "tile_r3_c2.jpg",
+      "local_coordinates": {
+        "x": 170,
+        "y": 93
+      },
+      "global_coordinates": {
+        "x": 450,
+        "y": 651
+      },
+      "radius": 3,
+      "intensity": 0
+    }
+  ]
+}

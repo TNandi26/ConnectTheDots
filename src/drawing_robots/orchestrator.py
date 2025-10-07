@@ -1,6 +1,6 @@
 import os
 import logging
-from  circle_detection import full_process
+from  circle_detection import run_dot_detection_for_all_segments
 import pathlib
 from segment_merge import main_logic
 from number_detection import run_detection_for_all_segments
@@ -51,18 +51,14 @@ def run_detection_for_dots():
     folder = pathlib.Path(path)
     jpg_files = list(folder.glob("*.jpg"))
 
-    for image_file in jpg_files:
-        full_process(image_file)
-
-def run_detection_for_numbers():
+    run_dot_detection_for_all_segments()
 
 
 if __name__ == "__main__":
 
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
-
-    main_logic() # Merging together the pictures, segment_merge.py
     check_folder_status() # Setting up the working directory
+    main_logic() # Merging together the pictures, segment_merge.py
     run_detection_for_dots() # Run the dot detection algorithm for each segmented image, circle_detection.py
-
+    run_detection_for_all_segments(expected_range=(1, 50), use_combo_ocr=True)
     

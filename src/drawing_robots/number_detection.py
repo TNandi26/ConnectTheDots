@@ -7,18 +7,13 @@ import pathlib
 from collections import Counter
 import pytesseract
 from PIL import Image
+import easyocr
 
 # Set Tesseract path for Windows
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
-# Optional: EasyOCR for combo detection
-try:
-    import easyocr
-    EASYOCR_AVAILABLE = True
-    reader = easyocr.Reader(['en'], gpu=False)
-except ImportError:
-    EASYOCR_AVAILABLE = False
-    logging.warning("EasyOCR not available. Install with: pip install easyocr")
+EASYOCR_AVAILABLE = True
+reader = easyocr.Reader(['en'], gpu=False)
 
 # ============================================================================
 # HELPER FUNCTIONS
@@ -64,7 +59,7 @@ def load_detected_circles_for_segment(segment_name, detected_circles_json):
         return []
 
 
-def erase_dots_from_image(image, circles, margin=3):
+def erase_dots_from_image(image, circles, margin=1):
     """
     Erase dots from image by filling them with white
     margin: extra pixels around dot to erase
@@ -107,9 +102,7 @@ def preprocess_for_ocr(gray_image, threshold_value, upscale=True):
 
 def detect_numbers_easyocr(image, scale_factor=1):
     """Detect numbers using EasyOCR"""
-    if not EASYOCR_AVAILABLE:
-        return []
-    
+
     try:
         results = reader.readtext(image, allowlist='0123456789', detail=1)
         
@@ -141,11 +134,8 @@ def detect_numbers_easyocr(image, scale_factor=1):
         logging.error(f"EasyOCR detection failed: {e}")
         return []
 
-
 def detect_numbers_tesseract(image, scale_factor=1, config='--psm 11 --oem 3 -c tessedit_char_whitelist=0123456789'):
-    """
-    Detect numbers using Tesseract OCR
-    """
+    """Detect numbers using Tesseract OCR"""
     try:
         pil_image = Image.fromarray(image)
         data = pytesseract.image_to_data(pil_image, config=config, output_type=pytesseract.Output.DICT)
@@ -173,75 +163,6 @@ def detect_numbers_tesseract(image, scale_factor=1, config='--psm 11 --oem 3 -c 
                     'bbox': (x, y, w, h),
                     'confidence': conf,
                     'method': 'tesseract'
-                })
-        
-        return detections
-    except Exception as e:
-        logging.error(f"Tesseract detection failed: {e}")
-        return []
-    """Detect numbers using EasyOCR"""
-    if not EASYOCR_AVAILABLE:
-        return []
-    
-    try:
-        results = reader.readtext(image, allowlist='0123456789', detail=1)
-        
-        detections = []
-        for bbox, text, conf in results:
-            if text.isdigit():
-                # bbox is [[x1,y1], [x2,y2], [x3,y3], [x4,y4]]
-                x_coords = [point[0] for point in bbox]
-                y_coords = [point[1] for point in bbox]
-                
-                x = int(min(x_coords)) // scale_factor
-                y = int(min(y_coords)) // scale_factor
-                w = int(max(x_coords) - min(x_coords)) // scale_factor
-                h = int(max(y_coords) - min(y_coords)) // scale_factor
-                
-                center_x = x + w // 2
-                center_y = y + h // 2
-                
-                detections.append({
-                    'number': int(text),
-                    'center': (center_x, center_y),
-                    'bbox': (x, y, w, h),
-                    'confidence': int(conf * 100),
-                    'method': 'easyocr'
-                })
-        
-        return detections
-    except Exception as e:
-        logging.error(f"EasyOCR detection failed: {e}")
-        return []
-    """
-    Detect numbers using Tesseract OCR
-    """
-    try:
-        pil_image = Image.fromarray(image)
-        data = pytesseract.image_to_data(pil_image, config=config, output_type=pytesseract.Output.DICT)
-        
-        detections = []
-        n_boxes = len(data['text'])
-        
-        for i in range(n_boxes):
-            text = data['text'][i].strip()
-            conf = int(data['conf'][i])
-            
-            # Filter: must be a number with good confidence
-            if text and text.isdigit() and conf > 50:  # Increased confidence threshold
-                x = data['left'][i] // scale_factor
-                y = data['top'][i] // scale_factor
-                w = data['width'][i] // scale_factor
-                h = data['height'][i] // scale_factor
-                
-                center_x = x + w // 2
-                center_y = y + h // 2
-                
-                detections.append({
-                    'number': int(text),
-                    'center': (center_x, center_y),
-                    'bbox': (x, y, w, h),
-                    'confidence': conf
                 })
         
         return detections
@@ -422,20 +343,6 @@ def ensure_unique_numbers(detections, expected_range=None):
             logging.warning(f"Missing numbers in this segment: {sorted(missing_nums)}")
     
     return unique_detections
-    """Remove detections that are too small (likely dots)"""
-    filtered = []
-    
-    for det in detections:
-        x, y, w, h = det['bbox']
-        
-        if w >= min_width and h >= min_height:
-            filtered.append(det)
-        else:
-            logging.debug(f"Filtered out small detection: {det['number']} ({w}x{h})")
-    
-    logging.info(f"Dot filtering: {len(detections)} -> {len(filtered)} detections")
-    return filtered
-
 
 def validate_number_range(detections, expected_range=None):
     """Filter detections to expected range"""
@@ -587,7 +494,7 @@ def process_single_segment(image_path, output_base_path, viz_dir, detected_circl
     # Erase dots from image
     if circles:
         logging.info(f"Erasing {len(circles)} dots from image...")
-        gray_no_dots = erase_dots_from_image(gray, circles, margin=2)  # Reduced margin from 3 to 2
+        gray_no_dots = erase_dots_from_image(gray, circles, margin=1)  # Reduced margin from 3 to 2
         save_debug_image(gray_no_dots, f"{segment_name}_no_dots.jpg")
     else:
         logging.warning("No circles found for this segment, processing without dot removal")
@@ -937,7 +844,7 @@ def run_detection_for_all_segments(expected_range=None, use_combo_ocr=True):
             "global_numbers.json"
         )
         
-        main_image_path = os.path.join(base_path, "Pictures/lo.jpg")
+        main_image_path = os.path.join(base_path, "Pictures/rendes_test.jpg")
         if os.path.exists(main_image_path):
             visualize_on_main_image(main_image_path, global_numbers, "main_image_with_numbers.jpg")
         else:
@@ -949,8 +856,4 @@ def run_detection_for_all_segments(expected_range=None, use_combo_ocr=True):
 
 
 if __name__ == "__main__":
-    # Run with combo OCR (Tesseract + EasyOCR) for best accuracy
-    run_detection_for_all_segments(expected_range=(1, 100), use_combo_ocr=True)
-    
-    # Or Tesseract only if EasyOCR not installed:
-    # run_detection_for_all_segments(expected_range=(1, 100), use_combo_ocr=False)
+    run_detection_for_all_segments(expected_range=(1, 10), use_combo_ocr=True)

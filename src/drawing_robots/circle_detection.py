@@ -283,9 +283,6 @@ def process_single_segment(image_path, output_base_path, viz_dir):
     logging.info("PHASE 1: Circle detection...")
     detected_circles, binary_debug = detect_circles_combined_improved(gray, segment_name)
     
-    if binary_debug is not None:
-        save_debug_image(binary_debug, f"{segment_name}_binary.jpg")
-    
     if not detected_circles:
         logging.warning(f"No circles found in {segment_name}")
         return None
@@ -326,8 +323,6 @@ def process_single_segment(image_path, output_base_path, viz_dir):
     logging.info(f"✓ {segment_name}: {len(black_circles)} circles detected\n")
     
     return segment_data
-
-
 
 # ============================================================================
 # NEW: COORDINATE CONVERSION AND VISUALIZATION ON MAIN IMAGE
@@ -518,7 +513,7 @@ def save_final_json(all_segments_data, output_path, filename="detected_circles.j
     logging.info(f"{'='*60}\n")
 
 
-def run_detection_for_all_segments():
+def run_dot_detection_for_all_segments():
     """Process all segments in the folder"""
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
     
@@ -566,7 +561,7 @@ def run_detection_for_all_segments():
         )
         
         # Visualize on main image
-        main_image_path = os.path.join(base_path, "Pictures/lo.jpg")
+        main_image_path = os.path.join(base_path, "Pictures/rendes_test.jpg")
         if os.path.exists(main_image_path):
             visualize_on_main_image(main_image_path, global_circles, "main_image_with_dots.jpg")
         else:
@@ -579,4 +574,4 @@ def run_detection_for_all_segments():
 
 
 if __name__ == "__main__":
-    run_detection_for_all_segments()
+    run_dot_detection_for_all_segments()
