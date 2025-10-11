@@ -8,35 +8,12 @@ from collections import Counter
 
 
 # ============================================================================
-# HELPER FUNCTIONS (UNCHANGED)
+# HELPER FUNCTIONS
 # ============================================================================
-
-def load_transformed_image(image_path):
-    if not os.path.exists(image_path):
-        logging.error(f"Input image not found: {image_path}")
-        return None
-    image = cv2.imread(image_path)
-    if image is None:
-        logging.error(f"Could not load image from {image_path}")
-        return None
-    logging.info(f"Loaded image from {image_path}")
-    return image
-
-
-def save_debug_image(image, filename):
-    """Save debug image to output folder"""
-    base_path = os.path.dirname(os.path.abspath(__file__))
-    output_path = os.path.join(base_path, "Output_pictures", filename)
-    cv2.imwrite(output_path, image)
-
-
-def auto_calibrate_multiple_thresholds(gray_image, segment_name):
+def auto_calibrate_multiple_thresholds(gray_image):
     """Test multiple thresholds and collect candidates from each"""
-    mean_val = gray_image.mean()
-    std_val = gray_image.std()
-    logging.info(f"Image stats: mean={mean_val:.1f}, std={std_val:.1f}")
-    
-    test_thresholds = [10, 20, 30, 40, 50, 80, 100, 120, 150, 180]
+
+    test_thresholds = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 130, 140, 150, 160, 170, 180, 190, 200]
     all_candidates = []
     threshold_stats = []
     
@@ -45,11 +22,6 @@ def auto_calibrate_multiple_thresholds(gray_image, segment_name):
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2, 2))
         binary = cv2.morphologyEx(binary, cv2.MORPH_OPEN, kernel, iterations=1)
         contours, _ = cv2.findContours(binary, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-        
-        # Save contour visualization with segment name
-        contour_viz = cv2.cvtColor(binary, cv2.COLOR_GRAY2BGR)
-        cv2.drawContours(contour_viz, contours, -1, (0, 255, 0), 1)
-        #save_debug_image(contour_viz, f"{segment_name}_debug_contours_{thresh}.jpg")
         
         candidates = []
         for contour in contours:
@@ -153,12 +125,12 @@ def cluster_radius_groups(candidates, n_groups=2):
     return filtered
 
 
-def detect_circles_combined_improved(gray, segment_name):
+def detect_circles_combined_improved(gray):
     """Improved combined detection with multiple methods"""
     all_candidates = []
     
     logging.info("Running multi-threshold contour detection...")
-    contour_candidates, threshold_stats = auto_calibrate_multiple_thresholds(gray, segment_name)
+    contour_candidates, threshold_stats = auto_calibrate_multiple_thresholds(gray)
     
     for c in contour_candidates:
         c['method'] = 'contour'
@@ -194,7 +166,7 @@ def detect_circles_combined_improved(gray, segment_name):
 
 
 # ============================================================================
-# FILTERING FUNCTIONS (IN-MEMORY)
+# FILTERING FUNCTIONS
 # ============================================================================
 
 def filter_by_radius(circles):
@@ -239,6 +211,67 @@ def check_black_color(circles, gray_image, black_threshold=120):
     return black_circles, rejected_circles
 
 
+def filter_by_intensity_variance(circles, std_multiplier=2.0):
+    """
+    Filter out circles whose intensity differs significantly from the average.
+    
+    Args:
+        circles: List of circles with intensity data
+        std_multiplier: Number of standard deviations to use as threshold (default: 2.0)
+    
+    Returns:
+        Filtered list of circles
+    """
+    if not circles:
+        return []
+    
+    # Extract intensities
+    intensities = [circle.get("intensity", 0) for circle in circles]
+    
+    # Calculate statistics
+    mean_intensity = np.mean(intensities)
+    std_intensity = np.std(intensities)
+    
+    logging.info(f"Intensity stats - Mean: {mean_intensity:.2f}, Std: {std_intensity:.2f}")
+    
+    # Filter circles
+    filtered_circles = []
+    removed_count = 0
+    
+    for circle in circles:
+        intensity = circle.get("intensity", 0)
+        deviation = abs(intensity - mean_intensity)
+        
+        if deviation <= std_multiplier * std_intensity:
+            filtered_circles.append(circle)
+        else:
+            removed_count += 1
+            logging.info(f"Removed circle at ({circle.get('global_coordinates', {}).get('x', 'N/A')}, "
+                        f"{circle.get('global_coordinates', {}).get('y', 'N/A')}) - "
+                        f"intensity: {intensity} (deviation: {deviation:.2f})")
+    
+    logging.info(f"Intensity filtering: {len(circles)} -> {len(filtered_circles)} circles "
+                f"({removed_count} removed)")
+    
+    return filtered_circles
+
+
+def add_unique_ids(circles):
+    """
+    Add unique sequential IDs to circles
+    
+    Args:
+        circles: List of circle dictionaries
+    
+    Returns:
+        List of circles with added 'id' field
+    """
+    for i, circle in enumerate(circles, start=1):
+        circle["id"] = i
+    
+    return circles
+
+
 # ============================================================================
 # VISUALIZATION
 # ============================================================================
@@ -264,7 +297,7 @@ def visualize_final_circles(image, circles, save_path):
 # SEGMENT PROCESSING
 # ============================================================================
 
-def process_single_segment(image_path, output_base_path, viz_dir):
+def process_single_segment(image_path, viz_dir):
     """Process one segment and return its data"""
     segment_name = pathlib.Path(image_path).stem
     logging.info(f"\n{'='*60}")
@@ -272,7 +305,7 @@ def process_single_segment(image_path, output_base_path, viz_dir):
     logging.info(f"{'='*60}")
     
     # Load image
-    image = load_transformed_image(image_path)
+    image = cv2.imread(image_path)
     if image is None:
         logging.error(f"Failed to load: {segment_name}")
         return None
@@ -281,7 +314,7 @@ def process_single_segment(image_path, output_base_path, viz_dir):
     
     # Phase 1: Detect circles
     logging.info("PHASE 1: Circle detection...")
-    detected_circles, binary_debug = detect_circles_combined_improved(gray, segment_name)
+    detected_circles, binary_debug = detect_circles_combined_improved(gray)
     
     if not detected_circles:
         logging.warning(f"No circles found in {segment_name}")
@@ -325,7 +358,7 @@ def process_single_segment(image_path, output_base_path, viz_dir):
     return segment_data
 
 # ============================================================================
-# NEW: COORDINATE CONVERSION AND VISUALIZATION ON MAIN IMAGE
+# COORDINATE CONVERSION AND VISUALIZATION ON MAIN IMAGE
 # ============================================================================
 
 def load_segment_mapping(segments_json_path):
@@ -344,11 +377,6 @@ def convert_to_global_coordinates(detected_circles_json_path, segments_json_path
         detected_data = json.load(f)
     
     segment_mapping = load_segment_mapping(segments_json_path)
-    
-    logging.info("\n" + "="*60)
-    logging.info("CONVERTING TO GLOBAL COORDINATES")
-    logging.info("="*60)
-    
     all_global_circles = []
     
     # Process each segment
@@ -369,7 +397,6 @@ def convert_to_global_coordinates(detected_circles_json_path, segments_json_path
         for circle in segment["circles"]:
             local_x = circle["pixel_x"]
             local_y = circle["pixel_y"]
-            
             global_x = local_x + offset_x
             global_y = local_y + offset_y
             
@@ -389,12 +416,19 @@ def convert_to_global_coordinates(detected_circles_json_path, segments_json_path
     
     logging.info(f"Total circles after deduplication: {len(unique_circles)}")
     
+    # Filter by intensity variance
+    logging.info("Filtering by intensity variance...")
+    filtered_circles = filter_by_intensity_variance(unique_circles, std_multiplier=2.0)
+    
+    # Add unique IDs
+    filtered_circles = add_unique_ids(filtered_circles)
+    
     # Save to JSON
     output_data = {
-        "detection_method": "Multi-Method Improved",
+        "detection_method": "Multi-Method Improved with Intensity Filter",
         "coordinate_space": "global (main image)",
-        "total_circles": len(unique_circles),
-        "circles": unique_circles
+        "total_circles": len(filtered_circles),
+        "circles": filtered_circles
     }
     
     base_path = os.path.dirname(os.path.abspath(__file__))
@@ -406,7 +440,7 @@ def convert_to_global_coordinates(detected_circles_json_path, segments_json_path
     logging.info(f"Global coordinates saved: {full_output_path}")
     logging.info("="*60 + "\n")
     
-    return unique_circles
+    return filtered_circles
 
 
 def remove_duplicate_circles(circles, distance_threshold=15):
@@ -453,19 +487,12 @@ def remove_duplicate_circles(circles, distance_threshold=15):
 def visualize_on_main_image(main_image_path, global_circles, output_path="main_image_with_dots.jpg"):
     """
     Draw all detected circles on the main image using global coordinates
-    """
-    logging.info("\n" + "="*60)
-    logging.info("VISUALIZING ON MAIN IMAGE")
-    logging.info("="*60)
-    
-    # Load main image
+    """    
     main_image = cv2.imread(main_image_path)
     if main_image is None:
         logging.error(f"Failed to load main image: {main_image_path}")
         return
-    
-    logging.info(f"Main image dimensions: {main_image.shape[1]}x{main_image.shape[0]}")
-    
+        
     # Draw circles
     for i, circle in enumerate(global_circles):
         x = circle["global_coordinates"]["x"]
@@ -476,27 +503,26 @@ def visualize_on_main_image(main_image_path, global_circles, output_path="main_i
         cv2.circle(main_image, (x, y), 3, (0, 0, 255), -1)
         # Draw green circle border
         cv2.circle(main_image, (x, y), r, (0, 255, 0), 2)
-        # Add number label
-        cv2.putText(main_image, str(i + 1), (x - 8, y - r - 5),
-                   cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0, 255, 0), 1)
-    
-    # Save
-    base_path = os.path.dirname(os.path.abspath(__file__))
-    full_output_path = os.path.join(base_path, "Output_pictures", output_path)
+
+    full_output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Output_pictures", output_path)
     cv2.imwrite(full_output_path, main_image)
     
     logging.info(f"Main image visualization saved: {full_output_path}")
     logging.info(f"Total circles drawn: {len(global_circles)}")
-    logging.info("="*60 + "\n")
-
 
 
 def save_final_json(all_segments_data, output_path, filename="detected_circles.json"):
-    """Save all segment data to ONE JSON file"""
+    """Save all segment data to ONE JSON file with unique IDs"""
     total_circles = sum(seg["total_circles"] for seg in all_segments_data if seg is not None)
     
+    global_id = 1
+    for segment in all_segments_data:
+        if segment is not None:
+            for circle in segment["circles"]:
+                circle["global_id"] = global_id
+                global_id += 1
+    
     output_data = {
-        "detection_method": "Multi-Method Improved",
         "total_segments": len([s for s in all_segments_data if s is not None]),
         "total_circles_found": total_circles,
         "segments": [s for s in all_segments_data if s is not None]
@@ -506,14 +532,12 @@ def save_final_json(all_segments_data, output_path, filename="detected_circles.j
     with open(full_output_path, 'w') as f:
         json.dump(output_data, f, indent=2)
     
-    logging.info(f"\n{'='*60}")
-    logging.info(f"FINAL JSON SAVED: {full_output_path}")
+    logging.info(f"Final json saved to {full_output_path}")
     logging.info(f"Total segments: {output_data['total_segments']}")
     logging.info(f"Total circles: {total_circles}")
-    logging.info(f"{'='*60}\n")
 
 
-def run_dot_detection_for_all_segments():
+def run_dot_detection_for_all_segments(picture_name):
     """Process all segments in the folder"""
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
     
@@ -522,10 +546,8 @@ def run_dot_detection_for_all_segments():
     output_path = os.path.join(base_path, "Output_pictures")
     viz_dir = os.path.join(output_path, "segment_visualizations")
     
-    # Create visualization directory
     os.makedirs(viz_dir, exist_ok=True)
     
-    # Get all JPG files
     folder = pathlib.Path(segments_path)
     jpg_files = sorted(list(folder.glob("*.jpg")))
     
@@ -537,22 +559,20 @@ def run_dot_detection_for_all_segments():
     all_segments_data = []
     for i, image_file in enumerate(jpg_files, 1):
         logging.info(f"[{i}/{len(jpg_files)}]")
-        segment_data = process_single_segment(image_file, output_path, viz_dir)
+        segment_data = process_single_segment(image_file, viz_dir)
         all_segments_data.append(segment_data)
     
     # Save segment-level JSON
     detected_circles_json = os.path.join(output_path, "detected_circles.json")
     save_final_json(all_segments_data, output_path, "detected_circles.json")
     
-    logging.info("\n✓✓✓ SEGMENT PROCESSING COMPLETE ✓✓✓\n")
+    logging.info("\nSegment process is completed\n")
     
-    # NEW: Convert to global coordinates and visualize on main image
-    segments_json_path = os.path.join(segments_path, "segments.json")
+    # Convert to global coordinates and visualize on main image
+    segments_json_path = os.path.join(segments_path, "overlap_segments.json")
     
     if os.path.exists(segments_json_path):
-        logging.info("="*60)
-        logging.info("CONVERTING TO GLOBAL COORDINATES")
-        logging.info("="*60)
+        logging.info("Converting to global coordinates")
         
         global_circles = convert_to_global_coordinates(
             detected_circles_json,
@@ -560,8 +580,7 @@ def run_dot_detection_for_all_segments():
             "global_coordinates.json"
         )
         
-        # Visualize on main image
-        main_image_path = os.path.join(base_path, "Pictures/rendes_test.jpg")
+        main_image_path = os.path.join(base_path, f"Pictures/{picture_name}")
         if os.path.exists(main_image_path):
             visualize_on_main_image(main_image_path, global_circles, "main_image_with_dots.jpg")
         else:
@@ -570,7 +589,7 @@ def run_dot_detection_for_all_segments():
     else:
         logging.warning(f"Segments mapping not found at: {segments_json_path}")
     
-    logging.info("\n✓✓✓ ALL PROCESSING COMPLETE ✓✓✓\n")
+    logging.info("\nAll processing is completed\n")
 
 
 if __name__ == "__main__":

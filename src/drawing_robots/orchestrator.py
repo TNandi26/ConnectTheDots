@@ -42,7 +42,7 @@ def check_folder_status():
         logging.info("Config already exists")
 
 
-def run_detection_for_dots():
+def run_detection_for_dots(picture_name):
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Segments/SegmentsOverlap")
 
     count_segments = len(list(pathlib.Path(path).glob("*.jpg")))
@@ -51,14 +51,15 @@ def run_detection_for_dots():
     folder = pathlib.Path(path)
     jpg_files = list(folder.glob("*.jpg"))
 
-    run_dot_detection_for_all_segments()
+    run_dot_detection_for_all_segments(picture_name)
 
 
 if __name__ == "__main__":
 
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
     check_folder_status() # Setting up the working directory
-    main_logic() # Merging together the pictures, segment_merge.py
-    run_detection_for_dots() # Run the dot detection algorithm for each segmented image, circle_detection.py
-    run_detection_for_all_segments(expected_range=(1, 50), use_combo_ocr=True)
+    picture_name = main_logic() # Merging together the pictures, segment_merge.py
+    run_detection_for_dots(picture_name) # Run the dot detection algorithm for each segmented image, circle_detection.py
+    exit()
+    run_detection_for_all_segments(picture_name, expected_range=(1, 10), use_combo_ocr=True)
     

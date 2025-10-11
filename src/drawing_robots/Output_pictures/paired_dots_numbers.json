@@ -1,0 +1,118 @@
+{
+  "expected_range": 10,
+  "total_pairs": 10,
+  "known_pairs": 8,
+  "predicted_pairs": 2,
+  "pairs": [
+    {
+      "number": 1,
+      "dot_id": 2,
+      "dot_x": 57,
+      "dot_y": 363,
+      "num_x": null,
+      "num_y": null,
+      "distance": null,
+      "confidence": null,
+      "predicted": true
+    },
+    {
+      "number": 2,
+      "dot_id": 3,
+      "dot_x": 243,
+      "dot_y": 364,
+      "num_x": 255,
+      "num_y": 379,
+      "distance": 19.21,
+      "confidence": 100,
+      "predicted": false
+    },
+    {
+      "number": 3,
+      "dot_id": 1,
+      "dot_x": 300,
+      "dot_y": 188,
+      "num_x": 319,
+      "num_y": 181,
+      "distance": 20.25,
+      "confidence": 100,
+      "predicted": false
+    },
+    {
+      "number": 4,
+      "dot_id": 4,
+      "dot_x": 357,
+      "dot_y": 364,
+      "num_x": 350,
+      "num_y": 384,
+      "distance": 21.19,
+      "confidence": 100,
+      "predicted": false
+    },
+    {
+      "number": 5,
+      "dot_id": 5,
+      "dot_x": 541,
+      "dot_y": 364,
+      "num_x": 551,
+      "num_y": 346,
+      "distance": 20.59,
+      "confidence": 99,
+      "predicted": false
+    },
+    {
+      "number": 6,
+      "dot_id": 7,
+      "dot_x": 393,
+      "dot_y": 474,
+      "num_x": 379,
+      "num_y": 475,
+      "distance": 14.04,
+      "confidence": 100,
+      "predicted": false
+    },
+    {
+      "number": 7,
+      "dot_id": 10,
+      "dot_x": 449,
+      "dot_y": 650,
+      "num_x": 458,
+      "num_y": 670,
+      "distance": 21.93,
+      "confidence": 99,
+      "predicted": false
+    },
+    {
+      "number": 8,
+      "dot_id": 9,
+      "dot_x": 300,
+      "dot_y": 542,
+      "num_x": null,
+      "num_y": null,
+      "distance": null,
+      "confidence": null,
+      "predicted": true
+    },
+    {
+      "number": 9,
+      "dot_id": 8,
+      "dot_x": 151,
+      "dot_y": 647,
+      "num_x": 140,
+      "num_y": 667,
+      "distance": 22.83,
+      "confidence": 95,
+      "predicted": false
+    },
+    {
+      "number": 10,
+      "dot_id": 6,
+      "dot_x": 208,
+      "dot_y": 475,
+      "num_x": 231,
+      "num_y": 475,
+      "distance": 23.0,
+      "confidence": 99,
+      "predicted": false
+    }
+  ]
+}

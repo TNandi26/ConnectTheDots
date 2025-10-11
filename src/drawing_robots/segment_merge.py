@@ -38,7 +38,7 @@ def segment_fixed_grid(filename, dir_in, dir_out, cols):
             metadata[out_name] = {"start": {"x": left, "y": upper}, "end": {"x": right, "y": lower}}
 
     # Save metadata
-    meta_path = os.path.join(dir_out, "segments.json")
+    meta_path = os.path.join(dir_out, "grid-segments.json")
     with open(meta_path, "w") as f:
         json.dump(metadata, f, indent=2)
     print(f"Saved {len(metadata)} segments and metadata to {meta_path}")
@@ -85,7 +85,7 @@ def segment_with_overlap(filename, dir_in, dir_out, cols, overlap_x=0.5, overlap
         r += 1
 
     # Save metadata
-    meta_path = os.path.join(dir_out, "segments.json")
+    meta_path = os.path.join(dir_out, "overlap_segments.json")
     with open(meta_path, "w") as f:
         json.dump(metadata, f, indent=2)
     print(f"Saved {len(metadata)} overlapping segments and metadata to {meta_path}")
@@ -146,12 +146,15 @@ def main_logic():
     picture_number = int(input("Enter number: "))
     logging.info(images[picture_number - 1])
 
+
     # Fixed grid
     segment_fixed_grid(images[picture_number - 1], picture_folder, os.path.join(segments_path, "SegmentsGrid"), cols=5)
     # Overlap segments
-    segment_with_overlap(images[picture_number - 1], picture_folder, os.path.join(segments_path, "SegmentsOverlap"), cols=4, overlap_x=0.35, overlap_y=0.35)
+    segment_with_overlap(images[picture_number - 1], picture_folder, os.path.join(segments_path, "SegmentsOverlap"), cols=3, overlap_x=0.5, overlap_y=0.5)
     # Merge overlapping tiles
-    merge_tiles_from_json(os.path.join(segments_path, "SegmentsOverlap"), os.path.join(output_path, "merged_result.jpg"), os.path.join(segments_path, "SegmentsOverlap/segments.json"))
+    merge_tiles_from_json(os.path.join(segments_path, "SegmentsOverlap"), os.path.join(output_path, "merged_result.jpg"), os.path.join(segments_path, "SegmentsOverlap/overlap_segments.json"))
+    
+    return images[picture_number - 1]
 
 if __name__ == "__main__":
     main_logic()

@@ -1,0 +1,119 @@
+[
+    {
+        "dot_id": 7,
+        "dot_coord": {
+            "x": 393,
+            "y": 474
+        },
+        "num_value": 6,
+        "num_coord": {
+            "x": 379,
+            "y": 475
+        },
+        "distance": 14.036
+    },
+    {
+        "dot_id": 9,
+        "dot_coord": {
+            "x": 300,
+            "y": 542
+        },
+        "num_value": 12,
+        "num_coord": {
+            "x": 301,
+            "y": 561
+        },
+        "distance": 19.026
+    },
+    {
+        "dot_id": 3,
+        "dot_coord": {
+            "x": 243,
+            "y": 364
+        },
+        "num_value": 2,
+        "num_coord": {
+            "x": 255,
+            "y": 379
+        },
+        "distance": 19.209
+    },
+    {
+        "dot_id": 1,
+        "dot_coord": {
+            "x": 300,
+            "y": 188
+        },
+        "num_value": 11,
+        "num_coord": {
+            "x": 319,
+            "y": 181
+        },
+        "distance": 20.248
+    },
+    {
+        "dot_id": 5,
+        "dot_coord": {
+            "x": 541,
+            "y": 364
+        },
+        "num_value": 5,
+        "num_coord": {
+            "x": 551,
+            "y": 346
+        },
+        "distance": 20.591
+    },
+    {
+        "dot_id": 4,
+        "dot_coord": {
+            "x": 357,
+            "y": 364
+        },
+        "num_value": 4,
+        "num_coord": {
+            "x": 350,
+            "y": 384
+        },
+        "distance": 21.19
+    },
+    {
+        "dot_id": 10,
+        "dot_coord": {
+            "x": 449,
+            "y": 650
+        },
+        "num_value": 7,
+        "num_coord": {
+            "x": 458,
+            "y": 670
+        },
+        "distance": 21.932
+    },
+    {
+        "dot_id": 8,
+        "dot_coord": {
+            "x": 151,
+            "y": 647
+        },
+        "num_value": 9,
+        "num_coord": {
+            "x": 140,
+            "y": 667
+        },
+        "distance": 22.825
+    },
+    {
+        "dot_id": 6,
+        "dot_coord": {
+            "x": 208,
+            "y": 475
+        },
+        "num_value": 10,
+        "num_coord": {
+            "x": 231,
+            "y": 475
+        },
+        "distance": 23.0
+    }
+]

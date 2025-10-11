@@ -787,10 +787,9 @@ def save_final_json(all_segments_data, output_path, filename="detected_numbers.j
 # MAIN PROCESSING FUNCTION
 # ============================================================================
 
-def run_detection_for_all_segments(expected_range=None, use_combo_ocr=True):
+def run_detection_for_all_segments(picture_name, expected_range=None, use_combo_ocr=True):
     """
     Process all segments in the folder
-    use_combo_ocr: if True, uses both Tesseract + EasyOCR for better accuracy
     """
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
     
@@ -815,19 +814,12 @@ def run_detection_for_all_segments(expected_range=None, use_combo_ocr=True):
     logging.info(f"BATCH PROCESSING: {len(jpg_files)} segments")
     if expected_range:
         logging.info(f"Expected number range: {expected_range[0]}-{expected_range[1]}")
-    if use_combo_ocr and EASYOCR_AVAILABLE:
-        logging.info("Using COMBO: Tesseract + EasyOCR")
-    elif use_combo_ocr and not EASYOCR_AVAILABLE:
-        logging.warning("EasyOCR not available, using Tesseract only")
-    else:
-        logging.info("Using Tesseract only")
-    logging.info(f"{'='*60}\n")
     
     all_segments_data = []
     for i, image_file in enumerate(jpg_files, 1):
         logging.info(f"[{i}/{len(jpg_files)}]")
-        segment_data = process_single_segment(image_file, output_path, viz_dir, 
-                                             detected_circles_json, expected_range, use_combo_ocr)
+        segment_data = process_single_segment(image_file, output_path, viz_dir, detected_circles_json, expected_range, use_combo_ocr)
+                                             
         all_segments_data.append(segment_data)
     
     detected_numbers_json = os.path.join(output_path, "detected_numbers.json")
@@ -844,7 +836,7 @@ def run_detection_for_all_segments(expected_range=None, use_combo_ocr=True):
             "global_numbers.json"
         )
         
-        main_image_path = os.path.join(base_path, "Pictures/rendes_test.jpg")
+        main_image_path = os.path.join(base_path, f"Pictures/{picture_name}")
         if os.path.exists(main_image_path):
             visualize_on_main_image(main_image_path, global_numbers, "main_image_with_numbers.jpg")
         else:
@@ -852,7 +844,7 @@ def run_detection_for_all_segments(expected_range=None, use_combo_ocr=True):
     else:
         logging.warning(f"Segments mapping not found at: {segments_json_path}")
     
-    logging.info("\n✓✓✓ ALL NUMBER DETECTION COMPLETE ✓✓✓\n")
+    logging.info("\nNumber detection is completed\n")
 
 
 if __name__ == "__main__":
