@@ -367,7 +367,7 @@ def load_segment_mapping(segments_json_path):
         return json.load(f)
 
 
-def convert_to_global_coordinates(detected_circles_json_path, segments_json_path, output_json_path="global_coordinates.json"):
+def convert_to_global_coordinates(detected_circles_json_path, segments_json_path, output_json_path):
     """
     Convert segment-local coordinates to global coordinates on the main image
     Also removes duplicates from overlapping segments
@@ -381,7 +381,7 @@ def convert_to_global_coordinates(detected_circles_json_path, segments_json_path
     
     # Process each segment
     for segment in detected_data["segments"]:
-        segment_name = segment["segment_name"] + ".jpg"  # Add .jpg extension if needed
+        segment_name = segment["segment_name"] + ".jpg"
         
         # Get the offset for this segment from the mapping
         if segment_name not in segment_mapping:
@@ -432,13 +432,12 @@ def convert_to_global_coordinates(detected_circles_json_path, segments_json_path
     }
     
     base_path = os.path.dirname(os.path.abspath(__file__))
-    full_output_path = os.path.join(base_path, "Output_pictures", output_json_path)
+    full_output_path = os.path.join(base_path, "Output_pictures/config", output_json_path)
     
     with open(full_output_path, 'w') as f:
         json.dump(output_data, f, indent=2)
     
     logging.info(f"Global coordinates saved: {full_output_path}")
-    logging.info("="*60 + "\n")
     
     return filtered_circles
 
@@ -511,7 +510,7 @@ def visualize_on_main_image(main_image_path, global_circles, output_path="main_i
     logging.info(f"Total circles drawn: {len(global_circles)}")
 
 
-def save_final_json(all_segments_data, output_path, filename="detected_circles.json"):
+def save_final_json(all_segments_data, output_path, filename):
     """Save all segment data to ONE JSON file with unique IDs"""
     total_circles = sum(seg["total_circles"] for seg in all_segments_data if seg is not None)
     
@@ -542,29 +541,23 @@ def run_dot_detection_for_all_segments(picture_name):
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
     
     base_path = os.path.dirname(os.path.abspath(__file__))
-    segments_path = os.path.join(base_path, "Segments/SegmentsOverlap")
     output_path = os.path.join(base_path, "Output_pictures")
-    viz_dir = os.path.join(output_path, "segment_visualizations")
-    
-    os.makedirs(viz_dir, exist_ok=True)
-    
+    segments_path = os.path.join(output_path, "Segments/SegmentsOverlap")
+    viz_dir = os.path.join(output_path, "Segments/Segment_dot_visualizations")
+        
     folder = pathlib.Path(segments_path)
     jpg_files = sorted(list(folder.glob("*.jpg")))
     
-    logging.info(f"\n{'='*60}")
-    logging.info(f"BATCH PROCESSING: {len(jpg_files)} segments")
-    logging.info(f"{'='*60}\n")
+    logging.info(f"Batch processing: {len(jpg_files)} segments")
     
-    # Process each segment and collect data
     all_segments_data = []
     for i, image_file in enumerate(jpg_files, 1):
         logging.info(f"[{i}/{len(jpg_files)}]")
         segment_data = process_single_segment(image_file, viz_dir)
         all_segments_data.append(segment_data)
     
-    # Save segment-level JSON
-    detected_circles_json = os.path.join(output_path, "detected_circles.json")
-    save_final_json(all_segments_data, output_path, "detected_circles.json")
+    detected_circles_json = os.path.join(os.path.join(output_path, "config"), "detected_circles.json")
+    save_final_json(all_segments_data, os.path.join(output_path, "config"), "detected_circles.json")
     
     logging.info("\nSegment process is completed\n")
     
@@ -577,10 +570,10 @@ def run_dot_detection_for_all_segments(picture_name):
         global_circles = convert_to_global_coordinates(
             detected_circles_json,
             segments_json_path,
-            "global_coordinates.json"
+            "global_dot_coordinates.json"
         )
         
-        main_image_path = os.path.join(base_path, f"Pictures/{picture_name}")
+        main_image_path = os.path.join(base_path, f"../../Pictures/{picture_name}")
         if os.path.exists(main_image_path):
             visualize_on_main_image(main_image_path, global_circles, "main_image_with_dots.jpg")
         else:
@@ -589,7 +582,7 @@ def run_dot_detection_for_all_segments(picture_name):
     else:
         logging.warning(f"Segments mapping not found at: {segments_json_path}")
     
-    logging.info("\nAll processing is completed\n")
+    logging.info("\nAll process has been completed\n")
 
 
 if __name__ == "__main__":

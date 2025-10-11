@@ -16,53 +16,44 @@ def visualize_pairs(pairs, output_path, main_image_path=None):
     # Prepare base image
     if main_image_path and os.path.exists(main_image_path):
         img = cv2.imread(main_image_path)
-        logging.info(f"Using main image: {img.shape}")
     else:
         # Calculate canvas size from coordinates with padding
         max_x = max(p["dot_coord"]["x"] for p in pairs) + 100
         max_y = max(p["dot_coord"]["y"] for p in pairs) + 100
         img = 255 * np.ones((max_y, max_x, 3), dtype=np.uint8)
-        logging.info(f"Created blank canvas: {img.shape}")
 
     for pair in pairs:
         dot_x = int(pair["dot_coord"]["x"])
         dot_y = int(pair["dot_coord"]["y"])
         num_value = pair["num_value"]
-        predicted = pair.get("outlier", False)  # optional: mark predicted/outlier numbers
+        predicted = pair.get("outlier", False)
 
-        # Draw dot
-        color_dot = (0, 255, 0) if not predicted else (0, 165, 255)  # Green or Orange
+        color_dot = (0, 255, 0) if not predicted else (0, 165, 255)
         cv2.circle(img, (dot_x, dot_y), 5, color_dot, -1)
 
-        # Draw number if paired
         if pair["num_coord"] is not None:
             num_x = int(pair["num_coord"]["x"])
             num_y = int(pair["num_coord"]["y"])
-            cv2.circle(img, (num_x, num_y), 3, (0, 0, 255), -1)  # Red
+            cv2.circle(img, (num_x, num_y), 3, (0, 0, 255), -1)
             cv2.line(img, (dot_x, dot_y), (num_x, num_y), (200, 200, 200), 1)
 
-        # Draw number label
         label = f"{num_value}{'*' if predicted else ''}"
         cv2.putText(img, label, (dot_x + 10, dot_y - 10),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1)
 
-    # Save image
     cv2.imwrite(output_path, img)
     logging.info(f"Visualization saved to: {output_path}")
 
-def distance_based_pairing(dot_dict, num_dict, expected_range, missing_numbers, output_path):
-    len_dot = len(dot_dict)
-    len_num = len(num_dict)
 
-    print(f"The dot detection was {((expected_range - abs(len_dot - expected_range)) / expected_range)*100:.2f}% accurate")
-    print(f"The num detection was {((expected_range - abs(len_num - expected_range)) / expected_range)*100:.2f}% accurate")
+def distance_based_pairing(dot_dict, num_dict, expected_range, missing_numbers, output_path):
+
+    print(f"The dot detection was {((expected_range - abs(len(dot_dict) - expected_range)) / expected_range)*100:.2f}% accurate")
+    print(f"The num detection was {((expected_range - abs(len(num_dict) - expected_range)) / expected_range)*100:.2f}% accurate")
 
     pairs = [] 
     unpaired_dots = set(dot_dict.keys())
     unpaired_nums = set(num_dict.keys())
 
-    # Greedy pairing: repeatedly find and pair the closest dot-number pair
-    # Only pair with numbers in valid range (1 to expected_range)
     while unpaired_dots and unpaired_nums:
         min_dist = None
         best_dot = None
@@ -72,7 +63,6 @@ def distance_based_pairing(dot_dict, num_dict, expected_range, missing_numbers, 
             dot_x, dot_y = dot_dict[dot_id]["x"], dot_dict[dot_id]["y"]
             
             for num_id in unpaired_nums:
-                # Skip outliers (numbers > expected_range)
                 if num_id > expected_range:
                     continue
                     
@@ -87,7 +77,6 @@ def distance_based_pairing(dot_dict, num_dict, expected_range, missing_numbers, 
         if best_dot is None:
             break
 
-        # Pair them
         unpaired_dots.remove(best_dot)
         unpaired_nums.remove(best_num)
 
@@ -99,23 +88,21 @@ def distance_based_pairing(dot_dict, num_dict, expected_range, missing_numbers, 
             "distance": round(min_dist, 3)
         })
 
-        print(f"Dot {best_dot} paired with number {best_num}, distance: {min_dist:.3f} pixels")
+        logging.info(f"Dot {best_dot} paired with number {best_num}, distance: {min_dist:.3f} pixels")
 
-    # Handle outliers: predict missing numbers based on neighbors (GLOBAL)
+    # Handling outliers and predicting the numbers, it's based on the neighouring numbers
     if unpaired_dots and missing_numbers:
         print("\nPredicting numbers for outliers based on neighbors...")
-        missing_numbers = list(missing_numbers)  # Make mutable copy
+        missing_numbers = list(missing_numbers)
         
         while unpaired_dots and missing_numbers:
             best_dot = None
             best_num = None
             best_score = float('inf')
             
-            # For each unpaired dot, evaluate fit for each missing number
             for dot_id in unpaired_dots:
                 dot_x, dot_y = dot_dict[dot_id]["x"], dot_dict[dot_id]["y"]
                 
-                # Find nearest neighbors with known numbers
                 neighbor_distances = []
                 for pair in pairs:
                     neighbor_x, neighbor_y = pair["dot_coord"]["x"], pair["dot_coord"]["y"]
@@ -125,16 +112,13 @@ def distance_based_pairing(dot_dict, num_dict, expected_range, missing_numbers, 
                 neighbor_distances.sort()
                 neighbors = [num for _, num in neighbor_distances[:3]]
                 
-                # Try each missing number
                 for missing_num in missing_numbers:
                     score = 0
-                    # Check if number fits between neighbors
                     for i in range(len(neighbors) - 1):
                         if min(neighbors[i], neighbors[i+1]) < missing_num < max(neighbors[i], neighbors[i+1]):
                             score = abs(missing_num - neighbors[i]) + abs(missing_num - neighbors[i+1])
                             break
                     
-                    # If not between neighbors, use distance to closest neighbor
                     if score == 0:
                         score = min(abs(missing_num - n) for n in neighbors) + 1000
                     
@@ -146,7 +130,6 @@ def distance_based_pairing(dot_dict, num_dict, expected_range, missing_numbers, 
             if best_dot is None:
                 break
             
-            # Make the prediction
             unpaired_dots.remove(best_dot)
             missing_numbers.remove(best_num)
             
@@ -161,7 +144,6 @@ def distance_based_pairing(dot_dict, num_dict, expected_range, missing_numbers, 
             
             print(f"  Predicted: Dot {best_dot} → Number {best_num} (score: {best_score:.1f})")
     
-    # Sort pairs by number value
     pairs.sort(key=lambda p: p["num_value"] if isinstance(p["num_value"], int) else 9999)
 
     with open(output_path, "w") as f:
@@ -250,31 +232,23 @@ def dot_to_dict(dot_path):
         logging.error(f"File not found {dot_path}")
         return {}
     
-
-if __name__ == "__main__":
+def matchmaker_main():
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
     base_path = os.path.dirname(os.path.abspath(__file__))
     dot_path = os.path.join(base_path, "Output_pictures_star/global_coordinates.json")
     num_path = os.path.join(base_path, "Output_pictures_star/global_numbers.json")
-    base_image_path = os.path.join(base_path, "Pictures/star.jpg")
-
-
+    base_image_path = os.path.join(base_path, "../../Pictures/star.jpg")
     expected_range = 10
 
     dot_dict = dot_to_dict(dot_path)
     num_dict, outliars, missing_numbers = num_to_dict(num_path, expected_range)
-    num_dict = dict(sorted(num_dict.items(), key=lambda item: int(item[0])))
+    #num_dict = dict(sorted(num_dict.items(), key=lambda item: int(item[0])))
 
+    pairs = distance_based_pairing(dot_dict, num_dict, expected_range, missing_numbers, os.path.join(base_path, "Output_pictures/config/pairing.json"))
 
-    logging.info("Dot dict:")
-    #logging.info(json.dumps(dot_dict, indent=4))
-    logging.info(len(dot_dict))
+    visualize_pairs(pairs, os.path.join(base_path, "Output_pictures/pairing_visualization.jpg"), base_image_path)
 
-    logging.info("Num dict:")
-    #logging.info(json.dumps(num_dict, indent=4))
-    logging.info(len(num_dict))
-
-    pairs = distance_based_pairing(dot_dict, num_dict, expected_range, missing_numbers, os.path.join(base_path, "Output_pictures"))
-
-    visualize_pairs(pairs, os.path.join(base_path, "Output_pictures/pairing_visualization.jpg"))
+if __name__ == "__main__":
+    matchmaker_main()
+    

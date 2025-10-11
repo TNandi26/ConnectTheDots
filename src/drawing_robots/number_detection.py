@@ -9,11 +9,10 @@ import pytesseract
 from PIL import Image
 import easyocr
 
-# Set Tesseract path for Windows
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 EASYOCR_AVAILABLE = True
-reader = easyocr.Reader(['en'], gpu=False)
+reader = easyocr.Reader(['en'], gpu=True)
 
 # ============================================================================
 # HELPER FUNCTIONS
@@ -494,7 +493,7 @@ def process_single_segment(image_path, output_base_path, viz_dir, detected_circl
     # Erase dots from image
     if circles:
         logging.info(f"Erasing {len(circles)} dots from image...")
-        gray_no_dots = erase_dots_from_image(gray, circles, margin=1)  # Reduced margin from 3 to 2
+        gray_no_dots = erase_dots_from_image(gray, circles, margin=1)
         save_debug_image(gray_no_dots, f"{segment_name}_no_dots.jpg")
     else:
         logging.warning("No circles found for this segment, processing without dot removal")
@@ -810,7 +809,6 @@ def run_detection_for_all_segments(picture_name, expected_range=None, use_combo_
     folder = pathlib.Path(segments_path)
     jpg_files = sorted(list(folder.glob("*.jpg")))
     
-    logging.info(f"\n{'='*60}")
     logging.info(f"BATCH PROCESSING: {len(jpg_files)} segments")
     if expected_range:
         logging.info(f"Expected number range: {expected_range[0]}-{expected_range[1]}")
@@ -825,7 +823,7 @@ def run_detection_for_all_segments(picture_name, expected_range=None, use_combo_
     detected_numbers_json = os.path.join(output_path, "detected_numbers.json")
     save_final_json(all_segments_data, output_path, "detected_numbers.json")
     
-    logging.info("\n✓✓✓ SEGMENT PROCESSING COMPLETE ✓✓✓\n")
+    logging.info("\nSegment processing has been completed\n")
     
     segments_json_path = os.path.join(segments_path, "segments.json")
     
