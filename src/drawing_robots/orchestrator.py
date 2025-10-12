@@ -89,11 +89,11 @@ if __name__ == "__main__":
     logging.info(f"Using {images[picture_number - 1]}")
     picture_path = os.path.join(picture_folder, images[picture_number - 1])
     print(picture_path)
-
+    range = int(input("What is the upper limit of your expected range: "))
 
     check_folder_status() # Setting up the working directory
     main_logic(images, picture_number, picture_path) # Merging together the pictures, segment_merge.py
     run_detection_for_dots(images[picture_number - 1]) # Run the dot detection algorithm for each segmented image, circle_detection.py
-    run_detection_for_all_segments(images[picture_number - 1], expected_range=(1, 10), use_combo_ocr=True)
-    matchmaker_main()
+    run_detection_for_all_segments(images[picture_number - 1], expected_range=(1, range), use_combo_ocr=True)
+    matchmaker_main(images[picture_number - 1], range)
     

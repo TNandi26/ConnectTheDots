@@ -232,18 +232,17 @@ def dot_to_dict(dot_path):
         logging.error(f"File not found {dot_path}")
         return {}
     
-def matchmaker_main():
+def matchmaker_main(picture_name, expected_range):
+
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
     base_path = os.path.dirname(os.path.abspath(__file__))
-    dot_path = os.path.join(base_path, "Output_pictures_star/global_coordinates.json")
-    num_path = os.path.join(base_path, "Output_pictures_star/global_numbers.json")
-    base_image_path = os.path.join(base_path, "../../Pictures/star.jpg")
-    expected_range = 10
+    dot_path = os.path.join(base_path, "Output_pictures/config/global_dot_coordinates.json")
+    num_path = os.path.join(base_path, "Output_pictures/config/global_numbers.json")
+    base_image_path = os.path.join(base_path, f"../../Pictures/{picture_name}")
 
     dot_dict = dot_to_dict(dot_path)
     num_dict, outliars, missing_numbers = num_to_dict(num_path, expected_range)
-    #num_dict = dict(sorted(num_dict.items(), key=lambda item: int(item[0])))
 
     pairs = distance_based_pairing(dot_dict, num_dict, expected_range, missing_numbers, os.path.join(base_path, "Output_pictures/config/pairing.json"))
 
@@ -251,4 +250,3 @@ def matchmaker_main():
 
 if __name__ == "__main__":
     matchmaker_main()
-    

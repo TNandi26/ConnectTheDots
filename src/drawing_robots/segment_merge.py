@@ -131,7 +131,7 @@ def main_logic(images, picture_number, picture_path):
     # Fixed grid
     segment_fixed_grid(picture_path, os.path.join(segments_path, "SegmentsGrid"), cols=5)
     # Overlap segments
-    segment_with_overlap(picture_path, os.path.join(segments_path, "SegmentsOverlap"), cols=3, overlap_x=0.5, overlap_y=0.5)
+    segment_with_overlap(picture_path, os.path.join(segments_path, "SegmentsOverlap"), cols=2, overlap_x=0.5, overlap_y=0.5)
     # Merge overlapping tiles
     merge_tiles_from_json(os.path.join(segments_path, "SegmentsOverlap"), os.path.join(output_path, "merged_result.jpg"), os.path.join(segments_path, "SegmentsOverlap/overlap_segments.json"))
     

@@ -12,7 +12,7 @@ import easyocr
 
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 EASYOCR_AVAILABLE = True
-reader = easyocr.Reader(['en'], gpu=True)
+reader = easyocr.Reader(['en'], gpu=False)
 
 # ============================================================================
 # HELPER FUNCTIONS
@@ -69,8 +69,7 @@ def erase_dots_from_image(image, circles, margin=1):
     result = image.copy()
     
     for x, y, r in circles:
-        # Create a mask for this circle
-        cv2.circle(result, (x, y), r + margin, 255, -1)  # Fill with white
+        cv2.circle(result, (x, y), r + margin, 255, -1)
     
     logging.info(f"Erased {len(circles)} dots from image")
     return result
@@ -93,7 +92,6 @@ def preprocess_for_ocr(gray_image, threshold_value, upscale=True):
         height = int(binary.shape[0] * scale_factor)
         binary = cv2.resize(binary, (width, height), interpolation=cv2.INTER_CUBIC)
     
-    # Denoise
     denoised = cv2.fastNlMeansDenoising(binary, None, 10, 7, 21)
     
     return denoised, scale_factor
@@ -147,7 +145,7 @@ def detect_numbers_tesseract(image, scale_factor=1, config='--psm 11 --oem 3 -c 
             conf = int(data['conf'][i])
             
             # Filter: must be a number with good confidence to avoid false positives
-            if text and text.isdigit() and conf > 55:  # Stricter threshold
+            if text and text.isdigit() and conf > 55:
                 x = data['left'][i] // scale_factor
                 y = data['top'][i] // scale_factor
                 w = data['width'][i] // scale_factor
@@ -185,9 +183,6 @@ def detect_numbers_multi_threshold(gray_image, segment_name, use_combo=True):
     
     for thresh in test_thresholds:
         preprocessed, scale_factor = preprocess_for_ocr(gray_image, thresh, upscale=True)
-        
-        # Debug images disabled to save space
-        # save_debug_image(preprocessed, f"{segment_name}_thresh_{thresh}.jpg")
         
         # Method 1: Tesseract with PSM 11 (sparse text)
         config = '--psm 11 --oem 3 -c tessedit_char_whitelist=0123456789'
@@ -600,17 +595,14 @@ def load_segment_mapping(segments_json_path):
         return json.load(f)
 
 
-def convert_to_global_coordinates(detected_numbers_json_path, segments_json_path, 
-                                  output_json_path="global_numbers.json"):
+def convert_to_global_coordinates(detected_numbers_json_path, segments_json_path, output_json_path="config/global_numbers.json"):
     """Convert segment-local coordinates to global coordinates"""
     with open(detected_numbers_json_path, 'r') as f:
         detected_data = json.load(f)
     
     segment_mapping = load_segment_mapping(segments_json_path)
     
-    logging.info("\n" + "="*60)
     logging.info("CONVERTING NUMBERS TO GLOBAL COORDINATES")
-    logging.info("="*60)
     
     all_global_numbers = []
     
@@ -775,11 +767,9 @@ def save_final_json(all_segments_data, output_path, filename="detected_numbers.j
     with open(full_output_path, 'w') as f:
         json.dump(output_data, f, indent=2)
     
-    logging.info(f"\n{'='*60}")
     logging.info(f"FINAL JSON SAVED: {full_output_path}")
     logging.info(f"Total segments: {output_data['total_segments']}")
     logging.info(f"Total numbers: {total_numbers}")
-    logging.info(f"{'='*60}\n")
 
 
 # ============================================================================
@@ -793,14 +783,13 @@ def run_detection_for_all_segments(picture_name, expected_range=None, use_combo_
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
     
     base_path = os.path.dirname(os.path.abspath(__file__))
-    segments_path = os.path.join(base_path, "Segments/SegmentsOverlap")
     output_path = os.path.join(base_path, "Output_pictures")
+    segments_path = os.path.join(output_path, "Segments/SegmentsOverlap")
     viz_dir = os.path.join(output_path, "number_visualizations")
-    detected_circles_json = os.path.join(output_path, "detected_circles.json")
+    detected_circles_json = os.path.join(output_path, "config/detected_circles.json")
     
     os.makedirs(viz_dir, exist_ok=True)
     
-    # Check if circles are detected
     if not os.path.exists(detected_circles_json):
         logging.error(f"Detected circles JSON not found: {detected_circles_json}")
         logging.error("Please run circle detection first!")
@@ -820,8 +809,8 @@ def run_detection_for_all_segments(picture_name, expected_range=None, use_combo_
                                              
         all_segments_data.append(segment_data)
     
-    detected_numbers_json = os.path.join(output_path, "detected_numbers.json")
-    save_final_json(all_segments_data, output_path, "detected_numbers.json")
+    detected_numbers_json = os.path.join(output_path, "config/detected_numbers.json")
+    save_final_json(all_segments_data, output_path, detected_numbers_json)
     
     logging.info("\nSegment processing has been completed\n")
     
@@ -831,10 +820,10 @@ def run_detection_for_all_segments(picture_name, expected_range=None, use_combo_
         global_numbers = convert_to_global_coordinates(
             detected_numbers_json,
             segments_json_path,
-            "global_numbers.json"
+            "config/global_numbers.json"
         )
         
-        main_image_path = os.path.join(base_path, f"Pictures/{picture_name}")
+        main_image_path = os.path.join(base_path, f"../../Pictures/{picture_name}")
         if os.path.exists(main_image_path):
             visualize_on_main_image(main_image_path, global_numbers, "main_image_with_numbers.jpg")
         else:

@@ -6,10 +6,6 @@ import json
 import pathlib
 from collections import Counter
 
-
-# ============================================================================
-# HELPER FUNCTIONS
-# ============================================================================
 def auto_calibrate_multiple_thresholds(gray_image):
     """Test multiple thresholds and collect candidates from each"""
 
@@ -225,10 +221,8 @@ def filter_by_intensity_variance(circles, std_multiplier=2.0):
     if not circles:
         return []
     
-    # Extract intensities
     intensities = [circle.get("intensity", 0) for circle in circles]
     
-    # Calculate statistics
     mean_intensity = np.mean(intensities)
     std_intensity = np.std(intensities)
     
@@ -257,18 +251,8 @@ def filter_by_intensity_variance(circles, std_multiplier=2.0):
 
 
 def add_unique_ids(circles):
-    """
-    Add unique sequential IDs to circles
-    
-    Args:
-        circles: List of circle dictionaries
-    
-    Returns:
-        List of circles with added 'id' field
-    """
     for i, circle in enumerate(circles, start=1):
         circle["id"] = i
-    
     return circles
 
 
@@ -304,7 +288,6 @@ def process_single_segment(image_path, viz_dir):
     logging.info(f"Processing: {segment_name}")
     logging.info(f"{'='*60}")
     
-    # Load image
     image = cv2.imread(image_path)
     if image is None:
         logging.error(f"Failed to load: {segment_name}")
@@ -312,7 +295,6 @@ def process_single_segment(image_path, viz_dir):
     
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) if len(image.shape) == 3 else image.copy()
     
-    # Phase 1: Detect circles
     logging.info("PHASE 1: Circle detection...")
     detected_circles, binary_debug = detect_circles_combined_improved(gray)
     
@@ -322,15 +304,12 @@ def process_single_segment(image_path, viz_dir):
     
     logging.info(f"Phase 1: {len(detected_circles)} circles detected")
     
-    # Phase 2: Filter by radius
     logging.info("PHASE 2: Radius filtering...")
     filtered_circles = filter_by_radius(detected_circles)
     
-    # Phase 3: Black color check
     logging.info("PHASE 3: Black color check...")
     black_circles, rejected_circles = check_black_color(filtered_circles, gray)
     
-    # Create segment data
     segment_data = {
         "segment_name": segment_name,
         "segment_path": str(image_path),
@@ -349,11 +328,10 @@ def process_single_segment(image_path, viz_dir):
             "intensity": intensity
         })
     
-    # Save visualization
     viz_path = os.path.join(viz_dir, f"{segment_name}_final.jpg")
     visualize_final_circles(image, black_circles, viz_path)
     
-    logging.info(f"✓ {segment_name}: {len(black_circles)} circles detected\n")
+    logging.info(f"{segment_name}: {len(black_circles)} circles detected\n")
     
     return segment_data
 
@@ -372,14 +350,12 @@ def convert_to_global_coordinates(detected_circles_json_path, segments_json_path
     Convert segment-local coordinates to global coordinates on the main image
     Also removes duplicates from overlapping segments
     """
-    # Load data
     with open(detected_circles_json_path, 'r') as f:
         detected_data = json.load(f)
     
     segment_mapping = load_segment_mapping(segments_json_path)
     all_global_circles = []
     
-    # Process each segment
     for segment in detected_data["segments"]:
         segment_name = segment["segment_name"] + ".jpg"
         
@@ -411,19 +387,15 @@ def convert_to_global_coordinates(detected_circles_json_path, segments_json_path
     
     logging.info(f"Total circles before deduplication: {len(all_global_circles)}")
     
-    # Remove duplicates from overlapping segments
     unique_circles = remove_duplicate_circles(all_global_circles)
     
     logging.info(f"Total circles after deduplication: {len(unique_circles)}")
     
-    # Filter by intensity variance
     logging.info("Filtering by intensity variance...")
     filtered_circles = filter_by_intensity_variance(unique_circles, std_multiplier=2.0)
     
-    # Add unique IDs
     filtered_circles = add_unique_ids(filtered_circles)
     
-    # Save to JSON
     output_data = {
         "detection_method": "Multi-Method Improved with Intensity Filter",
         "coordinate_space": "global (main image)",
@@ -556,7 +528,6 @@ def run_dot_detection_for_all_segments(picture_name):
         segment_data = process_single_segment(image_file, viz_dir)
         all_segments_data.append(segment_data)
     
-    detected_circles_json = os.path.join(os.path.join(output_path, "config"), "detected_circles.json")
     save_final_json(all_segments_data, os.path.join(output_path, "config"), "detected_circles.json")
     
     logging.info("\nSegment process is completed\n")
@@ -568,7 +539,7 @@ def run_dot_detection_for_all_segments(picture_name):
         logging.info("Converting to global coordinates")
         
         global_circles = convert_to_global_coordinates(
-            detected_circles_json,
+            os.path.join(os.path.join(output_path, "config"), "detected_circles.json"),
             segments_json_path,
             "global_dot_coordinates.json"
         )
@@ -578,11 +549,10 @@ def run_dot_detection_for_all_segments(picture_name):
             visualize_on_main_image(main_image_path, global_circles, "main_image_with_dots.jpg")
         else:
             logging.warning(f"Main image not found at: {main_image_path}")
-            logging.info("Please set the correct path to your main image")
     else:
         logging.warning(f"Segments mapping not found at: {segments_json_path}")
     
-    logging.info("\nAll process has been completed\n")
+    logging.info("All process has been completed\n")
 
 
 if __name__ == "__main__":
