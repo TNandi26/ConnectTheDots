@@ -1,0 +1,382 @@
+[
+    {
+        "dot_id": 23,
+        "dot_coord": {
+            "x": 549,
+            "y": 589
+        },
+        "num_value": 1,
+        "num_coord": {
+            "x": 570,
+            "y": 593
+        },
+        "distance": 21.378
+    },
+    {
+        "dot_id": 9,
+        "dot_coord": {
+            "x": 384,
+            "y": 370
+        },
+        "num_value": 2,
+        "num_coord": null,
+        "distance": null,
+        "outlier": true
+    },
+    {
+        "dot_id": 8,
+        "dot_coord": {
+            "x": 384,
+            "y": 485
+        },
+        "num_value": 3,
+        "num_coord": {
+            "x": 401,
+            "y": 489
+        },
+        "distance": 17.464
+    },
+    {
+        "dot_id": 11,
+        "dot_coord": {
+            "x": 443,
+            "y": 375
+        },
+        "num_value": 4,
+        "num_coord": null,
+        "distance": null,
+        "outlier": true
+    },
+    {
+        "dot_id": 2,
+        "dot_coord": {
+            "x": 627,
+            "y": 232
+        },
+        "num_value": 5,
+        "num_coord": {
+            "x": 644,
+            "y": 235
+        },
+        "distance": 17.263
+    },
+    {
+        "dot_id": 13,
+        "dot_coord": {
+            "x": 574,
+            "y": 418
+        },
+        "num_value": 6,
+        "num_coord": {
+            "x": 592,
+            "y": 421
+        },
+        "distance": 18.248
+    },
+    {
+        "dot_id": 10,
+        "dot_coord": {
+            "x": 466,
+            "y": 522
+        },
+        "num_value": 7,
+        "num_coord": {
+            "x": 482,
+            "y": 525
+        },
+        "distance": 16.279
+    },
+    {
+        "dot_id": 12,
+        "dot_coord": {
+            "x": 584,
+            "y": 474
+        },
+        "num_value": 8,
+        "num_coord": {
+            "x": 602,
+            "y": 478
+        },
+        "distance": 18.439
+    },
+    {
+        "dot_id": 14,
+        "dot_coord": {
+            "x": 777,
+            "y": 469
+        },
+        "num_value": 9,
+        "num_coord": {
+            "x": 793,
+            "y": 472
+        },
+        "distance": 16.279
+    },
+    {
+        "dot_id": 25,
+        "dot_coord": {
+            "x": 659,
+            "y": 568
+        },
+        "num_value": 10,
+        "num_coord": {
+            "x": 676,
+            "y": 571
+        },
+        "distance": 17.263
+    },
+    {
+        "dot_id": 1,
+        "dot_coord": {
+            "x": 336,
+            "y": 212
+        },
+        "num_value": 11,
+        "num_coord": null,
+        "distance": null,
+        "outlier": true
+    },
+    {
+        "dot_id": 22,
+        "dot_coord": {
+            "x": 449,
+            "y": 601
+        },
+        "num_value": 12,
+        "num_coord": {
+            "x": 466,
+            "y": 604
+        },
+        "distance": 17.263
+    },
+    {
+        "dot_id": 24,
+        "dot_coord": {
+            "x": 574,
+            "y": 685
+        },
+        "num_value": 13,
+        "num_coord": {
+            "x": 592,
+            "y": 689
+        },
+        "distance": 18.439
+    },
+    {
+        "dot_id": 30,
+        "dot_coord": {
+            "x": 668,
+            "y": 771
+        },
+        "num_value": 14,
+        "num_coord": {
+            "x": 686,
+            "y": 776
+        },
+        "distance": 18.682
+    },
+    {
+        "dot_id": 29,
+        "dot_coord": {
+            "x": 502,
+            "y": 754
+        },
+        "num_value": 15,
+        "num_coord": {
+            "x": 519,
+            "y": 758
+        },
+        "distance": 17.464
+    },
+    {
+        "dot_id": 19,
+        "dot_coord": {
+            "x": 399,
+            "y": 671
+        },
+        "num_value": 16,
+        "num_coord": {
+            "x": 414,
+            "y": 675
+        },
+        "distance": 15.524
+    },
+    {
+        "dot_id": 28,
+        "dot_coord": {
+            "x": 375,
+            "y": 799
+        },
+        "num_value": 17,
+        "num_coord": {
+            "x": 393,
+            "y": 804
+        },
+        "distance": 18.682
+    },
+    {
+        "dot_id": 18,
+        "dot_coord": {
+            "x": 326,
+            "y": 707
+        },
+        "num_value": 18,
+        "num_coord": {
+            "x": 343,
+            "y": 710
+        },
+        "distance": 17.263
+    },
+    {
+        "dot_id": 20,
+        "dot_coord": {
+            "x": 333,
+            "y": 639
+        },
+        "num_value": 19,
+        "num_coord": {
+            "x": 350,
+            "y": 642
+        },
+        "distance": 17.263
+    },
+    {
+        "dot_id": 26,
+        "dot_coord": {
+            "x": 210,
+            "y": 827
+        },
+        "num_value": 20,
+        "num_coord": {
+            "x": 227,
+            "y": 829
+        },
+        "distance": 17.117
+    },
+    {
+        "dot_id": 27,
+        "dot_coord": {
+            "x": 185,
+            "y": 794
+        },
+        "num_value": 21,
+        "num_coord": {
+            "x": 201,
+            "y": 798
+        },
+        "distance": 16.492
+    },
+    {
+        "dot_id": 21,
+        "dot_coord": {
+            "x": 319,
+            "y": 617
+        },
+        "num_value": 22,
+        "num_coord": null,
+        "distance": null,
+        "outlier": true
+    },
+    {
+        "dot_id": 15,
+        "dot_coord": {
+            "x": 220,
+            "y": 628
+        },
+        "num_value": 23,
+        "num_coord": {
+            "x": 237,
+            "y": 631
+        },
+        "distance": 17.263
+    },
+    {
+        "dot_id": 16,
+        "dot_coord": {
+            "x": 125,
+            "y": 588
+        },
+        "num_value": 24,
+        "num_coord": null,
+        "distance": null,
+        "outlier": true
+    },
+    {
+        "dot_id": 17,
+        "dot_coord": {
+            "x": 259,
+            "y": 561
+        },
+        "num_value": 25,
+        "num_coord": {
+            "x": 276,
+            "y": 565
+        },
+        "distance": 17.464
+    },
+    {
+        "dot_id": 3,
+        "dot_coord": {
+            "x": 152,
+            "y": 514
+        },
+        "num_value": 26,
+        "num_coord": {
+            "x": 168,
+            "y": 518
+        },
+        "distance": 16.492
+    },
+    {
+        "dot_id": 6,
+        "dot_coord": {
+            "x": 61,
+            "y": 368
+        },
+        "num_value": 27,
+        "num_coord": {
+            "x": 77,
+            "y": 371
+        },
+        "distance": 16.279
+    },
+    {
+        "dot_id": 4,
+        "dot_coord": {
+            "x": 195,
+            "y": 415
+        },
+        "num_value": 28,
+        "num_coord": {
+            "x": 211,
+            "y": 418
+        },
+        "distance": 16.279
+    },
+    {
+        "dot_id": 7,
+        "dot_coord": {
+            "x": 286,
+            "y": 506
+        },
+        "num_value": 29,
+        "num_coord": {
+            "x": 302,
+            "y": 509
+        },
+        "distance": 16.279
+    },
+    {
+        "dot_id": 5,
+        "dot_coord": {
+            "x": 260,
+            "y": 387
+        },
+        "num_value": 30,
+        "num_coord": {
+            "x": 277,
+            "y": 391
+        },
+        "distance": 17.464
+    }
+]

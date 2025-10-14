@@ -1,0 +1,1418 @@
+{
+  "detection_method": "Multi-Threshold OCR with Consensus Voting",
+  "total_segments": 32,
+  "total_numbers_found": 94,
+  "segments": [
+    {
+      "segment_name": "tile_r0_c0",
+      "numbers": [
+        {
+          "number": 30,
+          "pixel_x": 109,
+          "pixel_y": 48,
+          "bbox": [
+            96,
+            39,
+            26,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 80.95238095238095
+        },
+        {
+          "number": 31,
+          "pixel_x": 107,
+          "pixel_y": 82,
+          "bbox": [
+            98,
+            74,
+            18,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 95.45454545454545
+        },
+        {
+          "number": 32,
+          "pixel_x": 124,
+          "pixel_y": 104,
+          "bbox": [
+            112,
+            95,
+            24,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 71.42857142857143
+        },
+        {
+          "number": 33,
+          "pixel_x": 123,
+          "pixel_y": 136,
+          "bbox": [
+            111,
+            128,
+            24,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 96.29629629629629
+        }
+      ],
+      "total_numbers": 4
+    },
+    {
+      "segment_name": "tile_r0_c1",
+      "numbers": [
+        {
+          "number": 28,
+          "pixel_x": 119,
+          "pixel_y": 39,
+          "bbox": [
+            107,
+            31,
+            24,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 50.0
+        },
+        {
+          "number": 29,
+          "pixel_x": 81,
+          "pixel_y": 19,
+          "bbox": [
+            69,
+            10,
+            24,
+            18
+          ],
+          "confidence": 100,
+          "vote_percentage": 75.0
+        },
+        {
+          "number": 30,
+          "pixel_x": 35,
+          "pixel_y": 48,
+          "bbox": [
+            22,
+            39,
+            26,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 86.95652173913044
+        },
+        {
+          "number": 31,
+          "pixel_x": 32,
+          "pixel_y": 82,
+          "bbox": [
+            22,
+            73,
+            21,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 32,
+          "pixel_x": 48,
+          "pixel_y": 103,
+          "bbox": [
+            36,
+            94,
+            25,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 52.38095238095239
+        },
+        {
+          "number": 33,
+          "pixel_x": 48,
+          "pixel_y": 136,
+          "bbox": [
+            36,
+            128,
+            24,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 78.57142857142857
+        }
+      ],
+      "total_numbers": 6
+    },
+    {
+      "segment_name": "tile_r0_c2",
+      "numbers": [
+        {
+          "number": 26,
+          "pixel_x": 137,
+          "pixel_y": 21,
+          "bbox": [
+            125,
+            14,
+            25,
+            15
+          ],
+          "confidence": 99,
+          "vote_percentage": 90.0
+        },
+        {
+          "number": 27,
+          "pixel_x": 102,
+          "pixel_y": 39,
+          "bbox": [
+            91,
+            31,
+            22,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 92.5925925925926
+        },
+        {
+          "number": 28,
+          "pixel_x": 44,
+          "pixel_y": 39,
+          "bbox": [
+            32,
+            31,
+            25,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 54.166666666666664
+        },
+        {
+          "number": 29,
+          "pixel_x": 9,
+          "pixel_y": 18,
+          "bbox": [
+            0,
+            9,
+            18,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 95.45454545454545
+        }
+      ],
+      "total_numbers": 4
+    },
+    {
+      "segment_name": "tile_r0_c3",
+      "numbers": [
+        {
+          "number": 21,
+          "pixel_x": 80,
+          "pixel_y": 171,
+          "bbox": [
+            73,
+            163,
+            15,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 70.0
+        },
+        {
+          "number": 22,
+          "pixel_x": 98,
+          "pixel_y": 133,
+          "bbox": [
+            87,
+            124,
+            22,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 23,
+          "pixel_x": 93,
+          "pixel_y": 103,
+          "bbox": [
+            80,
+            94,
+            26,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 50.0
+        },
+        {
+          "number": 24,
+          "pixel_x": 113,
+          "pixel_y": 81,
+          "bbox": [
+            102,
+            73,
+            23,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 25,
+          "pixel_x": 105,
+          "pixel_y": 45,
+          "bbox": [
+            93,
+            36,
+            24,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 83.33333333333334
+        },
+        {
+          "number": 26,
+          "pixel_x": 62,
+          "pixel_y": 21,
+          "bbox": [
+            49,
+            13,
+            26,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 90.9090909090909
+        },
+        {
+          "number": 27,
+          "pixel_x": 27,
+          "pixel_y": 39,
+          "bbox": [
+            17,
+            31,
+            21,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        }
+      ],
+      "total_numbers": 7
+    },
+    {
+      "segment_name": "tile_r0_c4",
+      "numbers": [
+        {
+          "number": 21,
+          "pixel_x": 7,
+          "pixel_y": 171,
+          "bbox": [
+            0,
+            164,
+            14,
+            15
+          ],
+          "confidence": 99,
+          "vote_percentage": 85.71428571428571
+        },
+        {
+          "number": 22,
+          "pixel_x": 25,
+          "pixel_y": 134,
+          "bbox": [
+            14,
+            126,
+            22,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 23,
+          "pixel_x": 17,
+          "pixel_y": 103,
+          "bbox": [
+            5,
+            93,
+            25,
+            21
+          ],
+          "confidence": 98,
+          "vote_percentage": 52.94117647058824
+        },
+        {
+          "number": 24,
+          "pixel_x": 38,
+          "pixel_y": 81,
+          "bbox": [
+            26,
+            72,
+            24,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 25,
+          "pixel_x": 29,
+          "pixel_y": 44,
+          "bbox": [
+            17,
+            35,
+            25,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 81.25
+        }
+      ],
+      "total_numbers": 5
+    },
+    {
+      "segment_name": "tile_r1_c0",
+      "numbers": [
+        {
+          "number": 2,
+          "pixel_x": 95,
+          "pixel_y": 134,
+          "bbox": [
+            89,
+            126,
+            12,
+            16
+          ],
+          "confidence": 100,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 32,
+          "pixel_x": 123,
+          "pixel_y": 15,
+          "bbox": [
+            111,
+            6,
+            25,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 66.66666666666666
+        },
+        {
+          "number": 33,
+          "pixel_x": 123,
+          "pixel_y": 47,
+          "bbox": [
+            111,
+            39,
+            24,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 88.88888888888889
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r1_c1",
+      "numbers": [
+        {
+          "number": 2,
+          "pixel_x": 20,
+          "pixel_y": 134,
+          "bbox": [
+            14,
+            126,
+            12,
+            16
+          ],
+          "confidence": 100,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 32,
+          "pixel_x": 49,
+          "pixel_y": 15,
+          "bbox": [
+            37,
+            6,
+            24,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 63.1578947368421
+        },
+        {
+          "number": 33,
+          "pixel_x": 48,
+          "pixel_y": 47,
+          "bbox": [
+            36,
+            39,
+            24,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r1_c2",
+      "numbers": [],
+      "total_numbers": 0
+    },
+    {
+      "segment_name": "tile_r1_c3",
+      "numbers": [
+        {
+          "number": 20,
+          "pixel_x": 130,
+          "pixel_y": 133,
+          "bbox": [
+            119,
+            125,
+            23,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 83.33333333333334
+        },
+        {
+          "number": 21,
+          "pixel_x": 80,
+          "pixel_y": 81,
+          "bbox": [
+            71,
+            72,
+            19,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 22,
+          "pixel_x": 98,
+          "pixel_y": 44,
+          "bbox": [
+            88,
+            35,
+            21,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 7,
+          "pixel_x": 88,
+          "pixel_y": 15,
+          "bbox": [
+            84,
+            11,
+            8,
+            9
+          ],
+          "confidence": 77,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 4
+    },
+    {
+      "segment_name": "tile_r1_c4",
+      "numbers": [
+        {
+          "number": 20,
+          "pixel_x": 55,
+          "pixel_y": 133,
+          "bbox": [
+            43,
+            125,
+            24,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 96.0
+        },
+        {
+          "number": 21,
+          "pixel_x": 7,
+          "pixel_y": 82,
+          "bbox": [
+            0,
+            73,
+            15,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 87.5
+        },
+        {
+          "number": 22,
+          "pixel_x": 24,
+          "pixel_y": 45,
+          "bbox": [
+            13,
+            36,
+            22,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 88.88888888888889
+        },
+        {
+          "number": 24,
+          "pixel_x": 18,
+          "pixel_y": 15,
+          "bbox": [
+            9,
+            10,
+            19,
+            11
+          ],
+          "confidence": 69,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 4
+    },
+    {
+      "segment_name": "tile_r2_c0",
+      "numbers": [
+        {
+          "number": 2,
+          "pixel_x": 95,
+          "pixel_y": 45,
+          "bbox": [
+            89,
+            37,
+            12,
+            16
+          ],
+          "confidence": 100,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 3,
+          "pixel_x": 70,
+          "pixel_y": 109,
+          "bbox": [
+            64,
+            101,
+            13,
+            16
+          ],
+          "confidence": 100,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 7,
+          "pixel_x": 137,
+          "pixel_y": 171,
+          "bbox": [
+            133,
+            165,
+            9,
+            13
+          ],
+          "confidence": 96,
+          "vote_percentage": 100.0
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r2_c1",
+      "numbers": [
+        {
+          "number": 2,
+          "pixel_x": 21,
+          "pixel_y": 46,
+          "bbox": [
+            14,
+            38,
+            14,
+            16
+          ],
+          "confidence": 100,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 4,
+          "pixel_x": 36,
+          "pixel_y": 139,
+          "bbox": [
+            32,
+            134,
+            8,
+            10
+          ],
+          "confidence": 97,
+          "vote_percentage": 100.0
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r2_c2",
+      "numbers": [
+        {
+          "number": 3,
+          "pixel_x": 17,
+          "pixel_y": 92,
+          "bbox": [
+            13,
+            86,
+            8,
+            12
+          ],
+          "confidence": 93,
+          "vote_percentage": 50.0
+        },
+        {
+          "number": 17,
+          "pixel_x": 127,
+          "pixel_y": 96,
+          "bbox": [
+            119,
+            89,
+            17,
+            15
+          ],
+          "confidence": 99,
+          "vote_percentage": 52.63157894736842
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r2_c3",
+      "numbers": [
+        {
+          "number": 1,
+          "pixel_x": 146,
+          "pixel_y": 107,
+          "bbox": [
+            142,
+            101,
+            9,
+            12
+          ],
+          "confidence": 85,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 13,
+          "pixel_x": 111,
+          "pixel_y": 134,
+          "bbox": [
+            101,
+            127,
+            21,
+            14
+          ],
+          "confidence": 95,
+          "vote_percentage": 50.0
+        },
+        {
+          "number": 15,
+          "pixel_x": 90,
+          "pixel_y": 170,
+          "bbox": [
+            82,
+            162,
+            16,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 61.53846153846154
+        },
+        {
+          "number": 17,
+          "pixel_x": 52,
+          "pixel_y": 96,
+          "bbox": [
+            43,
+            89,
+            18,
+            15
+          ],
+          "confidence": 99,
+          "vote_percentage": 91.66666666666666
+        },
+        {
+          "number": 20,
+          "pixel_x": 130,
+          "pixel_y": 44,
+          "bbox": [
+            118,
+            36,
+            24,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        }
+      ],
+      "total_numbers": 5
+    },
+    {
+      "segment_name": "tile_r2_c4",
+      "numbers": [
+        {
+          "number": 17,
+          "pixel_x": 13,
+          "pixel_y": 149,
+          "bbox": [
+            6,
+            143,
+            15,
+            13
+          ],
+          "confidence": 90,
+          "vote_percentage": 55.00000000000001
+        },
+        {
+          "number": 19,
+          "pixel_x": 74,
+          "pixel_y": 107,
+          "bbox": [
+            64,
+            98,
+            21,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 75.0
+        },
+        {
+          "number": 20,
+          "pixel_x": 55,
+          "pixel_y": 44,
+          "bbox": [
+            44,
+            36,
+            23,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 15,
+          "pixel_x": 10,
+          "pixel_y": 170,
+          "bbox": [
+            0,
+            164,
+            21,
+            12
+          ],
+          "confidence": 50,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 4
+    },
+    {
+      "segment_name": "tile_r2_c5",
+      "numbers": [],
+      "total_numbers": 0
+    },
+    {
+      "segment_name": "tile_r3_c0",
+      "numbers": [
+        {
+          "number": 3,
+          "pixel_x": 71,
+          "pixel_y": 20,
+          "bbox": [
+            65,
+            12,
+            12,
+            16
+          ],
+          "confidence": 100,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 4,
+          "pixel_x": 111,
+          "pixel_y": 50,
+          "bbox": [
+            105,
+            43,
+            13,
+            15
+          ],
+          "confidence": 100,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 7,
+          "pixel_x": 137,
+          "pixel_y": 82,
+          "bbox": [
+            133,
+            76,
+            8,
+            12
+          ],
+          "confidence": 96,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 8,
+          "pixel_x": 124,
+          "pixel_y": 122,
+          "bbox": [
+            118,
+            115,
+            12,
+            14
+          ],
+          "confidence": 99,
+          "vote_percentage": 83.33333333333334
+        }
+      ],
+      "total_numbers": 4
+    },
+    {
+      "segment_name": "tile_r3_c1",
+      "numbers": [
+        {
+          "number": 7,
+          "pixel_x": 62,
+          "pixel_y": 82,
+          "bbox": [
+            58,
+            76,
+            8,
+            12
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        }
+      ],
+      "total_numbers": 1
+    },
+    {
+      "segment_name": "tile_r3_c2",
+      "numbers": [
+        {
+          "number": 17,
+          "pixel_x": 127,
+          "pixel_y": 7,
+          "bbox": [
+            118,
+            0,
+            18,
+            15
+          ],
+          "confidence": 99,
+          "vote_percentage": 57.14285714285714
+        }
+      ],
+      "total_numbers": 1
+    },
+    {
+      "segment_name": "tile_r3_c3",
+      "numbers": [
+        {
+          "number": 1,
+          "pixel_x": 146,
+          "pixel_y": 18,
+          "bbox": [
+            142,
+            12,
+            9,
+            12
+          ],
+          "confidence": 95,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 14,
+          "pixel_x": 97,
+          "pixel_y": 122,
+          "bbox": [
+            88,
+            114,
+            18,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 96.42857142857143
+        },
+        {
+          "number": 15,
+          "pixel_x": 89,
+          "pixel_y": 80,
+          "bbox": [
+            80,
+            71,
+            19,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 71.42857142857143
+        },
+        {
+          "number": 17,
+          "pixel_x": 52,
+          "pixel_y": 7,
+          "bbox": [
+            44,
+            0,
+            16,
+            15
+          ],
+          "confidence": 98,
+          "vote_percentage": 88.88888888888889
+        }
+      ],
+      "total_numbers": 4
+    },
+    {
+      "segment_name": "tile_r3_c4",
+      "numbers": [
+        {
+          "number": 14,
+          "pixel_x": 22,
+          "pixel_y": 122,
+          "bbox": [
+            13,
+            113,
+            18,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 96.29629629629629
+        },
+        {
+          "number": 15,
+          "pixel_x": 14,
+          "pixel_y": 80,
+          "bbox": [
+            5,
+            71,
+            19,
+            19
+          ],
+          "confidence": 99,
+          "vote_percentage": 50.0
+        },
+        {
+          "number": 19,
+          "pixel_x": 75,
+          "pixel_y": 18,
+          "bbox": [
+            65,
+            9,
+            20,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 88.23529411764706
+        },
+        {
+          "number": 16,
+          "pixel_x": 14,
+          "pixel_y": 60,
+          "bbox": [
+            6,
+            55,
+            16,
+            11
+          ],
+          "confidence": 93,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 4
+    },
+    {
+      "segment_name": "tile_r3_c5",
+      "numbers": [],
+      "total_numbers": 0
+    },
+    {
+      "segment_name": "tile_r4_c0",
+      "numbers": [
+        {
+          "number": 8,
+          "pixel_x": 124,
+          "pixel_y": 33,
+          "bbox": [
+            117,
+            26,
+            15,
+            15
+          ],
+          "confidence": 99,
+          "vote_percentage": 83.33333333333334
+        },
+        {
+          "number": 9,
+          "pixel_x": 136,
+          "pixel_y": 149,
+          "bbox": [
+            130,
+            142,
+            13,
+            14
+          ],
+          "confidence": 99,
+          "vote_percentage": 71.42857142857143
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r4_c1",
+      "numbers": [
+        {
+          "number": 8,
+          "pixel_x": 49,
+          "pixel_y": 33,
+          "bbox": [
+            42,
+            26,
+            15,
+            15
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 9,
+          "pixel_x": 61,
+          "pixel_y": 149,
+          "bbox": [
+            55,
+            142,
+            12,
+            14
+          ],
+          "confidence": 99,
+          "vote_percentage": 85.71428571428571
+        },
+        {
+          "number": 10,
+          "pixel_x": 131,
+          "pixel_y": 161,
+          "bbox": [
+            121,
+            154,
+            20,
+            15
+          ],
+          "confidence": 99,
+          "vote_percentage": 88.88888888888889
+        },
+        {
+          "number": 1,
+          "pixel_x": 146,
+          "pixel_y": 109,
+          "bbox": [
+            142,
+            104,
+            8,
+            10
+          ],
+          "confidence": 72,
+          "vote_percentage": 100
+        }
+      ],
+      "total_numbers": 4
+    },
+    {
+      "segment_name": "tile_r4_c2",
+      "numbers": [
+        {
+          "number": 10,
+          "pixel_x": 56,
+          "pixel_y": 162,
+          "bbox": [
+            46,
+            154,
+            20,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 78.57142857142857
+        },
+        {
+          "number": 11,
+          "pixel_x": 71,
+          "pixel_y": 108,
+          "bbox": [
+            65,
+            102,
+            13,
+            13
+          ],
+          "confidence": 99,
+          "vote_percentage": 58.82352941176471
+        },
+        {
+          "number": 12,
+          "pixel_x": 97,
+          "pixel_y": 162,
+          "bbox": [
+            88,
+            154,
+            18,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r4_c3",
+      "numbers": [
+        {
+          "number": 12,
+          "pixel_x": 21,
+          "pixel_y": 162,
+          "bbox": [
+            11,
+            153,
+            21,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 95.83333333333334
+        },
+        {
+          "number": 13,
+          "pixel_x": 85,
+          "pixel_y": 157,
+          "bbox": [
+            75,
+            149,
+            20,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 66.66666666666666
+        },
+        {
+          "number": 14,
+          "pixel_x": 97,
+          "pixel_y": 32,
+          "bbox": [
+            88,
+            25,
+            19,
+            15
+          ],
+          "confidence": 99,
+          "vote_percentage": 96.29629629629629
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r4_c4",
+      "numbers": [
+        {
+          "number": 13,
+          "pixel_x": 10,
+          "pixel_y": 157,
+          "bbox": [
+            0,
+            149,
+            20,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 75.0
+        },
+        {
+          "number": 14,
+          "pixel_x": 22,
+          "pixel_y": 33,
+          "bbox": [
+            13,
+            25,
+            19,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 92.5925925925926
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r5_c0",
+      "numbers": [
+        {
+          "number": 9,
+          "pixel_x": 137,
+          "pixel_y": 61,
+          "bbox": [
+            130,
+            53,
+            14,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 72.72727272727273
+        }
+      ],
+      "total_numbers": 1
+    },
+    {
+      "segment_name": "tile_r5_c1",
+      "numbers": [
+        {
+          "number": 1,
+          "pixel_x": 146,
+          "pixel_y": 20,
+          "bbox": [
+            142,
+            15,
+            8,
+            11
+          ],
+          "confidence": 80,
+          "vote_percentage": 100.0
+        },
+        {
+          "number": 9,
+          "pixel_x": 61,
+          "pixel_y": 60,
+          "bbox": [
+            55,
+            53,
+            12,
+            15
+          ],
+          "confidence": 100,
+          "vote_percentage": 92.3076923076923
+        },
+        {
+          "number": 10,
+          "pixel_x": 131,
+          "pixel_y": 72,
+          "bbox": [
+            121,
+            65,
+            20,
+            15
+          ],
+          "confidence": 99,
+          "vote_percentage": 80.0
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r5_c2",
+      "numbers": [
+        {
+          "number": 10,
+          "pixel_x": 56,
+          "pixel_y": 72,
+          "bbox": [
+            46,
+            65,
+            21,
+            15
+          ],
+          "confidence": 99,
+          "vote_percentage": 83.33333333333334
+        },
+        {
+          "number": 11,
+          "pixel_x": 71,
+          "pixel_y": 19,
+          "bbox": [
+            65,
+            13,
+            13,
+            13
+          ],
+          "confidence": 99,
+          "vote_percentage": 81.81818181818183
+        },
+        {
+          "number": 12,
+          "pixel_x": 97,
+          "pixel_y": 73,
+          "bbox": [
+            88,
+            65,
+            18,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 100.0
+        }
+      ],
+      "total_numbers": 3
+    },
+    {
+      "segment_name": "tile_r5_c3",
+      "numbers": [
+        {
+          "number": 12,
+          "pixel_x": 22,
+          "pixel_y": 73,
+          "bbox": [
+            12,
+            64,
+            20,
+            18
+          ],
+          "confidence": 99,
+          "vote_percentage": 91.66666666666666
+        },
+        {
+          "number": 13,
+          "pixel_x": 84,
+          "pixel_y": 68,
+          "bbox": [
+            75,
+            60,
+            19,
+            16
+          ],
+          "confidence": 99,
+          "vote_percentage": 64.28571428571429
+        }
+      ],
+      "total_numbers": 2
+    },
+    {
+      "segment_name": "tile_r5_c4",
+      "numbers": [
+        {
+          "number": 13,
+          "pixel_x": 10,
+          "pixel_y": 67,
+          "bbox": [
+            0,
+            60,
+            20,
+            15
+          ],
+          "confidence": 99,
+          "vote_percentage": 68.75
+        }
+      ],
+      "total_numbers": 1
+    }
+  ]
+}

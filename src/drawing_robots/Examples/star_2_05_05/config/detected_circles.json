@@ -1,0 +1,1050 @@
+{
+  "total_segments": 14,
+  "total_circles_found": 160,
+  "segments": [
+    {
+      "segment_name": "tile_r0_c0",
+      "circles": [
+        {
+          "pixel_x": 243,
+          "pixel_y": 364,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 58,
+          "pixel_y": 365,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 243,
+          "pixel_y": 364,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 58,
+          "pixel_y": 365,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 242,
+          "pixel_y": 363,
+          "radius": 2,
+          "intensity": 15
+        },
+        {
+          "pixel_x": 57,
+          "pixel_y": 363,
+          "radius": 2,
+          "intensity": 22
+        }
+      ],
+      "total_circles": 6
+    },
+    {
+      "segment_name": "tile_r0_c1",
+      "circles": [
+        {
+          "pixel_x": 150,
+          "pixel_y": 188,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 188,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 364,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 188,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 364,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 188,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 364,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 93,
+          "pixel_y": 364,
+          "radius": 3,
+          "intensity": 1
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 188,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 206,
+          "pixel_y": 363,
+          "radius": 2,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 92,
+          "pixel_y": 363,
+          "radius": 2,
+          "intensity": 13
+        },
+        {
+          "pixel_x": 149,
+          "pixel_y": 187,
+          "radius": 2,
+          "intensity": 2
+        }
+      ],
+      "total_circles": 12
+    },
+    {
+      "segment_name": "tile_r0_c2",
+      "circles": [
+        {
+          "pixel_x": 57,
+          "pixel_y": 364,
+          "radius": 3,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 241,
+          "pixel_y": 364,
+          "radius": 3,
+          "intensity": 14
+        },
+        {
+          "pixel_x": 57,
+          "pixel_y": 364,
+          "radius": 3,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 241,
+          "pixel_y": 364,
+          "radius": 3,
+          "intensity": 14
+        },
+        {
+          "pixel_x": 57,
+          "pixel_y": 364,
+          "radius": 3,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 241,
+          "pixel_y": 364,
+          "radius": 3,
+          "intensity": 14
+        },
+        {
+          "pixel_x": 57,
+          "pixel_y": 364,
+          "radius": 3,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 241,
+          "pixel_y": 363,
+          "radius": 2,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 56,
+          "pixel_y": 363,
+          "radius": 2,
+          "intensity": 15
+        }
+      ],
+      "total_circles": 9
+    },
+    {
+      "segment_name": "tile_r0_c3",
+      "circles": [
+        {
+          "pixel_x": 91,
+          "pixel_y": 364,
+          "radius": 3,
+          "intensity": 4
+        },
+        {
+          "pixel_x": 91,
+          "pixel_y": 364,
+          "radius": 3,
+          "intensity": 4
+        },
+        {
+          "pixel_x": 91,
+          "pixel_y": 364,
+          "radius": 3,
+          "intensity": 4
+        },
+        {
+          "pixel_x": 91,
+          "pixel_y": 364,
+          "radius": 3,
+          "intensity": 4
+        },
+        {
+          "pixel_x": 91,
+          "pixel_y": 363,
+          "radius": 2,
+          "intensity": 8
+        }
+      ],
+      "total_circles": 5
+    },
+    {
+      "segment_name": "tile_r1_c0",
+      "circles": [
+        {
+          "pixel_x": 207,
+          "pixel_y": 275,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 275,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 275,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 275,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 275,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 275,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 243,
+          "pixel_y": 164,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 58,
+          "pixel_y": 165,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 275,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 243,
+          "pixel_y": 164,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 58,
+          "pixel_y": 165,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 274,
+          "radius": 2,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 242,
+          "pixel_y": 163,
+          "radius": 2,
+          "intensity": 15
+        },
+        {
+          "pixel_x": 57,
+          "pixel_y": 163,
+          "radius": 2,
+          "intensity": 22
+        }
+      ],
+      "total_circles": 14
+    },
+    {
+      "segment_name": "tile_r1_c1",
+      "circles": [
+        {
+          "pixel_x": 150,
+          "pixel_y": 342,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 342,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 342,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 58,
+          "pixel_y": 275,
+          "radius": 3,
+          "intensity": 6
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 342,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 57,
+          "pixel_y": 275,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 342,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 57,
+          "pixel_y": 275,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 164,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 342,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 57,
+          "pixel_y": 275,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 164,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 342,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 244,
+          "pixel_y": 275,
+          "radius": 3,
+          "intensity": 2
+        },
+        {
+          "pixel_x": 57,
+          "pixel_y": 275,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 164,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 93,
+          "pixel_y": 164,
+          "radius": 3,
+          "intensity": 1
+        },
+        {
+          "pixel_x": 149,
+          "pixel_y": 341,
+          "radius": 2,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 243,
+          "pixel_y": 274,
+          "radius": 2,
+          "intensity": 6
+        },
+        {
+          "pixel_x": 57,
+          "pixel_y": 274,
+          "radius": 2,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 206,
+          "pixel_y": 163,
+          "radius": 2,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 92,
+          "pixel_y": 163,
+          "radius": 2,
+          "intensity": 13
+        },
+        {
+          "pixel_x": 149,
+          "pixel_y": 361,
+          "radius": 2,
+          "intensity": 94
+        }
+      ],
+      "total_circles": 23
+    },
+    {
+      "segment_name": "tile_r1_c2",
+      "circles": [
+        {
+          "pixel_x": 57,
+          "pixel_y": 164,
+          "radius": 3,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 241,
+          "pixel_y": 164,
+          "radius": 3,
+          "intensity": 14
+        },
+        {
+          "pixel_x": 57,
+          "pixel_y": 164,
+          "radius": 3,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 241,
+          "pixel_y": 164,
+          "radius": 3,
+          "intensity": 14
+        },
+        {
+          "pixel_x": 57,
+          "pixel_y": 164,
+          "radius": 3,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 94,
+          "pixel_y": 275,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 241,
+          "pixel_y": 164,
+          "radius": 3,
+          "intensity": 14
+        },
+        {
+          "pixel_x": 57,
+          "pixel_y": 164,
+          "radius": 3,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 93,
+          "pixel_y": 274,
+          "radius": 2,
+          "intensity": 1
+        },
+        {
+          "pixel_x": 241,
+          "pixel_y": 163,
+          "radius": 2,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 56,
+          "pixel_y": 163,
+          "radius": 2,
+          "intensity": 15
+        }
+      ],
+      "total_circles": 11
+    },
+    {
+      "segment_name": "tile_r1_c3",
+      "circles": [
+        {
+          "pixel_x": 91,
+          "pixel_y": 164,
+          "radius": 3,
+          "intensity": 4
+        },
+        {
+          "pixel_x": 91,
+          "pixel_y": 164,
+          "radius": 3,
+          "intensity": 4
+        },
+        {
+          "pixel_x": 91,
+          "pixel_y": 164,
+          "radius": 3,
+          "intensity": 4
+        },
+        {
+          "pixel_x": 91,
+          "pixel_y": 164,
+          "radius": 3,
+          "intensity": 4
+        },
+        {
+          "pixel_x": 91,
+          "pixel_y": 163,
+          "radius": 2,
+          "intensity": 8
+        }
+      ],
+      "total_circles": 5
+    },
+    {
+      "segment_name": "tile_r2_c0",
+      "circles": [
+        {
+          "pixel_x": 207,
+          "pixel_y": 75,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 152,
+          "pixel_y": 248,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 75,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 152,
+          "pixel_y": 248,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 75,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 152,
+          "pixel_y": 248,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 75,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 152,
+          "pixel_y": 248,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 75,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 152,
+          "pixel_y": 248,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 75,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 152,
+          "pixel_y": 248,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 75,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 151,
+          "pixel_y": 247,
+          "radius": 2,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 74,
+          "radius": 2,
+          "intensity": 0
+        }
+      ],
+      "total_circles": 15
+    },
+    {
+      "segment_name": "tile_r2_c1",
+      "circles": [
+        {
+          "pixel_x": 2,
+          "pixel_y": 248,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 2,
+          "pixel_y": 248,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 2,
+          "pixel_y": 248,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 1,
+          "pixel_y": 248,
+          "radius": 3,
+          "intensity": 1
+        },
+        {
+          "pixel_x": 1,
+          "pixel_y": 248,
+          "radius": 3,
+          "intensity": 1
+        },
+        {
+          "pixel_x": 1,
+          "pixel_y": 248,
+          "radius": 3,
+          "intensity": 1
+        },
+        {
+          "pixel_x": 1,
+          "pixel_y": 248,
+          "radius": 3,
+          "intensity": 1
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 142,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 2,
+          "pixel_y": 248,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 142,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 2,
+          "pixel_y": 248,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 142,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 58,
+          "pixel_y": 75,
+          "radius": 3,
+          "intensity": 6
+        },
+        {
+          "pixel_x": 2,
+          "pixel_y": 248,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 142,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 57,
+          "pixel_y": 75,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 2,
+          "pixel_y": 248,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 142,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 57,
+          "pixel_y": 75,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 2,
+          "pixel_y": 248,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 142,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 57,
+          "pixel_y": 75,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 2,
+          "pixel_y": 248,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 142,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 244,
+          "pixel_y": 75,
+          "radius": 3,
+          "intensity": 2
+        },
+        {
+          "pixel_x": 57,
+          "pixel_y": 75,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 149,
+          "pixel_y": 141,
+          "radius": 2,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 243,
+          "pixel_y": 74,
+          "radius": 2,
+          "intensity": 6
+        },
+        {
+          "pixel_x": 57,
+          "pixel_y": 74,
+          "radius": 2,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 149,
+          "pixel_y": 161,
+          "radius": 2,
+          "intensity": 94
+        }
+      ],
+      "total_circles": 30
+    },
+    {
+      "segment_name": "tile_r2_c2",
+      "circles": [
+        {
+          "pixel_x": 150,
+          "pixel_y": 251,
+          "radius": 3,
+          "intensity": 5
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 251,
+          "radius": 3,
+          "intensity": 5
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 251,
+          "radius": 3,
+          "intensity": 5
+        },
+        {
+          "pixel_x": 94,
+          "pixel_y": 75,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 149,
+          "pixel_y": 250,
+          "radius": 2,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 93,
+          "pixel_y": 74,
+          "radius": 2,
+          "intensity": 1
+        }
+      ],
+      "total_circles": 6
+    },
+    {
+      "segment_name": "tile_r3_c0",
+      "circles": [
+        {
+          "pixel_x": 152,
+          "pixel_y": 48,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 152,
+          "pixel_y": 48,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 152,
+          "pixel_y": 48,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 152,
+          "pixel_y": 48,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 152,
+          "pixel_y": 48,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 152,
+          "pixel_y": 48,
+          "radius": 3,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 151,
+          "pixel_y": 47,
+          "radius": 2,
+          "intensity": 11
+        }
+      ],
+      "total_circles": 7
+    },
+    {
+      "segment_name": "tile_r3_c1",
+      "circles": [
+        {
+          "pixel_x": 2,
+          "pixel_y": 48,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 2,
+          "pixel_y": 48,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 2,
+          "pixel_y": 48,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 1,
+          "pixel_y": 48,
+          "radius": 3,
+          "intensity": 1
+        },
+        {
+          "pixel_x": 1,
+          "pixel_y": 48,
+          "radius": 3,
+          "intensity": 1
+        },
+        {
+          "pixel_x": 1,
+          "pixel_y": 48,
+          "radius": 3,
+          "intensity": 1
+        },
+        {
+          "pixel_x": 1,
+          "pixel_y": 48,
+          "radius": 3,
+          "intensity": 1
+        },
+        {
+          "pixel_x": 2,
+          "pixel_y": 48,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 2,
+          "pixel_y": 48,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 2,
+          "pixel_y": 48,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 2,
+          "pixel_y": 48,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 2,
+          "pixel_y": 48,
+          "radius": 3,
+          "intensity": 0
+        },
+        {
+          "pixel_x": 2,
+          "pixel_y": 48,
+          "radius": 3,
+          "intensity": 0
+        }
+      ],
+      "total_circles": 13
+    },
+    {
+      "segment_name": "tile_r3_c2",
+      "circles": [
+        {
+          "pixel_x": 150,
+          "pixel_y": 51,
+          "radius": 3,
+          "intensity": 5
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 51,
+          "radius": 3,
+          "intensity": 5
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 51,
+          "radius": 3,
+          "intensity": 5
+        },
+        {
+          "pixel_x": 149,
+          "pixel_y": 50,
+          "radius": 2,
+          "intensity": 0
+        }
+      ],
+      "total_circles": 4
+    }
+  ]
+}

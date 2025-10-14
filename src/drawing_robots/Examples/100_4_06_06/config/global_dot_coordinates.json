@@ -1,0 +1,1420 @@
+{
+  "detection_method": "Multi-Method Improved with Intensity Filter",
+  "total_circles": 101,
+  "circles": [
+    {
+      "segment_name": "tile_r0_c0.jpg",
+      "local_coordinates": {
+        "x": 227,
+        "y": 128
+      },
+      "global_coordinates": {
+        "x": 227,
+        "y": 128
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 1
+    },
+    {
+      "segment_name": "tile_r0_c1.jpg",
+      "local_coordinates": {
+        "x": 193,
+        "y": 213
+      },
+      "global_coordinates": {
+        "x": 294,
+        "y": 213
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 2
+    },
+    {
+      "segment_name": "tile_r0_c1.jpg",
+      "local_coordinates": {
+        "x": 189,
+        "y": 264
+      },
+      "global_coordinates": {
+        "x": 290,
+        "y": 264
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 3
+    },
+    {
+      "segment_name": "tile_r0_c2.jpg",
+      "local_coordinates": {
+        "x": 176,
+        "y": 289
+      },
+      "global_coordinates": {
+        "x": 378,
+        "y": 289
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 4
+    },
+    {
+      "segment_name": "tile_r0_c3.jpg",
+      "local_coordinates": {
+        "x": 243,
+        "y": 236
+      },
+      "global_coordinates": {
+        "x": 546,
+        "y": 236
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 5
+    },
+    {
+      "segment_name": "tile_r0_c4.jpg",
+      "local_coordinates": {
+        "x": 247,
+        "y": 241
+      },
+      "global_coordinates": {
+        "x": 651,
+        "y": 241
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 6
+    },
+    {
+      "segment_name": "tile_r0_c6.jpg",
+      "local_coordinates": {
+        "x": 64,
+        "y": 275
+      },
+      "global_coordinates": {
+        "x": 670,
+        "y": 275
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 7
+    },
+    {
+      "segment_name": "tile_r0_c5.jpg",
+      "local_coordinates": {
+        "x": 225,
+        "y": 296
+      },
+      "global_coordinates": {
+        "x": 730,
+        "y": 296
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 8
+    },
+    {
+      "segment_name": "tile_r0_c6.jpg",
+      "local_coordinates": {
+        "x": 163,
+        "y": 282
+      },
+      "global_coordinates": {
+        "x": 769,
+        "y": 282
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 9
+    },
+    {
+      "segment_name": "tile_r10_c0.jpg",
+      "local_coordinates": {
+        "x": 150,
+        "y": 19
+      },
+      "global_coordinates": {
+        "x": 150,
+        "y": 1219
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 10
+    },
+    {
+      "segment_name": "tile_r10_c0.jpg",
+      "local_coordinates": {
+        "x": 136,
+        "y": 94
+      },
+      "global_coordinates": {
+        "x": 136,
+        "y": 1294
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 11
+    },
+    {
+      "segment_name": "tile_r10_c1.jpg",
+      "local_coordinates": {
+        "x": 223,
+        "y": 131
+      },
+      "global_coordinates": {
+        "x": 324,
+        "y": 1331
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 12
+    },
+    {
+      "segment_name": "tile_r10_c1.jpg",
+      "local_coordinates": {
+        "x": 224,
+        "y": 185
+      },
+      "global_coordinates": {
+        "x": 325,
+        "y": 1385
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 13
+    },
+    {
+      "segment_name": "tile_r10_c1.jpg",
+      "local_coordinates": {
+        "x": 185,
+        "y": 31
+      },
+      "global_coordinates": {
+        "x": 286,
+        "y": 1231
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 14
+    },
+    {
+      "segment_name": "tile_r10_c3.jpg",
+      "local_coordinates": {
+        "x": 175,
+        "y": 185
+      },
+      "global_coordinates": {
+        "x": 478,
+        "y": 1385
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 15
+    },
+    {
+      "segment_name": "tile_r10_c4.jpg",
+      "local_coordinates": {
+        "x": 227,
+        "y": 185
+      },
+      "global_coordinates": {
+        "x": 631,
+        "y": 1385
+      },
+      "radius": 7,
+      "intensity": 0,
+      "id": 16
+    },
+    {
+      "segment_name": "tile_r10_c6.jpg",
+      "local_coordinates": {
+        "x": 176,
+        "y": 185
+      },
+      "global_coordinates": {
+        "x": 782,
+        "y": 1385
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 17
+    },
+    {
+      "segment_name": "tile_r10_c7.jpg",
+      "local_coordinates": {
+        "x": 229,
+        "y": 186
+      },
+      "global_coordinates": {
+        "x": 936,
+        "y": 1386
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 18
+    },
+    {
+      "segment_name": "tile_r10_c9.jpg",
+      "local_coordinates": {
+        "x": 26,
+        "y": 102
+      },
+      "global_coordinates": {
+        "x": 935,
+        "y": 1302
+      },
+      "radius": 6,
+      "intensity": 2,
+      "id": 19
+    },
+    {
+      "segment_name": "tile_r10_c7.jpg",
+      "local_coordinates": {
+        "x": 198,
+        "y": 32
+      },
+      "global_coordinates": {
+        "x": 905,
+        "y": 1232
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 20
+    },
+    {
+      "segment_name": "tile_r1_c2.jpg",
+      "local_coordinates": {
+        "x": 164,
+        "y": 207
+      },
+      "global_coordinates": {
+        "x": 366,
+        "y": 327
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 21
+    },
+    {
+      "segment_name": "tile_r1_c3.jpg",
+      "local_coordinates": {
+        "x": 164,
+        "y": 277
+      },
+      "global_coordinates": {
+        "x": 467,
+        "y": 397
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 22
+    },
+    {
+      "segment_name": "tile_r1_c4.jpg",
+      "local_coordinates": {
+        "x": 65,
+        "y": 222
+      },
+      "global_coordinates": {
+        "x": 469,
+        "y": 342
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 23
+    },
+    {
+      "segment_name": "tile_r1_c4.jpg",
+      "local_coordinates": {
+        "x": 158,
+        "y": 257
+      },
+      "global_coordinates": {
+        "x": 562,
+        "y": 377
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 24
+    },
+    {
+      "segment_name": "tile_r1_c5.jpg",
+      "local_coordinates": {
+        "x": 187,
+        "y": 289
+      },
+      "global_coordinates": {
+        "x": 692,
+        "y": 409
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 25
+    },
+    {
+      "segment_name": "tile_r1_c6.jpg",
+      "local_coordinates": {
+        "x": 157,
+        "y": 268
+      },
+      "global_coordinates": {
+        "x": 763,
+        "y": 388
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 26
+    },
+    {
+      "segment_name": "tile_r1_c8.jpg",
+      "local_coordinates": {
+        "x": 47,
+        "y": 228
+      },
+      "global_coordinates": {
+        "x": 855,
+        "y": 348
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 27
+    },
+    {
+      "segment_name": "tile_r1_c6.jpg",
+      "local_coordinates": {
+        "x": 165,
+        "y": 221
+      },
+      "global_coordinates": {
+        "x": 771,
+        "y": 341
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 28
+    },
+    {
+      "segment_name": "tile_r2_c0.jpg",
+      "local_coordinates": {
+        "x": 230,
+        "y": 297
+      },
+      "global_coordinates": {
+        "x": 230,
+        "y": 537
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 29
+    },
+    {
+      "segment_name": "tile_r2_c0.jpg",
+      "local_coordinates": {
+        "x": 167,
+        "y": 292
+      },
+      "global_coordinates": {
+        "x": 167,
+        "y": 532
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 30
+    },
+    {
+      "segment_name": "tile_r2_c0.jpg",
+      "local_coordinates": {
+        "x": 249,
+        "y": 256
+      },
+      "global_coordinates": {
+        "x": 249,
+        "y": 496
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 31
+    },
+    {
+      "segment_name": "tile_r2_c2.jpg",
+      "local_coordinates": {
+        "x": 134,
+        "y": 251
+      },
+      "global_coordinates": {
+        "x": 336,
+        "y": 491
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 32
+    },
+    {
+      "segment_name": "tile_r2_c2.jpg",
+      "local_coordinates": {
+        "x": 206,
+        "y": 268
+      },
+      "global_coordinates": {
+        "x": 408,
+        "y": 508
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 33
+    },
+    {
+      "segment_name": "tile_r2_c3.jpg",
+      "local_coordinates": {
+        "x": 187,
+        "y": 227
+      },
+      "global_coordinates": {
+        "x": 490,
+        "y": 467
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 34
+    },
+    {
+      "segment_name": "tile_r2_c5.jpg",
+      "local_coordinates": {
+        "x": 78,
+        "y": 202
+      },
+      "global_coordinates": {
+        "x": 583,
+        "y": 442
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 35
+    },
+    {
+      "segment_name": "tile_r2_c9.jpg",
+      "local_coordinates": {
+        "x": 33,
+        "y": 200
+      },
+      "global_coordinates": {
+        "x": 942,
+        "y": 440
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 36
+    },
+    {
+      "segment_name": "tile_r2_c8.jpg",
+      "local_coordinates": {
+        "x": 184,
+        "y": 291
+      },
+      "global_coordinates": {
+        "x": 992,
+        "y": 531
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 37
+    },
+    {
+      "segment_name": "tile_r2_c9.jpg",
+      "local_coordinates": {
+        "x": 78,
+        "y": 241
+      },
+      "global_coordinates": {
+        "x": 987,
+        "y": 481
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 38
+    },
+    {
+      "segment_name": "tile_r3_c0.jpg",
+      "local_coordinates": {
+        "x": 247,
+        "y": 252
+      },
+      "global_coordinates": {
+        "x": 247,
+        "y": 612
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 39
+    },
+    {
+      "segment_name": "tile_r3_c0.jpg",
+      "local_coordinates": {
+        "x": 93,
+        "y": 222
+      },
+      "global_coordinates": {
+        "x": 93,
+        "y": 582
+      },
+      "radius": 6,
+      "intensity": 1,
+      "id": 40
+    },
+    {
+      "segment_name": "tile_r3_c2.jpg",
+      "local_coordinates": {
+        "x": 108,
+        "y": 204
+      },
+      "global_coordinates": {
+        "x": 310,
+        "y": 564
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 41
+    },
+    {
+      "segment_name": "tile_r3_c10.jpg",
+      "local_coordinates": {
+        "x": 185,
+        "y": 291
+      },
+      "global_coordinates": {
+        "x": 1195,
+        "y": 651
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 42
+    },
+    {
+      "segment_name": "tile_r3_c10.jpg",
+      "local_coordinates": {
+        "x": 129,
+        "y": 252
+      },
+      "global_coordinates": {
+        "x": 1139,
+        "y": 612
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 43
+    },
+    {
+      "segment_name": "tile_r3_c7.jpg",
+      "local_coordinates": {
+        "x": 7,
+        "y": 297
+      },
+      "global_coordinates": {
+        "x": 714,
+        "y": 657
+      },
+      "radius": 7,
+      "intensity": 0,
+      "id": 44
+    },
+    {
+      "segment_name": "tile_r3_c6.jpg",
+      "local_coordinates": {
+        "x": 149,
+        "y": 272
+      },
+      "global_coordinates": {
+        "x": 755,
+        "y": 632
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 45
+    },
+    {
+      "segment_name": "tile_r3_c7.jpg",
+      "local_coordinates": {
+        "x": 159,
+        "y": 290
+      },
+      "global_coordinates": {
+        "x": 866,
+        "y": 650
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 46
+    },
+    {
+      "segment_name": "tile_r4_c0.jpg",
+      "local_coordinates": {
+        "x": 89,
+        "y": 268
+      },
+      "global_coordinates": {
+        "x": 89,
+        "y": 748
+      },
+      "radius": 6,
+      "intensity": 1,
+      "id": 47
+    },
+    {
+      "segment_name": "tile_r4_c0.jpg",
+      "local_coordinates": {
+        "x": 84,
+        "y": 241
+      },
+      "global_coordinates": {
+        "x": 84,
+        "y": 721
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 48
+    },
+    {
+      "segment_name": "tile_r4_c0.jpg",
+      "local_coordinates": {
+        "x": 201,
+        "y": 190
+      },
+      "global_coordinates": {
+        "x": 201,
+        "y": 670
+      },
+      "radius": 7,
+      "intensity": 0,
+      "id": 49
+    },
+    {
+      "segment_name": "tile_r4_c0.jpg",
+      "local_coordinates": {
+        "x": 159,
+        "y": 263
+      },
+      "global_coordinates": {
+        "x": 159,
+        "y": 743
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 50
+    },
+    {
+      "segment_name": "tile_r4_c0.jpg",
+      "local_coordinates": {
+        "x": 140,
+        "y": 208
+      },
+      "global_coordinates": {
+        "x": 140,
+        "y": 688
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 51
+    },
+    {
+      "segment_name": "tile_r4_c10.jpg",
+      "local_coordinates": {
+        "x": 174,
+        "y": 263
+      },
+      "global_coordinates": {
+        "x": 1184,
+        "y": 743
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 52
+    },
+    {
+      "segment_name": "tile_r4_c11.jpg",
+      "local_coordinates": {
+        "x": 120,
+        "y": 226
+      },
+      "global_coordinates": {
+        "x": 1231,
+        "y": 706
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 53
+    },
+    {
+      "segment_name": "tile_r4_c10.jpg",
+      "local_coordinates": {
+        "x": 72,
+        "y": 293
+      },
+      "global_coordinates": {
+        "x": 1082,
+        "y": 773
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 54
+    },
+    {
+      "segment_name": "tile_r4_c10.jpg",
+      "local_coordinates": {
+        "x": 70,
+        "y": 217
+      },
+      "global_coordinates": {
+        "x": 1080,
+        "y": 697
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 55
+    },
+    {
+      "segment_name": "tile_r4_c3.jpg",
+      "local_coordinates": {
+        "x": 250,
+        "y": 221
+      },
+      "global_coordinates": {
+        "x": 553,
+        "y": 701
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 56
+    },
+    {
+      "segment_name": "tile_r4_c3.jpg",
+      "local_coordinates": {
+        "x": 208,
+        "y": 270
+      },
+      "global_coordinates": {
+        "x": 511,
+        "y": 750
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 57
+    },
+    {
+      "segment_name": "tile_r4_c4.jpg",
+      "local_coordinates": {
+        "x": 207,
+        "y": 205
+      },
+      "global_coordinates": {
+        "x": 611,
+        "y": 685
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 58
+    },
+    {
+      "segment_name": "tile_r4_c5.jpg",
+      "local_coordinates": {
+        "x": 158,
+        "y": 257
+      },
+      "global_coordinates": {
+        "x": 663,
+        "y": 737
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 59
+    },
+    {
+      "segment_name": "tile_r5_c7.jpg",
+      "local_coordinates": {
+        "x": 53,
+        "y": 178
+      },
+      "global_coordinates": {
+        "x": 760,
+        "y": 778
+      },
+      "radius": 7,
+      "intensity": 0,
+      "id": 60
+    },
+    {
+      "segment_name": "tile_r4_c7.jpg",
+      "local_coordinates": {
+        "x": 150,
+        "y": 287
+      },
+      "global_coordinates": {
+        "x": 857,
+        "y": 767
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 61
+    },
+    {
+      "segment_name": "tile_r4_c7.jpg",
+      "local_coordinates": {
+        "x": 175,
+        "y": 262
+      },
+      "global_coordinates": {
+        "x": 882,
+        "y": 742
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 62
+    },
+    {
+      "segment_name": "tile_r4_c8.jpg",
+      "local_coordinates": {
+        "x": 179,
+        "y": 293
+      },
+      "global_coordinates": {
+        "x": 987,
+        "y": 773
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 63
+    },
+    {
+      "segment_name": "tile_r4_c8.jpg",
+      "local_coordinates": {
+        "x": 172,
+        "y": 205
+      },
+      "global_coordinates": {
+        "x": 980,
+        "y": 685
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 64
+    },
+    {
+      "segment_name": "tile_r5_c0.jpg",
+      "local_coordinates": {
+        "x": 135,
+        "y": 287
+      },
+      "global_coordinates": {
+        "x": 135,
+        "y": 887
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 65
+    },
+    {
+      "segment_name": "tile_r5_c0.jpg",
+      "local_coordinates": {
+        "x": 22,
+        "y": 217
+      },
+      "global_coordinates": {
+        "x": 22,
+        "y": 817
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 66
+    },
+    {
+      "segment_name": "tile_r5_c10.jpg",
+      "local_coordinates": {
+        "x": 205,
+        "y": 217
+      },
+      "global_coordinates": {
+        "x": 1215,
+        "y": 817
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 67
+    },
+    {
+      "segment_name": "tile_r5_c10.jpg",
+      "local_coordinates": {
+        "x": 159,
+        "y": 198
+      },
+      "global_coordinates": {
+        "x": 1169,
+        "y": 798
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 68
+    },
+    {
+      "segment_name": "tile_r6_c10.jpg",
+      "local_coordinates": {
+        "x": 61,
+        "y": 179
+      },
+      "global_coordinates": {
+        "x": 1071,
+        "y": 899
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 69
+    },
+    {
+      "segment_name": "tile_r5_c3.jpg",
+      "local_coordinates": {
+        "x": 186,
+        "y": 223
+      },
+      "global_coordinates": {
+        "x": 489,
+        "y": 823
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 70
+    },
+    {
+      "segment_name": "tile_r5_c5.jpg",
+      "local_coordinates": {
+        "x": 210,
+        "y": 257
+      },
+      "global_coordinates": {
+        "x": 715,
+        "y": 857
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 71
+    },
+    {
+      "segment_name": "tile_r5_c7.jpg",
+      "local_coordinates": {
+        "x": 111,
+        "y": 277
+      },
+      "global_coordinates": {
+        "x": 818,
+        "y": 877
+      },
+      "radius": 7,
+      "intensity": 0,
+      "id": 72
+    },
+    {
+      "segment_name": "tile_r5_c6.jpg",
+      "local_coordinates": {
+        "x": 252,
+        "y": 235
+      },
+      "global_coordinates": {
+        "x": 858,
+        "y": 835
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 73
+    },
+    {
+      "segment_name": "tile_r5_c6.jpg",
+      "local_coordinates": {
+        "x": 185,
+        "y": 235
+      },
+      "global_coordinates": {
+        "x": 791,
+        "y": 835
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 74
+    },
+    {
+      "segment_name": "tile_r5_c7.jpg",
+      "local_coordinates": {
+        "x": 193,
+        "y": 294
+      },
+      "global_coordinates": {
+        "x": 900,
+        "y": 894
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 75
+    },
+    {
+      "segment_name": "tile_r5_c7.jpg",
+      "local_coordinates": {
+        "x": 171,
+        "y": 216
+      },
+      "global_coordinates": {
+        "x": 878,
+        "y": 816
+      },
+      "radius": 6,
+      "intensity": 1,
+      "id": 76
+    },
+    {
+      "segment_name": "tile_r5_c8.jpg",
+      "local_coordinates": {
+        "x": 179,
+        "y": 275
+      },
+      "global_coordinates": {
+        "x": 987,
+        "y": 875
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 77
+    },
+    {
+      "segment_name": "tile_r5_c9.jpg",
+      "local_coordinates": {
+        "x": 55,
+        "y": 238
+      },
+      "global_coordinates": {
+        "x": 964,
+        "y": 838
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 78
+    },
+    {
+      "segment_name": "tile_r6_c0.jpg",
+      "local_coordinates": {
+        "x": 142,
+        "y": 236
+      },
+      "global_coordinates": {
+        "x": 142,
+        "y": 956
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 79
+    },
+    {
+      "segment_name": "tile_r6_c0.jpg",
+      "local_coordinates": {
+        "x": 81,
+        "y": 234
+      },
+      "global_coordinates": {
+        "x": 81,
+        "y": 954
+      },
+      "radius": 6,
+      "intensity": 3,
+      "id": 80
+    },
+    {
+      "segment_name": "tile_r6_c0.jpg",
+      "local_coordinates": {
+        "x": 97,
+        "y": 263
+      },
+      "global_coordinates": {
+        "x": 97,
+        "y": 983
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 81
+    },
+    {
+      "segment_name": "tile_r6_c11.jpg",
+      "local_coordinates": {
+        "x": 55,
+        "y": 253
+      },
+      "global_coordinates": {
+        "x": 1166,
+        "y": 973
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 82
+    },
+    {
+      "segment_name": "tile_r6_c10.jpg",
+      "local_coordinates": {
+        "x": 182,
+        "y": 208
+      },
+      "global_coordinates": {
+        "x": 1192,
+        "y": 928
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 83
+    },
+    {
+      "segment_name": "tile_r7_c10.jpg",
+      "local_coordinates": {
+        "x": 196,
+        "y": 73
+      },
+      "global_coordinates": {
+        "x": 1206,
+        "y": 913
+      },
+      "radius": 8,
+      "intensity": 0,
+      "id": 84
+    },
+    {
+      "segment_name": "tile_r6_c3.jpg",
+      "local_coordinates": {
+        "x": 198,
+        "y": 186
+      },
+      "global_coordinates": {
+        "x": 501,
+        "y": 906
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 85
+    },
+    {
+      "segment_name": "tile_r6_c4.jpg",
+      "local_coordinates": {
+        "x": 143,
+        "y": 264
+      },
+      "global_coordinates": {
+        "x": 547,
+        "y": 984
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 86
+    },
+    {
+      "segment_name": "tile_r6_c8.jpg",
+      "local_coordinates": {
+        "x": 41,
+        "y": 244
+      },
+      "global_coordinates": {
+        "x": 849,
+        "y": 964
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 87
+    },
+    {
+      "segment_name": "tile_r6_c8.jpg",
+      "local_coordinates": {
+        "x": 32,
+        "y": 196
+      },
+      "global_coordinates": {
+        "x": 840,
+        "y": 916
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 88
+    },
+    {
+      "segment_name": "tile_r6_c6.jpg",
+      "local_coordinates": {
+        "x": 167,
+        "y": 199
+      },
+      "global_coordinates": {
+        "x": 773,
+        "y": 919
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 89
+    },
+    {
+      "segment_name": "tile_r6_c7.jpg",
+      "local_coordinates": {
+        "x": 252,
+        "y": 249
+      },
+      "global_coordinates": {
+        "x": 959,
+        "y": 969
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 90
+    },
+    {
+      "segment_name": "tile_r6_c7.jpg",
+      "local_coordinates": {
+        "x": 191,
+        "y": 237
+      },
+      "global_coordinates": {
+        "x": 898,
+        "y": 957
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 91
+    },
+    {
+      "segment_name": "tile_r6_c7.jpg",
+      "local_coordinates": {
+        "x": 231,
+        "y": 204
+      },
+      "global_coordinates": {
+        "x": 938,
+        "y": 924
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 92
+    },
+    {
+      "segment_name": "tile_r7_c0.jpg",
+      "local_coordinates": {
+        "x": 212,
+        "y": 288
+      },
+      "global_coordinates": {
+        "x": 212,
+        "y": 1128
+      },
+      "radius": 7,
+      "intensity": 0,
+      "id": 93
+    },
+    {
+      "segment_name": "tile_r7_c0.jpg",
+      "local_coordinates": {
+        "x": 55,
+        "y": 240
+      },
+      "global_coordinates": {
+        "x": 55,
+        "y": 1080
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 94
+    },
+    {
+      "segment_name": "tile_r7_c0.jpg",
+      "local_coordinates": {
+        "x": 182,
+        "y": 238
+      },
+      "global_coordinates": {
+        "x": 182,
+        "y": 1078
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 95
+    },
+    {
+      "segment_name": "tile_r7_c0.jpg",
+      "local_coordinates": {
+        "x": 60,
+        "y": 182
+      },
+      "global_coordinates": {
+        "x": 60,
+        "y": 1022
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 96
+    },
+    {
+      "segment_name": "tile_r7_c12.jpg",
+      "local_coordinates": {
+        "x": 11,
+        "y": 3
+      },
+      "global_coordinates": {
+        "x": 1223,
+        "y": 843
+      },
+      "radius": 5,
+      "intensity": 3,
+      "id": 97
+    },
+    {
+      "segment_name": "tile_r7_c6.jpg",
+      "local_coordinates": {
+        "x": 63,
+        "y": 204
+      },
+      "global_coordinates": {
+        "x": 669,
+        "y": 1044
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 98
+    },
+    {
+      "segment_name": "tile_r7_c6.jpg",
+      "local_coordinates": {
+        "x": 184,
+        "y": 283
+      },
+      "global_coordinates": {
+        "x": 790,
+        "y": 1123
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 99
+    },
+    {
+      "segment_name": "tile_r8_c0.jpg",
+      "local_coordinates": {
+        "x": 133,
+        "y": 205
+      },
+      "global_coordinates": {
+        "x": 133,
+        "y": 1165
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 100
+    },
+    {
+      "segment_name": "tile_r8_c0.jpg",
+      "local_coordinates": {
+        "x": 177,
+        "y": 204
+      },
+      "global_coordinates": {
+        "x": 177,
+        "y": 1164
+      },
+      "radius": 6,
+      "intensity": 0,
+      "id": 101
+    }
+  ]
+}
