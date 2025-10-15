@@ -4,6 +4,7 @@ Circle/Dot Detection Module
 - Combined filter_by_radius + check_black_color → filter_circles
 - Simplified remove_duplicate_circles (single pass instead of nested loops)
 - Merged convert_to_global_coordinates + remove_duplicate_circles + filter_by_intensity_variance + add_unique_ids → convert_to_global
+- Added variance and solidity filters to reject number centers (false positives)
 """
 
 import cv2
@@ -11,6 +12,23 @@ import numpy as np
 import json
 import logging
 from collections import Counter
+
+
+def calculate_variance(gray, center, radius):
+    """Calculate intensity variance - dots are uniform, number centers have edges"""
+    x, y = center
+    mask = np.zeros(gray.shape, dtype=np.uint8)
+    cv2.circle(mask, (x, y), radius, 255, -1)
+    pixels = gray[mask == 255]
+    return np.var(pixels) if len(pixels) > 0 else 999
+
+
+def calculate_solidity(contour):
+    """Calculate solidity - dots are solid shapes, number centers are hollow"""
+    area = cv2.contourArea(contour)
+    hull = cv2.convexHull(contour)
+    hull_area = cv2.contourArea(hull)
+    return area / hull_area if hull_area > 0 else 0
 
 
 def detect_circles_multi_method(gray, config):
@@ -40,10 +58,12 @@ def detect_circles_multi_method(gray, config):
                     if circularity > min_circularity:
                         (x, y), radius = cv2.minEnclosingCircle(contour)
                         if min_radius <= int(radius) <= max_radius:
+                            solidity = calculate_solidity(contour)
                             all_candidates.append({
                                 'center': (int(x), int(y)),
                                 'radius': int(radius),
                                 'circularity': circularity,
+                                'solidity': solidity,
                                 'method': 'contour'
                             })
     
@@ -70,6 +90,7 @@ def detect_circles_multi_method(gray, config):
             'center': (int(kp.pt[0]), int(kp.pt[1])),
             'radius': int(kp.size / 2),
             'circularity': 1.0,
+            'solidity': 1.0,
             'method': 'blob'
         })
     
@@ -77,45 +98,99 @@ def detect_circles_multi_method(gray, config):
     return all_candidates
 
 
-def filter_circles(candidates, gray, config):
-    """Apply all filtering steps"""
+def check_solid_center(gray, center, radius):
+    """Check if a circle is solid (real dot) vs hollow (number center like 'o', '0', '6', '8', '9')"""
+    x, y = center
+    
+    # Check center pixel
+    if not (0 <= x < gray.shape[1] and 0 <= y < gray.shape[0]):
+        return False
+    
+    center_intensity = gray[y, x]
+    
+    # Sample pixels in a small radius around center (25% of circle radius)
+    sample_radius = max(1, radius // 4)
+    sample_points = []
+    
+    # Sample 8 points around the center
+    for angle in [0, 45, 90, 135, 180, 225, 270, 315]:
+        rad = np.radians(angle)
+        sx = int(x + sample_radius * np.cos(rad))
+        sy = int(y + sample_radius * np.sin(rad))
+        
+        if 0 <= sx < gray.shape[1] and 0 <= sy < gray.shape[0]:
+            sample_points.append(gray[sy, sx])
+    
+    if not sample_points:
+        return False
+    
+    # Calculate intensity variance in the center region
+    all_points = [center_intensity] + sample_points
+    variance = np.var(all_points)
+    mean_intensity = np.mean(all_points)
+    
+    # Real dots: low variance (solid), dark mean intensity
+    # Number centers: high variance (white center, dark edges) OR light mean intensity
+    is_solid = variance < 400 and mean_intensity < 120
+    
+    return is_solid
+
+
+def filter_circles(candidates, gray, config, expected_range=None):
+    """Apply minimal filtering - let matchmaker handle false positives"""
     if not candidates:
         return []
     
-    # Step 1: Radius clustering - find mode and keep ±1
-    radii = [c['radius'] for c in candidates]
-    radius_counts = Counter(radii)
-    mode_radius, count = radius_counts.most_common(1)[0]
-    logging.info(f"Most common radius: {mode_radius} ({count} occurrences)")
+    logging.info(f"Starting with {len(candidates)} candidates")
     
-    filtered = [c for c in candidates if abs(c['radius'] - mode_radius) <= 1]
-    logging.info(f"Radius filtering: {len(candidates)} → {len(filtered)}")
-    
-    # Step 2: Black color check
+    # Step 1: Black color check (keep dots that are dark enough)
     black_threshold = config['circle_detection']['black_threshold']
     black_circles = []
     
-    for c in filtered:
+    for c in candidates:
         x, y = c['center']
         if 0 <= x < gray.shape[1] and 0 <= y < gray.shape[0]:
             intensity = gray[y, x]
             if intensity < black_threshold:
                 c['intensity'] = int(intensity)
                 black_circles.append(c)
-                logging.debug(f"Accepted: ({x},{y}) - intensity: {intensity}")
-            else:
-                logging.debug(f"Rejected: ({x},{y}) - intensity: {intensity}")
     
-    logging.info(f"Black filter: {len(filtered)} → {len(black_circles)}")
+    logging.info(f"Black filter: {len(candidates)} → {len(black_circles)}")
     
-    # Step 3: Quality filter
-    quality_filtered = [c for c in black_circles if c.get('circularity', 1.0) > 0.6]
-    logging.info(f"Quality filter: {len(black_circles)} → {len(quality_filtered)}")
+    # Step 2: Solid center check (NEW - reject number centers)
+    solid_circles = []
+    rejected_hollow = 0
     
+    for c in black_circles:
+        if check_solid_center(gray, c['center'], c['radius']):
+            solid_circles.append(c)
+        else:
+            rejected_hollow += 1
+            logging.debug(f"Rejected hollow center at ({c['center'][0]}, {c['center'][1]})")
+    
+    logging.info(f"Solid center filter: {len(black_circles)} → {len(solid_circles)} (rejected {rejected_hollow} hollow centers)")
+    
+    # Step 3: Remove extreme outliers in radius (keep 95% of data)
+    if len(solid_circles) > 5:
+        radii = sorted([c['radius'] for c in solid_circles])
+        p5 = radii[int(len(radii) * 0.05)]  # 5th percentile
+        p95 = radii[int(len(radii) * 0.95)]  # 95th percentile
+        
+        radius_filtered = [c for c in solid_circles if p5 <= c['radius'] <= p95]
+        logging.info(f"Radius outlier filter (keep {p5}-{p95}px): {len(solid_circles)} → {len(radius_filtered)}")
+    else:
+        radius_filtered = solid_circles
+        logging.info(f"Too few candidates, skipping radius filter")
+    
+    # Step 4: Basic quality filter (very permissive)
+    quality_filtered = [c for c in radius_filtered if c.get('circularity', 1.0) > 0.4]
+    logging.info(f"Quality filter (circularity > 0.4): {len(radius_filtered)} → {len(quality_filtered)}")
+    
+    logging.info(f"Final filtered candidates: {len(quality_filtered)}\n")
     return quality_filtered
 
 
-def process_segment(image_path, config):
+def process_segment(image_path, config, expected_range=None):
     """Process a single segment"""
     segment_name = image_path.stem
     logging.info(f"Processing: {segment_name}")
@@ -135,9 +210,9 @@ def process_segment(image_path, config):
         logging.warning(f"No circles found in {segment_name}")
         return None
     
-    # Phase 2: Filtering
+    # Phase 2: Filtering (now with expected_range)
     logging.info("PHASE 2: Filtering...")
-    filtered = filter_circles(candidates, gray, config)
+    filtered = filter_circles(candidates, gray, config, expected_range)
     
     if not filtered:
         logging.warning(f"No circles passed filtering in {segment_name}")
@@ -275,7 +350,7 @@ def convert_to_global(detected_json, segments_json, output_json, config):
     logging.info(f"Saved to {output_json}")
     return filtered
 
-def run_dot_detection_for_all_segments(config, picture_name):
+def run_dot_detection_for_all_segments(config, picture_name, expected_range=None):
     """Main entry point for dot detection pipeline"""
     base_path = config['_base_path']
     segments_dir = base_path / config['paths']['segments_overlap_dir']
@@ -283,13 +358,18 @@ def run_dot_detection_for_all_segments(config, picture_name):
     config_dir.mkdir(parents=True, exist_ok=True)
     
     jpg_files = sorted(segments_dir.glob("*.jpg"))
-    logging.info(f"Processing {len(jpg_files)} segments...\n")
+    
+    # Log whether radius filtering will be used
+    if expected_range and expected_range < 30:
+        logging.info(f"Processing {len(jpg_files)} segments (expected: {expected_range} dots - radius filtering DISABLED)\n")
+    else:
+        logging.info(f"Processing {len(jpg_files)} segments (expected: {expected_range} dots - radius filtering ENABLED)\n")
     
     # Process each segment
     all_segments = []
     for i, image_file in enumerate(jpg_files, 1):
         logging.info(f"[{i}/{len(jpg_files)}]")
-        segment_data = process_segment(image_file, config)
+        segment_data = process_segment(image_file, config, expected_range)
         if segment_data:
             all_segments.append(segment_data)
     

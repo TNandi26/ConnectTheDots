@@ -10,7 +10,7 @@ import torch
 from PIL import Image
 from circle_detection import run_dot_detection_for_all_segments
 from segment_merge import segment_and_merge_image
-from number_detection import run_detection_for_all_segments
+from number import run_dot_anchored_detection
 from matchmaker import matchmaker_main
 
 
@@ -180,11 +180,12 @@ def run_pipeline(config, image_path, expected_range):
         segment_and_merge_image(config, image_path)
         
         logging.info("STEP 2: Dot Detection")
-        run_dot_detection_for_all_segments(config, image_path.name)
+        # Pass the upper limit (expected_range[1]) to dot detection
+        run_dot_detection_for_all_segments(config, image_path.name, expected_range[1])
         
         logging.info("STEP 3: Number Detection")
         use_combo = config['number_detection']['use_easyocr']
-        run_detection_for_all_segments(config, image_path.name, expected_range, use_combo)
+        run_dot_anchored_detection(config, image_path.name, expected_range)
         
         logging.info("STEP 4: Dot-Number Matching")
         matchmaker_main(config, image_path.name, expected_range[1])
@@ -215,7 +216,6 @@ def main():
 
     expected_range = get_expected_range()
     
-    # Run pipeline
     run_pipeline(config, image_path, expected_range)
 
 if __name__ == "__main__":
