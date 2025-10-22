@@ -10,7 +10,7 @@ import torch
 from PIL import Image
 from circle_detection import run_dot_detection_for_all_segments
 from segment_merge import segment_and_merge_image
-from number import run_dot_anchored_detection
+from number import run_segment_based_detection
 from matchmaker import matchmaker_main
 
 
@@ -185,7 +185,7 @@ def run_pipeline(config, image_path, expected_range):
         
         logging.info("STEP 3: Number Detection")
         use_combo = config['number_detection']['use_easyocr']
-        run_dot_anchored_detection(config, image_path.name, expected_range)
+        run_segment_based_detection(config, image_path.name, expected_range)
         
         logging.info("STEP 4: Dot-Number Matching")
         matchmaker_main(config, image_path.name, expected_range[1])

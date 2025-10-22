@@ -14,6 +14,7 @@ import logging
 from collections import Counter
 
 
+
 def calculate_variance(gray, center, radius):
     """Calculate intensity variance - dots are uniform, number centers have edges"""
     x, y = center

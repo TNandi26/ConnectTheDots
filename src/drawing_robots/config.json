@@ -37,6 +37,7 @@
     "max_radius": 25,
     "min_circularity": 0.5,
     "black_threshold": 100,
+    "white_threshold": 180,
     "duplicate_threshold": 12,
     "intensity_std_multiplier": 2.5,
     "blob_detector": {
@@ -48,11 +49,11 @@
     }
   },
   "number_detection": {
-  "search_radius": 80,
-  "tesseract_confidence": 40,
-  "duplicate_threshold": 20,
-  "tesseract_path": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
-  "use_easyocr": true,
-  "easyocr_gpu": false
-}
+    "mask_thresholds": [75, 80, 85, 90, 95],
+    "tesseract_confidence": 35,
+    "max_match_distance": 100,
+    "tesseract_path": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+    "use_easyocr": true,
+    "easyocr_gpu": false
+  }
 }

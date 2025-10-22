@@ -1,20 +1,16 @@
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 import os
 import logging
-from pathlib import Path
 import sys
 from PIL import Image
 import math
+from itertools import product
+from orchestrator import load_config
 
 
 def load_image(image_path):
-    """
-        Load image from file
-        Args: image_path: Path to the image that will be loaded in
-        Returns: The loaded in image
-    """
+    """Load image from file"""
     image = cv2.imread(str(image_path))
     if os.path.exists(image_path) is None:
         logging.error(f"Path is not valid: {image_path}")
@@ -28,22 +24,14 @@ def load_image(image_path):
 
 
 def convert_to_grayscale(image):
-    """
-        Convert BGR image to grayscale
-        Args: image: An image that will be converted to grayscale
-        Returns: Grayscale image
-    """
+    """Convert BGR image to grayscale"""
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     logging.info(f"Converted to grayscale: {gray_image.shape}")
     return gray_image
 
 
 def apply_blur(image, kernel_size=7):
-    """
-        Apply Gaussian blur to reduce noise - INCREASED for smoother edges
-        Args: image: An image that will be blurred
-              kernel_size: Kernel size sets the width and height of the neighborhood used for blurring, where larger values mean stronger smoothing
-    """
+    """Apply Gaussian blur to reduce noise"""
     if kernel_size > 0:
         blurred = cv2.GaussianBlur(image, (kernel_size, kernel_size), 0)
         logging.info(f"Applied Gaussian blur with kernel size {kernel_size}")
@@ -51,64 +39,93 @@ def apply_blur(image, kernel_size=7):
     else:
         logging.info("Skipping blur step")
         return image
-    
 
-def apply_adaptive_threshold(image):
+
+def apply_preprocessing(image_gray, use_heavy=True):
     """
-        Apply threshold to locate the A4 paper, 
-            where the first number in cv2.threshold is the pixel value where if any pixel value is above that it will be white,
-            if it's lower than that it will be black
-        Args: image: A grayscale image that will be used for thresholding
-        Returns: Image that is black and white
+    Apply preprocessing to enhance image quality
+    Set use_heavy=False to skip preprocessing
     """
-    _, threshold = cv2.threshold(image, 150, 255, cv2.THRESH_BINARY)
+    if not use_heavy:
+        logging.info("Skipping preprocessing (using original)")
+        return image_gray
     
+    logging.info("Applying HEAVY preprocessing...")
+    
+    # Step 1: Remove gradient lighting, preserve blacks
+    logging.info(f"  Removing gradients (blur size: {GRADIENT_BLUR_SIZE})")
+    background = cv2.GaussianBlur(image_gray, (GRADIENT_BLUR_SIZE, GRADIENT_BLUR_SIZE), 0)
+
+    # Compute normalized but protect dark regions
+    normalized = cv2.divide(image_gray, background + 1, scale=255)
+
+    # Preserve dark pixels (if pixel is dark in original, keep it)
+    mask_dark = image_gray < 60  # threshold can be tuned
+    normalized[mask_dark] = image_gray[mask_dark]
+
+    normalized = np.clip(normalized, 0, 255).astype(np.uint8)
+
+    # Step 2: Contrast enhancement (mild CLAHE)
+    logging.info(f"  Enhancing contrast (strength: {CONTRAST_STRENGTH})")
+    clahe = cv2.createCLAHE(clipLimit=CONTRAST_STRENGTH, tileGridSize=(5,5))
+    enhanced = clahe.apply(normalized)
+
+    # Step 3: Reduce noise but keep edges sharp
+    logging.info(f"  Reducing noise (filter size: {NOISE_REDUCTION})")
+    denoised = cv2.fastNlMeansDenoising(enhanced, h=10)
+
+    # Step 4: Gentle sharpening
+    logging.info("  Sharpening edges")
+    kernel = np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]])
+    sharpened = cv2.filter2D(denoised, -1, kernel)
+
+    result = np.clip(sharpened, 0, 255).astype(np.uint8)
+    logging.info("Preprocessing complete!")
+
+    return result
+
+
+def apply_adaptive_threshold(image, threshold):
+    """Apply threshold to locate the A4 paper"""
+    _, threshold = cv2.threshold(image, threshold, 255, cv2.THRESH_BINARY)
     return threshold
 
 
 def detect_a4_contour(threshold_image):
     """Detect the A4 paper contour from threshold image"""
-    # Find contours
     contours, _ = cv2.findContours(threshold_image, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     
     if not contours:
         logging.error("No contours found")
         return None
     
-    # Find largest contour by area
     image_area = threshold_image.shape[0] * threshold_image.shape[1]
     
     for contour in sorted(contours, key=cv2.contourArea, reverse=True):
         area = cv2.contourArea(contour)
-        
-        # Must be significant portion of image (A4 paper)
-        if area > image_area * 0.15:  # At least 15% of image
+        if area > image_area * 0.15:
             logging.info(f"Found A4 contour with area: {area}")
             return contour
     
     logging.error("No suitable A4 contour found")
     return None
 
+
 def create_mask_from_contour(contour, image_shape):
     """Create binary mask from contour"""
     mask = np.zeros(image_shape[:2], dtype=np.uint8)
-    
     if contour is not None:
-        # Fill the contour area with white (255)
         cv2.fillPoly(mask, [contour], 255)
         logging.info("Mask created successfully")
-    
     return mask
 
 
 def apply_mask_to_original(original_image, mask):
     """Apply mask to original image to keep only paper area"""
     if len(original_image.shape) == 3:
-        # 3-channel image - convert mask to 3 channels
         mask_3ch = cv2.cvtColor(mask, cv2.COLOR_GRAY2BGR)
         masked_result = cv2.bitwise_and(original_image, mask_3ch)
     else:
-        # Grayscale image
         masked_result = cv2.bitwise_and(original_image, original_image, mask=mask)
     
     logging.info("Mask applied to original image")
@@ -118,31 +135,25 @@ def apply_mask_to_original(original_image, mask):
 def visualize_contour(original_image, contour):
     """Draw contour on original image for visualization"""
     vis_image = original_image.copy()
-    
     if contour is not None:
         cv2.drawContours(vis_image, [contour], -1, (0, 255, 0), 3)
         logging.info("Contour visualization created")
-    
     return vis_image
+
 
 def crop_paper_only(original_image, contour):
     """Crop image to show only the paper area with minimal background"""
     if contour is None:
         return original_image
     
-    # Get bounding rectangle of the contour
     x, y, w, h = cv2.boundingRect(contour)
-    
-    # Add small padding around the paper
     padding = 20
     x = max(0, x - padding)
     y = max(0, y - padding)
     w = min(original_image.shape[1] - x, w + 2*padding)
     h = min(original_image.shape[0] - y, h + 2*padding)
     
-    # Crop the image
     cropped = original_image[y:y+h, x:x+w]
-    
     logging.info(f"Cropped paper to size: {cropped.shape}")
     return cropped
 
@@ -152,25 +163,18 @@ def crop_paper_tight(original_image, contour):
     if contour is None:
         return original_image
     
-    # Get exact contour bounds
     x, y, w, h = cv2.boundingRect(contour)
-    
-    # Crop exactly to contour bounds
     cropped = original_image[y:y+h, x:x+w]
-    
     logging.info(f"Tight cropped paper to size: {cropped.shape}")
     return cropped
 
 
-def save_step(image, step_name, step_number):
+def save_step(image, step_name, step_number, output_dir="Output_pictures"):
     """Save image for each processing step"""
-
     filename = f"step_{step_number:02d}_{step_name}.jpg"
-    output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Output_pictures")
-
-    os.makedirs(output_path, exist_ok=True) #Create it if it doesnt exists
+    output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), output_dir)
+    os.makedirs(output_path, exist_ok=True)
     picture_folder = os.path.join(output_path, filename)
-
     cv2.imwrite(picture_folder, image)
     logging.info(f"Saved: {filename}")
 
@@ -184,150 +188,154 @@ def check_resolution(image):
         logging.info(f"A4 paper is detected with good ratio: {ratio}") 
     else:
         logging.error(f"A4 paper ratio is not ideal, please adjust the camera, ratio is {ratio}")
-        
+
 
 def locate_corners_white_paper(path_to_image):
     """
-    Detect corner coordinates of white paper on dark background
-    Returns: (result_image, corner_coordinates_list)
+    Detect corners of WHITE PAPER
     """
     image = cv2.imread(path_to_image)
     if image is None:
         logging.error(f"Could not load image from {path_to_image}")
-        return None
+        return None, []
     
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     
-    # Binary threshold - extract white paper
-    _, binary = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY)
+    # CRITICAL FIX: Detect WHITE paper by looking for bright regions
+    # Use higher threshold to find white paper edges, not black background
+
+    _, binary = cv2.threshold(gray, PAPER_THRESHOLD, 255, cv2.THRESH_BINARY)
     
-    # Find contours
+    # Clean up the binary image
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
+    binary = cv2.morphologyEx(binary, cv2.MORPH_CLOSE, kernel)
+    binary = cv2.morphologyEx(binary, cv2.MORPH_OPEN, kernel)
+    
+    # Find contours on WHITE regions (paper)
     contours, _ = cv2.findContours(binary, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     
     if not contours:
         logging.error("No contours found for corner detection")
         return image, []
     
-    # Get largest contour (the paper)
+    # Get largest WHITE contour (the paper)
     largest_contour = max(contours, key=cv2.contourArea)
+    contour_area = cv2.contourArea(largest_contour)
+    image_area = gray.shape[0] * gray.shape[1]
     
-    # Approximate contour to 4 points (rectangle)
-    epsilon = 0.02 * cv2.arcLength(largest_contour, True)
-    approx = cv2.approxPolyDP(largest_contour, epsilon, True)
+    logging.info(f"Paper contour area: {contour_area} ({contour_area/image_area*100:.1f}% of image)")
     
-    # Try different epsilon values if we don't get exactly 4 points
-    if len(approx) != 4:
-        for eps_factor in [0.01, 0.03, 0.05, 0.08]:
-            epsilon = eps_factor * cv2.arcLength(largest_contour, True)
-            approx = cv2.approxPolyDP(largest_contour, epsilon, True)
-            if len(approx) == 4:
-                break
+    # Approximate to 4 corners
+    corners = None
+    for epsilon_factor in [CORNER_EPSILON, 0.01, 0.015, 0.02, 0.03, 0.04, 0.05]:
+        epsilon = epsilon_factor * cv2.arcLength(largest_contour, True)
+        approx = cv2.approxPolyDP(largest_contour, epsilon, True)
+        
+        if len(approx) == 4:
+            corners = [(int(p[0][0]), int(p[0][1])) for p in approx]
+            logging.info(f"Found 4 corners with epsilon: {epsilon_factor}")
+            break
     
-    # Extract coordinates
-    corners = []
-    for point in approx:
-        x, y = point[0]
-        corners.append((x, y))
+    # Fallback: use bounding rectangle corners
+    if corners is None or len(corners) != 4:
+        logging.warning("Could not find 4 corners, using bounding rectangle")
+        x, y, w, h = cv2.boundingRect(largest_contour)
+        corners = [
+            (x, y),           # Top-left
+            (x + w, y),       # Top-right
+            (x + w, y + h),   # Bottom-right
+            (x, y + h)        # Bottom-left
+        ]
     
-    # Sort corners: Top-Left, Top-Right, Bottom-Right, Bottom-Left
-    if len(corners) == 4:
-        corners = sort_corners_clockwise(corners)
-        logging.info(f"Found 4 corners: TL{corners[0]}, TR{corners[1]}, BR{corners[2]}, BL{corners[3]}")
-    else:
-        logging.warning(f"Found {len(corners)} corners instead of 4: {corners}")
+    # Sort corners properly
+    corners = sort_corners_clockwise(corners)
     
-    # Draw corners on image - only circles, no text
+    logging.info(f"Final corners:")
+    logging.info(f"  TL: {corners[0]}")
+    logging.info(f"  TR: {corners[1]}")
+    logging.info(f"  BR: {corners[2]}")
+    logging.info(f"  BL: {corners[3]}")
+    
+    # Draw corners on image
     result_image = image.copy()
     for i, corner in enumerate(corners):
         x, y = corner
-        cv2.circle(result_image, (x, y), 8, (0, 0, 255), -1)  # Red circles only
+        cv2.circle(result_image, (x, y), 3, (0, 0, 255), -1)
+        cv2.putText(result_image, str(i+1), (x+5, y-5), 
+                   cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
     
     return result_image, corners
 
 
 def sort_corners_clockwise(corners):
-    """Sort corners in clockwise order: Top-Left, Top-Right, Bottom-Right, Bottom-Left"""
+    """
+    Sort corners: Top-Left, Top-Right, Bottom-Right, Bottom-Left
+    """
     if len(corners) != 4:
         return corners
     
-    # Calculate center point
-    center_x = sum(x for x, y in corners) / 4
-    center_y = sum(y for x, y in corners) / 4
+    # Convert to numpy array
+    points = np.array(corners, dtype=np.float32)
     
-    # Classify corners by position relative to center
-    def classify_corner(corner):
-        x, y = corner
-        if x < center_x and y < center_y:
-            return 0  # Top-left
-        elif x >= center_x and y < center_y:
-            return 1  # Top-right
-        elif x >= center_x and y >= center_y:
-            return 2  # Bottom-right
-        else:
-            return 3  # Bottom-left
+    # Sort by y-coordinate (top vs bottom)
+    sorted_by_y = points[np.argsort(points[:, 1])]
     
-    # Sort corners
-    sorted_corners = [None] * 4
-    for corner in corners:
-        idx = classify_corner(corner)
-        sorted_corners[idx] = corner
+    # Top 2 points (smaller y)
+    top_points = sorted_by_y[:2]
+    # Bottom 2 points (larger y)
+    bottom_points = sorted_by_y[2:]
     
-    # Handle any None values (fallback)
-    for i in range(4):
-        if sorted_corners[i] is None:
-            remaining_corners = [c for c in corners if c not in sorted_corners]
-            if remaining_corners:
-                sorted_corners[i] = remaining_corners[0]
+    # Sort top points by x (left vs right)
+    top_left = top_points[np.argmin(top_points[:, 0])]
+    top_right = top_points[np.argmax(top_points[:, 0])]
     
-    return [corner for corner in sorted_corners if corner is not None]
+    # Sort bottom points by x (left vs right)
+    bottom_left = bottom_points[np.argmin(bottom_points[:, 0])]
+    bottom_right = bottom_points[np.argmax(bottom_points[:, 0])]
+    
+    # Return in correct order
+    result = [
+        tuple(map(int, top_left)),
+        tuple(map(int, top_right)),
+        tuple(map(int, bottom_right)),
+        tuple(map(int, bottom_left))
+    ]
+    
+    return result
 
 
 def apply_perspective_transform(image, corners, output_width=595, output_height=842):
-    """
-    Apply perspective transformation to correct document perspective
-    Standard A4 size: 595x842 pixels (roughly 210x297mm at 72 DPI)
-    """
+    """Apply perspective transformation to correct document perspective"""
     if len(corners) != 4:
         logging.error(f"Need exactly 4 corners for perspective transform, got {len(corners)}")
         return image
     
-    # Source points (detected corners)
     src_points = np.float32(corners)
-    
-    # Destination points (perfect rectangle)
     dst_points = np.float32([
-        [0, 0],                           # Top-left
-        [output_width - 1, 0],            # Top-right
-        [output_width - 1, output_height - 1],  # Bottom-right
-        [0, output_height - 1]            # Bottom-left
+        [0, 0],
+        [output_width - 1, 0],
+        [output_width - 1, output_height - 1],
+        [0, output_height - 1]
     ])
     
-    # Calculate perspective transformation matrix
     transform_matrix = cv2.getPerspectiveTransform(src_points, dst_points)
     logging.info("Perspective transformation matrix calculated")
-    
-    # Apply transformation
     corrected_image = cv2.warpPerspective(image, transform_matrix, (output_width, output_height))
-    
     logging.info(f"Applied perspective transformation: {image.shape} -> ({output_width}, {output_height})")
     return corrected_image
 
 
 def calculate_optimal_output_size(corners):
-    """
-    Calculate optimal output size based on corner distances to maintain aspect ratio
-    """
+    """Calculate optimal output size based on corner distances to maintain aspect ratio"""
     if len(corners) != 4:
         logging.warning("Cannot calculate optimal size without 4 corners, using default A4")
-        return 595, 842  # Default A4 size
+        return 595, 842
     
-    # Calculate distances
     top_width = np.linalg.norm(np.array(corners[1]) - np.array(corners[0]))
     bottom_width = np.linalg.norm(np.array(corners[2]) - np.array(corners[3]))
     left_height = np.linalg.norm(np.array(corners[3]) - np.array(corners[0]))
     right_height = np.linalg.norm(np.array(corners[2]) - np.array(corners[1]))
     
-    # Use average dimensions
     avg_width = int((top_width + bottom_width) / 2)
     avg_height = int((left_height + right_height) / 2)
     
@@ -335,14 +343,137 @@ def calculate_optimal_output_size(corners):
     return avg_width, avg_height
 
 
+def fix_lighting_inconsistency(image, blur_size=51, clip_limit=2.0, gamma=0.9):
+    """
+    Kiegyenlíti a világítási inkonzisztenciákat egy képen.
+    Paraméterek:
+        image: bemeneti kép (szürkeárnyalatos vagy színes)
+        blur_size: a háttér kisimítására használt GaussianBlur kernel méret (páratlan szám)
+        clip_limit: CLAHE kontrasztjavítás erőssége (2–4 közötti javasolt)
+        gamma: gamma korrekció (0.7–1.2 tartományban javasolt)
+        
+    Visszatér:
+        result: világításban kiegyenlített, kontrasztos kép (uint8)
+    """
+
+    if len(image.shape) == 3:
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    else:
+        gray = image.copy()
+
+    background = cv2.GaussianBlur(gray, (blur_size, blur_size), 0)
+    normalized = cv2.divide(gray, background, scale=255)
+    normalized = np.clip(normalized, 0, 255).astype(np.uint8)
+
+    clahe = cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=(8,8))
+    contrast = clahe.apply(normalized)
+
+    img_float = contrast.astype(np.float32) / 255.0
+    gamma_corrected = np.power(img_float, gamma)
+    gamma_corrected = np.clip(gamma_corrected * 255, 0, 255).astype(np.uint8)
+
+    result = cv2.fastNlMeansDenoising(gamma_corrected, h=8)
+
+    return result
+
+
+def massive_lighting_experiments(image, output_dir="Output_massive/test"):
+    """
+    Rengeteg fény- és kontrasztkiegyenlítési módszer kipróbálása.
+    Cél: látni, melyik kombináció segíti a pontdetekciót.
+    """
+
+    if len(image.shape) == 3:
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    else:
+        gray = image.copy()
+
+    os.makedirs(output_dir, exist_ok=True)
+    step = 1
+
+    # ────────────────────────────────────────────────
+    # 1️⃣ Paramétertartományok
+    blur_sizes = [21, 51, 81, 101]
+    clip_limits = [1.0, 2.0, 3.0, 4.0]
+    gammas = [0.7, 0.9, 1.0, 1.2, 1.5]
+    morph_sizes = [15, 31, 51, 71]
+    methods = ["blackhat", "retinex", "clahe", "illum"]
+
+    logging.info("Starting massive preprocessing experiments...")
+
+    # ────────────────────────────────────────────────
+    # 2️⃣ Iterálunk minden kombináción
+    for method in methods:
+        for (blur, clip, gamma, morph) in product(blur_sizes, clip_limits, gammas, morph_sizes):
+
+            try:
+                result = gray.copy()
+
+                # ───── Method 1: Black-hat enhancement ─────
+                if method == "blackhat":
+                    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (morph, morph))
+                    blackhat = cv2.morphologyEx(result, cv2.MORPH_BLACKHAT, kernel)
+                    result = cv2.add(result, blackhat)
+
+                # ───── Method 2: Retinex-like log normalization ─────
+                elif method == "retinex":
+                    blur_img = cv2.GaussianBlur(result, (blur, blur), 0)
+                    retinex = cv2.log(np.float32(result) + 1) - cv2.log(np.float32(blur_img) + 1)
+                    result = cv2.normalize(retinex, None, 0, 255, cv2.NORM_MINMAX).astype(np.uint8)
+
+                # ───── Method 3: CLAHE + Laplacian ─────
+                elif method == "clahe":
+                    clahe = cv2.createCLAHE(clipLimit=clip, tileGridSize=(8,8))
+                    clahe_img = clahe.apply(result)
+                    lap = cv2.Laplacian(clahe_img, cv2.CV_16S, ksize=3)
+                    result = cv2.convertScaleAbs(clahe_img - 0.3 * lap)
+
+                # ───── Method 4: Illumination flattening ─────
+                elif method == "illum":
+                    background = cv2.GaussianBlur(result, (blur, blur), 0)
+                    result = cv2.divide(result, background, scale=255)
+
+                # ───── Gamma correction ─────
+                gamma_corr = np.power(result / 255.0, gamma)
+                result = np.clip(gamma_corr * 255, 0, 255).astype(np.uint8)
+
+                # ───── Optional noise reduction ─────
+                result = cv2.bilateralFilter(result, 5, 50, 50)
+
+                # ───── Save result ─────
+                filename = f"step_{step:03d}_{method}_b{blur}_c{clip}_g{gamma}_m{morph}.jpg"
+                path = os.path.join(output_dir, filename)
+                cv2.imwrite(path, result)
+                logging.info(f"Saved {filename}")
+                step += 1
+
+            except Exception as e:
+                logging.warning(f"Failed for combo {method}, b={blur}, c={clip}, g={gamma}, m={morph}: {e}")
+
+    logging.info(f"All {step-1} variations saved in '{output_dir}' directory.")
+
+
+
 if __name__ == "__main__":
 
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
-
+    
+    config = load_config()
+    GRADIENT_BLUR_SIZE = config["preprocess"]["GRADIENT_BLUR_SIZE"]
+    CONTRAST_STRENGTH = config["preprocess"]["CONTRAST_STRENGTH"]
+    NOISE_REDUCTION = config["preprocess"]["NOISE_REDUCTION"]
+    PAPER_THRESHOLD = config["preprocess"]["PAPER_THRESHOLD"]
+    CORNER_EPSILON = config["preprocess"]["CORNER_EPSILON"]
+    logging.info("Current settings:")
+    logging.info(f"Gradient Blur Size: {GRADIENT_BLUR_SIZE}")
+    logging.info(f"Contrast Strength: {CONTRAST_STRENGTH}")
+    logging.info(f"Noise Reduction: {NOISE_REDUCTION}")
+    logging.info(f"Paper Threshold: {PAPER_THRESHOLD}")
+    logging.info(f"Corner Epsilon: {CORNER_EPSILON}")
     logging.info("Please select an image to use:")
 
     base_path = os.path.dirname(os.path.abspath(__file__))
-    picture_folder = os.path.join(base_path, "Pictures")
+    picture_folder = os.path.join(base_path, "../../Pictures")
     pictures = os.listdir(picture_folder)
     i=0
     for picture in pictures:
@@ -356,64 +487,74 @@ if __name__ == "__main__":
     grayscale_image = convert_to_grayscale(base_image)
     save_step(grayscale_image, "grayscale", 2)
 
-    blurred_image = apply_blur(grayscale_image)
-    save_step(blurred_image, "blurred", 3)
+    threshold = 100
+    test_image = apply_adaptive_threshold(grayscale_image, threshold=PAPER_THRESHOLD)
+    save_step(test_image, "Test_threshold", 10000)
 
-    threshold_image = apply_adaptive_threshold(blurred_image)
-    save_step(threshold_image, "threshold", 4)
+    gpt_test = fix_lighting_inconsistency(grayscale_image)
+    save_step(gpt_test, "gpt_threshold", 794675)
+    massive_lighting_experiments(grayscale_image)
+
+    logging.info("\nUse heavy preprocessing? (y/n, default=y): ")
+    use_preprocessing = input().strip().lower()
+    use_heavy = use_preprocessing != 'n'
+    
+    processed_image = apply_preprocessing(grayscale_image, use_heavy=use_heavy)
+    save_step(processed_image, "preprocessed" if use_heavy else "no_preprocessing", 3)
+
+    blurred_image = apply_blur(processed_image)
+    save_step(blurred_image, "blurred", 4)
+
+    threshold_image = apply_adaptive_threshold(blurred_image, PAPER_THRESHOLD)
+    save_step(threshold_image, "threshold", 5)
 
     a4_contour = detect_a4_contour(threshold_image)
-    save_step(threshold_image, "contour", 5)
+    save_step(threshold_image, "contour", 6)
     
     if a4_contour is not None:
         logging.info("A4 paper detected successfully!")
         
         paper_mask = create_mask_from_contour(a4_contour, threshold_image.shape)
-        save_step(paper_mask, "paper_mask", 6)
+        save_step(paper_mask, "paper_mask", 7)
         
         masked_original = apply_mask_to_original(base_image, paper_mask)
-        save_step(masked_original, "masked_original", 7)
+        save_step(masked_original, "masked_original", 8)
         
-        # Visualize detected contour
         contour_visualization = visualize_contour(base_image, a4_contour)
-        save_step(contour_visualization, "contour_detected", 8)
+        save_step(contour_visualization, "contour_detected", 9)
 
-        # Corner detection with coordinates
-        output_picture_folder = os.path.join(base_path, "Output_pictures/step_07_masked_original.jpg")
+        output_picture_folder = os.path.join(base_path, "Output_pictures/step_08_masked_original.jpg")
         image_corner, corner_coordinates = locate_corners_white_paper(output_picture_folder)
-        save_step(image_corner, "corners", 14)
-        # Log corner coordinates for use in other parts of code
+        save_step(image_corner, "corners", 10)
+        
         if len(corner_coordinates) == 4:
-            logging.info("=== CORNER COORDINATES ===")
             logging.info(f"Top-Left corner: {corner_coordinates[0]}")
             logging.info(f"Top-Right corner: {corner_coordinates[1]}")
             logging.info(f"Bottom-Right corner: {corner_coordinates[2]}")
             logging.info(f"Bottom-Left corner: {corner_coordinates[3]}")
-            logging.info("===========================")
-
-        # Apply standard A4 transformation
 
         logging.info("Applying standard A4 perspective transform...")
         corrected_standard = apply_perspective_transform(masked_original, corner_coordinates)
-        save_step(corrected_standard, "perspective_A4", 9)
+        save_step(corrected_standard, "perspective_A4", 11)
         
-        # Apply adaptive transformation (maintains original proportions)
-        logging.info("Applying perspective transform...")
-
-        # Also apply transform to grayscale for better processing
         grayscale_cropped = convert_to_grayscale(masked_original)
-        save_step(grayscale_cropped, "before_transform_gray", 10)
+        
+        if use_heavy:
+            grayscale_cropped = apply_preprocessing(grayscale_cropped, use_heavy=True)
+            save_step(grayscale_cropped, "before_transform_preprocessed", 12)
+        else:
+            save_step(grayscale_cropped, "before_transform_gray", 12)
         
         corrected_gray_standard = apply_perspective_transform(grayscale_cropped, corner_coordinates)
-        save_step(corrected_gray_standard, "perspective_A4_gray", 11)
+        save_step(corrected_gray_standard, "perspective_A4_gray", 13)
         
         corrected_image = apply_perspective_transform(masked_original, corner_coordinates, output_width=1240, output_height=1754)
-        save_step(corrected_image, "smaller_resolution", 12)
+        save_step(corrected_image, "smaller_resolution", 14)
 
         corrected_image = apply_perspective_transform(masked_original, corner_coordinates, output_width=1654, output_height=2339)
-        save_step(corrected_image, "bigger_resolution", 13)
-
+        save_step(corrected_image, "bigger_resolution", 15)
+        
     else:
         logging.error("FAILED: Could not detect A4 paper")
-        logging.error("Try adjusting the area threshold in detect_a4_contour function")
+        logging.error(f"Try adjusting PAPER_THRESHOLD (current: {PAPER_THRESHOLD})")
         sys.exit()

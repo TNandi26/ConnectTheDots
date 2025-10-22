@@ -1,0 +1,1708 @@
+{
+  "detection_method": "Enhanced Mask + CLAHE + Overlap",
+  "total_dots": 100,
+  "total_numbers": 85,
+  "detection_accuracy": 85.0,
+  "numbers": [
+    {
+      "dot_id": 1,
+      "number": 90,
+      "global_coordinates": {
+        "x": 654,
+        "y": 178
+      },
+      "bbox": [
+        643,
+        168,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 13.45,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 2,
+      "number": 91,
+      "global_coordinates": {
+        "x": 673,
+        "y": 160
+      },
+      "bbox": [
+        662,
+        151,
+        22,
+        19
+      ],
+      "confidence": 100,
+      "distance_from_dot": 13.0,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 3,
+      "number": 93,
+      "global_coordinates": {
+        "x": 730,
+        "y": 96
+      },
+      "bbox": [
+        718,
+        86,
+        24,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 12.17,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 4,
+      "number": 92,
+      "global_coordinates": {
+        "x": 696,
+        "y": 130
+      },
+      "bbox": [
+        684,
+        120,
+        24,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 14.0,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 5,
+      "number": 94,
+      "global_coordinates": {
+        "x": 760,
+        "y": 78
+      },
+      "bbox": [
+        748,
+        68,
+        25,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 11.0,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 7,
+      "number": 10,
+      "global_coordinates": {
+        "x": 819,
+        "y": 108
+      },
+      "bbox": [
+        808,
+        99,
+        22,
+        18
+      ],
+      "confidence": 100,
+      "distance_from_dot": 27.2,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 10,
+      "number": 97,
+      "global_coordinates": {
+        "x": 844,
+        "y": 20
+      },
+      "bbox": [
+        833,
+        10,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 11.18,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 12,
+      "number": 14,
+      "global_coordinates": {
+        "x": 922,
+        "y": 177
+      },
+      "bbox": [
+        912,
+        168,
+        21,
+        19
+      ],
+      "confidence": 100,
+      "distance_from_dot": 14.56,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 13,
+      "number": 13,
+      "global_coordinates": {
+        "x": 912,
+        "y": 149
+      },
+      "bbox": [
+        901,
+        139,
+        22,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 16.03,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 14,
+      "number": 12,
+      "global_coordinates": {
+        "x": 898,
+        "y": 112
+      },
+      "bbox": [
+        887,
+        103,
+        22,
+        19
+      ],
+      "confidence": 100,
+      "distance_from_dot": 17.2,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 15,
+      "number": 100,
+      "global_coordinates": {
+        "x": 900,
+        "y": 86
+      },
+      "bbox": [
+        884,
+        76,
+        32,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 21.1,
+      "method": "easyocr",
+      "digit_count": 3,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 16,
+      "number": 98,
+      "global_coordinates": {
+        "x": 851,
+        "y": 86
+      },
+      "bbox": [
+        840,
+        77,
+        23,
+        19
+      ],
+      "confidence": 100,
+      "distance_from_dot": 15.56,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 17,
+      "number": 49,
+      "global_coordinates": {
+        "x": 887,
+        "y": 52
+      },
+      "bbox": [
+        876,
+        42,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 15.03,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 18,
+      "number": 82,
+      "global_coordinates": {
+        "x": 241,
+        "y": 196
+      },
+      "bbox": [
+        229,
+        186,
+        24,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 12.17,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 19,
+      "number": 53,
+      "global_coordinates": {
+        "x": 213,
+        "y": 272
+      },
+      "bbox": [
+        202,
+        262,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 15.52,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 20,
+      "number": 78,
+      "global_coordinates": {
+        "x": 106,
+        "y": 258
+      },
+      "bbox": [
+        95,
+        249,
+        22,
+        18
+      ],
+      "confidence": 100,
+      "distance_from_dot": 13.34,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 21,
+      "number": 79,
+      "global_coordinates": {
+        "x": 135,
+        "y": 228
+      },
+      "bbox": [
+        123,
+        219,
+        24,
+        19
+      ],
+      "confidence": 100,
+      "distance_from_dot": 14.21,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 24,
+      "number": 83,
+      "global_coordinates": {
+        "x": 296,
+        "y": 183
+      },
+      "bbox": [
+        284,
+        173,
+        24,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 12.37,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 25,
+      "number": 56,
+      "global_coordinates": {
+        "x": 445,
+        "y": 213
+      },
+      "bbox": [
+        433,
+        203,
+        24,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 12.0,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 26,
+      "number": 95,
+      "global_coordinates": {
+        "x": 396,
+        "y": 198
+      },
+      "bbox": [
+        385,
+        188,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 12.0,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 27,
+      "number": 64,
+      "global_coordinates": {
+        "x": 353,
+        "y": 185
+      },
+      "bbox": [
+        341,
+        175,
+        24,
+        21
+      ],
+      "confidence": 100,
+      "distance_from_dot": 13.04,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 29,
+      "number": 87,
+      "global_coordinates": {
+        "x": 492,
+        "y": 219
+      },
+      "bbox": [
+        480,
+        209,
+        24,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 12.04,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 30,
+      "number": 2,
+      "global_coordinates": {
+        "x": 611,
+        "y": 258
+      },
+      "bbox": [
+        606,
+        250,
+        10,
+        16
+      ],
+      "confidence": 99,
+      "distance_from_dot": 12.21,
+      "method": "easyocr",
+      "digit_count": 1,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 31,
+      "number": 85,
+      "global_coordinates": {
+        "x": 542,
+        "y": 218
+      },
+      "bbox": [
+        530,
+        208,
+        24,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 42.19,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 32,
+      "number": 89,
+      "global_coordinates": {
+        "x": 633,
+        "y": 198
+      },
+      "bbox": [
+        621,
+        188,
+        24,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 10.44,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 33,
+      "number": 5,
+      "global_coordinates": {
+        "x": 696,
+        "y": 236
+      },
+      "bbox": [
+        690,
+        229,
+        12,
+        15
+      ],
+      "confidence": 99,
+      "distance_from_dot": 12.04,
+      "method": "easyocr",
+      "digit_count": 1,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 34,
+      "number": 4,
+      "global_coordinates": {
+        "x": 693,
+        "y": 281
+      },
+      "bbox": [
+        689,
+        274,
+        9,
+        14
+      ],
+      "confidence": 97,
+      "distance_from_dot": 66.73,
+      "method": "tesseract",
+      "digit_count": 1,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 35,
+      "number": 69,
+      "global_coordinates": {
+        "x": 738,
+        "y": 257
+      },
+      "bbox": [
+        722,
+        243,
+        32,
+        29
+      ],
+      "confidence": 28,
+      "distance_from_dot": 15.0,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 37,
+      "number": 1,
+      "global_coordinates": {
+        "x": 583,
+        "y": 210
+      },
+      "bbox": [
+        579,
+        203,
+        9,
+        15
+      ],
+      "confidence": 99,
+      "distance_from_dot": 98.01,
+      "method": "easyocr",
+      "digit_count": 1,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 38,
+      "number": 6,
+      "global_coordinates": {
+        "x": 757,
+        "y": 241
+      },
+      "bbox": [
+        751,
+        233,
+        13,
+        16
+      ],
+      "confidence": 95,
+      "distance_from_dot": 14.56,
+      "method": "easyocr",
+      "digit_count": 1,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 39,
+      "number": 21,
+      "global_coordinates": {
+        "x": 822,
+        "y": 182
+      },
+      "bbox": [
+        812,
+        173,
+        21,
+        19
+      ],
+      "confidence": 100,
+      "distance_from_dot": 11.0,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 40,
+      "number": 20,
+      "global_coordinates": {
+        "x": 850,
+        "y": 242
+      },
+      "bbox": [
+        839,
+        233,
+        23,
+        18
+      ],
+      "confidence": 100,
+      "distance_from_dot": 17.46,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 41,
+      "number": 17,
+      "global_coordinates": {
+        "x": 938,
+        "y": 250
+      },
+      "bbox": [
+        928,
+        241,
+        21,
+        19
+      ],
+      "confidence": 100,
+      "distance_from_dot": 16.12,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 42,
+      "number": 18,
+      "global_coordinates": {
+        "x": 916,
+        "y": 270
+      },
+      "bbox": [
+        905,
+        261,
+        23,
+        19
+      ],
+      "confidence": 100,
+      "distance_from_dot": 15.62,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 43,
+      "number": 19,
+      "global_coordinates": {
+        "x": 885,
+        "y": 270
+      },
+      "bbox": [
+        874,
+        260,
+        22,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 16.0,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 44,
+      "number": 16,
+      "global_coordinates": {
+        "x": 945,
+        "y": 219
+      },
+      "bbox": [
+        934,
+        209,
+        23,
+        21
+      ],
+      "confidence": 100,
+      "distance_from_dot": 13.34,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 45,
+      "number": 15,
+      "global_coordinates": {
+        "x": 937,
+        "y": 198
+      },
+      "bbox": [
+        926,
+        188,
+        22,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 15.3,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 46,
+      "number": 61,
+      "global_coordinates": {
+        "x": 208,
+        "y": 341
+      },
+      "bbox": [
+        197,
+        331,
+        22,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 16.12,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 47,
+      "number": 76,
+      "global_coordinates": {
+        "x": 71,
+        "y": 319
+      },
+      "bbox": [
+        60,
+        309,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 14.32,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 48,
+      "number": 65,
+      "global_coordinates": {
+        "x": 149,
+        "y": 317
+      },
+      "bbox": [
+        137,
+        307,
+        24,
+        21
+      ],
+      "confidence": 100,
+      "distance_from_dot": 12.65,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 49,
+      "number": 62,
+      "global_coordinates": {
+        "x": 205,
+        "y": 304
+      },
+      "bbox": [
+        193,
+        294,
+        24,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 17.26,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 50,
+      "number": 77,
+      "global_coordinates": {
+        "x": 87,
+        "y": 285
+      },
+      "bbox": [
+        77,
+        277,
+        21,
+        17
+      ],
+      "confidence": 100,
+      "distance_from_dot": 13.04,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 52,
+      "number": 75,
+      "global_coordinates": {
+        "x": 60,
+        "y": 350
+      },
+      "bbox": [
+        49,
+        340,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 14.87,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 53,
+      "number": 22,
+      "global_coordinates": {
+        "x": 800,
+        "y": 286
+      },
+      "bbox": [
+        789,
+        277,
+        22,
+        18
+      ],
+      "confidence": 100,
+      "distance_from_dot": 19.24,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 54,
+      "number": 23,
+      "global_coordinates": {
+        "x": 768,
+        "y": 349
+      },
+      "bbox": [
+        757,
+        339,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 15.52,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 56,
+      "number": 73,
+      "global_coordinates": {
+        "x": 51,
+        "y": 418
+      },
+      "bbox": [
+        40,
+        409,
+        23,
+        19
+      ],
+      "confidence": 100,
+      "distance_from_dot": 13.15,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 58,
+      "number": 67,
+      "global_coordinates": {
+        "x": 145,
+        "y": 417
+      },
+      "bbox": [
+        134,
+        407,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 16.49,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 60,
+      "number": 74,
+      "global_coordinates": {
+        "x": 50,
+        "y": 388
+      },
+      "bbox": [
+        39,
+        379,
+        23,
+        18
+      ],
+      "confidence": 100,
+      "distance_from_dot": 14.32,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 61,
+      "number": 66,
+      "global_coordinates": {
+        "x": 134,
+        "y": 368
+      },
+      "bbox": [
+        123,
+        358,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 14.04,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 62,
+      "number": 24,
+      "global_coordinates": {
+        "x": 764,
+        "y": 418
+      },
+      "bbox": [
+        753,
+        409,
+        22,
+        18
+      ],
+      "confidence": 100,
+      "distance_from_dot": 17.0,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 63,
+      "number": 72,
+      "global_coordinates": {
+        "x": 59,
+        "y": 454
+      },
+      "bbox": [
+        48,
+        445,
+        22,
+        18
+      ],
+      "confidence": 100,
+      "distance_from_dot": 14.0,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 64,
+      "number": 60,
+      "global_coordinates": {
+        "x": 201,
+        "y": 407
+      },
+      "bbox": [
+        189,
+        397,
+        24,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 44.28,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 65,
+      "number": 70,
+      "global_coordinates": {
+        "x": 98,
+        "y": 484
+      },
+      "bbox": [
+        87,
+        474,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 15.0,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 66,
+      "number": 65,
+      "global_coordinates": {
+        "x": 133,
+        "y": 448
+      },
+      "bbox": [
+        122,
+        439,
+        23,
+        19
+      ],
+      "confidence": 100,
+      "distance_from_dot": 18.44,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 67,
+      "number": 44,
+      "global_coordinates": {
+        "x": 346,
+        "y": 506
+      },
+      "bbox": [
+        335,
+        496,
+        23,
+        21
+      ],
+      "confidence": 100,
+      "distance_from_dot": 15.65,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 68,
+      "number": 43,
+      "global_coordinates": {
+        "x": 397,
+        "y": 453
+      },
+      "bbox": [
+        386,
+        444,
+        23,
+        18
+      ],
+      "confidence": 100,
+      "distance_from_dot": 16.03,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 69,
+      "number": 42,
+      "global_coordinates": {
+        "x": 500,
+        "y": 467
+      },
+      "bbox": [
+        489,
+        457,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 17.03,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 70,
+      "number": 41,
+      "global_coordinates": {
+        "x": 576,
+        "y": 475
+      },
+      "bbox": [
+        566,
+        466,
+        21,
+        18
+      ],
+      "confidence": 100,
+      "distance_from_dot": 16.03,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 71,
+      "number": 31,
+      "global_coordinates": {
+        "x": 718,
+        "y": 496
+      },
+      "bbox": [
+        708,
+        487,
+        20,
+        18
+      ],
+      "confidence": 100,
+      "distance_from_dot": 16.28,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 72,
+      "number": 40,
+      "global_coordinates": {
+        "x": 646,
+        "y": 464
+      },
+      "bbox": [
+        635,
+        454,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 16.64,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 73,
+      "number": 58,
+      "global_coordinates": {
+        "x": 195,
+        "y": 512
+      },
+      "bbox": [
+        184,
+        502,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 51.08,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 74,
+      "number": 59,
+      "global_coordinates": {
+        "x": 206,
+        "y": 450
+      },
+      "bbox": [
+        195,
+        440,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 59.08,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 75,
+      "number": 57,
+      "global_coordinates": {
+        "x": 161,
+        "y": 560
+      },
+      "bbox": [
+        150,
+        551,
+        22,
+        19
+      ],
+      "confidence": 100,
+      "distance_from_dot": 69.07,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 76,
+      "number": 45,
+      "global_coordinates": {
+        "x": 342,
+        "y": 556
+      },
+      "bbox": [
+        330,
+        546,
+        24,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 18.03,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 77,
+      "number": 50,
+      "global_coordinates": {
+        "x": 260,
+        "y": 525
+      },
+      "bbox": [
+        249,
+        515,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 14.04,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 78,
+      "number": 32,
+      "global_coordinates": {
+        "x": 688,
+        "y": 576
+      },
+      "bbox": [
+        677,
+        567,
+        23,
+        19
+      ],
+      "confidence": 100,
+      "distance_from_dot": 15.03,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 79,
+      "number": 30,
+      "global_coordinates": {
+        "x": 776,
+        "y": 555
+      },
+      "bbox": [
+        765,
+        546,
+        23,
+        19
+      ],
+      "confidence": 100,
+      "distance_from_dot": 15.65,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 80,
+      "number": 25,
+      "global_coordinates": {
+        "x": 838,
+        "y": 528
+      },
+      "bbox": [
+        827,
+        519,
+        22,
+        19
+      ],
+      "confidence": 100,
+      "distance_from_dot": 16.03,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 81,
+      "number": 51,
+      "global_coordinates": {
+        "x": 246,
+        "y": 564
+      },
+      "bbox": [
+        235,
+        554,
+        22,
+        21
+      ],
+      "confidence": 100,
+      "distance_from_dot": 57.63,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 82,
+      "number": 33,
+      "global_coordinates": {
+        "x": 682,
+        "y": 623
+      },
+      "bbox": [
+        671,
+        614,
+        23,
+        19
+      ],
+      "confidence": 100,
+      "distance_from_dot": 16.03,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 83,
+      "number": 52,
+      "global_coordinates": {
+        "x": 227,
+        "y": 613
+      },
+      "bbox": [
+        216,
+        603,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 87.56,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 84,
+      "number": 56,
+      "global_coordinates": {
+        "x": 147,
+        "y": 707
+      },
+      "bbox": [
+        136,
+        697,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 14.32,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 86,
+      "number": 49,
+      "global_coordinates": {
+        "x": 296,
+        "y": 704
+      },
+      "bbox": [
+        285,
+        694,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 14.76,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 87,
+      "number": 46,
+      "global_coordinates": {
+        "x": 373,
+        "y": 705
+      },
+      "bbox": [
+        362,
+        695,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 16.76,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 88,
+      "number": 36,
+      "global_coordinates": {
+        "x": 620,
+        "y": 716
+      },
+      "bbox": [
+        609,
+        706,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 14.14,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 89,
+      "number": 39,
+      "global_coordinates": {
+        "x": 604,
+        "y": 663
+      },
+      "bbox": [
+        593,
+        654,
+        23,
+        18
+      ],
+      "confidence": 100,
+      "distance_from_dot": 13.04,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 90,
+      "number": 35,
+      "global_coordinates": {
+        "x": 698,
+        "y": 711
+      },
+      "bbox": [
+        688,
+        702,
+        21,
+        19
+      ],
+      "confidence": 100,
+      "distance_from_dot": 17.0,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 91,
+      "number": 34,
+      "global_coordinates": {
+        "x": 678,
+        "y": 666
+      },
+      "bbox": [
+        667,
+        657,
+        22,
+        19
+      ],
+      "confidence": 100,
+      "distance_from_dot": 16.0,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 92,
+      "number": 29,
+      "global_coordinates": {
+        "x": 766,
+        "y": 683
+      },
+      "bbox": [
+        755,
+        674,
+        22,
+        19
+      ],
+      "confidence": 100,
+      "distance_from_dot": 52.0,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 93,
+      "number": 28,
+      "global_coordinates": {
+        "x": 739,
+        "y": 717
+      },
+      "bbox": [
+        730,
+        707,
+        19,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 50.22,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 95,
+      "number": 53,
+      "global_coordinates": {
+        "x": 224,
+        "y": 700
+      },
+      "bbox": [
+        212,
+        690,
+        24,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 67.23,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 96,
+      "number": 48,
+      "global_coordinates": {
+        "x": 314,
+        "y": 750
+      },
+      "bbox": [
+        303,
+        740,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 17.03,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 97,
+      "number": 47,
+      "global_coordinates": {
+        "x": 389,
+        "y": 741
+      },
+      "bbox": [
+        379,
+        732,
+        21,
+        18
+      ],
+      "confidence": 100,
+      "distance_from_dot": 16.16,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 98,
+      "number": 36,
+      "global_coordinates": {
+        "x": 709,
+        "y": 738
+      },
+      "bbox": [
+        697,
+        728,
+        24,
+        21
+      ],
+      "confidence": 100,
+      "distance_from_dot": 72.0,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    },
+    {
+      "dot_id": 100,
+      "number": 26,
+      "global_coordinates": {
+        "x": 829,
+        "y": 705
+      },
+      "bbox": [
+        818,
+        695,
+        23,
+        20
+      ],
+      "confidence": 100,
+      "distance_from_dot": 46.67,
+      "method": "easyocr",
+      "digit_count": 2,
+      "aggressive": false,
+      "suspicious": false
+    }
+  ]
+}

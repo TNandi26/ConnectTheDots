@@ -1,3 +1,14 @@
+"""
+Number Detection - Dynamic ROI per Dot
+
+STRATEGY:
+1. Load full image
+2. For EACH dot: cut out ROI around it (radius ~70px)
+3. Save ROI coordinates for later (to convert to global)
+4. OCR on each ROI
+5. Convert back to global coordinates
+"""
+
 import cv2
 import numpy as np
 import json
@@ -10,664 +21,572 @@ import easyocr
 
 
 def setup_ocr(config):
-    """Initialize OCR engines from config"""
+    """Initialize OCR engines"""
     pytesseract.pytesseract.tesseract_cmd = config['number_detection']['tesseract_path']
-    
-    use_easyocr = config['number_detection']['use_easyocr']
-    easyocr_gpu = config['number_detection']['easyocr_gpu']
-    
+
     reader = None
-    if use_easyocr:
+    if config['number_detection']['use_easyocr']:
         try:
-            reader = easyocr.Reader(['en'], gpu=easyocr_gpu)
-            logging.info(f"EasyOCR initialized (GPU: {easyocr_gpu})")
+            gpu_enabled = config['number_detection']['easyocr_gpu']
+            import torch
+            if gpu_enabled and not torch.cuda.is_available():
+                gpu_enabled = False
+                logging.warning("CUDA not available, using CPU")
+
+            reader = easyocr.Reader(['en'], gpu=gpu_enabled)
+            logging.info(f"✓ EasyOCR initialized (GPU: {gpu_enabled})")
         except Exception as e:
-            logging.warning(f"EasyOCR failed to initialize: {e}")
-            reader = None
-    
+            logging.warning(f"EasyOCR failed: {e}")
+
     return reader
 
 
-def load_detected_circles_for_segment(segment_name, detected_circles_json):
-    """Load circle coordinates for this segment"""
+def load_dots(global_dots_json):
+    """Load dot coordinates"""
     try:
-        with open(detected_circles_json) as f:
+        with open(global_dots_json) as f:
             data = json.load(f)
-        
-        for segment in data.get('segments', []):
-            if segment['segment_name'] == segment_name:
-                return [(c['pixel_x'], c['pixel_y'], c['radius']) for c in segment.get('circles', [])]
-        
-        return []
+
+        dots = [
+            {
+                "id": c["id"],
+                "x": c["global_coordinates"]["x"],
+                "y": c["global_coordinates"]["y"],
+                "radius": c.get("radius", 5)
+            }
+            for c in data.get("circles", [])
+        ]
+
+        logging.info(f"Loaded {len(dots)} dots")
+        return dots
     except Exception as e:
-        logging.warning(f"Could not load circles for {segment_name}: {e}")
+        logging.error(f"Failed to load dots: {e}")
         return []
 
 
-def erase_dots_from_image(image, circles, config):
-    """Erase dots by filling with white"""
-    if not circles:
-        return image
-    
-    result = image.copy()
-    margin = config['number_detection']['dot_erase_margin']
-    
-    for x, y, r in circles:
-        cv2.circle(result, (x, y), r + margin, 255, -1)
-    
-    logging.info(f"Erased {len(circles)} dots from image")
+def count_holes_in_region(binary_region):
+    """Count holes for digit 8 detection"""
+    if binary_region.size == 0:
+        return 0
+
+    if len(binary_region.shape) == 3:
+        binary_region = cv2.cvtColor(binary_region, cv2.COLOR_BGR2GRAY)
+
+    _, binary = cv2.threshold(binary_region, 127, 255, cv2.THRESH_BINARY)
+
+    contours, hierarchy = cv2.findContours(
+        binary, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE
+    )
+
+    if hierarchy is None:
+        return 0
+
+    hole_count = sum(1 for h in hierarchy[0] if h[3] != -1)
+    return hole_count
+
+
+def analyze_digit_shape(binary_region):
+    """Analyze shape for digit 8"""
+    if binary_region.size == 0:
+        return {'holes': 0, 'is_8': False}
+
+    if len(binary_region.shape) == 3:
+        binary_region = cv2.cvtColor(binary_region, cv2.COLOR_BGR2GRAY)
+
+    _, binary = cv2.threshold(binary_region, 127, 255, cv2.THRESH_BINARY)
+
+    holes = count_holes_in_region(binary)
+    is_8 = (holes == 2)
+
+    return {'holes': holes, 'is_8': is_8}
+
+
+def extract_roi_around_dot(image, dot, config):
+    """
+    Extract ROI around dot - uses config for roi_radius
+    Returns: roi_image, roi_coordinates
+    """
+    h, w = image.shape[:2]
+
+    # Get ROI radius from config (default 70)
+    roi_radius = config['number_detection'].get('roi_radius', 70)
+
+    # Calculate ROI bounds with dot at CENTER
+    x_center = dot['x']
+    y_center = dot['y']
+
+    x1 = max(0, x_center - roi_radius)
+    y1 = max(0, y_center - roi_radius)
+    x2 = min(w, x_center + roi_radius)
+    y2 = min(h, y_center + roi_radius)
+
+    # Extract ROI
+    roi = image[y1:y2, x1:x2].copy()
+
+    # Calculate dot position within ROI
+    dot_local_x = x_center - x1
+    dot_local_y = y_center - y1
+
+    # Erase dot from ROI (use config for erase radius)
+    erase_radius = dot['radius'] + config['number_detection'].get('dot_erase_padding', 3)
+    cv2.circle(roi, (dot_local_x, dot_local_y), erase_radius, 255, -1)
+
+    roi_info = {
+        'roi': roi,
+        'global_offset': (x1, y1),  # To convert back to global coords
+        'dot_local': (dot_local_x, dot_local_y),
+        'dot_id': dot['id'],
+        'bounds': (x1, y1, x2, y2),
+        'roi_size': (x2 - x1, y2 - y1)
+    }
+
+    return roi_info
+
+
+def process_roi_with_thresholds(roi_info, config, debug_dir):
+    """
+    Process ROI with multiple thresholds FROM CONFIG
+    Returns list of processed images ready for OCR
+    """
+    roi = roi_info['roi']
+    dot_id = roi_info['dot_id']
+
+    # Apply CLAHE
+    clahe = cv2.createCLAHE(clipLimit=2.5, tileGridSize=(8, 8))
+    enhanced = clahe.apply(roi)
+
+    # Get thresholds from config
+    thresholds = config['number_detection']['thresholds']
+
+    processed_rois = []
+
+    for thresh in thresholds:
+        # Binary threshold
+        _, binary = cv2.threshold(enhanced, thresh, 255, cv2.THRESH_BINARY)
+
+        # Ensure numbers are white on black
+        if np.mean(binary) < 127:
+            binary = cv2.bitwise_not(binary)
+
+        # Character separation
+        kernel_erode = cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2))
+        separated = cv2.morphologyEx(binary, cv2.MORPH_ERODE, kernel_erode, iterations=1)
+
+        kernel_dilate = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2, 2))
+        separated = cv2.morphologyEx(separated, cv2.MORPH_DILATE, kernel_dilate, iterations=1)
+
+        # Clean noise
+        kernel_open = cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2))
+        cleaned = cv2.morphologyEx(separated, cv2.MORPH_OPEN, kernel_open, iterations=1)
+
+        # Save debug image
+        if debug_dir:
+            debug_vis = cv2.cvtColor(cleaned, cv2.COLOR_GRAY2BGR)
+
+            # Mark dot center
+            dot_x, dot_y = roi_info['dot_local']
+            cv2.line(debug_vis, (dot_x - 8, dot_y), (dot_x + 8, dot_y), (0, 0, 255), 1)
+            cv2.line(debug_vis, (dot_x, dot_y - 8), (dot_x, dot_y + 8), (0, 0, 255), 1)
+            cv2.putText(debug_vis, f"Dot {dot_id} | Thresh: {thresh}",
+                       (5, 15), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0, 255, 0), 1)
+
+            cv2.imwrite(str(debug_dir / f"dot{dot_id:03d}_thresh{thresh}.jpg"), debug_vis)
+
+        # Upscale for OCR
+        h, w = cleaned.shape
+        scale_factor = 4
+        scaled = cv2.resize(cleaned, (w * scale_factor, h * scale_factor),
+                           interpolation=cv2.INTER_CUBIC)
+
+        # Denoise
+        denoised = cv2.fastNlMeansDenoising(scaled, None, 3, 7, 21)
+
+        processed_rois.append({
+            'image': denoised,
+            'original': cleaned,
+            'threshold': thresh,
+            'scale_factor': scale_factor
+        })
+
+    return processed_rois
+
+
+def detect_with_tesseract(processed_data, min_conf):
+    """Detect with Tesseract"""
+    detections = []
+
+    for psm in [6, 11, 12]:
+        config_str = f"--psm {psm} --oem 3 -c tessedit_char_whitelist=0123456789"
+
+        try:
+            pil_img = Image.fromarray(processed_data['image'])
+            data = pytesseract.image_to_data(
+                pil_img, config=config_str,
+                output_type=pytesseract.Output.DICT
+            )
+
+            for i in range(len(data['text'])):
+                text = data['text'][i].strip()
+                conf = int(data['conf'][i]) if data['conf'][i] != -1 else 0
+
+                if text and text.isdigit() and conf > min_conf:
+                    sf = processed_data['scale_factor']
+                    x = data['left'][i] // sf
+                    y = data['top'][i] // sf
+                    w = data['width'][i] // sf
+                    h = data['height'][i] // sf
+
+                    if w > 0 and h > 0 and w < 200 and h < 100:
+                        region = processed_data['original'][y:y+h, x:x+w]
+                        shape_info = analyze_digit_shape(region)
+
+                        detections.append({
+                            'number': int(text),
+                            'local_x': x + w // 2,
+                            'local_y': y + h // 2,
+                            'confidence': conf,
+                            'method': 'tesseract',
+                            'shape_info': shape_info
+                        })
+        except:
+            pass
+
+    return detections
+
+
+def detect_with_easyocr(processed_data, reader):
+    """Detect with EasyOCR"""
+    if reader is None:
+        return []
+
+    detections = []
+
+    try:
+        results = reader.readtext(
+            processed_data['image'],
+            allowlist='0123456789',
+            detail=1
+        )
+
+        for bbox, text, conf in results:
+            if text.isdigit():
+                sf = processed_data['scale_factor']
+                x_coords = [p[0] for p in bbox]
+                y_coords = [p[1] for p in bbox]
+
+                x = int(min(x_coords)) // sf
+                y = int(min(y_coords)) // sf
+                w = int(max(x_coords) - min(x_coords)) // sf
+                h = int(max(y_coords) - min(y_coords)) // sf
+
+                if w > 0 and h > 0 and w < 200 and h < 100:
+                    region = processed_data['original'][y:y+h, x:x+w]
+                    shape_info = analyze_digit_shape(region)
+
+                    adjusted_conf = int(conf * 100)
+                    if len(text) > 1:
+                        adjusted_conf = min(100, int(adjusted_conf * 1.3))
+
+                    detections.append({
+                        'number': int(text),
+                        'local_x': x + w // 2,
+                        'local_y': y + h // 2,
+                        'confidence': adjusted_conf,
+                        'method': 'easyocr',
+                        'shape_info': shape_info
+                    })
+    except:
+        pass
+
+    return detections
+
+
+def vote_on_detections(all_detections):
+    """Vote with digit 8 correction"""
+    if not all_detections:
+        return None
+
+    votes = Counter(d['number'] for d in all_detections)
+
+    # Check for digit 8 signature
+    has_8_signature = any(d['shape_info']['is_8'] for d in all_detections)
+
+    if has_8_signature and 8 in votes:
+        winning_number = 8
+    else:
+        winning_number = votes.most_common(1)[0][0]
+
+    # Get best detection
+    winners = [d for d in all_detections if d['number'] == winning_number]
+    best = max(winners, key=lambda d: d['confidence'])
+
+    # Average position
+    avg_x = int(np.mean([d['local_x'] for d in all_detections]))
+    avg_y = int(np.mean([d['local_y'] for d in all_detections]))
+
+    return {
+        'number': winning_number,
+        'local_x': avg_x,
+        'local_y': avg_y,
+        'confidence': best['confidence'],
+        'votes': votes[winning_number],
+        'total_detections': len(all_detections),
+        'methods': list(set(d['method'] for d in all_detections)),
+        'shape_corrected': has_8_signature and 8 in votes
+    }
+
+
+def process_dot(image, dot, config, reader, debug_dir):
+    """
+    Process a single dot:
+    1. Extract ROI around dot
+    2. Apply thresholds
+    3. Run OCR
+    4. Vote on results
+    """
+    # Extract ROI (uses config for radius)
+    roi_info = extract_roi_around_dot(image, dot, config)
+
+    # Save ROI debug
+    if debug_dir:
+        roi_vis = cv2.cvtColor(roi_info['roi'], cv2.COLOR_GRAY2BGR)
+        dot_x, dot_y = roi_info['dot_local']
+
+        # Crosshair at center
+        cv2.line(roi_vis, (dot_x - 10, dot_y), (dot_x + 10, dot_y), (0, 0, 255), 2)
+        cv2.line(roi_vis, (dot_x, dot_y - 10), (dot_x, dot_y + 10), (0, 0, 255), 2)
+        cv2.rectangle(roi_vis, (0, 0), (roi_vis.shape[1]-1, roi_vis.shape[0]-1), (0, 255, 0), 2)
+
+        # Show ROI info
+        roi_w, roi_h = roi_info['roi_size']
+        cv2.putText(roi_vis, f"Dot {dot['id']} | ROI: {roi_w}x{roi_h}",
+                   (5, 15), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0, 255, 0), 1)
+        cv2.putText(roi_vis, f"Global: ({dot['x']}, {dot['y']})",
+                   (5, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0, 255, 0), 1)
+
+        cv2.imwrite(str(debug_dir / f"dot{dot['id']:03d}_0_roi.jpg"), roi_vis)
+
+    # Process with thresholds FROM CONFIG
+    processed_rois = process_roi_with_thresholds(roi_info, config, debug_dir)
+
+    # OCR
+    all_detections = []
+
+    for processed in processed_rois:
+        tess_dets = detect_with_tesseract(processed,
+                                          config['number_detection']['tesseract_confidence'])
+        easy_dets = detect_with_easyocr(processed, reader)
+
+        all_detections.extend(tess_dets + easy_dets)
+
+    if not all_detections:
+        return None
+
+    # Vote
+    result = vote_on_detections(all_detections)
+
+    if result:
+        # Convert to global coordinates
+        offset_x, offset_y = roi_info['global_offset']
+        result['global_x'] = result['local_x'] + offset_x
+        result['global_y'] = result['local_y'] + offset_y
+        result['dot_id'] = dot['id']
+
     return result
 
 
-def save_debug_image(image, filename, config):
-    """Save debug image to number_debug folder"""
-    debug_dir = config['_base_path'] / config['paths']['number_debug_dir']
-    debug_dir.mkdir(parents=True, exist_ok=True)
-    cv2.imwrite(str(debug_dir / filename), image)
+def visualize(image, detections, dots, output_path):
+    """Create visualization"""
+    vis = image.copy()
+    if len(vis.shape) == 2:
+        vis = cv2.cvtColor(vis, cv2.COLOR_GRAY2BGR)
 
+    # Draw dots
+    for dot in dots:
+        cv2.circle(vis, (dot['x'], dot['y']), 3, (255, 0, 0), -1)
 
-def preprocess_for_ocr(gray_image, threshold_value):
-    """Preprocess image for OCR"""
-    _, binary = cv2.threshold(gray_image, threshold_value, 255, cv2.THRESH_BINARY)
-    
-    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2))
-    binary = cv2.morphologyEx(binary, cv2.MORPH_OPEN, kernel, iterations=1)
-    
-    # Upscale 2x for better OCR
-    scale_factor = 2
-    width = int(binary.shape[1] * scale_factor)
-    height = int(binary.shape[0] * scale_factor)
-    binary = cv2.resize(binary, (width, height), interpolation=cv2.INTER_CUBIC)
-    
-    denoised = cv2.fastNlMeansDenoising(binary, None, 10, 7, 21)
-    
-    return denoised, scale_factor
-
-
-def detect_numbers_easyocr(image, scale_factor, reader):
-    """Detect numbers using EasyOCR"""
-    if reader is None:
-        return []
-    
-    try:
-        results = reader.readtext(image, allowlist='0123456789', detail=1)
-        
-        detections = []
-        for bbox, text, conf in results:
-            if text.isdigit():
-                x_coords = [point[0] for point in bbox]
-                y_coords = [point[1] for point in bbox]
-                
-                x = int(min(x_coords)) // scale_factor
-                y = int(min(y_coords)) // scale_factor
-                w = int(max(x_coords) - min(x_coords)) // scale_factor
-                h = int(max(y_coords) - min(y_coords)) // scale_factor
-                
-                detections.append({
-                    'number': int(text),
-                    'center': (x + w // 2, y + h // 2),
-                    'bbox': (x, y, w, h),
-                    'confidence': int(conf * 100),
-                    'method': 'easyocr'
-                })
-        
-        return detections
-    except Exception as e:
-        logging.error(f"EasyOCR detection failed: {e}")
-        return []
-
-
-def detect_numbers_tesseract(image, scale_factor, config_str, min_conf):
-    """Detect numbers using Tesseract OCR"""
-    try:
-        pil_image = Image.fromarray(image)
-        data = pytesseract.image_to_data(pil_image, config=config_str, output_type=pytesseract.Output.DICT)
-        
-        detections = []
-        n_boxes = len(data['text'])
-        
-        for i in range(n_boxes):
-            text = data['text'][i].strip()
-            conf = int(data['conf'][i])
-            
-            if text and text.isdigit() and conf > min_conf:
-                x = data['left'][i] // scale_factor
-                y = data['top'][i] // scale_factor
-                w = data['width'][i] // scale_factor
-                h = data['height'][i] // scale_factor
-                
-                detections.append({
-                    'number': int(text),
-                    'center': (x + w // 2, y + h // 2),
-                    'bbox': (x, y, w, h),
-                    'confidence': conf,
-                    'method': 'tesseract'
-                })
-        
-        return detections
-    except Exception as e:
-        logging.error(f"Tesseract detection failed: {e}")
-        return []
-
-
-def detect_numbers_multi_threshold(gray_image, segment_name, config, reader):
-    """
-    Try multiple thresholds with Tesseract (PSM 11 + PSM 6) and EasyOCR
-    
-    This is the CORE detection function - tries 10 thresholds x 3 methods = 30 passes
-    """
-    thresholds = config['number_detection']['thresholds']
-    min_conf = config['number_detection']['tesseract_confidence']
-    all_detections = []
-    
-    for thresh in thresholds:
-        preprocessed, scale_factor = preprocess_for_ocr(gray_image, thresh)
-        
-        # Method 1: Tesseract PSM 11 (sparse text)
-        config_psm11 = '--psm 11 --oem 3 -c tessedit_char_whitelist=0123456789'
-        detections_psm11 = detect_numbers_tesseract(preprocessed, scale_factor, config_psm11, min_conf)
-        for det in detections_psm11:
-            det['threshold'] = thresh
-            det['psm'] = 11
-        all_detections.extend(detections_psm11)
-        
-        # Method 2: Tesseract PSM 6 (uniform block)
-        config_psm6 = '--psm 6 --oem 3 -c tessedit_char_whitelist=0123456789'
-        detections_psm6 = detect_numbers_tesseract(preprocessed, scale_factor, config_psm6, min_conf)
-        for det in detections_psm6:
-            det['threshold'] = thresh
-            det['psm'] = 6
-        all_detections.extend(detections_psm6)
-        
-        # Method 3: EasyOCR
-        easyocr_detections = detect_numbers_easyocr(preprocessed, scale_factor, reader)
-        for det in easyocr_detections:
-            det['threshold'] = thresh
-        all_detections.extend(easyocr_detections)
-        
-        logging.info(f"Threshold {thresh}: Tesseract={len(detections_psm11)+len(detections_psm6)}, "
-                    f"EasyOCR={len(easyocr_detections)}")
-    
-    logging.info(f"Total detections from all methods: {len(all_detections)}")
-    return all_detections
-
-
-def consensus_voting(detections, config):
-    """
-    Vote on which number is at each position
-    Requires min 3 votes and 50% agreement
-    """
-    if not detections:
-        return []
-    
-    position_tolerance = config['number_detection']['consensus']['position_tolerance']
-    min_votes = config['number_detection']['consensus']['min_votes']
-    min_percentage = config['number_detection']['consensus']['min_percentage']
-    
-    # Group by position
-    position_groups = []
-    
+    # Draw numbers
     for det in detections:
-        cx, cy = det['center']
-        
-        found_group = False
-        for group in position_groups:
-            group_center = group['center']
-            dist = np.sqrt((cx - group_center[0])**2 + (cy - group_center[1])**2)
-            
-            if dist < position_tolerance:
-                group['detections'].append(det)
-                found_group = True
+        x = det['global_x']
+        y = det['global_y']
+
+        if det.get('shape_corrected'):
+            color = (255, 0, 255)
+        elif len(det['methods']) > 1:
+            color = (0, 255, 0)
+        else:
+            color = (0, 165, 255)
+
+        cv2.circle(vis, (x, y), 5, (0, 0, 255), -1)
+
+        # Find corresponding dot
+        for dot in dots:
+            if dot['id'] == det['dot_id']:
+                cv2.line(vis, (dot['x'], dot['y']), (x, y), (150, 150, 150), 1)
                 break
-        
-        if not found_group:
-            position_groups.append({
-                'center': (cx, cy),
-                'detections': [det]
-            })
-    
-    # Vote on each position
-    consensus_detections = []
-    
-    for group in position_groups:
-        dets = group['detections']
-        
-        if len(dets) < min_votes:
-            logging.debug(f"Skipped position - only {len(dets)} vote(s)")
-            continue
-        
-        number_votes = Counter([d['number'] for d in dets])
-        most_common_number, vote_count = number_votes.most_common(1)[0]
-        
-        vote_percentage = (vote_count / len(dets)) * 100
-        
-        if vote_percentage < min_percentage:
-            logging.debug(f"Skipped - low consensus ({vote_percentage:.0f}%)")
-            continue
-        
-        same_number_dets = [d for d in dets if d['number'] == most_common_number]
-        best_det = max(same_number_dets, key=lambda x: x['confidence'])
-        
-        best_det['vote_count'] = vote_count
-        best_det['total_votes'] = len(dets)
-        best_det['vote_percentage'] = vote_percentage
-        
-        consensus_detections.append(best_det)
-        logging.info(f"✓ Number {most_common_number} at ({best_det['center'][0]}, {best_det['center'][1]}) "
-                    f"- {vote_count}/{len(dets)} votes ({vote_percentage:.0f}%)")
-    
-    logging.info(f"Consensus voting: {len(detections)} → {len(consensus_detections)} detections")
-    return consensus_detections
+
+        label = f"{det['number']}"
+        cv2.putText(vis, label, (x + 8, y - 8),
+                   cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0), 3)
+        cv2.putText(vis, label, (x + 8, y - 8),
+                   cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 2)
+
+    cv2.imwrite(str(output_path), vis)
 
 
-def filter_by_size(detections, config):
-    """Remove detections that are too small (dots) or too large"""
-    size_cfg = config['number_detection']['size_filter']
-    min_w, min_h = size_cfg['min_width'], size_cfg['min_height']
-    max_w, max_h = size_cfg['max_width'], size_cfg['max_height']
-    
-    filtered = []
-    for det in detections:
-        x, y, w, h = det['bbox']
-        if min_w <= w <= max_w and min_h <= h <= max_h:
-            filtered.append(det)
-        else:
-            logging.debug(f"Filtered out: {det['number']} ({w}x{h})")
-    
-    logging.info(f"Size filtering: {len(detections)} → {len(filtered)}")
-    return filtered
+def run_segment_based_detection(config, picture_name, expected_range=None):
+    """Main - Dynamic ROI per dot"""
+    # Display config being used
+    thresholds = config['number_detection']['thresholds']
+    roi_radius = config['number_detection'].get('roi_radius', 70)
+    tesseract_conf = config['number_detection']['tesseract_confidence']
+    use_easyocr = config['number_detection']['use_easyocr']
 
-
-def ensure_unique_numbers(detections, expected_range):
-    """Ensure each number appears only once"""
-    if not detections:
-        return []
-    
-    number_groups = {}
-    for det in detections:
-        num = det['number']
-        if num not in number_groups:
-            number_groups[num] = []
-        number_groups[num].append(det)
-    
-    unique_detections = []
-    
-    for num, dets in number_groups.items():
-        if len(dets) == 1:
-            unique_detections.append(dets[0])
-        else:
-            best = max(dets, key=lambda x: (x.get('vote_percentage', 0), x['confidence']))
-            unique_detections.append(best)
-            logging.info(f"Number {num}: kept best of {len(dets)} detections")
-    
-    unique_detections = sorted(unique_detections, key=lambda x: x['number'])
-    logging.info(f"Unique filtering: {len(detections)} → {len(unique_detections)}")
-    
-    # Check for missing numbers
-    if expected_range:
-        detected_nums = set(d['number'] for d in unique_detections)
-        expected_nums = set(range(expected_range[0], expected_range[1] + 1))
-        missing_nums = expected_nums - detected_nums
-        
-        if missing_nums:
-            logging.warning(f"Missing numbers: {sorted(missing_nums)}")
-    
-    return unique_detections
-
-
-def validate_number_range(detections, expected_range):
-    """Filter detections to expected range"""
-    if expected_range is None:
-        return detections
-    
-    min_num, max_num = expected_range
-    filtered = [d for d in detections if min_num <= d['number'] <= max_num]
-    
-    logging.info(f"Range filtering ({min_num}-{max_num}): {len(detections)} → {len(filtered)}")
-    return filtered
-
-
-def detect_missing_numbers_relaxed(gray_no_dots, missing_numbers, config):
-    """
-    Second pass with relaxed settings for missing numbers
-    Lower confidence threshold (35 instead of 55)
-    """
-    if not missing_numbers:
-        return []
-    
-    logging.info(f"Second pass: searching for {missing_numbers}")
-    
-    relaxed_thresholds = config['number_detection']['relaxed_thresholds']
-    relaxed_conf = config['number_detection']['relaxed_confidence']
-    all_detections = []
-    
-    for thresh in relaxed_thresholds:
-        preprocessed, scale_factor = preprocess_for_ocr(gray_no_dots, thresh)
-        
-        config_str = '--psm 11 --oem 3 -c tessedit_char_whitelist=0123456789'
-        data = pytesseract.image_to_data(Image.fromarray(preprocessed), config=config_str, output_type=pytesseract.Output.DICT)
-        
-        n_boxes = len(data['text'])
-        for i in range(n_boxes):
-            text = data['text'][i].strip()
-            conf = int(data['conf'][i])
-            
-            if text and text.isdigit() and int(text) in missing_numbers and conf > relaxed_conf:
-                x = data['left'][i] // scale_factor
-                y = data['top'][i] // scale_factor
-                w = data['width'][i] // scale_factor
-                h = data['height'][i] // scale_factor
-                
-                all_detections.append({
-                    'number': int(text),
-                    'center': (x + w // 2, y + h // 2),
-                    'bbox': (x, y, w, h),
-                    'confidence': conf,
-                    'method': 'relaxed_pass',
-                    'threshold': thresh
-                })
-    
-    logging.info(f"Second pass found {len(all_detections)} candidates")
-    return all_detections
-
-
-def visualize_detected_numbers(image, detections, save_path):
-    """Draw detected numbers on image"""
-    result_image = image.copy()
-    if len(result_image.shape) == 2:
-        result_image = cv2.cvtColor(result_image, cv2.COLOR_GRAY2BGR)
-    
-    for det in detections:
-        cx, cy = det['center']
-        x, y, w, h = det['bbox']
-        number = det['number']
-        vote_pct = det.get('vote_percentage', 0)
-        
-        cv2.rectangle(result_image, (x, y), (x + w, y + h), (255, 0, 0), 2)
-        cv2.circle(result_image, (cx, cy), 3, (0, 0, 255), -1)
-        
-        label = f"{number} ({vote_pct:.0f}%)"
-        cv2.putText(result_image, label, (x, y - 5),
-                   cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-    
-    cv2.imwrite(str(save_path), result_image)
-    logging.info(f"Visualization saved: {save_path}")
-
-
-def process_segment(image_path, config, detected_circles_json, expected_range, reader):
-    """Process one segment with full detection pipeline"""
-
-    segment_name = image_path.stem
-    logging.info(f"\n{'='*60}")
-    logging.info(f"Processing: {segment_name}")
-    logging.info(f"{'='*60}")
-    
-    image = cv2.imread(str(image_path))
-    if image is None:
-        logging.error(f"Failed to load: {segment_name}")
-        return None
-    
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    
-    circles = load_detected_circles_for_segment(segment_name, detected_circles_json)
-    
-    if circles:
-        logging.info(f"Erasing {len(circles)} dots...")
-        gray_no_dots = erase_dots_from_image(gray, circles, config)
-        save_debug_image(gray_no_dots, f"{segment_name}_no_dots.jpg", config)
-    else:
-        logging.warning("No circles found, processing without dot removal")
-        gray_no_dots = gray
-    
-    logging.info("PHASE 1: Multi-threshold detection...")
-    all_detections = detect_numbers_multi_threshold(gray_no_dots, segment_name, config, reader)
-    
-    if not all_detections:
-        logging.warning(f"No numbers found in {segment_name}")
-        return None
-    
-    logging.info("PHASE 2: Consensus voting...")
-    consensus_detections = consensus_voting(all_detections, config)
-    
-    logging.info("PHASE 3: Size filtering...")
-    consensus_detections = filter_by_size(consensus_detections, config)
-    
-    logging.info("PHASE 4: Unique numbers...")
-    consensus_detections = ensure_unique_numbers(consensus_detections, expected_range)
-    
-    # Phase 4.5: Relaxed pass for missing numbers
-    if expected_range:
-        detected_nums = set(d['number'] for d in consensus_detections)
-        expected_nums = set(range(expected_range[0], expected_range[1] + 1))
-        missing_nums = sorted(expected_nums - detected_nums)
-        
-        if missing_nums:
-            logging.info(f"PHASE 4.5: Recovering {len(missing_nums)} missing numbers...")
-            relaxed_detections = detect_missing_numbers_relaxed(gray_no_dots, missing_nums, config)
-            
-            size_cfg = config['number_detection']['size_filter']
-            for det in relaxed_detections:
-                x, y, w, h = det['bbox']
-                if (size_cfg['min_width'] <= w <= size_cfg['max_width'] and
-                    size_cfg['min_height'] <= h <= size_cfg['max_height']):
-                    
-                    # Check not duplicate position
-                    is_dup = False
-                    for existing in consensus_detections:
-                        ex, ey = existing['center']
-                        cx, cy = det['center']
-                        dist = np.sqrt((cx - ex)**2 + (cy - ey)**2)
-                        if dist < 15:
-                            is_dup = True
-                            break
-                    
-                    if not is_dup:
-                        det['vote_percentage'] = 100
-                        consensus_detections.append(det)
-                        logging.info(f"  ✓ Recovered: {det['number']}")
-    
-    if expected_range:
-        logging.info(f"PHASE 5: Range validation {expected_range}...")
-        consensus_detections = validate_number_range(consensus_detections, expected_range)
-        
-        detected_nums = set(d['number'] for d in consensus_detections)
-        expected_nums = set(range(expected_range[0], expected_range[1] + 1))
-        still_missing = sorted(expected_nums - detected_nums)
-        if still_missing:
-            logging.warning(f"  Still missing: {still_missing}")
-    
-    # Create segment data
-    segment_data = {
-        "segment_name": segment_name,
-        "numbers": [
-            {
-                "number": det['number'],
-                "pixel_x": det['center'][0],
-                "pixel_y": det['center'][1],
-                "bbox": det['bbox'],
-                "confidence": det['confidence'],
-                "vote_percentage": det.get('vote_percentage', 100)
-            }
-            for det in consensus_detections
-        ],
-        "total_numbers": len(consensus_detections)
-    }
-    
-    viz_dir = config['_base_path'] / config['paths']['number_viz_dir']
-    viz_dir.mkdir(parents=True, exist_ok=True)
-    viz_path = viz_dir / f"{segment_name}_numbers.jpg"
-    visualize_detected_numbers(image, consensus_detections, viz_path)
-    
-    logging.info(f"{segment_name}: {len(consensus_detections)} numbers detected\n")
-    
-    return segment_data
-
-
-def convert_to_global(detected_json, segments_json, output_json, config):
-    """Convert to global coordinates with deduplicatiom"""
-
-    with open(detected_json) as f:
-        detected_data = json.load(f)
-    with open(segments_json) as f:
-        segment_mapping = json.load(f)
-       
-    all_global_numbers = []
-    
-    for segment in detected_data["segments"]:
-        segment_name = segment["segment_name"] + ".jpg"
-        
-        if segment_name not in segment_mapping:
-            logging.warning(f"Segment {segment_name} not in mapping")
-            continue
-        
-        offset = segment_mapping[segment_name]["start"]
-        
-        for num_data in segment["numbers"]:
-            all_global_numbers.append({
-                "number": num_data["number"],
-                "segment_name": segment_name,
-                "local_coordinates": {
-                    "x": num_data["pixel_x"],
-                    "y": num_data["pixel_y"]
-                },
-                "global_coordinates": {
-                    "x": num_data["pixel_x"] + offset["x"],
-                    "y": num_data["pixel_y"] + offset["y"]
-                },
-                "bbox": num_data["bbox"],
-                "confidence": num_data["confidence"],
-                "vote_percentage": num_data.get("vote_percentage", 100)
-            })
-    
-    logging.info(f"Total before deduplication: {len(all_global_numbers)}")
-    
-    # Remove duplicates (keep best vote percentage)
-    threshold = config['number_detection']['duplicate_threshold']
-    sorted_numbers = sorted(all_global_numbers, key=lambda x: (x.get('vote_percentage', 0), x['confidence']), reverse=True)
-    
-    unique = []
-    
-    for num in sorted_numbers:
-        global_x = num["global_coordinates"]["x"]
-        global_y = num["global_coordinates"]["y"]
-        number_value = num["number"]
-        
-        is_duplicate = False
-        duplicate_idx = -1
-        
-        for i, existing in enumerate(unique):
-            ex_x = existing["global_coordinates"]["x"]
-            ex_y = existing["global_coordinates"]["y"]
-            
-            distance = np.sqrt((global_x - ex_x)**2 + (global_y - ex_y)**2)
-            
-            if distance < threshold:
-                if number_value == existing["number"]:
-                    is_duplicate = True
-                    duplicate_idx = i
-                    break
-                elif distance < 10:
-                    is_duplicate = True
-                    duplicate_idx = i
-                    logging.info(f"Removing close false positive: {number_value} vs {existing['number']}")
-                    break
-        
-        if is_duplicate:
-            if num.get('vote_percentage', 0) > unique[duplicate_idx].get('vote_percentage', 0):
-                unique[duplicate_idx] = num
-        else:
-            unique.append(num)
-    
-    logging.info(f"After deduplication: {len(unique)}")
-    
-    with open(output_json, 'w') as f:
-        json.dump({
-            "detection_method": "Multi-Threshold OCR with Consensus Voting",
-            "total_numbers": len(unique),
-            "numbers": unique
-        }, f, indent=2)
-    
-    logging.info(f"Saved to {output_json}")
-    return unique
-
-
-def run_detection_for_all_segments(config, picture_name, expected_range, use_combo_ocr):
-    """Main entry point for number detection"""
+    print("\n" + "="*60)
+    print("DYNAMIC ROI NUMBER DETECTION")
+    print("="*60)
+    print(f"📋 Config:")
+    print(f"   Thresholds: {thresholds}")
+    print(f"   ROI radius: {roi_radius}px")
+    print(f"   Tesseract min conf: {tesseract_conf}")
+    print(f"   EasyOCR: {'✓' if use_easyocr else '✗'}")
+    print("="*60 + "\n")
 
     base_path = config['_base_path']
-    segments_dir = base_path / config['paths']['segments_overlap_dir']
     config_dir = base_path / config['paths']['config_dir']
-    
-    reader = setup_ocr(config) if use_combo_ocr else None
-    
-    # Check for detected circles
-    detected_circles_json = config_dir / config['filenames']['detected_circles']
-    if not detected_circles_json.exists():
-        logging.error(f"Detected circles JSON not found: {detected_circles_json}")
-        logging.error("Please run circle detection first!")
+    debug_dir = base_path / config['paths']['number_debug_dir']
+
+    # Clear debug
+    import shutil
+    if debug_dir.exists():
+        shutil.rmtree(debug_dir)
+    debug_dir.mkdir(parents=True, exist_ok=True)
+
+    # Load dots
+    dots = load_dots(config_dir / config['filenames']['global_dots'])
+    if not dots:
+        print("❌ No dots loaded!")
         return
-    
-    jpg_files = sorted(segments_dir.glob("*.jpg"))
-    
-    logging.info(f"BATCH PROCESSING: {len(jpg_files)} segments")
-    if expected_range:
-        logging.info(f"Expected range: {expected_range[0]}-{expected_range[1]}\n")
-    
-    # Process segments
-    all_segments_data = []
-    for i, image_file in enumerate(jpg_files, 1):
-        logging.info(f"[{i}/{len(jpg_files)}]")
-        segment_data = process_segment(image_file, config, detected_circles_json, expected_range, reader)
-        all_segments_data.append(segment_data)
-    
-    # Save segment results
-    detected_numbers_json = config_dir / config['filenames']['detected_numbers']
-    
-    with open(detected_numbers_json, 'w') as f:
-        json.dump({
-            "detection_method": "Multi-Threshold OCR with Consensus Voting",
-            "total_segments": len([s for s in all_segments_data if s]),
-            "total_numbers_found": sum(s["total_numbers"] for s in all_segments_data if s),
-            "segments": [s for s in all_segments_data if s]
-        }, f, indent=2)
-    
-    logging.info(f"Saved segment results to {detected_numbers_json}\n")
-    
-    # Convert to global
-    segments_json = segments_dir / config['filenames']['overlap_segments_meta']
-    global_numbers_json = config_dir / config['filenames']['global_numbers']
-    
-    if not segments_json.exists():
-        logging.error(f"Segments mapping not found: {segments_json}")
-        return
-    
-    global_numbers = convert_to_global(detected_numbers_json, segments_json, global_numbers_json, config)
-    
-    # Visualize on main image
+
+    # Load full image
     picture_path = base_path / config['paths']['pictures_dir'] / picture_name
-    
-    if picture_path.exists():
-        main_image = cv2.imread(str(picture_path))
-        
-        for num in global_numbers:
-            x = num["global_coordinates"]["x"]
-            y = num["global_coordinates"]["y"]
-            number = num["number"]
-            
-            cv2.circle(main_image, (x, y), 5, (0, 0, 255), -1)
-            
-            label = f"{number}"
-            cv2.putText(main_image, label, (x + 8, y - 8),
-                       cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
-        
-        output_path = base_path / config['filenames']['main_with_numbers']
-        cv2.imwrite(str(output_path), main_image)
-        logging.info(f"Main image visualization saved to {output_path}")
-    else:
-        logging.warning(f"Main image not found: {picture_path}")
-    
-    logging.info("Number detection completed\n")
+    if not picture_path.exists():
+        print(f"❌ Image not found: {picture_path}")
+        return
+
+    image = cv2.imread(str(picture_path))
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+    print(f"📷 Image: {gray.shape[1]}x{gray.shape[0]}")
+    print(f"🔵 Dots: {len(dots)}\n")
+
+    if expected_range:
+        print(f"🎯 Expected range: {expected_range[0]}-{expected_range[1]}\n")
+
+    # OCR
+    reader = setup_ocr(config)
+
+    # Process each dot
+    print("="*60)
+    print("PROCESSING DOTS")
+    print("="*60)
+
+    detections = []
+    total_dots = len(dots)
+
+    for idx, dot in enumerate(dots, 1):
+        # Progress bar
+        progress = (idx / total_dots) * 100
+        bar_length = 40
+        filled = int(bar_length * idx / total_dots)
+        bar = '█' * filled + '░' * (bar_length - filled)
+
+        print(f"\r[{bar}] {progress:.1f}% | Dot {idx}/{total_dots} (ID: {dot['id']})",
+              end='', flush=True)
+
+        result = process_dot(gray, dot, config, reader, debug_dir)
+
+        if result:
+            detections.append(result)
+
+    print("\n" + "="*60)
+    print(f"✓ All dots processed!")
+    print("="*60 + "\n")
+
+    # Filter by range
+    if expected_range:
+        min_n, max_n = expected_range
+        filtered = [d for d in detections if min_n <= d['number'] <= max_n]
+        print(f"🔍 Filtered to [{min_n}, {max_n}]: {len(detections)} → {len(filtered)}\n")
+        detections = filtered
+
+    # Save
+    print("💾 Saving results...")
+    output_json = config_dir / config['filenames']['global_numbers']
+    with open(output_json, 'w') as f:
+        json.dump({
+            "detection_method": "Dynamic ROI per Dot",
+            "config_used": {
+                "thresholds": config['number_detection']['thresholds'],
+                "roi_radius": config['number_detection'].get('roi_radius', 70),
+                "tesseract_confidence": config['number_detection']['tesseract_confidence']
+            },
+            "total_numbers": len(detections),
+            "numbers": [
+                {
+                    "dot_id": d['dot_id'],
+                    "number": d['number'],
+                    "global_coordinates": {"x": d['global_x'], "y": d['global_y']},
+                    "confidence": d['confidence'],
+                    "votes": d['votes'],
+                    "methods": d['methods'],
+                    "shape_corrected": d.get('shape_corrected', False)
+                }
+                for d in detections
+            ]
+        }, f, indent=2)
+
+    print(f"✓ Saved to: {output_json.name}\n")
+
+    # Visualize
+    print("🎨 Creating visualization...")
+    viz_path = base_path / config['filenames']['main_with_numbers']
+    visualize(image, detections, dots, viz_path)
+    print(f"✓ Visualization saved\n")
+
+    # Stats
+    print("="*60)
+    print("📊 FINAL RESULTS")
+    print("="*60)
+    print(f"Numbers detected: {len(detections)}/{len(dots)}")
+
+    both_ocr = sum(1 for d in detections if len(d['methods']) > 1)
+    shape_corrected = sum(1 for d in detections if d.get('shape_corrected'))
+
+    print(f"Both OCRs agreed: {both_ocr}")
+    print(f"Shape-corrected 8s: {shape_corrected}")
+
+    if expected_range:
+        detected_nums = set(d['number'] for d in detections)
+        expected_nums = set(range(expected_range[0], expected_range[1] + 1))
+        accuracy = (len(detected_nums) / len(expected_nums)) * 100
+
+        print(f"\nAccuracy: {accuracy:.1f}%")
+
+        missing = sorted(expected_nums - detected_nums)
+        if missing:
+            print(f"Missing ({len(missing)}): {missing[:20]}{'...' if len(missing) > 20 else ''}")
+
+    print("\n" + "="*60)
+    print("🔍 DEBUG IMAGES")
+    print("="*60)
+    print(f"Location: {debug_dir}/")
+    print(f"  - dot001_0_roi.jpg (ROI with center marked)")
+    print(f"  - dot001_thresh{config['number_detection']['thresholds'][0]}.jpg")
+    for t in config['number_detection']['thresholds'][1:]:
+        print(f"  - dot001_thresh{t}.jpg")
+    print("="*60 + "\n")
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
