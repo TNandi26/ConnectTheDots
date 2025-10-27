@@ -1,0 +1,1444 @@
+{
+  "detection_method": "Dynamic ROI per Dot",
+  "thresholds": [
+    130,
+    140,
+    150
+  ],
+  "total_numbers": 96,
+  "numbers": [
+    {
+      "dot_id": 1,
+      "number": 30,
+      "global_coordinates": {
+        "x": 653,
+        "y": 182
+      },
+      "confidence": 87,
+      "votes": 12,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 2,
+      "number": 91,
+      "global_coordinates": {
+        "x": 678,
+        "y": 154
+      },
+      "confidence": 100,
+      "votes": 14,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 3,
+      "number": 93,
+      "global_coordinates": {
+        "x": 733,
+        "y": 95
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 4,
+      "number": 92,
+      "global_coordinates": {
+        "x": 696,
+        "y": 130
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 5,
+      "number": 94,
+      "global_coordinates": {
+        "x": 752,
+        "y": 85
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 7,
+      "number": 1,
+      "global_coordinates": {
+        "x": 808,
+        "y": 118
+      },
+      "confidence": 71,
+      "votes": 8,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 8,
+      "number": 10,
+      "global_coordinates": {
+        "x": 817,
+        "y": 108
+      },
+      "confidence": 100,
+      "votes": 4,
+      "methods": [
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 9,
+      "number": 98,
+      "global_coordinates": {
+        "x": 843,
+        "y": 78
+      },
+      "confidence": 100,
+      "votes": 9,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 10,
+      "number": 97,
+      "global_coordinates": {
+        "x": 847,
+        "y": 22
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 11,
+      "number": 11,
+      "global_coordinates": {
+        "x": 848,
+        "y": 107
+      },
+      "confidence": 100,
+      "votes": 12,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 12,
+      "number": 14,
+      "global_coordinates": {
+        "x": 922,
+        "y": 177
+      },
+      "confidence": 100,
+      "votes": 15,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 13,
+      "number": 13,
+      "global_coordinates": {
+        "x": 912,
+        "y": 148
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 15,
+      "number": 8,
+      "global_coordinates": {
+        "x": 871,
+        "y": 93
+      },
+      "confidence": 60,
+      "votes": 2,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": true
+    },
+    {
+      "dot_id": 16,
+      "number": 98,
+      "global_coordinates": {
+        "x": 850,
+        "y": 86
+      },
+      "confidence": 88,
+      "votes": 5,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 17,
+      "number": 99,
+      "global_coordinates": {
+        "x": 887,
+        "y": 51
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 18,
+      "number": 82,
+      "global_coordinates": {
+        "x": 241,
+        "y": 195
+      },
+      "confidence": 100,
+      "votes": 10,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 19,
+      "number": 63,
+      "global_coordinates": {
+        "x": 213,
+        "y": 271
+      },
+      "confidence": 79,
+      "votes": 8,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 20,
+      "number": 78,
+      "global_coordinates": {
+        "x": 113,
+        "y": 251
+      },
+      "confidence": 100,
+      "votes": 7,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 21,
+      "number": 8,
+      "global_coordinates": {
+        "x": 145,
+        "y": 225
+      },
+      "confidence": 72,
+      "votes": 3,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": true
+    },
+    {
+      "dot_id": 22,
+      "number": 80,
+      "global_coordinates": {
+        "x": 176,
+        "y": 217
+      },
+      "confidence": 100,
+      "votes": 4,
+      "methods": [
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 23,
+      "number": 81,
+      "global_coordinates": {
+        "x": 197,
+        "y": 217
+      },
+      "confidence": 100,
+      "votes": 7,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 24,
+      "number": 83,
+      "global_coordinates": {
+        "x": 296,
+        "y": 182
+      },
+      "confidence": 100,
+      "votes": 4,
+      "methods": [
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 25,
+      "number": 86,
+      "global_coordinates": {
+        "x": 445,
+        "y": 212
+      },
+      "confidence": 100,
+      "votes": 13,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 26,
+      "number": 85,
+      "global_coordinates": {
+        "x": 397,
+        "y": 198
+      },
+      "confidence": 100,
+      "votes": 10,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 27,
+      "number": 84,
+      "global_coordinates": {
+        "x": 353,
+        "y": 185
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 28,
+      "number": 88,
+      "global_coordinates": {
+        "x": 542,
+        "y": 217
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 29,
+      "number": 87,
+      "global_coordinates": {
+        "x": 492,
+        "y": 218
+      },
+      "confidence": 100,
+      "votes": 13,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 30,
+      "number": 2,
+      "global_coordinates": {
+        "x": 610,
+        "y": 257
+      },
+      "confidence": 99,
+      "votes": 8,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 31,
+      "number": 1,
+      "global_coordinates": {
+        "x": 583,
+        "y": 210
+      },
+      "confidence": 99,
+      "votes": 8,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 32,
+      "number": 89,
+      "global_coordinates": {
+        "x": 637,
+        "y": 194
+      },
+      "confidence": 100,
+      "votes": 13,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 33,
+      "number": 5,
+      "global_coordinates": {
+        "x": 696,
+        "y": 237
+      },
+      "confidence": 99,
+      "votes": 6,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 34,
+      "number": 14,
+      "global_coordinates": {
+        "x": 724,
+        "y": 230
+      },
+      "confidence": 53,
+      "votes": 2,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 35,
+      "number": 6,
+      "global_coordinates": {
+        "x": 725,
+        "y": 253
+      },
+      "confidence": 99,
+      "votes": 8,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 36,
+      "number": 4,
+      "global_coordinates": {
+        "x": 683,
+        "y": 280
+      },
+      "confidence": 95,
+      "votes": 4,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 37,
+      "number": 3,
+      "global_coordinates": {
+        "x": 663,
+        "y": 286
+      },
+      "confidence": 99,
+      "votes": 6,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 38,
+      "number": 2,
+      "global_coordinates": {
+        "x": 735,
+        "y": 223
+      },
+      "confidence": 62,
+      "votes": 7,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 39,
+      "number": 21,
+      "global_coordinates": {
+        "x": 822,
+        "y": 181
+      },
+      "confidence": 100,
+      "votes": 13,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 40,
+      "number": 20,
+      "global_coordinates": {
+        "x": 850,
+        "y": 241
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 41,
+      "number": 8,
+      "global_coordinates": {
+        "x": 935,
+        "y": 252
+      },
+      "confidence": 99,
+      "votes": 2,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": true
+    },
+    {
+      "dot_id": 42,
+      "number": 13,
+      "global_coordinates": {
+        "x": 892,
+        "y": 266
+      },
+      "confidence": 80,
+      "votes": 8,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 43,
+      "number": 19,
+      "global_coordinates": {
+        "x": 884,
+        "y": 269
+      },
+      "confidence": 100,
+      "votes": 4,
+      "methods": [
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 44,
+      "number": 16,
+      "global_coordinates": {
+        "x": 943,
+        "y": 215
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 45,
+      "number": 8,
+      "global_coordinates": {
+        "x": 935,
+        "y": 199
+      },
+      "confidence": 21,
+      "votes": 1,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": true
+    },
+    {
+      "dot_id": 46,
+      "number": 61,
+      "global_coordinates": {
+        "x": 208,
+        "y": 340
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 47,
+      "number": 76,
+      "global_coordinates": {
+        "x": 71,
+        "y": 318
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 48,
+      "number": 65,
+      "global_coordinates": {
+        "x": 153,
+        "y": 309
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 49,
+      "number": 62,
+      "global_coordinates": {
+        "x": 198,
+        "y": 296
+      },
+      "confidence": 100,
+      "votes": 8,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 50,
+      "number": 77,
+      "global_coordinates": {
+        "x": 87,
+        "y": 285
+      },
+      "confidence": 100,
+      "votes": 4,
+      "methods": [
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 51,
+      "number": 64,
+      "global_coordinates": {
+        "x": 158,
+        "y": 286
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 52,
+      "number": 75,
+      "global_coordinates": {
+        "x": 65,
+        "y": 341
+      },
+      "confidence": 100,
+      "votes": 10,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 53,
+      "number": 22,
+      "global_coordinates": {
+        "x": 800,
+        "y": 286
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 54,
+      "number": 23,
+      "global_coordinates": {
+        "x": 769,
+        "y": 349
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 56,
+      "number": 73,
+      "global_coordinates": {
+        "x": 63,
+        "y": 406
+      },
+      "confidence": 100,
+      "votes": 6,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 58,
+      "number": 67,
+      "global_coordinates": {
+        "x": 134,
+        "y": 412
+      },
+      "confidence": 100,
+      "votes": 10,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 59,
+      "number": 60,
+      "global_coordinates": {
+        "x": 201,
+        "y": 406
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 60,
+      "number": 74,
+      "global_coordinates": {
+        "x": 50,
+        "y": 388
+      },
+      "confidence": 100,
+      "votes": 4,
+      "methods": [
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 61,
+      "number": 66,
+      "global_coordinates": {
+        "x": 135,
+        "y": 367
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 62,
+      "number": 24,
+      "global_coordinates": {
+        "x": 763,
+        "y": 418
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 63,
+      "number": 72,
+      "global_coordinates": {
+        "x": 69,
+        "y": 460
+      },
+      "confidence": 100,
+      "votes": 8,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 64,
+      "number": 29,
+      "global_coordinates": {
+        "x": 206,
+        "y": 449
+      },
+      "confidence": 70,
+      "votes": 9,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 65,
+      "number": 70,
+      "global_coordinates": {
+        "x": 98,
+        "y": 483
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 66,
+      "number": 68,
+      "global_coordinates": {
+        "x": 132,
+        "y": 440
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 67,
+      "number": 44,
+      "global_coordinates": {
+        "x": 346,
+        "y": 506
+      },
+      "confidence": 100,
+      "votes": 8,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 68,
+      "number": 43,
+      "global_coordinates": {
+        "x": 397,
+        "y": 452
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 69,
+      "number": 42,
+      "global_coordinates": {
+        "x": 501,
+        "y": 467
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 70,
+      "number": 41,
+      "global_coordinates": {
+        "x": 575,
+        "y": 474
+      },
+      "confidence": 100,
+      "votes": 13,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 71,
+      "number": 31,
+      "global_coordinates": {
+        "x": 716,
+        "y": 495
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 72,
+      "number": 40,
+      "global_coordinates": {
+        "x": 646,
+        "y": 464
+      },
+      "confidence": 100,
+      "votes": 6,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 73,
+      "number": 57,
+      "global_coordinates": {
+        "x": 160,
+        "y": 560
+      },
+      "confidence": 100,
+      "votes": 4,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 74,
+      "number": 28,
+      "global_coordinates": {
+        "x": 196,
+        "y": 511
+      },
+      "confidence": 83,
+      "votes": 12,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 75,
+      "number": 21,
+      "global_coordinates": {
+        "x": 245,
+        "y": 564
+      },
+      "confidence": 70,
+      "votes": 9,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 76,
+      "number": 45,
+      "global_coordinates": {
+        "x": 341,
+        "y": 555
+      },
+      "confidence": 100,
+      "votes": 13,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 77,
+      "number": 50,
+      "global_coordinates": {
+        "x": 260,
+        "y": 524
+      },
+      "confidence": 100,
+      "votes": 3,
+      "methods": [
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 78,
+      "number": 32,
+      "global_coordinates": {
+        "x": 688,
+        "y": 577
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 79,
+      "number": 30,
+      "global_coordinates": {
+        "x": 776,
+        "y": 555
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 80,
+      "number": 25,
+      "global_coordinates": {
+        "x": 838,
+        "y": 529
+      },
+      "confidence": 100,
+      "votes": 13,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 81,
+      "number": 22,
+      "global_coordinates": {
+        "x": 227,
+        "y": 612
+      },
+      "confidence": 81,
+      "votes": 9,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 82,
+      "number": 33,
+      "global_coordinates": {
+        "x": 681,
+        "y": 623
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 83,
+      "number": 23,
+      "global_coordinates": {
+        "x": 224,
+        "y": 700
+      },
+      "confidence": 56,
+      "votes": 12,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 84,
+      "number": 26,
+      "global_coordinates": {
+        "x": 147,
+        "y": 707
+      },
+      "confidence": 85,
+      "votes": 6,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 85,
+      "number": 54,
+      "global_coordinates": {
+        "x": 228,
+        "y": 722
+      },
+      "confidence": 100,
+      "votes": 8,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 86,
+      "number": 43,
+      "global_coordinates": {
+        "x": 296,
+        "y": 704
+      },
+      "confidence": 76,
+      "votes": 12,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 87,
+      "number": 46,
+      "global_coordinates": {
+        "x": 374,
+        "y": 704
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 88,
+      "number": 38,
+      "global_coordinates": {
+        "x": 620,
+        "y": 715
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 89,
+      "number": 39,
+      "global_coordinates": {
+        "x": 603,
+        "y": 662
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 90,
+      "number": 35,
+      "global_coordinates": {
+        "x": 697,
+        "y": 710
+      },
+      "confidence": 100,
+      "votes": 15,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 91,
+      "number": 34,
+      "global_coordinates": {
+        "x": 678,
+        "y": 666
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 92,
+      "number": 26,
+      "global_coordinates": {
+        "x": 825,
+        "y": 703
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 93,
+      "number": 29,
+      "global_coordinates": {
+        "x": 766,
+        "y": 683
+      },
+      "confidence": 100,
+      "votes": 13,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 94,
+      "number": 28,
+      "global_coordinates": {
+        "x": 751,
+        "y": 706
+      },
+      "confidence": 100,
+      "votes": 7,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 95,
+      "number": 25,
+      "global_coordinates": {
+        "x": 166,
+        "y": 745
+      },
+      "confidence": 86,
+      "votes": 12,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 96,
+      "number": 48,
+      "global_coordinates": {
+        "x": 310,
+        "y": 741
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 97,
+      "number": 47,
+      "global_coordinates": {
+        "x": 385,
+        "y": 733
+      },
+      "confidence": 100,
+      "votes": 14,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 98,
+      "number": 37,
+      "global_coordinates": {
+        "x": 631,
+        "y": 732
+      },
+      "confidence": 100,
+      "votes": 8,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 99,
+      "number": 36,
+      "global_coordinates": {
+        "x": 705,
+        "y": 733
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    },
+    {
+      "dot_id": 100,
+      "number": 27,
+      "global_coordinates": {
+        "x": 813,
+        "y": 743
+      },
+      "confidence": 100,
+      "votes": 16,
+      "methods": [
+        "tesseract",
+        "easyocr"
+      ],
+      "shape_corrected": false
+    }
+  ]
+}

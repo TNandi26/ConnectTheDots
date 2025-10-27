@@ -49,11 +49,11 @@
     }
   },
   "number_detection": {
-    "mask_thresholds": [75, 80, 85, 90, 95],
+    "mask_thresholds": [75, 80, 85, 90],
     "tesseract_confidence": 35,
     "max_match_distance": 100,
     "tesseract_path": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
     "use_easyocr": true,
-    "easyocr_gpu": false
+    "easyocr_gpu": true
   }
 }

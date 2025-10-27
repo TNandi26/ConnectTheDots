@@ -1,0 +1,31 @@
+{
+  "robot_ip": "10.150.0.1",
+  "dashboard_port": 29999,
+  "secondary_port": 30002,
+  "rtde_port": 30004,
+  "rtde_config_file": "rtdeState.xml",
+
+  "home_position_mm": [-37.0, -295.0, -42.0, 2.2, 2.2, 0.0],
+
+  "pen_orientation_rad": [2.2, 2.2, 0.0],
+
+  "drawing_height_mm": -100.0,
+  "safe_travel_height_offset_mm": 50.0,
+
+  "default_speed_ms": 0.1,
+  "default_accel_mss": 0.5,
+  "move_wait_time_s": 3,
+  "drawing_move_wait_time_s": 0.5,
+
+  "image_processing": {
+    "warped_image_width_px": 800,
+    "warped_image_height_px": 1131
+  },
+
+  "paper_corners_robot_mm": {
+    "top_left": [-150.0, -200.0, -100.0],
+    "top_right": [150.0, -200.0, -100.0],
+    "bottom_right": [150.0, -400.0, -100.0],
+    "bottom_left": [-150.0, -400.0, -100.0]
+  }
+}

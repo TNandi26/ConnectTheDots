@@ -10,7 +10,7 @@ import torch
 from PIL import Image
 from circle_detection import run_dot_detection_for_all_segments
 from segment_merge import segment_and_merge_image
-from number import run_segment_based_detection
+from number_detection import run_segment_based_detection
 from matchmaker import matchmaker_main
 
 
