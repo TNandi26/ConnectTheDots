@@ -11,7 +11,7 @@ from PIL import Image
 from circle_detection import run_dot_detection_for_all_segments
 from segment_merge import segment_and_merge_image
 from number_detection import run_segment_based_detection
-from matchmaker import matchmaker_main
+from matchmaker import pair_numbers_to_dots
 
 
 def load_config(config_file="config.json"):
@@ -188,7 +188,7 @@ def run_pipeline(config, image_path, expected_range):
         run_segment_based_detection(config, image_path.name, expected_range)
         
         logging.info("STEP 4: Dot-Number Matching")
-        matchmaker_main(config, image_path.name, expected_range[1])
+        pair_numbers_to_dots(config, image_path.name, expected_range[1])
                 
     except Exception as e:
         logging.error(f"Pipeline failed: {e}", exc_info=True)

@@ -1,0 +1,3774 @@
+{
+  "total_segments": 74,
+  "total_circles_found": 554,
+  "segments": [
+    {
+      "segment_name": "tile_r0_c4",
+      "circles": [
+        {
+          "pixel_x": 208,
+          "pixel_y": 103,
+          "radius": 2,
+          "intensity": 23
+        }
+      ],
+      "total_circles": 1
+    },
+    {
+      "segment_name": "tile_r0_c5",
+      "circles": [
+        {
+          "pixel_x": 125,
+          "pixel_y": 103,
+          "radius": 2,
+          "intensity": 15
+        },
+        {
+          "pixel_x": 139,
+          "pixel_y": 86,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 187,
+          "pixel_y": 77,
+          "radius": 2,
+          "intensity": 6
+        },
+        {
+          "pixel_x": 149,
+          "pixel_y": 73,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 201,
+          "pixel_y": 66,
+          "radius": 2,
+          "intensity": 13
+        },
+        {
+          "pixel_x": 168,
+          "pixel_y": 62,
+          "radius": 2,
+          "intensity": 14
+        },
+        {
+          "pixel_x": 187,
+          "pixel_y": 54,
+          "radius": 2,
+          "intensity": 20
+        }
+      ],
+      "total_circles": 7
+    },
+    {
+      "segment_name": "tile_r0_c6",
+      "circles": [
+        {
+          "pixel_x": 173,
+          "pixel_y": 114,
+          "radius": 2,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 41,
+          "pixel_y": 103,
+          "radius": 2,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 165,
+          "pixel_y": 96,
+          "radius": 2,
+          "intensity": 5
+        },
+        {
+          "pixel_x": 55,
+          "pixel_y": 86,
+          "radius": 2,
+          "intensity": 30
+        },
+        {
+          "pixel_x": 103,
+          "pixel_y": 77,
+          "radius": 2,
+          "intensity": 6
+        },
+        {
+          "pixel_x": 65,
+          "pixel_y": 73,
+          "radius": 2,
+          "intensity": 12
+        },
+        {
+          "pixel_x": 143,
+          "pixel_y": 70,
+          "radius": 2,
+          "intensity": 2
+        },
+        {
+          "pixel_x": 117,
+          "pixel_y": 64,
+          "radius": 2,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 84,
+          "pixel_y": 62,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 154,
+          "pixel_y": 58,
+          "radius": 2,
+          "intensity": 5
+        },
+        {
+          "pixel_x": 103,
+          "pixel_y": 54,
+          "radius": 2,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 126,
+          "pixel_y": 50,
+          "radius": 2,
+          "intensity": 6
+        },
+        {
+          "pixel_x": 149,
+          "pixel_y": 40,
+          "radius": 2,
+          "intensity": 19
+        },
+        {
+          "pixel_x": 132,
+          "pixel_y": 28,
+          "radius": 2,
+          "intensity": 11
+        }
+      ],
+      "total_circles": 14
+    },
+    {
+      "segment_name": "tile_r0_c7",
+      "circles": [
+        {
+          "pixel_x": 89,
+          "pixel_y": 115,
+          "radius": 2,
+          "intensity": 13
+        },
+        {
+          "pixel_x": 81,
+          "pixel_y": 96,
+          "radius": 2,
+          "intensity": 9
+        },
+        {
+          "pixel_x": 19,
+          "pixel_y": 77,
+          "radius": 2,
+          "intensity": 6
+        },
+        {
+          "pixel_x": 59,
+          "pixel_y": 71,
+          "radius": 2,
+          "intensity": 10
+        },
+        {
+          "pixel_x": 33,
+          "pixel_y": 66,
+          "radius": 2,
+          "intensity": 13
+        },
+        {
+          "pixel_x": 70,
+          "pixel_y": 58,
+          "radius": 2,
+          "intensity": 2
+        },
+        {
+          "pixel_x": 19,
+          "pixel_y": 54,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 65,
+          "pixel_y": 40,
+          "radius": 2,
+          "intensity": 25
+        },
+        {
+          "pixel_x": 48,
+          "pixel_y": 29,
+          "radius": 2,
+          "intensity": 23
+        }
+      ],
+      "total_circles": 9
+    },
+    {
+      "segment_name": "tile_r0_c8",
+      "circles": [
+        {
+          "pixel_x": 5,
+          "pixel_y": 114,
+          "radius": 2,
+          "intensity": 7
+        }
+      ],
+      "total_circles": 1
+    },
+    {
+      "segment_name": "tile_r1_c1",
+      "circles": [
+        {
+          "pixel_x": 134,
+          "pixel_y": 117,
+          "radius": 2,
+          "intensity": 26
+        },
+        {
+          "pixel_x": 164,
+          "pixel_y": 102,
+          "radius": 2,
+          "intensity": 28
+        },
+        {
+          "pixel_x": 182,
+          "pixel_y": 101,
+          "radius": 2,
+          "intensity": 35
+        },
+        {
+          "pixel_x": 201,
+          "pixel_y": 89,
+          "radius": 2,
+          "intensity": 25
+        }
+      ],
+      "total_circles": 4
+    },
+    {
+      "segment_name": "tile_r1_c2",
+      "circles": [
+        {
+          "pixel_x": 49,
+          "pixel_y": 117,
+          "radius": 2,
+          "intensity": 25
+        },
+        {
+          "pixel_x": 80,
+          "pixel_y": 102,
+          "radius": 2,
+          "intensity": 9
+        },
+        {
+          "pixel_x": 97,
+          "pixel_y": 101,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 117,
+          "pixel_y": 89,
+          "radius": 2,
+          "intensity": 32
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 88,
+          "radius": 2,
+          "intensity": 34
+        },
+        {
+          "pixel_x": 181,
+          "pixel_y": 81,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 148,
+          "pixel_y": 81,
+          "radius": 2,
+          "intensity": 43
+        }
+      ],
+      "total_circles": 7
+    },
+    {
+      "segment_name": "tile_r1_c3",
+      "circles": [
+        {
+          "pixel_x": 14,
+          "pixel_y": 101,
+          "radius": 2,
+          "intensity": 35
+        },
+        {
+          "pixel_x": 178,
+          "pixel_y": 99,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 151,
+          "pixel_y": 96,
+          "radius": 2,
+          "intensity": 30
+        },
+        {
+          "pixel_x": 33,
+          "pixel_y": 89,
+          "radius": 2,
+          "intensity": 25
+        },
+        {
+          "pixel_x": 123,
+          "pixel_y": 88,
+          "radius": 2,
+          "intensity": 37
+        },
+        {
+          "pixel_x": 97,
+          "pixel_y": 82,
+          "radius": 2,
+          "intensity": 33
+        },
+        {
+          "pixel_x": 64,
+          "pixel_y": 81,
+          "radius": 2,
+          "intensity": 44
+        }
+      ],
+      "total_circles": 7
+    },
+    {
+      "segment_name": "tile_r1_c4",
+      "circles": [
+        {
+          "pixel_x": 95,
+          "pixel_y": 99,
+          "radius": 2,
+          "intensity": 34
+        },
+        {
+          "pixel_x": 67,
+          "pixel_y": 96,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 93,
+          "radius": 2,
+          "intensity": 19
+        },
+        {
+          "pixel_x": 39,
+          "pixel_y": 88,
+          "radius": 2,
+          "intensity": 34
+        },
+        {
+          "pixel_x": 177,
+          "pixel_y": 85,
+          "radius": 2,
+          "intensity": 21
+        },
+        {
+          "pixel_x": 13,
+          "pixel_y": 81,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 196,
+          "pixel_y": 73,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 208,
+          "pixel_y": 55,
+          "radius": 2,
+          "intensity": 23
+        }
+      ],
+      "total_circles": 8
+    },
+    {
+      "segment_name": "tile_r1_c5",
+      "circles": [
+        {
+          "pixel_x": 133,
+          "pixel_y": 108,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 10,
+          "pixel_y": 99,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 66,
+          "pixel_y": 93,
+          "radius": 2,
+          "intensity": 13
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 93,
+          "radius": 2,
+          "intensity": 28
+        },
+        {
+          "pixel_x": 93,
+          "pixel_y": 85,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 75,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 125,
+          "pixel_y": 55,
+          "radius": 2,
+          "intensity": 15
+        },
+        {
+          "pixel_x": 139,
+          "pixel_y": 38,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 187,
+          "pixel_y": 29,
+          "radius": 2,
+          "intensity": 6
+        },
+        {
+          "pixel_x": 149,
+          "pixel_y": 25,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 201,
+          "pixel_y": 17,
+          "radius": 2,
+          "intensity": 10
+        },
+        {
+          "pixel_x": 168,
+          "pixel_y": 14,
+          "radius": 2,
+          "intensity": 14
+        },
+        {
+          "pixel_x": 187,
+          "pixel_y": 6,
+          "radius": 2,
+          "intensity": 20
+        }
+      ],
+      "total_circles": 13
+    },
+    {
+      "segment_name": "tile_r1_c6",
+      "circles": [
+        {
+          "pixel_x": 175,
+          "pixel_y": 112,
+          "radius": 2,
+          "intensity": 6
+        },
+        {
+          "pixel_x": 161,
+          "pixel_y": 111,
+          "radius": 2,
+          "intensity": 2
+        },
+        {
+          "pixel_x": 49,
+          "pixel_y": 108,
+          "radius": 2,
+          "intensity": 27
+        },
+        {
+          "pixel_x": 2,
+          "pixel_y": 108,
+          "radius": 2,
+          "intensity": 36
+        },
+        {
+          "pixel_x": 183,
+          "pixel_y": 106,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 138,
+          "pixel_y": 94,
+          "radius": 3,
+          "intensity": 4
+        },
+        {
+          "pixel_x": 66,
+          "pixel_y": 93,
+          "radius": 2,
+          "intensity": 26
+        },
+        {
+          "pixel_x": 188,
+          "pixel_y": 90,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 9,
+          "pixel_y": 85,
+          "radius": 2,
+          "intensity": 21
+        },
+        {
+          "pixel_x": 183,
+          "pixel_y": 79,
+          "radius": 2,
+          "intensity": 19
+        },
+        {
+          "pixel_x": 123,
+          "pixel_y": 75,
+          "radius": 2,
+          "intensity": 21
+        },
+        {
+          "pixel_x": 28,
+          "pixel_y": 73,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 173,
+          "pixel_y": 67,
+          "radius": 2,
+          "intensity": 26
+        },
+        {
+          "pixel_x": 41,
+          "pixel_y": 55,
+          "radius": 2,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 165,
+          "pixel_y": 48,
+          "radius": 2,
+          "intensity": 5
+        },
+        {
+          "pixel_x": 55,
+          "pixel_y": 38,
+          "radius": 2,
+          "intensity": 30
+        },
+        {
+          "pixel_x": 103,
+          "pixel_y": 29,
+          "radius": 2,
+          "intensity": 6
+        },
+        {
+          "pixel_x": 65,
+          "pixel_y": 25,
+          "radius": 2,
+          "intensity": 12
+        },
+        {
+          "pixel_x": 143,
+          "pixel_y": 22,
+          "radius": 2,
+          "intensity": 2
+        },
+        {
+          "pixel_x": 117,
+          "pixel_y": 16,
+          "radius": 2,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 84,
+          "pixel_y": 14,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 154,
+          "pixel_y": 10,
+          "radius": 2,
+          "intensity": 5
+        },
+        {
+          "pixel_x": 103,
+          "pixel_y": 6,
+          "radius": 2,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 126,
+          "pixel_y": 2,
+          "radius": 2,
+          "intensity": 6
+        }
+      ],
+      "total_circles": 24
+    },
+    {
+      "segment_name": "tile_r1_c7",
+      "circles": [
+        {
+          "pixel_x": 91,
+          "pixel_y": 113,
+          "radius": 2,
+          "intensity": 2
+        },
+        {
+          "pixel_x": 77,
+          "pixel_y": 111,
+          "radius": 2,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 99,
+          "pixel_y": 106,
+          "radius": 2,
+          "intensity": 22
+        },
+        {
+          "pixel_x": 53,
+          "pixel_y": 92,
+          "radius": 2,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 104,
+          "pixel_y": 90,
+          "radius": 2,
+          "intensity": 14
+        },
+        {
+          "pixel_x": 99,
+          "pixel_y": 79,
+          "radius": 2,
+          "intensity": 17
+        },
+        {
+          "pixel_x": 39,
+          "pixel_y": 75,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 89,
+          "pixel_y": 67,
+          "radius": 2,
+          "intensity": 13
+        },
+        {
+          "pixel_x": 81,
+          "pixel_y": 48,
+          "radius": 2,
+          "intensity": 9
+        },
+        {
+          "pixel_x": 19,
+          "pixel_y": 29,
+          "radius": 2,
+          "intensity": 6
+        },
+        {
+          "pixel_x": 59,
+          "pixel_y": 23,
+          "radius": 2,
+          "intensity": 10
+        },
+        {
+          "pixel_x": 33,
+          "pixel_y": 17,
+          "radius": 2,
+          "intensity": 10
+        },
+        {
+          "pixel_x": 70,
+          "pixel_y": 10,
+          "radius": 2,
+          "intensity": 2
+        },
+        {
+          "pixel_x": 19,
+          "pixel_y": 6,
+          "radius": 2,
+          "intensity": 20
+        }
+      ],
+      "total_circles": 14
+    },
+    {
+      "segment_name": "tile_r1_c8",
+      "circles": [
+        {
+          "pixel_x": 14,
+          "pixel_y": 116,
+          "radius": 2,
+          "intensity": 57
+        },
+        {
+          "pixel_x": 5,
+          "pixel_y": 111,
+          "radius": 2,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 15,
+          "pixel_y": 106,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 20,
+          "pixel_y": 90,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 15,
+          "pixel_y": 79,
+          "radius": 2,
+          "intensity": 19
+        },
+        {
+          "pixel_x": 5,
+          "pixel_y": 67,
+          "radius": 2,
+          "intensity": 26
+        }
+      ],
+      "total_circles": 6
+    },
+    {
+      "segment_name": "tile_r2_c0",
+      "circles": [
+        {
+          "pixel_x": 198,
+          "pixel_y": 104,
+          "radius": 2,
+          "intensity": 37
+        },
+        {
+          "pixel_x": 206,
+          "pixel_y": 86,
+          "radius": 2,
+          "intensity": 22
+        }
+      ],
+      "total_circles": 2
+    },
+    {
+      "segment_name": "tile_r2_c1",
+      "circles": [
+        {
+          "pixel_x": 174,
+          "pixel_y": 117,
+          "radius": 2,
+          "intensity": 36
+        },
+        {
+          "pixel_x": 114,
+          "pixel_y": 104,
+          "radius": 2,
+          "intensity": 42
+        },
+        {
+          "pixel_x": 172,
+          "pixel_y": 95,
+          "radius": 2,
+          "intensity": 33
+        },
+        {
+          "pixel_x": 122,
+          "pixel_y": 86,
+          "radius": 2,
+          "intensity": 26
+        },
+        {
+          "pixel_x": 162,
+          "pixel_y": 84,
+          "radius": 2,
+          "intensity": 28
+        },
+        {
+          "pixel_x": 134,
+          "pixel_y": 69,
+          "radius": 2,
+          "intensity": 26
+        },
+        {
+          "pixel_x": 164,
+          "pixel_y": 54,
+          "radius": 2,
+          "intensity": 28
+        },
+        {
+          "pixel_x": 182,
+          "pixel_y": 53,
+          "radius": 2,
+          "intensity": 35
+        },
+        {
+          "pixel_x": 201,
+          "pixel_y": 41,
+          "radius": 2,
+          "intensity": 25
+        }
+      ],
+      "total_circles": 9
+    },
+    {
+      "segment_name": "tile_r2_c2",
+      "circles": [
+        {
+          "pixel_x": 90,
+          "pixel_y": 117,
+          "radius": 2,
+          "intensity": 37
+        },
+        {
+          "pixel_x": 30,
+          "pixel_y": 104,
+          "radius": 2,
+          "intensity": 37
+        },
+        {
+          "pixel_x": 88,
+          "pixel_y": 95,
+          "radius": 2,
+          "intensity": 27
+        },
+        {
+          "pixel_x": 38,
+          "pixel_y": 86,
+          "radius": 2,
+          "intensity": 22
+        },
+        {
+          "pixel_x": 78,
+          "pixel_y": 85,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 49,
+          "pixel_y": 69,
+          "radius": 2,
+          "intensity": 25
+        },
+        {
+          "pixel_x": 80,
+          "pixel_y": 54,
+          "radius": 2,
+          "intensity": 9
+        },
+        {
+          "pixel_x": 97,
+          "pixel_y": 53,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 117,
+          "pixel_y": 41,
+          "radius": 2,
+          "intensity": 32
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 40,
+          "radius": 2,
+          "intensity": 34
+        },
+        {
+          "pixel_x": 181,
+          "pixel_y": 33,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 148,
+          "pixel_y": 33,
+          "radius": 2,
+          "intensity": 43
+        }
+      ],
+      "total_circles": 12
+    },
+    {
+      "segment_name": "tile_r2_c3",
+      "circles": [
+        {
+          "pixel_x": 6,
+          "pixel_y": 117,
+          "radius": 2,
+          "intensity": 36
+        },
+        {
+          "pixel_x": 3,
+          "pixel_y": 95,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 14,
+          "pixel_y": 53,
+          "radius": 2,
+          "intensity": 35
+        },
+        {
+          "pixel_x": 178,
+          "pixel_y": 51,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 151,
+          "pixel_y": 48,
+          "radius": 2,
+          "intensity": 30
+        },
+        {
+          "pixel_x": 33,
+          "pixel_y": 41,
+          "radius": 2,
+          "intensity": 25
+        },
+        {
+          "pixel_x": 123,
+          "pixel_y": 40,
+          "radius": 2,
+          "intensity": 37
+        },
+        {
+          "pixel_x": 97,
+          "pixel_y": 34,
+          "radius": 2,
+          "intensity": 33
+        },
+        {
+          "pixel_x": 64,
+          "pixel_y": 33,
+          "radius": 2,
+          "intensity": 44
+        }
+      ],
+      "total_circles": 9
+    },
+    {
+      "segment_name": "tile_r2_c4",
+      "circles": [
+        {
+          "pixel_x": 196,
+          "pixel_y": 72,
+          "radius": 2,
+          "intensity": 6
+        },
+        {
+          "pixel_x": 209,
+          "pixel_y": 72,
+          "radius": 1,
+          "intensity": 13
+        },
+        {
+          "pixel_x": 95,
+          "pixel_y": 51,
+          "radius": 2,
+          "intensity": 34
+        },
+        {
+          "pixel_x": 67,
+          "pixel_y": 48,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 45,
+          "radius": 2,
+          "intensity": 19
+        },
+        {
+          "pixel_x": 39,
+          "pixel_y": 40,
+          "radius": 2,
+          "intensity": 34
+        },
+        {
+          "pixel_x": 177,
+          "pixel_y": 37,
+          "radius": 2,
+          "intensity": 21
+        },
+        {
+          "pixel_x": 13,
+          "pixel_y": 33,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 196,
+          "pixel_y": 25,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 208,
+          "pixel_y": 7,
+          "radius": 2,
+          "intensity": 23
+        }
+      ],
+      "total_circles": 10
+    },
+    {
+      "segment_name": "tile_r2_c5",
+      "circles": [
+        {
+          "pixel_x": 167,
+          "pixel_y": 117,
+          "radius": 2,
+          "intensity": 6
+        },
+        {
+          "pixel_x": 184,
+          "pixel_y": 75,
+          "radius": 2,
+          "intensity": 13
+        },
+        {
+          "pixel_x": 112,
+          "pixel_y": 72,
+          "radius": 2,
+          "intensity": 15
+        },
+        {
+          "pixel_x": 126,
+          "pixel_y": 72,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 133,
+          "pixel_y": 60,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 10,
+          "pixel_y": 51,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 66,
+          "pixel_y": 45,
+          "radius": 2,
+          "intensity": 13
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 45,
+          "radius": 2,
+          "intensity": 28
+        },
+        {
+          "pixel_x": 93,
+          "pixel_y": 37,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 207,
+          "pixel_y": 27,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 125,
+          "pixel_y": 7,
+          "radius": 2,
+          "intensity": 15
+        }
+      ],
+      "total_circles": 11
+    },
+    {
+      "segment_name": "tile_r2_c6",
+      "circles": [
+        {
+          "pixel_x": 83,
+          "pixel_y": 117,
+          "radius": 2,
+          "intensity": 16
+        },
+        {
+          "pixel_x": 100,
+          "pixel_y": 76,
+          "radius": 2,
+          "intensity": 27
+        },
+        {
+          "pixel_x": 28,
+          "pixel_y": 72,
+          "radius": 2,
+          "intensity": 6
+        },
+        {
+          "pixel_x": 42,
+          "pixel_y": 72,
+          "radius": 2,
+          "intensity": 19
+        },
+        {
+          "pixel_x": 173,
+          "pixel_y": 63,
+          "radius": 2,
+          "intensity": 6
+        },
+        {
+          "pixel_x": 161,
+          "pixel_y": 61,
+          "radius": 2,
+          "intensity": 13
+        },
+        {
+          "pixel_x": 49,
+          "pixel_y": 60,
+          "radius": 2,
+          "intensity": 27
+        },
+        {
+          "pixel_x": 2,
+          "pixel_y": 60,
+          "radius": 2,
+          "intensity": 36
+        },
+        {
+          "pixel_x": 183,
+          "pixel_y": 58,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 138,
+          "pixel_y": 46,
+          "radius": 3,
+          "intensity": 4
+        },
+        {
+          "pixel_x": 66,
+          "pixel_y": 45,
+          "radius": 2,
+          "intensity": 26
+        },
+        {
+          "pixel_x": 188,
+          "pixel_y": 42,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 9,
+          "pixel_y": 37,
+          "radius": 2,
+          "intensity": 21
+        },
+        {
+          "pixel_x": 183,
+          "pixel_y": 31,
+          "radius": 2,
+          "intensity": 19
+        },
+        {
+          "pixel_x": 123,
+          "pixel_y": 27,
+          "radius": 2,
+          "intensity": 21
+        },
+        {
+          "pixel_x": 28,
+          "pixel_y": 25,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 173,
+          "pixel_y": 19,
+          "radius": 2,
+          "intensity": 26
+        },
+        {
+          "pixel_x": 41,
+          "pixel_y": 7,
+          "radius": 2,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 165,
+          "pixel_y": 1,
+          "radius": 1,
+          "intensity": 7
+        }
+      ],
+      "total_circles": 19
+    },
+    {
+      "segment_name": "tile_r2_c7",
+      "circles": [
+        {
+          "pixel_x": 16,
+          "pixel_y": 75,
+          "radius": 2,
+          "intensity": 13
+        },
+        {
+          "pixel_x": 89,
+          "pixel_y": 64,
+          "radius": 2,
+          "intensity": 12
+        },
+        {
+          "pixel_x": 77,
+          "pixel_y": 61,
+          "radius": 2,
+          "intensity": 17
+        },
+        {
+          "pixel_x": 99,
+          "pixel_y": 58,
+          "radius": 2,
+          "intensity": 22
+        },
+        {
+          "pixel_x": 53,
+          "pixel_y": 44,
+          "radius": 2,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 104,
+          "pixel_y": 42,
+          "radius": 2,
+          "intensity": 14
+        },
+        {
+          "pixel_x": 99,
+          "pixel_y": 31,
+          "radius": 2,
+          "intensity": 17
+        },
+        {
+          "pixel_x": 39,
+          "pixel_y": 27,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 89,
+          "pixel_y": 19,
+          "radius": 2,
+          "intensity": 13
+        },
+        {
+          "pixel_x": 82,
+          "pixel_y": 1,
+          "radius": 1,
+          "intensity": 18
+        }
+      ],
+      "total_circles": 10
+    },
+    {
+      "segment_name": "tile_r2_c8",
+      "circles": [
+        {
+          "pixel_x": 5,
+          "pixel_y": 63,
+          "radius": 2,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 15,
+          "pixel_y": 58,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 20,
+          "pixel_y": 42,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 15,
+          "pixel_y": 31,
+          "radius": 2,
+          "intensity": 19
+        },
+        {
+          "pixel_x": 5,
+          "pixel_y": 19,
+          "radius": 2,
+          "intensity": 26
+        }
+      ],
+      "total_circles": 5
+    },
+    {
+      "segment_name": "tile_r3_c0",
+      "circles": [
+        {
+          "pixel_x": 187,
+          "pixel_y": 114,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 201,
+          "pixel_y": 113,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 186,
+          "pixel_y": 95,
+          "radius": 2,
+          "intensity": 21
+        },
+        {
+          "pixel_x": 192,
+          "pixel_y": 74,
+          "radius": 2,
+          "intensity": 38
+        },
+        {
+          "pixel_x": 198,
+          "pixel_y": 56,
+          "radius": 2,
+          "intensity": 37
+        },
+        {
+          "pixel_x": 206,
+          "pixel_y": 38,
+          "radius": 2,
+          "intensity": 22
+        }
+      ],
+      "total_circles": 6
+    },
+    {
+      "segment_name": "tile_r3_c1",
+      "circles": [
+        {
+          "pixel_x": 103,
+          "pixel_y": 114,
+          "radius": 2,
+          "intensity": 34
+        },
+        {
+          "pixel_x": 117,
+          "pixel_y": 113,
+          "radius": 2,
+          "intensity": 42
+        },
+        {
+          "pixel_x": 138,
+          "pixel_y": 112,
+          "radius": 2,
+          "intensity": 33
+        },
+        {
+          "pixel_x": 186,
+          "pixel_y": 104,
+          "radius": 2,
+          "intensity": 16
+        },
+        {
+          "pixel_x": 102,
+          "pixel_y": 95,
+          "radius": 2,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 85,
+          "radius": 2,
+          "intensity": 35
+        },
+        {
+          "pixel_x": 108,
+          "pixel_y": 74,
+          "radius": 2,
+          "intensity": 32
+        },
+        {
+          "pixel_x": 173,
+          "pixel_y": 69,
+          "radius": 2,
+          "intensity": 32
+        },
+        {
+          "pixel_x": 114,
+          "pixel_y": 56,
+          "radius": 2,
+          "intensity": 42
+        },
+        {
+          "pixel_x": 172,
+          "pixel_y": 47,
+          "radius": 2,
+          "intensity": 33
+        },
+        {
+          "pixel_x": 122,
+          "pixel_y": 38,
+          "radius": 2,
+          "intensity": 26
+        },
+        {
+          "pixel_x": 162,
+          "pixel_y": 36,
+          "radius": 2,
+          "intensity": 28
+        },
+        {
+          "pixel_x": 134,
+          "pixel_y": 21,
+          "radius": 2,
+          "intensity": 26
+        },
+        {
+          "pixel_x": 164,
+          "pixel_y": 6,
+          "radius": 2,
+          "intensity": 28
+        },
+        {
+          "pixel_x": 182,
+          "pixel_y": 5,
+          "radius": 2,
+          "intensity": 35
+        }
+      ],
+      "total_circles": 15
+    },
+    {
+      "segment_name": "tile_r3_c2",
+      "circles": [
+        {
+          "pixel_x": 19,
+          "pixel_y": 114,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 33,
+          "pixel_y": 113,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 54,
+          "pixel_y": 112,
+          "radius": 2,
+          "intensity": 30
+        },
+        {
+          "pixel_x": 102,
+          "pixel_y": 104,
+          "radius": 2,
+          "intensity": 22
+        },
+        {
+          "pixel_x": 18,
+          "pixel_y": 95,
+          "radius": 2,
+          "intensity": 21
+        },
+        {
+          "pixel_x": 66,
+          "pixel_y": 85,
+          "radius": 2,
+          "intensity": 30
+        },
+        {
+          "pixel_x": 24,
+          "pixel_y": 74,
+          "radius": 2,
+          "intensity": 38
+        },
+        {
+          "pixel_x": 90,
+          "pixel_y": 69,
+          "radius": 2,
+          "intensity": 37
+        },
+        {
+          "pixel_x": 30,
+          "pixel_y": 56,
+          "radius": 2,
+          "intensity": 37
+        },
+        {
+          "pixel_x": 88,
+          "pixel_y": 47,
+          "radius": 2,
+          "intensity": 27
+        },
+        {
+          "pixel_x": 38,
+          "pixel_y": 38,
+          "radius": 2,
+          "intensity": 22
+        },
+        {
+          "pixel_x": 78,
+          "pixel_y": 37,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 49,
+          "pixel_y": 21,
+          "radius": 2,
+          "intensity": 25
+        },
+        {
+          "pixel_x": 80,
+          "pixel_y": 6,
+          "radius": 2,
+          "intensity": 9
+        },
+        {
+          "pixel_x": 97,
+          "pixel_y": 5,
+          "radius": 2,
+          "intensity": 29
+        }
+      ],
+      "total_circles": 15
+    },
+    {
+      "segment_name": "tile_r3_c3",
+      "circles": [
+        {
+          "pixel_x": 18,
+          "pixel_y": 104,
+          "radius": 2,
+          "intensity": 16
+        },
+        {
+          "pixel_x": 5,
+          "pixel_y": 69,
+          "radius": 2,
+          "intensity": 32
+        },
+        {
+          "pixel_x": 3,
+          "pixel_y": 47,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 14,
+          "pixel_y": 5,
+          "radius": 2,
+          "intensity": 35
+        },
+        {
+          "pixel_x": 178,
+          "pixel_y": 3,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 208,
+          "pixel_y": 1,
+          "radius": 1,
+          "intensity": 26
+        }
+      ],
+      "total_circles": 6
+    },
+    {
+      "segment_name": "tile_r3_c4",
+      "circles": [
+        {
+          "pixel_x": 196,
+          "pixel_y": 24,
+          "radius": 2,
+          "intensity": 6
+        },
+        {
+          "pixel_x": 209,
+          "pixel_y": 24,
+          "radius": 1,
+          "intensity": 13
+        },
+        {
+          "pixel_x": 95,
+          "pixel_y": 3,
+          "radius": 2,
+          "intensity": 34
+        },
+        {
+          "pixel_x": 124,
+          "pixel_y": 1,
+          "radius": 2,
+          "intensity": 38
+        }
+      ],
+      "total_circles": 4
+    },
+    {
+      "segment_name": "tile_r3_c5",
+      "circles": [
+        {
+          "pixel_x": 165,
+          "pixel_y": 111,
+          "radius": 2,
+          "intensity": 9
+        },
+        {
+          "pixel_x": 167,
+          "pixel_y": 69,
+          "radius": 2,
+          "intensity": 6
+        },
+        {
+          "pixel_x": 184,
+          "pixel_y": 27,
+          "radius": 2,
+          "intensity": 13
+        },
+        {
+          "pixel_x": 112,
+          "pixel_y": 24,
+          "radius": 2,
+          "intensity": 15
+        },
+        {
+          "pixel_x": 126,
+          "pixel_y": 24,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 133,
+          "pixel_y": 12,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 10,
+          "pixel_y": 3,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 40,
+          "pixel_y": 1,
+          "radius": 2,
+          "intensity": 32
+        }
+      ],
+      "total_circles": 8
+    },
+    {
+      "segment_name": "tile_r3_c6",
+      "circles": [
+        {
+          "pixel_x": 81,
+          "pixel_y": 112,
+          "radius": 2,
+          "intensity": 9
+        },
+        {
+          "pixel_x": 83,
+          "pixel_y": 69,
+          "radius": 2,
+          "intensity": 16
+        },
+        {
+          "pixel_x": 100,
+          "pixel_y": 28,
+          "radius": 2,
+          "intensity": 27
+        },
+        {
+          "pixel_x": 28,
+          "pixel_y": 24,
+          "radius": 2,
+          "intensity": 6
+        },
+        {
+          "pixel_x": 42,
+          "pixel_y": 24,
+          "radius": 2,
+          "intensity": 19
+        },
+        {
+          "pixel_x": 173,
+          "pixel_y": 15,
+          "radius": 2,
+          "intensity": 6
+        },
+        {
+          "pixel_x": 161,
+          "pixel_y": 13,
+          "radius": 2,
+          "intensity": 13
+        },
+        {
+          "pixel_x": 49,
+          "pixel_y": 12,
+          "radius": 2,
+          "intensity": 27
+        },
+        {
+          "pixel_x": 2,
+          "pixel_y": 12,
+          "radius": 2,
+          "intensity": 36
+        },
+        {
+          "pixel_x": 183,
+          "pixel_y": 10,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 142,
+          "pixel_y": 5,
+          "radius": 3,
+          "intensity": 114
+        }
+      ],
+      "total_circles": 11
+    },
+    {
+      "segment_name": "tile_r3_c7",
+      "circles": [
+        {
+          "pixel_x": 16,
+          "pixel_y": 27,
+          "radius": 2,
+          "intensity": 13
+        },
+        {
+          "pixel_x": 89,
+          "pixel_y": 16,
+          "radius": 2,
+          "intensity": 12
+        },
+        {
+          "pixel_x": 77,
+          "pixel_y": 13,
+          "radius": 2,
+          "intensity": 17
+        },
+        {
+          "pixel_x": 99,
+          "pixel_y": 10,
+          "radius": 2,
+          "intensity": 22
+        }
+      ],
+      "total_circles": 4
+    },
+    {
+      "segment_name": "tile_r3_c8",
+      "circles": [
+        {
+          "pixel_x": 5,
+          "pixel_y": 15,
+          "radius": 2,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 15,
+          "pixel_y": 10,
+          "radius": 2,
+          "intensity": 20
+        }
+      ],
+      "total_circles": 2
+    },
+    {
+      "segment_name": "tile_r4_c0",
+      "circles": [
+        {
+          "pixel_x": 205,
+          "pixel_y": 96,
+          "radius": 2,
+          "intensity": 33
+        },
+        {
+          "pixel_x": 191,
+          "pixel_y": 87,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 187,
+          "pixel_y": 66,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 201,
+          "pixel_y": 65,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 186,
+          "pixel_y": 47,
+          "radius": 2,
+          "intensity": 21
+        },
+        {
+          "pixel_x": 192,
+          "pixel_y": 26,
+          "radius": 2,
+          "intensity": 38
+        },
+        {
+          "pixel_x": 198,
+          "pixel_y": 8,
+          "radius": 2,
+          "intensity": 37
+        }
+      ],
+      "total_circles": 7
+    },
+    {
+      "segment_name": "tile_r4_c1",
+      "circles": [
+        {
+          "pixel_x": 121,
+          "pixel_y": 96,
+          "radius": 2,
+          "intensity": 28
+        },
+        {
+          "pixel_x": 107,
+          "pixel_y": 87,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 189,
+          "pixel_y": 82,
+          "radius": 2,
+          "intensity": 16
+        },
+        {
+          "pixel_x": 133,
+          "pixel_y": 76,
+          "radius": 2,
+          "intensity": 25
+        },
+        {
+          "pixel_x": 103,
+          "pixel_y": 66,
+          "radius": 2,
+          "intensity": 34
+        },
+        {
+          "pixel_x": 117,
+          "pixel_y": 65,
+          "radius": 2,
+          "intensity": 42
+        },
+        {
+          "pixel_x": 138,
+          "pixel_y": 64,
+          "radius": 2,
+          "intensity": 33
+        },
+        {
+          "pixel_x": 186,
+          "pixel_y": 56,
+          "radius": 2,
+          "intensity": 16
+        },
+        {
+          "pixel_x": 102,
+          "pixel_y": 47,
+          "radius": 2,
+          "intensity": 11
+        },
+        {
+          "pixel_x": 150,
+          "pixel_y": 37,
+          "radius": 2,
+          "intensity": 35
+        },
+        {
+          "pixel_x": 108,
+          "pixel_y": 26,
+          "radius": 2,
+          "intensity": 32
+        },
+        {
+          "pixel_x": 173,
+          "pixel_y": 21,
+          "radius": 2,
+          "intensity": 32
+        },
+        {
+          "pixel_x": 114,
+          "pixel_y": 8,
+          "radius": 2,
+          "intensity": 42
+        }
+      ],
+      "total_circles": 13
+    },
+    {
+      "segment_name": "tile_r4_c2",
+      "circles": [
+        {
+          "pixel_x": 171,
+          "pixel_y": 114,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 37,
+          "pixel_y": 96,
+          "radius": 2,
+          "intensity": 33
+        },
+        {
+          "pixel_x": 23,
+          "pixel_y": 87,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 106,
+          "pixel_y": 82,
+          "radius": 2,
+          "intensity": 28
+        },
+        {
+          "pixel_x": 49,
+          "pixel_y": 77,
+          "radius": 2,
+          "intensity": 47
+        },
+        {
+          "pixel_x": 208,
+          "pixel_y": 76,
+          "radius": 2,
+          "intensity": 34
+        },
+        {
+          "pixel_x": 19,
+          "pixel_y": 66,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 33,
+          "pixel_y": 65,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 54,
+          "pixel_y": 64,
+          "radius": 2,
+          "intensity": 30
+        },
+        {
+          "pixel_x": 102,
+          "pixel_y": 56,
+          "radius": 2,
+          "intensity": 22
+        },
+        {
+          "pixel_x": 18,
+          "pixel_y": 47,
+          "radius": 2,
+          "intensity": 21
+        },
+        {
+          "pixel_x": 66,
+          "pixel_y": 37,
+          "radius": 2,
+          "intensity": 30
+        },
+        {
+          "pixel_x": 24,
+          "pixel_y": 26,
+          "radius": 2,
+          "intensity": 38
+        },
+        {
+          "pixel_x": 90,
+          "pixel_y": 21,
+          "radius": 2,
+          "intensity": 37
+        },
+        {
+          "pixel_x": 30,
+          "pixel_y": 8,
+          "radius": 2,
+          "intensity": 37
+        }
+      ],
+      "total_circles": 15
+    },
+    {
+      "segment_name": "tile_r4_c3",
+      "circles": [
+        {
+          "pixel_x": 87,
+          "pixel_y": 114,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 185,
+          "pixel_y": 84,
+          "radius": 2,
+          "intensity": 21
+        },
+        {
+          "pixel_x": 21,
+          "pixel_y": 82,
+          "radius": 2,
+          "intensity": 16
+        },
+        {
+          "pixel_x": 124,
+          "pixel_y": 76,
+          "radius": 2,
+          "intensity": 39
+        },
+        {
+          "pixel_x": 18,
+          "pixel_y": 56,
+          "radius": 2,
+          "intensity": 16
+        },
+        {
+          "pixel_x": 5,
+          "pixel_y": 21,
+          "radius": 2,
+          "intensity": 32
+        }
+      ],
+      "total_circles": 6
+    },
+    {
+      "segment_name": "tile_r4_c4",
+      "circles": [
+        {
+          "pixel_x": 2,
+          "pixel_y": 114,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 147,
+          "pixel_y": 90,
+          "radius": 2,
+          "intensity": 26
+        },
+        {
+          "pixel_x": 100,
+          "pixel_y": 86,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 194,
+          "pixel_y": 83,
+          "radius": 2,
+          "intensity": 23
+        },
+        {
+          "pixel_x": 40,
+          "pixel_y": 76,
+          "radius": 2,
+          "intensity": 36
+        }
+      ],
+      "total_circles": 5
+    },
+    {
+      "segment_name": "tile_r4_c5",
+      "circles": [
+        {
+          "pixel_x": 62,
+          "pixel_y": 90,
+          "radius": 2,
+          "intensity": 8
+        },
+        {
+          "pixel_x": 17,
+          "pixel_y": 84,
+          "radius": 2,
+          "intensity": 21
+        },
+        {
+          "pixel_x": 110,
+          "pixel_y": 83,
+          "radius": 2,
+          "intensity": 25
+        },
+        {
+          "pixel_x": 165,
+          "pixel_y": 63,
+          "radius": 2,
+          "intensity": 9
+        },
+        {
+          "pixel_x": 167,
+          "pixel_y": 21,
+          "radius": 2,
+          "intensity": 6
+        }
+      ],
+      "total_circles": 5
+    },
+    {
+      "segment_name": "tile_r4_c6",
+      "circles": [
+        {
+          "pixel_x": 63,
+          "pixel_y": 101,
+          "radius": 2,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 26,
+          "pixel_y": 83,
+          "radius": 2,
+          "intensity": 23
+        },
+        {
+          "pixel_x": 81,
+          "pixel_y": 64,
+          "radius": 2,
+          "intensity": 9
+        },
+        {
+          "pixel_x": 83,
+          "pixel_y": 21,
+          "radius": 2,
+          "intensity": 16
+        }
+      ],
+      "total_circles": 4
+    },
+    {
+      "segment_name": "tile_r5_c0",
+      "circles": [
+        {
+          "pixel_x": 205,
+          "pixel_y": 48,
+          "radius": 2,
+          "intensity": 33
+        },
+        {
+          "pixel_x": 191,
+          "pixel_y": 39,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 187,
+          "pixel_y": 18,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 201,
+          "pixel_y": 17,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 180,
+          "pixel_y": 2,
+          "radius": 2,
+          "intensity": 44
+        }
+      ],
+      "total_circles": 5
+    },
+    {
+      "segment_name": "tile_r5_c1",
+      "circles": [
+        {
+          "pixel_x": 196,
+          "pixel_y": 102,
+          "radius": 2,
+          "intensity": 32
+        },
+        {
+          "pixel_x": 164,
+          "pixel_y": 100,
+          "radius": 2,
+          "intensity": 48
+        },
+        {
+          "pixel_x": 184,
+          "pixel_y": 71,
+          "radius": 2,
+          "intensity": 42
+        },
+        {
+          "pixel_x": 121,
+          "pixel_y": 48,
+          "radius": 2,
+          "intensity": 28
+        },
+        {
+          "pixel_x": 107,
+          "pixel_y": 39,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 189,
+          "pixel_y": 34,
+          "radius": 2,
+          "intensity": 16
+        },
+        {
+          "pixel_x": 133,
+          "pixel_y": 28,
+          "radius": 2,
+          "intensity": 25
+        },
+        {
+          "pixel_x": 103,
+          "pixel_y": 18,
+          "radius": 2,
+          "intensity": 34
+        },
+        {
+          "pixel_x": 117,
+          "pixel_y": 17,
+          "radius": 2,
+          "intensity": 42
+        },
+        {
+          "pixel_x": 138,
+          "pixel_y": 16,
+          "radius": 2,
+          "intensity": 33
+        },
+        {
+          "pixel_x": 186,
+          "pixel_y": 8,
+          "radius": 2,
+          "intensity": 16
+        },
+        {
+          "pixel_x": 96,
+          "pixel_y": 2,
+          "radius": 1,
+          "intensity": 60
+        }
+      ],
+      "total_circles": 12
+    },
+    {
+      "segment_name": "tile_r5_c2",
+      "circles": [
+        {
+          "pixel_x": 112,
+          "pixel_y": 102,
+          "radius": 2,
+          "intensity": 35
+        },
+        {
+          "pixel_x": 80,
+          "pixel_y": 100,
+          "radius": 2,
+          "intensity": 55
+        },
+        {
+          "pixel_x": 167,
+          "pixel_y": 96,
+          "radius": 2,
+          "intensity": 40
+        },
+        {
+          "pixel_x": 100,
+          "pixel_y": 71,
+          "radius": 2,
+          "intensity": 37
+        },
+        {
+          "pixel_x": 171,
+          "pixel_y": 66,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 37,
+          "pixel_y": 48,
+          "radius": 2,
+          "intensity": 33
+        },
+        {
+          "pixel_x": 23,
+          "pixel_y": 39,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 106,
+          "pixel_y": 34,
+          "radius": 2,
+          "intensity": 28
+        },
+        {
+          "pixel_x": 49,
+          "pixel_y": 29,
+          "radius": 2,
+          "intensity": 47
+        },
+        {
+          "pixel_x": 208,
+          "pixel_y": 28,
+          "radius": 2,
+          "intensity": 34
+        },
+        {
+          "pixel_x": 19,
+          "pixel_y": 18,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 33,
+          "pixel_y": 17,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 54,
+          "pixel_y": 16,
+          "radius": 2,
+          "intensity": 30
+        },
+        {
+          "pixel_x": 102,
+          "pixel_y": 8,
+          "radius": 2,
+          "intensity": 22
+        },
+        {
+          "pixel_x": 12,
+          "pixel_y": 2,
+          "radius": 2,
+          "intensity": 44
+        }
+      ],
+      "total_circles": 15
+    },
+    {
+      "segment_name": "tile_r5_c3",
+      "circles": [
+        {
+          "pixel_x": 28,
+          "pixel_y": 102,
+          "radius": 2,
+          "intensity": 32
+        },
+        {
+          "pixel_x": 83,
+          "pixel_y": 96,
+          "radius": 2,
+          "intensity": 40
+        },
+        {
+          "pixel_x": 16,
+          "pixel_y": 71,
+          "radius": 2,
+          "intensity": 42
+        },
+        {
+          "pixel_x": 87,
+          "pixel_y": 66,
+          "radius": 2,
+          "intensity": 31
+        },
+        {
+          "pixel_x": 185,
+          "pixel_y": 36,
+          "radius": 2,
+          "intensity": 21
+        },
+        {
+          "pixel_x": 21,
+          "pixel_y": 34,
+          "radius": 2,
+          "intensity": 16
+        },
+        {
+          "pixel_x": 124,
+          "pixel_y": 28,
+          "radius": 2,
+          "intensity": 39
+        },
+        {
+          "pixel_x": 18,
+          "pixel_y": 8,
+          "radius": 2,
+          "intensity": 16
+        }
+      ],
+      "total_circles": 8
+    },
+    {
+      "segment_name": "tile_r5_c4",
+      "circles": [
+        {
+          "pixel_x": 205,
+          "pixel_y": 110,
+          "radius": 2,
+          "intensity": 23
+        },
+        {
+          "pixel_x": 3,
+          "pixel_y": 66,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 147,
+          "pixel_y": 42,
+          "radius": 2,
+          "intensity": 26
+        },
+        {
+          "pixel_x": 100,
+          "pixel_y": 38,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 194,
+          "pixel_y": 35,
+          "radius": 2,
+          "intensity": 23
+        },
+        {
+          "pixel_x": 40,
+          "pixel_y": 28,
+          "radius": 2,
+          "intensity": 36
+        }
+      ],
+      "total_circles": 6
+    },
+    {
+      "segment_name": "tile_r5_c5",
+      "circles": [
+        {
+          "pixel_x": 121,
+          "pixel_y": 109,
+          "radius": 2,
+          "intensity": 24
+        },
+        {
+          "pixel_x": 188,
+          "pixel_y": 89,
+          "radius": 2,
+          "intensity": 19
+        },
+        {
+          "pixel_x": 62,
+          "pixel_y": 42,
+          "radius": 2,
+          "intensity": 8
+        },
+        {
+          "pixel_x": 17,
+          "pixel_y": 36,
+          "radius": 2,
+          "intensity": 21
+        },
+        {
+          "pixel_x": 110,
+          "pixel_y": 35,
+          "radius": 2,
+          "intensity": 25
+        },
+        {
+          "pixel_x": 165,
+          "pixel_y": 15,
+          "radius": 2,
+          "intensity": 9
+        }
+      ],
+      "total_circles": 6
+    },
+    {
+      "segment_name": "tile_r5_c6",
+      "circles": [
+        {
+          "pixel_x": 37,
+          "pixel_y": 110,
+          "radius": 2,
+          "intensity": 23
+        },
+        {
+          "pixel_x": 104,
+          "pixel_y": 89,
+          "radius": 2,
+          "intensity": 28
+        },
+        {
+          "pixel_x": 127,
+          "pixel_y": 81,
+          "radius": 2,
+          "intensity": 24
+        },
+        {
+          "pixel_x": 63,
+          "pixel_y": 53,
+          "radius": 2,
+          "intensity": 7
+        },
+        {
+          "pixel_x": 26,
+          "pixel_y": 35,
+          "radius": 2,
+          "intensity": 23
+        },
+        {
+          "pixel_x": 81,
+          "pixel_y": 16,
+          "radius": 2,
+          "intensity": 9
+        }
+      ],
+      "total_circles": 6
+    },
+    {
+      "segment_name": "tile_r5_c7",
+      "circles": [
+        {
+          "pixel_x": 20,
+          "pixel_y": 89,
+          "radius": 2,
+          "intensity": 19
+        },
+        {
+          "pixel_x": 43,
+          "pixel_y": 81,
+          "radius": 2,
+          "intensity": 18
+        }
+      ],
+      "total_circles": 2
+    },
+    {
+      "segment_name": "tile_r6_c1",
+      "circles": [
+        {
+          "pixel_x": 184,
+          "pixel_y": 81,
+          "radius": 2,
+          "intensity": 42
+        },
+        {
+          "pixel_x": 196,
+          "pixel_y": 54,
+          "radius": 2,
+          "intensity": 32
+        },
+        {
+          "pixel_x": 164,
+          "pixel_y": 52,
+          "radius": 2,
+          "intensity": 48
+        },
+        {
+          "pixel_x": 184,
+          "pixel_y": 23,
+          "radius": 2,
+          "intensity": 42
+        }
+      ],
+      "total_circles": 4
+    },
+    {
+      "segment_name": "tile_r6_c2",
+      "circles": [
+        {
+          "pixel_x": 100,
+          "pixel_y": 81,
+          "radius": 2,
+          "intensity": 36
+        },
+        {
+          "pixel_x": 112,
+          "pixel_y": 54,
+          "radius": 2,
+          "intensity": 35
+        },
+        {
+          "pixel_x": 80,
+          "pixel_y": 52,
+          "radius": 2,
+          "intensity": 55
+        },
+        {
+          "pixel_x": 167,
+          "pixel_y": 48,
+          "radius": 2,
+          "intensity": 40
+        },
+        {
+          "pixel_x": 100,
+          "pixel_y": 23,
+          "radius": 2,
+          "intensity": 37
+        },
+        {
+          "pixel_x": 171,
+          "pixel_y": 18,
+          "radius": 2,
+          "intensity": 18
+        }
+      ],
+      "total_circles": 6
+    },
+    {
+      "segment_name": "tile_r6_c3",
+      "circles": [
+        {
+          "pixel_x": 16,
+          "pixel_y": 81,
+          "radius": 2,
+          "intensity": 42
+        },
+        {
+          "pixel_x": 28,
+          "pixel_y": 54,
+          "radius": 2,
+          "intensity": 32
+        },
+        {
+          "pixel_x": 83,
+          "pixel_y": 48,
+          "radius": 2,
+          "intensity": 40
+        },
+        {
+          "pixel_x": 16,
+          "pixel_y": 23,
+          "radius": 2,
+          "intensity": 42
+        },
+        {
+          "pixel_x": 87,
+          "pixel_y": 18,
+          "radius": 2,
+          "intensity": 31
+        }
+      ],
+      "total_circles": 5
+    },
+    {
+      "segment_name": "tile_r6_c4",
+      "circles": [
+        {
+          "pixel_x": 199,
+          "pixel_y": 116,
+          "radius": 2,
+          "intensity": 23
+        },
+        {
+          "pixel_x": 173,
+          "pixel_y": 114,
+          "radius": 2,
+          "intensity": 34
+        },
+        {
+          "pixel_x": 202,
+          "pixel_y": 90,
+          "radius": 2,
+          "intensity": 36
+        },
+        {
+          "pixel_x": 205,
+          "pixel_y": 62,
+          "radius": 2,
+          "intensity": 23
+        },
+        {
+          "pixel_x": 3,
+          "pixel_y": 18,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 143,
+          "pixel_y": 2,
+          "radius": 2,
+          "intensity": 60
+        }
+      ],
+      "total_circles": 6
+    },
+    {
+      "segment_name": "tile_r6_c5",
+      "circles": [
+        {
+          "pixel_x": 116,
+          "pixel_y": 116,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 89,
+          "pixel_y": 114,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 118,
+          "pixel_y": 90,
+          "radius": 2,
+          "intensity": 24
+        },
+        {
+          "pixel_x": 121,
+          "pixel_y": 61,
+          "radius": 2,
+          "intensity": 24
+        },
+        {
+          "pixel_x": 188,
+          "pixel_y": 41,
+          "radius": 2,
+          "intensity": 19
+        },
+        {
+          "pixel_x": 59,
+          "pixel_y": 2,
+          "radius": 2,
+          "intensity": 46
+        }
+      ],
+      "total_circles": 6
+    },
+    {
+      "segment_name": "tile_r6_c6",
+      "circles": [
+        {
+          "pixel_x": 31,
+          "pixel_y": 116,
+          "radius": 2,
+          "intensity": 23
+        },
+        {
+          "pixel_x": 5,
+          "pixel_y": 114,
+          "radius": 2,
+          "intensity": 34
+        },
+        {
+          "pixel_x": 34,
+          "pixel_y": 90,
+          "radius": 2,
+          "intensity": 36
+        },
+        {
+          "pixel_x": 37,
+          "pixel_y": 62,
+          "radius": 2,
+          "intensity": 23
+        },
+        {
+          "pixel_x": 104,
+          "pixel_y": 41,
+          "radius": 2,
+          "intensity": 28
+        },
+        {
+          "pixel_x": 127,
+          "pixel_y": 33,
+          "radius": 2,
+          "intensity": 24
+        },
+        {
+          "pixel_x": 63,
+          "pixel_y": 5,
+          "radius": 2,
+          "intensity": 7
+        }
+      ],
+      "total_circles": 7
+    },
+    {
+      "segment_name": "tile_r6_c7",
+      "circles": [
+        {
+          "pixel_x": 20,
+          "pixel_y": 41,
+          "radius": 2,
+          "intensity": 19
+        },
+        {
+          "pixel_x": 43,
+          "pixel_y": 33,
+          "radius": 2,
+          "intensity": 18
+        }
+      ],
+      "total_circles": 2
+    },
+    {
+      "segment_name": "tile_r7_c1",
+      "circles": [
+        {
+          "pixel_x": 161,
+          "pixel_y": 106,
+          "radius": 2,
+          "intensity": 83
+        },
+        {
+          "pixel_x": 188,
+          "pixel_y": 105,
+          "radius": 2,
+          "intensity": 79
+        },
+        {
+          "pixel_x": 157,
+          "pixel_y": 88,
+          "radius": 2,
+          "intensity": 68
+        },
+        {
+          "pixel_x": 183,
+          "pixel_y": 86,
+          "radius": 2,
+          "intensity": 76
+        },
+        {
+          "pixel_x": 184,
+          "pixel_y": 33,
+          "radius": 2,
+          "intensity": 42
+        },
+        {
+          "pixel_x": 196,
+          "pixel_y": 6,
+          "radius": 2,
+          "intensity": 32
+        },
+        {
+          "pixel_x": 164,
+          "pixel_y": 4,
+          "radius": 2,
+          "intensity": 48
+        }
+      ],
+      "total_circles": 7
+    },
+    {
+      "segment_name": "tile_r7_c2",
+      "circles": [
+        {
+          "pixel_x": 197,
+          "pixel_y": 108,
+          "radius": 2,
+          "intensity": 52
+        },
+        {
+          "pixel_x": 162,
+          "pixel_y": 107,
+          "radius": 2,
+          "intensity": 63
+        },
+        {
+          "pixel_x": 77,
+          "pixel_y": 106,
+          "radius": 2,
+          "intensity": 94
+        },
+        {
+          "pixel_x": 104,
+          "pixel_y": 105,
+          "radius": 2,
+          "intensity": 73
+        },
+        {
+          "pixel_x": 187,
+          "pixel_y": 88,
+          "radius": 2,
+          "intensity": 48
+        },
+        {
+          "pixel_x": 73,
+          "pixel_y": 88,
+          "radius": 2,
+          "intensity": 64
+        },
+        {
+          "pixel_x": 159,
+          "pixel_y": 86,
+          "radius": 2,
+          "intensity": 57
+        },
+        {
+          "pixel_x": 99,
+          "pixel_y": 86,
+          "radius": 2,
+          "intensity": 74
+        },
+        {
+          "pixel_x": 100,
+          "pixel_y": 33,
+          "radius": 2,
+          "intensity": 36
+        },
+        {
+          "pixel_x": 112,
+          "pixel_y": 6,
+          "radius": 2,
+          "intensity": 35
+        },
+        {
+          "pixel_x": 80,
+          "pixel_y": 4,
+          "radius": 2,
+          "intensity": 55
+        }
+      ],
+      "total_circles": 11
+    },
+    {
+      "segment_name": "tile_r7_c3",
+      "circles": [
+        {
+          "pixel_x": 113,
+          "pixel_y": 108,
+          "radius": 2,
+          "intensity": 55
+        },
+        {
+          "pixel_x": 78,
+          "pixel_y": 107,
+          "radius": 2,
+          "intensity": 58
+        },
+        {
+          "pixel_x": 20,
+          "pixel_y": 105,
+          "radius": 2,
+          "intensity": 79
+        },
+        {
+          "pixel_x": 103,
+          "pixel_y": 88,
+          "radius": 2,
+          "intensity": 53
+        },
+        {
+          "pixel_x": 75,
+          "pixel_y": 86,
+          "radius": 2,
+          "intensity": 54
+        },
+        {
+          "pixel_x": 15,
+          "pixel_y": 86,
+          "radius": 2,
+          "intensity": 76
+        },
+        {
+          "pixel_x": 16,
+          "pixel_y": 33,
+          "radius": 2,
+          "intensity": 42
+        },
+        {
+          "pixel_x": 28,
+          "pixel_y": 6,
+          "radius": 2,
+          "intensity": 32
+        }
+      ],
+      "total_circles": 8
+    },
+    {
+      "segment_name": "tile_r7_c4",
+      "circles": [
+        {
+          "pixel_x": 185,
+          "pixel_y": 111,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 29,
+          "pixel_y": 108,
+          "radius": 2,
+          "intensity": 52
+        },
+        {
+          "pixel_x": 183,
+          "pixel_y": 97,
+          "radius": 2,
+          "intensity": 21
+        },
+        {
+          "pixel_x": 19,
+          "pixel_y": 88,
+          "radius": 2,
+          "intensity": 48
+        },
+        {
+          "pixel_x": 173,
+          "pixel_y": 66,
+          "radius": 2,
+          "intensity": 34
+        },
+        {
+          "pixel_x": 202,
+          "pixel_y": 42,
+          "radius": 2,
+          "intensity": 36
+        },
+        {
+          "pixel_x": 205,
+          "pixel_y": 14,
+          "radius": 2,
+          "intensity": 23
+        }
+      ],
+      "total_circles": 7
+    },
+    {
+      "segment_name": "tile_r7_c5",
+      "circles": [
+        {
+          "pixel_x": 197,
+          "pixel_y": 112,
+          "radius": 2,
+          "intensity": 14
+        },
+        {
+          "pixel_x": 134,
+          "pixel_y": 111,
+          "radius": 2,
+          "intensity": 30
+        },
+        {
+          "pixel_x": 101,
+          "pixel_y": 111,
+          "radius": 2,
+          "intensity": 4
+        },
+        {
+          "pixel_x": 172,
+          "pixel_y": 97,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 99,
+          "pixel_y": 97,
+          "radius": 2,
+          "intensity": 15
+        },
+        {
+          "pixel_x": 127,
+          "pixel_y": 95,
+          "radius": 2,
+          "intensity": 27
+        },
+        {
+          "pixel_x": 208,
+          "pixel_y": 91,
+          "radius": 2,
+          "intensity": 23
+        },
+        {
+          "pixel_x": 187,
+          "pixel_y": 81,
+          "radius": 2,
+          "intensity": 15
+        },
+        {
+          "pixel_x": 115,
+          "pixel_y": 68,
+          "radius": 2,
+          "intensity": 16
+        },
+        {
+          "pixel_x": 89,
+          "pixel_y": 66,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 118,
+          "pixel_y": 42,
+          "radius": 2,
+          "intensity": 24
+        },
+        {
+          "pixel_x": 121,
+          "pixel_y": 13,
+          "radius": 2,
+          "intensity": 24
+        }
+      ],
+      "total_circles": 12
+    },
+    {
+      "segment_name": "tile_r7_c6",
+      "circles": [
+        {
+          "pixel_x": 113,
+          "pixel_y": 112,
+          "radius": 2,
+          "intensity": 23
+        },
+        {
+          "pixel_x": 50,
+          "pixel_y": 111,
+          "radius": 2,
+          "intensity": 25
+        },
+        {
+          "pixel_x": 17,
+          "pixel_y": 111,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 88,
+          "pixel_y": 97,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 15,
+          "pixel_y": 97,
+          "radius": 2,
+          "intensity": 21
+        },
+        {
+          "pixel_x": 43,
+          "pixel_y": 95,
+          "radius": 2,
+          "intensity": 25
+        },
+        {
+          "pixel_x": 124,
+          "pixel_y": 91,
+          "radius": 2,
+          "intensity": 28
+        },
+        {
+          "pixel_x": 103,
+          "pixel_y": 82,
+          "radius": 2,
+          "intensity": 24
+        },
+        {
+          "pixel_x": 5,
+          "pixel_y": 66,
+          "radius": 2,
+          "intensity": 34
+        },
+        {
+          "pixel_x": 34,
+          "pixel_y": 42,
+          "radius": 2,
+          "intensity": 36
+        },
+        {
+          "pixel_x": 37,
+          "pixel_y": 14,
+          "radius": 2,
+          "intensity": 23
+        }
+      ],
+      "total_circles": 11
+    },
+    {
+      "segment_name": "tile_r7_c7",
+      "circles": [
+        {
+          "pixel_x": 29,
+          "pixel_y": 112,
+          "radius": 2,
+          "intensity": 14
+        },
+        {
+          "pixel_x": 4,
+          "pixel_y": 97,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 40,
+          "pixel_y": 91,
+          "radius": 2,
+          "intensity": 25
+        },
+        {
+          "pixel_x": 19,
+          "pixel_y": 81,
+          "radius": 2,
+          "intensity": 15
+        }
+      ],
+      "total_circles": 4
+    },
+    {
+      "segment_name": "tile_r8_c1",
+      "circles": [
+        {
+          "pixel_x": 161,
+          "pixel_y": 58,
+          "radius": 2,
+          "intensity": 83
+        },
+        {
+          "pixel_x": 188,
+          "pixel_y": 57,
+          "radius": 2,
+          "intensity": 79
+        },
+        {
+          "pixel_x": 157,
+          "pixel_y": 40,
+          "radius": 2,
+          "intensity": 68
+        },
+        {
+          "pixel_x": 183,
+          "pixel_y": 38,
+          "radius": 2,
+          "intensity": 76
+        }
+      ],
+      "total_circles": 4
+    },
+    {
+      "segment_name": "tile_r8_c2",
+      "circles": [
+        {
+          "pixel_x": 197,
+          "pixel_y": 60,
+          "radius": 2,
+          "intensity": 52
+        },
+        {
+          "pixel_x": 162,
+          "pixel_y": 59,
+          "radius": 2,
+          "intensity": 63
+        },
+        {
+          "pixel_x": 77,
+          "pixel_y": 58,
+          "radius": 2,
+          "intensity": 94
+        },
+        {
+          "pixel_x": 104,
+          "pixel_y": 57,
+          "radius": 2,
+          "intensity": 73
+        },
+        {
+          "pixel_x": 187,
+          "pixel_y": 40,
+          "radius": 2,
+          "intensity": 48
+        },
+        {
+          "pixel_x": 73,
+          "pixel_y": 40,
+          "radius": 2,
+          "intensity": 64
+        },
+        {
+          "pixel_x": 159,
+          "pixel_y": 38,
+          "radius": 2,
+          "intensity": 57
+        },
+        {
+          "pixel_x": 99,
+          "pixel_y": 38,
+          "radius": 2,
+          "intensity": 74
+        }
+      ],
+      "total_circles": 8
+    },
+    {
+      "segment_name": "tile_r8_c3",
+      "circles": [
+        {
+          "pixel_x": 113,
+          "pixel_y": 60,
+          "radius": 2,
+          "intensity": 55
+        },
+        {
+          "pixel_x": 78,
+          "pixel_y": 59,
+          "radius": 2,
+          "intensity": 58
+        },
+        {
+          "pixel_x": 20,
+          "pixel_y": 57,
+          "radius": 2,
+          "intensity": 79
+        },
+        {
+          "pixel_x": 103,
+          "pixel_y": 40,
+          "radius": 2,
+          "intensity": 53
+        },
+        {
+          "pixel_x": 75,
+          "pixel_y": 38,
+          "radius": 2,
+          "intensity": 54
+        },
+        {
+          "pixel_x": 15,
+          "pixel_y": 38,
+          "radius": 2,
+          "intensity": 76
+        }
+      ],
+      "total_circles": 6
+    },
+    {
+      "segment_name": "tile_r8_c4",
+      "circles": [
+        {
+          "pixel_x": 185,
+          "pixel_y": 63,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 29,
+          "pixel_y": 60,
+          "radius": 2,
+          "intensity": 52
+        },
+        {
+          "pixel_x": 183,
+          "pixel_y": 49,
+          "radius": 2,
+          "intensity": 21
+        },
+        {
+          "pixel_x": 19,
+          "pixel_y": 40,
+          "radius": 2,
+          "intensity": 48
+        },
+        {
+          "pixel_x": 173,
+          "pixel_y": 18,
+          "radius": 2,
+          "intensity": 34
+        }
+      ],
+      "total_circles": 5
+    },
+    {
+      "segment_name": "tile_r8_c5",
+      "circles": [
+        {
+          "pixel_x": 197,
+          "pixel_y": 64,
+          "radius": 2,
+          "intensity": 14
+        },
+        {
+          "pixel_x": 134,
+          "pixel_y": 63,
+          "radius": 2,
+          "intensity": 30
+        },
+        {
+          "pixel_x": 102,
+          "pixel_y": 63,
+          "radius": 2,
+          "intensity": 21
+        },
+        {
+          "pixel_x": 172,
+          "pixel_y": 49,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 99,
+          "pixel_y": 49,
+          "radius": 2,
+          "intensity": 15
+        },
+        {
+          "pixel_x": 127,
+          "pixel_y": 47,
+          "radius": 2,
+          "intensity": 27
+        },
+        {
+          "pixel_x": 208,
+          "pixel_y": 43,
+          "radius": 2,
+          "intensity": 23
+        },
+        {
+          "pixel_x": 187,
+          "pixel_y": 33,
+          "radius": 2,
+          "intensity": 15
+        },
+        {
+          "pixel_x": 115,
+          "pixel_y": 20,
+          "radius": 2,
+          "intensity": 16
+        },
+        {
+          "pixel_x": 89,
+          "pixel_y": 18,
+          "radius": 2,
+          "intensity": 20
+        }
+      ],
+      "total_circles": 10
+    },
+    {
+      "segment_name": "tile_r8_c6",
+      "circles": [
+        {
+          "pixel_x": 113,
+          "pixel_y": 64,
+          "radius": 2,
+          "intensity": 23
+        },
+        {
+          "pixel_x": 50,
+          "pixel_y": 63,
+          "radius": 2,
+          "intensity": 25
+        },
+        {
+          "pixel_x": 17,
+          "pixel_y": 63,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 88,
+          "pixel_y": 49,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 15,
+          "pixel_y": 49,
+          "radius": 2,
+          "intensity": 21
+        },
+        {
+          "pixel_x": 43,
+          "pixel_y": 47,
+          "radius": 2,
+          "intensity": 25
+        },
+        {
+          "pixel_x": 124,
+          "pixel_y": 43,
+          "radius": 2,
+          "intensity": 28
+        },
+        {
+          "pixel_x": 103,
+          "pixel_y": 34,
+          "radius": 2,
+          "intensity": 24
+        },
+        {
+          "pixel_x": 5,
+          "pixel_y": 18,
+          "radius": 2,
+          "intensity": 34
+        }
+      ],
+      "total_circles": 9
+    },
+    {
+      "segment_name": "tile_r8_c7",
+      "circles": [
+        {
+          "pixel_x": 29,
+          "pixel_y": 64,
+          "radius": 2,
+          "intensity": 14
+        },
+        {
+          "pixel_x": 4,
+          "pixel_y": 49,
+          "radius": 2,
+          "intensity": 18
+        },
+        {
+          "pixel_x": 40,
+          "pixel_y": 43,
+          "radius": 2,
+          "intensity": 25
+        },
+        {
+          "pixel_x": 19,
+          "pixel_y": 33,
+          "radius": 2,
+          "intensity": 15
+        }
+      ],
+      "total_circles": 4
+    },
+    {
+      "segment_name": "tile_r9_c1",
+      "circles": [
+        {
+          "pixel_x": 161,
+          "pixel_y": 10,
+          "radius": 2,
+          "intensity": 83
+        },
+        {
+          "pixel_x": 188,
+          "pixel_y": 9,
+          "radius": 2,
+          "intensity": 79
+        }
+      ],
+      "total_circles": 2
+    },
+    {
+      "segment_name": "tile_r9_c2",
+      "circles": [
+        {
+          "pixel_x": 197,
+          "pixel_y": 12,
+          "radius": 2,
+          "intensity": 52
+        },
+        {
+          "pixel_x": 162,
+          "pixel_y": 11,
+          "radius": 2,
+          "intensity": 63
+        },
+        {
+          "pixel_x": 77,
+          "pixel_y": 10,
+          "radius": 2,
+          "intensity": 94
+        },
+        {
+          "pixel_x": 104,
+          "pixel_y": 9,
+          "radius": 2,
+          "intensity": 73
+        }
+      ],
+      "total_circles": 4
+    },
+    {
+      "segment_name": "tile_r9_c3",
+      "circles": [
+        {
+          "pixel_x": 113,
+          "pixel_y": 12,
+          "radius": 2,
+          "intensity": 55
+        },
+        {
+          "pixel_x": 78,
+          "pixel_y": 11,
+          "radius": 2,
+          "intensity": 58
+        },
+        {
+          "pixel_x": 20,
+          "pixel_y": 9,
+          "radius": 2,
+          "intensity": 79
+        }
+      ],
+      "total_circles": 3
+    },
+    {
+      "segment_name": "tile_r9_c4",
+      "circles": [
+        {
+          "pixel_x": 185,
+          "pixel_y": 15,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 29,
+          "pixel_y": 12,
+          "radius": 2,
+          "intensity": 52
+        },
+        {
+          "pixel_x": 183,
+          "pixel_y": 1,
+          "radius": 2,
+          "intensity": 21
+        }
+      ],
+      "total_circles": 3
+    },
+    {
+      "segment_name": "tile_r9_c5",
+      "circles": [
+        {
+          "pixel_x": 197,
+          "pixel_y": 16,
+          "radius": 2,
+          "intensity": 14
+        },
+        {
+          "pixel_x": 134,
+          "pixel_y": 15,
+          "radius": 2,
+          "intensity": 30
+        },
+        {
+          "pixel_x": 101,
+          "pixel_y": 15,
+          "radius": 2,
+          "intensity": 4
+        },
+        {
+          "pixel_x": 170,
+          "pixel_y": 2,
+          "radius": 2,
+          "intensity": 29
+        },
+        {
+          "pixel_x": 98,
+          "pixel_y": 2,
+          "radius": 2,
+          "intensity": 18
+        }
+      ],
+      "total_circles": 5
+    },
+    {
+      "segment_name": "tile_r9_c6",
+      "circles": [
+        {
+          "pixel_x": 113,
+          "pixel_y": 16,
+          "radius": 2,
+          "intensity": 23
+        },
+        {
+          "pixel_x": 50,
+          "pixel_y": 15,
+          "radius": 2,
+          "intensity": 25
+        },
+        {
+          "pixel_x": 17,
+          "pixel_y": 15,
+          "radius": 2,
+          "intensity": 20
+        },
+        {
+          "pixel_x": 87,
+          "pixel_y": 2,
+          "radius": 2,
+          "intensity": 9
+        },
+        {
+          "pixel_x": 15,
+          "pixel_y": 1,
+          "radius": 2,
+          "intensity": 21
+        }
+      ],
+      "total_circles": 5
+    },
+    {
+      "segment_name": "tile_r9_c7",
+      "circles": [
+        {
+          "pixel_x": 29,
+          "pixel_y": 16,
+          "radius": 2,
+          "intensity": 14
+        },
+        {
+          "pixel_x": 4,
+          "pixel_y": 1,
+          "radius": 2,
+          "intensity": 18
+        }
+      ],
+      "total_circles": 2
+    }
+  ]
+}

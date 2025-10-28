@@ -1,0 +1,236 @@
+2025-10-28 13:47:46,988 - __main__ - INFO - Configuration loaded successfully from: calibration.json
+2025-10-28 13:47:46,989 - __main__ - INFO - Connecting (Secondary): 10.150.0.1:30002...
+2025-10-28 13:47:47,029 - __main__ - INFO - Connected (Secondary: 30002)!
+2025-10-28 13:47:54,632 - __main__ - INFO - Dashboard Status (29999) Check
+2025-10-28 13:47:54,635 - __main__ - INFO - Dashboard Status
+2025-10-28 13:47:54,640 - __main__ - INFO -   Robot Mode: Robotmode: RUNNING
+2025-10-28 13:47:54,643 - __main__ - INFO -   Program State: STOPPED <unnamed>
+2025-10-28 13:47:54,645 - __main__ - INFO -   Safety Status: Safetystatus: NORMAL
+2025-10-28 13:47:54,646 - __main__ - INFO - RTDE Status (30004) Check
+2025-10-28 13:47:55,342 - rtde - INFO - Controller version: 5.16.0.0
+2025-10-28 13:47:55,345 - rtde - INFO - RTDE synchronization started
+2025-10-28 13:47:55,346 - __main__ - INFO - RTDE Status
+2025-10-28 13:47:55,346 - __main__ - INFO -   Actual TCP (m/rad): ['0.369', '-0.247', '0.055', '-1.251', '1.149', '-1.170']
+2025-10-28 13:47:55,346 - __main__ - INFO -   Actual Joints (rad): ['1.242', '-0.864', '2.033', '-1.151', '-0.401', '-9.460']
+2025-10-28 13:47:55,347 - rtde - INFO - RTDE synchronization paused
+2025-10-28 13:48:03,050 - __main__ - WARNING - Program interrupted by user
+2025-10-28 13:48:03,051 - __main__ - INFO - Disconnected (Secondary).
+2025-10-28 13:48:03,052 - __main__ - INFO - Drawing is finished.
+2025-10-28 14:54:08,352 - __main__ - INFO - Configuration loaded successfully from: calibration.json
+2025-10-28 14:54:08,352 - __main__ - INFO - Connecting (Secondary): 10.150.0.1:30002...
+2025-10-28 14:54:08,378 - __main__ - INFO - Connected (Secondary: 30002)!
+2025-10-28 14:54:15,428 - __main__ - INFO - Dashboard Status (29999) Check
+2025-10-28 14:54:15,430 - __main__ - INFO - Dashboard Status
+2025-10-28 14:54:15,444 - __main__ - INFO -   Robot Mode: Robotmode: RUNNING
+2025-10-28 14:54:15,446 - __main__ - INFO -   Program State: STOPPED <unnamed>
+2025-10-28 14:54:15,447 - __main__ - INFO -   Safety Status: Safetystatus: NORMAL
+2025-10-28 14:54:15,447 - __main__ - INFO - RTDE Status (30004) Check
+2025-10-28 14:54:15,714 - rtde - INFO - Controller version: 5.16.0.0
+2025-10-28 14:54:15,716 - rtde - INFO - RTDE synchronization started
+2025-10-28 14:54:15,720 - __main__ - INFO - RTDE Status
+2025-10-28 14:54:15,720 - __main__ - INFO -   Actual TCP (m/rad): ['-0.121', '-0.392', '-0.077', '2.927', '-0.976', '0.080']
+2025-10-28 14:54:15,720 - __main__ - INFO -   Actual Joints (rad): ['0.895', '-1.099', '1.715', '-2.222', '-1.496', '-9.461']
+2025-10-28 14:54:15,721 - rtde - INFO - RTDE synchronization paused
+2025-10-28 14:54:18,482 - __main__ - WARNING - Program interrupted by user
+2025-10-28 14:54:18,482 - __main__ - INFO - Disconnected (Secondary).
+2025-10-28 14:54:18,482 - __main__ - INFO - Drawing is finished.
+2025-10-28 15:03:23,594 - __main__ - INFO - Configuration loaded successfully from: calibration.json
+2025-10-28 15:03:23,594 - __main__ - INFO - Connecting (Secondary): 10.150.0.1:30002...
+2025-10-28 15:03:23,595 - __main__ - INFO - Connected (Secondary: 30002)!
+2025-10-28 15:03:24,164 - rtde - INFO - Controller version: 5.16.0.0
+2025-10-28 15:03:24,166 - rtde - INFO - RTDE synchronization started
+2025-10-28 15:03:24,166 - __main__ - INFO - RTDE Monitor connected and initialized (30004).
+2025-10-28 15:03:33,192 - __main__ - WARNING - Program interrupted by user
+2025-10-28 15:04:29,570 - __main__ - INFO - Configuration loaded successfully from: calibration.json
+2025-10-28 15:04:29,571 - __main__ - INFO - Connecting (Secondary): 10.150.0.1:30002...
+2025-10-28 15:04:29,572 - __main__ - INFO - Connected (Secondary: 30002)!
+2025-10-28 15:04:30,047 - rtde - INFO - Controller version: 5.16.0.0
+2025-10-28 15:04:30,049 - rtde - INFO - RTDE synchronization started
+2025-10-28 15:04:30,049 - __main__ - INFO - RTDE Monitor connected and initialized (30004).
+2025-10-28 15:04:33,935 - __main__ - INFO - Starting SAFE Home move (10 steps, manual confirm)
+2025-10-28 15:04:33,951 - __main__ - INFO - Interpolating move from [0.04147476937742401, -0.4085387483880024, -0.07730207401014469, 3.0738868007995226, -0.37514997531191807, 0.09512858644420641] to [-0.12125, -0.39231, -0.07732, 2.2, 2.2, 0.0] in 10 steps.
+2025-10-28 15:04:33,951 - __main__ - INFO - Preparing interpolated step 1/10...
+2025-10-28 15:04:45,173 - __main__ - INFO - Preparing interpolated step 2/10...
+2025-10-28 15:04:45,174 - __main__ - INFO - Preparing interpolated step 3/10...
+2025-10-28 15:04:50,496 - __main__ - WARNING - Move sequence cancelled by user.
+2025-10-28 15:04:50,496 - __main__ - INFO - Safe Home move complete.
+2025-10-28 15:04:57,451 - __main__ - INFO - Dashboard Status (29999) Check
+2025-10-28 15:04:57,454 - __main__ - INFO - Dashboard Status
+2025-10-28 15:04:57,459 - __main__ - INFO -   Robot Mode: Robotmode: RUNNING
+2025-10-28 15:04:57,460 - __main__ - INFO -   Program State: STOPPED <unnamed>
+2025-10-28 15:04:57,461 - __main__ - INFO -   Safety Status: Safetystatus: NORMAL
+2025-10-28 15:04:57,461 - __main__ - INFO - RTDE Status (30004) Check [Live]
+2025-10-28 15:04:57,462 - rtde - ERROR - received 0 bytes from Controller, probable cause: Controller has stopped
+2025-10-28 15:04:57,462 - rtde - INFO - RTDE disconnected
+2025-10-28 15:04:57,462 - __main__ - ERROR - RTDE error: 'received 0 bytes from Controller'
+2025-10-28 15:05:25,691 - __main__ - INFO - Dashboard Status (29999) Check
+2025-10-28 15:05:25,695 - __main__ - INFO - Dashboard Status
+2025-10-28 15:05:25,700 - __main__ - INFO -   Robot Mode: Robotmode: RUNNING
+2025-10-28 15:05:25,701 - __main__ - INFO -   Program State: STOPPED <unnamed>
+2025-10-28 15:05:25,702 - __main__ - INFO -   Safety Status: Safetystatus: NORMAL
+2025-10-28 15:05:25,702 - __main__ - INFO - RTDE Status (30004) Check [Live]
+2025-10-28 15:05:25,702 - __main__ - ERROR - RTDE error: 'Cannot receive when RTDE synchronization is inactive'
+2025-10-28 15:05:29,626 - __main__ - INFO - Configuration loaded successfully from: calibration.json
+2025-10-28 15:05:29,626 - __main__ - INFO - Connecting (Secondary): 10.150.0.1:30002...
+2025-10-28 15:05:29,629 - __main__ - INFO - Connected (Secondary: 30002)!
+2025-10-28 15:05:30,221 - rtde - INFO - Controller version: 5.16.0.0
+2025-10-28 15:05:30,223 - rtde - INFO - RTDE synchronization started
+2025-10-28 15:05:30,223 - __main__ - INFO - RTDE Monitor connected and initialized (30004).
+2025-10-28 15:05:35,411 - __main__ - INFO - Dashboard Status (29999) Check
+2025-10-28 15:05:35,413 - __main__ - INFO - Dashboard Status
+2025-10-28 15:05:35,417 - __main__ - INFO -   Robot Mode: Robotmode: RUNNING
+2025-10-28 15:05:35,418 - __main__ - INFO -   Program State: STOPPED <unnamed>
+2025-10-28 15:05:35,420 - __main__ - INFO -   Safety Status: Safetystatus: NORMAL
+2025-10-28 15:05:35,421 - __main__ - INFO - RTDE Status (30004) Check [Live]
+2025-10-28 15:05:35,435 - __main__ - INFO - RTDE Status
+2025-10-28 15:05:35,435 - __main__ - INFO -   Actual TCP (m/rad): ['0.041', '-0.409', '-0.077', '3.074', '-0.375', '0.095']
+2025-10-28 15:05:35,435 - __main__ - INFO -   Actual Joints (rad): ['1.296', '-1.099', '1.715', '-2.222', '-1.496', '-9.460']
+2025-10-28 15:05:39,900 - __main__ - INFO - Starting SAFE Home move (10 steps, manual confirm)
+2025-10-28 15:05:39,901 - rtde - ERROR - received 0 bytes from Controller, probable cause: Controller has stopped
+2025-10-28 15:05:39,901 - rtde - INFO - RTDE disconnected
+2025-10-28 15:05:39,902 - __main__ - ERROR - Error during move interpolation: 'received 0 bytes from Controller'
+2025-10-28 15:05:39,902 - __main__ - INFO - Safe Home move complete.
+2025-10-28 15:05:59,491 - __main__ - WARNING - Program interrupted by user
+2025-10-28 15:05:59,491 - rtde - ERROR - Unable to send: not connected to Robot
+2025-10-28 15:05:59,491 - rtde - ERROR - RTDE synchronization failed to pause
+2025-10-28 15:05:59,491 - __main__ - INFO - RTDE Monitor disconnected.
+2025-10-28 15:05:59,491 - __main__ - INFO - Disconnected (Secondary).
+2025-10-28 15:05:59,491 - __main__ - INFO - Program finished.
+2025-10-28 15:10:45,298 - __main__ - INFO - Configuration loaded successfully from: calibration.json
+2025-10-28 15:10:45,298 - __main__ - INFO - Connecting (Secondary): 10.150.0.1:30002...
+2025-10-28 15:10:45,299 - __main__ - INFO - Connected (Secondary: 30002)!
+2025-10-28 15:10:45,889 - rtde - INFO - Controller version: 5.16.0.0
+2025-10-28 15:10:45,890 - rtde - INFO - RTDE synchronization started
+2025-10-28 15:10:45,891 - __main__ - INFO - RTDE Monitor connected and initialized (30004).
+2025-10-28 15:10:49,305 - __main__ - INFO - Dashboard Status (29999) Check
+2025-10-28 15:10:49,307 - __main__ - INFO - Dashboard Status
+2025-10-28 15:10:49,311 - __main__ - INFO -   Robot Mode: Robotmode: RUNNING
+2025-10-28 15:10:49,312 - __main__ - INFO -   Program State: STOPPED <unnamed>
+2025-10-28 15:10:49,313 - __main__ - INFO -   Safety Status: Safetystatus: NORMAL
+2025-10-28 15:10:49,313 - __main__ - INFO - RTDE Status (30004) Check [Live]
+2025-10-28 15:10:49,330 - __main__ - INFO - RTDE Status
+2025-10-28 15:10:49,330 - __main__ - INFO -   Actual TCP (m/rad): ['0.041', '-0.409', '-0.077', '3.074', '-0.375', '0.095']
+2025-10-28 15:10:49,330 - __main__ - INFO -   Actual Joints (rad): ['1.296', '-1.099', '1.715', '-2.222', '-1.496', '-9.461']
+2025-10-28 15:10:52,497 - __main__ - WARNING - Program interrupted by user
+2025-10-28 15:10:52,498 - rtde - ERROR - received 0 bytes from Controller, probable cause: Controller has stopped
+2025-10-28 15:10:52,498 - rtde - INFO - RTDE disconnected
+2025-10-28 15:11:34,911 - __main__ - INFO - Configuration loaded successfully from: calibration.json
+2025-10-28 15:11:34,911 - __main__ - INFO - Connecting (Secondary): 10.150.0.1:30002...
+2025-10-28 15:11:34,933 - __main__ - INFO - Connected (Secondary: 30002)!
+2025-10-28 15:11:34,948 - rtde - INFO - Controller version: 5.16.0.0
+2025-10-28 15:11:34,951 - rtde - INFO - RTDE synchronization started
+2025-10-28 15:11:34,951 - __main__ - INFO - RTDE Monitor connected and initialized (30004).
+2025-10-28 15:11:36,807 - __main__ - INFO - Dashboard Status (29999) Check
+2025-10-28 15:11:36,809 - __main__ - INFO - Dashboard Status
+2025-10-28 15:11:36,814 - __main__ - INFO -   Robot Mode: Robotmode: RUNNING
+2025-10-28 15:11:36,815 - __main__ - INFO -   Program State: STOPPED <unnamed>
+2025-10-28 15:11:36,816 - __main__ - INFO -   Safety Status: Safetystatus: NORMAL
+2025-10-28 15:11:36,816 - __main__ - INFO - RTDE Status (30004) Check [Live]
+2025-10-28 15:11:36,828 - __main__ - INFO - RTDE Status
+2025-10-28 15:11:36,828 - __main__ - INFO -   Actual TCP (m/rad): ['0.041', '-0.409', '-0.077', '3.074', '-0.375', '0.095']
+2025-10-28 15:11:36,828 - __main__ - INFO -   Actual Joints (rad): ['1.296', '-1.099', '1.715', '-2.222', '-1.496', '-9.461']
+2025-10-28 15:11:40,390 - __main__ - INFO - Starting SAFE Home move (10 steps, manual confirm)
+2025-10-28 15:11:40,406 - __main__ - INFO - Interpolating move from [0.04147454581252285, -0.40853082945170716, -0.07731655094053985, 3.073902301966248, -0.37522949240136955, 0.09510924768916473] to [-0.12125, -0.39231, -0.07732, 2.2, 2.2, 0.0] in 10 steps.
+2025-10-28 15:11:40,406 - __main__ - INFO - Preparing interpolated step 1/10...
+2025-10-28 15:11:41,985 - __main__ - INFO - Preparing interpolated step 2/10...
+2025-10-28 15:11:44,608 - __main__ - INFO - Preparing interpolated step 3/10...
+2025-10-28 15:11:46,039 - __main__ - INFO - Preparing interpolated step 4/10...
+2025-10-28 15:11:47,503 - __main__ - INFO - Preparing interpolated step 5/10...
+2025-10-28 15:11:49,060 - __main__ - INFO - Preparing interpolated step 6/10...
+2025-10-28 15:11:50,584 - __main__ - INFO - Preparing interpolated step 7/10...
+2025-10-28 15:11:52,437 - __main__ - INFO - Preparing interpolated step 8/10...
+2025-10-28 15:11:53,685 - __main__ - INFO - Preparing interpolated step 9/10...
+2025-10-28 15:11:54,909 - __main__ - INFO - Preparing interpolated step 10/10...
+2025-10-28 15:11:56,594 - __main__ - INFO - Safe Home move complete.
+2025-10-28 15:36:08,040 - __main__ - WARNING - Program interrupted by user
+2025-10-28 15:36:08,045 - rtde - ERROR - received 0 bytes from Controller, probable cause: Controller has stopped
+2025-10-28 15:36:08,045 - rtde - INFO - RTDE disconnected
+2025-10-28 15:53:12,007 - __main__ - INFO - Configuration loaded successfully from: calibration.json
+2025-10-28 15:53:12,008 - __main__ - INFO - Connecting (Secondary): 10.150.0.1:30002...
+2025-10-28 15:53:12,009 - __main__ - INFO - Connected (Secondary: 30002)!
+2025-10-28 15:53:12,198 - rtde - INFO - Controller version: 5.16.0.0
+2025-10-28 15:53:12,199 - rtde - INFO - RTDE synchronization started
+2025-10-28 15:53:12,199 - __main__ - INFO - RTDE Monitor connected and initialized (30004).
+2025-10-28 15:53:16,754 - __main__ - INFO - Starting SAFE Home move (10 steps, manual confirm)
+2025-10-28 15:53:16,775 - __main__ - INFO - Interpolating move from [-0.002563137739284688, -0.46683480642211006, -0.009233740647966615, 1.74773962080885, 2.4720919970884876, -0.31070626788094025] to [-0.12125, -0.39231, -0.07732, 2.2, 2.2, 0.0] in 10 steps.
+2025-10-28 15:53:16,776 - __main__ - INFO - Preparing interpolated step 1/10...
+2025-10-28 15:53:18,103 - __main__ - INFO - Preparing interpolated step 2/10...
+2025-10-28 15:53:21,189 - __main__ - INFO - Preparing interpolated step 3/10...
+2025-10-28 15:53:25,727 - __main__ - WARNING - Move sequence cancelled by user.
+2025-10-28 15:53:25,727 - __main__ - INFO - Safe Home move complete.
+2025-10-28 15:53:31,898 - __main__ - INFO - Dashboard Status (29999) Check
+2025-10-28 15:53:31,899 - __main__ - INFO - Dashboard Status
+2025-10-28 15:53:31,903 - __main__ - INFO -   Robot Mode: Robotmode: RUNNING
+2025-10-28 15:53:31,906 - __main__ - INFO -   Program State: STOPPED <unnamed>
+2025-10-28 15:53:31,907 - __main__ - INFO -   Safety Status: Safetystatus: NORMAL
+2025-10-28 15:53:31,907 - __main__ - INFO - RTDE Status (30004) Check [Live]
+2025-10-28 15:53:31,908 - rtde - ERROR - received 0 bytes from Controller, probable cause: Controller has stopped
+2025-10-28 15:53:31,908 - rtde - INFO - RTDE disconnected
+2025-10-28 15:53:31,908 - __main__ - ERROR - RTDE error: 'received 0 bytes from Controller'
+2025-10-28 15:53:41,635 - __main__ - INFO - Configuration loaded successfully from: calibration.json
+2025-10-28 15:53:41,636 - __main__ - INFO - Connecting (Secondary): 10.150.0.1:30002...
+2025-10-28 15:53:41,649 - __main__ - INFO - Connected (Secondary: 30002)!
+2025-10-28 15:53:42,037 - rtde - INFO - Controller version: 5.16.0.0
+2025-10-28 15:53:42,040 - rtde - INFO - RTDE synchronization started
+2025-10-28 15:53:42,040 - __main__ - INFO - RTDE Monitor connected and initialized (30004).
+2025-10-28 15:53:43,927 - __main__ - INFO - Dashboard Status (29999) Check
+2025-10-28 15:53:43,929 - __main__ - INFO - Dashboard Status
+2025-10-28 15:53:43,933 - __main__ - INFO -   Robot Mode: Robotmode: RUNNING
+2025-10-28 15:53:43,934 - __main__ - INFO -   Program State: STOPPED <unnamed>
+2025-10-28 15:53:43,935 - __main__ - INFO -   Safety Status: Safetystatus: NORMAL
+2025-10-28 15:53:43,936 - __main__ - INFO - RTDE Status (30004) Check [Live]
+2025-10-28 15:53:43,972 - __main__ - INFO - RTDE Status
+2025-10-28 15:53:43,972 - __main__ - INFO -   Actual TCP (m/rad): ['-0.003', '-0.467', '-0.009', '1.748', '2.472', '-0.311']
+2025-10-28 15:53:43,972 - __main__ - INFO -   Actual Joints (rad): ['1.263', '-1.175', '1.593', '-2.215', '-1.530', '-11.645']
+2025-10-28 15:53:46,178 - __main__ - INFO - Starting SAFE Home move (10 steps, manual confirm)
+2025-10-28 15:53:46,221 - __main__ - INFO - Interpolating move from [-0.0025511242433601533, -0.4668146999542624, -0.009254412363957798, 1.7477389346783094, 2.472145275253061, -0.3106488167292346] to [-0.12125, -0.39231, -0.07732, 2.2, 2.2, 0.0] in 10 steps.
+2025-10-28 15:53:46,221 - __main__ - INFO - Preparing interpolated step 1/10...
+2025-10-28 15:53:47,212 - __main__ - INFO - Preparing interpolated step 2/10...
+2025-10-28 15:53:49,836 - __main__ - INFO - Preparing interpolated step 3/10...
+2025-10-28 15:53:52,384 - __main__ - INFO - Preparing interpolated step 4/10...
+2025-10-28 15:53:55,173 - __main__ - WARNING - Move sequence cancelled by user.
+2025-10-28 15:53:55,174 - __main__ - INFO - Safe Home move complete.
+2025-10-28 15:53:58,613 - __main__ - INFO - Dashboard Status (29999) Check
+2025-10-28 15:53:58,615 - __main__ - INFO - Dashboard Status
+2025-10-28 15:53:58,619 - __main__ - INFO -   Robot Mode: Robotmode: RUNNING
+2025-10-28 15:53:58,620 - __main__ - INFO -   Program State: STOPPED <unnamed>
+2025-10-28 15:53:58,621 - __main__ - INFO -   Safety Status: Safetystatus: NORMAL
+2025-10-28 15:53:58,622 - __main__ - INFO - RTDE Status (30004) Check [Live]
+2025-10-28 15:53:58,642 - __main__ - INFO - RTDE Status
+2025-10-28 15:53:58,642 - __main__ - INFO -   Actual TCP (m/rad): ['-0.003', '-0.467', '-0.009', '1.748', '2.472', '-0.311']
+2025-10-28 15:53:58,642 - __main__ - INFO -   Actual Joints (rad): ['1.263', '-1.175', '1.593', '-2.215', '-1.530', '-11.645']
+2025-10-28 15:54:02,886 - __main__ - INFO - Starting SAFE Home move (10 steps, manual confirm)
+2025-10-28 15:54:02,901 - rtde - ERROR - received 0 bytes from Controller, probable cause: Controller has stopped
+2025-10-28 15:54:02,901 - rtde - INFO - RTDE disconnected
+2025-10-28 15:54:02,902 - __main__ - ERROR - Error during move interpolation: 'received 0 bytes from Controller'
+2025-10-28 15:54:02,902 - __main__ - INFO - Safe Home move complete.
+2025-10-28 15:54:18,532 - __main__ - INFO - Configuration loaded successfully from: calibration.json
+2025-10-28 15:54:18,532 - __main__ - INFO - Connecting (Secondary): 10.150.0.1:30002...
+2025-10-28 15:54:18,533 - __main__ - INFO - Connected (Secondary: 30002)!
+2025-10-28 15:54:18,686 - rtde - INFO - Controller version: 5.16.0.0
+2025-10-28 15:54:18,687 - rtde - INFO - RTDE synchronization started
+2025-10-28 15:54:18,687 - __main__ - INFO - RTDE Monitor connected and initialized (30004).
+2025-10-28 15:54:20,451 - __main__ - INFO - Dashboard Status (29999) Check
+2025-10-28 15:54:20,453 - __main__ - INFO - Dashboard Status
+2025-10-28 15:54:20,458 - __main__ - INFO -   Robot Mode: Robotmode: RUNNING
+2025-10-28 15:54:20,459 - __main__ - INFO -   Program State: STOPPED <unnamed>
+2025-10-28 15:54:20,459 - __main__ - INFO -   Safety Status: Safetystatus: NORMAL
+2025-10-28 15:54:20,459 - __main__ - INFO - RTDE Status (30004) Check [Live]
+2025-10-28 15:54:20,471 - __main__ - INFO - RTDE Status
+2025-10-28 15:54:20,472 - __main__ - INFO -   Actual TCP (m/rad): ['-0.003', '-0.467', '-0.009', '1.748', '2.472', '-0.311']
+2025-10-28 15:54:20,472 - __main__ - INFO -   Actual Joints (rad): ['1.263', '-1.175', '1.593', '-2.215', '-1.530', '-11.645']
+2025-10-28 15:54:22,428 - __main__ - INFO - Starting SAFE Home move (10 steps, manual confirm)
+2025-10-28 15:54:22,468 - __main__ - INFO - Interpolating move from [-0.0025457692324915666, -0.4668530306135252, -0.009209315310011679, 1.7476864483943468, 2.4720687404181083, -0.3107975950323185] to [-0.12125, -0.39231, -0.07732, 2.2, 2.2, 0.0] in 10 steps.
+2025-10-28 15:54:22,468 - __main__ - INFO - Preparing interpolated step 1/10...
+2025-10-28 15:54:23,404 - __main__ - INFO - Preparing interpolated step 2/10...
+2025-10-28 15:54:24,518 - __main__ - INFO - Preparing interpolated step 3/10...
+2025-10-28 15:54:26,486 - __main__ - INFO - Preparing interpolated step 4/10...
+2025-10-28 15:54:27,275 - __main__ - INFO - Preparing interpolated step 5/10...
+2025-10-28 15:54:27,976 - __main__ - INFO - Preparing interpolated step 6/10...
+2025-10-28 15:54:28,632 - __main__ - INFO - Preparing interpolated step 7/10...
+2025-10-28 15:54:29,305 - __main__ - INFO - Preparing interpolated step 8/10...
+2025-10-28 15:54:30,005 - __main__ - INFO - Preparing interpolated step 9/10...
+2025-10-28 15:54:30,658 - __main__ - INFO - Preparing interpolated step 10/10...
+2025-10-28 15:54:31,412 - __main__ - INFO - Safe Home move complete.
+2025-10-28 15:54:32,413 - __main__ - WARNING - Invalid choice
+2025-10-28 15:54:35,959 - __main__ - INFO - Exiting

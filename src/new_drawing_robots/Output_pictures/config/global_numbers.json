@@ -1,0 +1,582 @@
+{
+  "detection_method": "Dot -> Raw ROI -> Raw OCR -> Closest",
+  "total_numbers": 48,
+  "numbers": [
+    {
+      "dot_id": 4,
+      "number": 93,
+      "global_coordinates": {
+        "x": 570,
+        "y": 69
+      },
+      "confidence": 88,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 6,
+      "number": 94,
+      "global_coordinates": {
+        "x": 587,
+        "y": 58
+      },
+      "confidence": 99,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 7,
+      "number": 95,
+      "global_coordinates": {
+        "x": 608,
+        "y": 50
+      },
+      "confidence": 98,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 13,
+      "number": 99,
+      "global_coordinates": {
+        "x": 659,
+        "y": 39
+      },
+      "confidence": 72,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 14,
+      "number": 97,
+      "global_coordinates": {
+        "x": 636,
+        "y": 24
+      },
+      "confidence": 95,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 16,
+      "number": 80,
+      "global_coordinates": {
+        "x": 249,
+        "y": 146
+      },
+      "confidence": 98,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 17,
+      "number": 68,
+      "global_coordinates": {
+        "x": 261,
+        "y": 145
+      },
+      "confidence": 22,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 18,
+      "number": 82,
+      "global_coordinates": {
+        "x": 286,
+        "y": 133
+      },
+      "confidence": 93,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 19,
+      "number": 85,
+      "global_coordinates": {
+        "x": 375,
+        "y": 132
+      },
+      "confidence": 99,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 20,
+      "number": 8,
+      "global_coordinates": {
+        "x": 350,
+        "y": 125
+      },
+      "confidence": 87,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 21,
+      "number": 83,
+      "global_coordinates": {
+        "x": 317,
+        "y": 125
+      },
+      "confidence": 66,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 22,
+      "number": 87,
+      "global_coordinates": {
+        "x": 431,
+        "y": 143
+      },
+      "confidence": 43,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 23,
+      "number": 86,
+      "global_coordinates": {
+        "x": 403,
+        "y": 137
+      },
+      "confidence": 99,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 24,
+      "number": 1,
+      "global_coordinates": {
+        "x": 485,
+        "y": 137
+      },
+      "confidence": 81,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 25,
+      "number": 89,
+      "global_coordinates": {
+        "x": 514,
+        "y": 126
+      },
+      "confidence": 99,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 26,
+      "number": 90,
+      "global_coordinates": {
+        "x": 528,
+        "y": 117
+      },
+      "confidence": 99,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 27,
+      "number": 5,
+      "global_coordinates": {
+        "x": 552,
+        "y": 152
+      },
+      "confidence": 49,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 29,
+      "number": 21,
+      "global_coordinates": {
+        "x": 626,
+        "y": 118
+      },
+      "confidence": 98,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 31,
+      "number": 19,
+      "global_coordinates": {
+        "x": 665,
+        "y": 166
+      },
+      "confidence": 97,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 32,
+      "number": 28,
+      "global_coordinates": {
+        "x": 504,
+        "y": 159
+      },
+      "confidence": 31,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 33,
+      "number": 30,
+      "global_coordinates": {
+        "x": 643,
+        "y": 147
+      },
+      "confidence": 67,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 34,
+      "number": 16,
+      "global_coordinates": {
+        "x": 697,
+        "y": 136
+      },
+      "confidence": 61,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 38,
+      "number": 61,
+      "global_coordinates": {
+        "x": 263,
+        "y": 213
+      },
+      "confidence": 80,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 39,
+      "number": 62,
+      "global_coordinates": {
+        "x": 261,
+        "y": 192
+      },
+      "confidence": 95,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 43,
+      "number": 23,
+      "global_coordinates": {
+        "x": 592,
+        "y": 214
+      },
+      "confidence": 95,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 44,
+      "number": 22,
+      "global_coordinates": {
+        "x": 612,
+        "y": 177
+      },
+      "confidence": 97,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 46,
+      "number": 76,
+      "global_coordinates": {
+        "x": 205,
+        "y": 253
+      },
+      "confidence": 75,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 47,
+      "number": 74,
+      "global_coordinates": {
+        "x": 181,
+        "y": 241
+      },
+      "confidence": 99,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 52,
+      "number": 88,
+      "global_coordinates": {
+        "x": 460,
+        "y": 139
+      },
+      "confidence": 99,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 53,
+      "number": 24,
+      "global_coordinates": {
+        "x": 590,
+        "y": 255
+      },
+      "confidence": 93,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 54,
+      "number": 70,
+      "global_coordinates": {
+        "x": 205,
+        "y": 296
+      },
+      "confidence": 99,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 57,
+      "number": 68,
+      "global_coordinates": {
+        "x": 225,
+        "y": 275
+      },
+      "confidence": 99,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 58,
+      "number": 44,
+      "global_coordinates": {
+        "x": 344,
+        "y": 309
+      },
+      "confidence": 58,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 62,
+      "number": 40,
+      "global_coordinates": {
+        "x": 524,
+        "y": 283
+      },
+      "confidence": 99,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 64,
+      "number": 51,
+      "global_coordinates": {
+        "x": 285,
+        "y": 343
+      },
+      "confidence": 76,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 67,
+      "number": 45,
+      "global_coordinates": {
+        "x": 340,
+        "y": 338
+      },
+      "confidence": 80,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 68,
+      "number": 32,
+      "global_coordinates": {
+        "x": 546,
+        "y": 350
+      },
+      "confidence": 84,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 69,
+      "number": 30,
+      "global_coordinates": {
+        "x": 603,
+        "y": 337
+      },
+      "confidence": 99,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 70,
+      "number": 25,
+      "global_coordinates": {
+        "x": 636,
+        "y": 321
+      },
+      "confidence": 95,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 71,
+      "number": 52,
+      "global_coordinates": {
+        "x": 274,
+        "y": 371
+      },
+      "confidence": 49,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 74,
+      "number": 33,
+      "global_coordinates": {
+        "x": 543,
+        "y": 378
+      },
+      "confidence": 98,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 77,
+      "number": 48,
+      "global_coordinates": {
+        "x": 329,
+        "y": 452
+      },
+      "confidence": 99,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 78,
+      "number": 46,
+      "global_coordinates": {
+        "x": 360,
+        "y": 426
+      },
+      "confidence": 96,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 80,
+      "number": 30,
+      "global_coordinates": {
+        "x": 515,
+        "y": 435
+      },
+      "confidence": 75,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 82,
+      "number": 27,
+      "global_coordinates": {
+        "x": 623,
+        "y": 450
+      },
+      "confidence": 52,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 83,
+      "number": 36,
+      "global_coordinates": {
+        "x": 559,
+        "y": 447
+      },
+      "confidence": 94,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 85,
+      "number": 35,
+      "global_coordinates": {
+        "x": 552,
+        "y": 431
+      },
+      "confidence": 92,
+      "methods": [
+        "easyocr"
+      ]
+    },
+    {
+      "dot_id": 86,
+      "number": 26,
+      "global_coordinates": {
+        "x": 633,
+        "y": 427
+      },
+      "confidence": 86,
+      "methods": [
+        "easyocr"
+      ]
+    }
+  ]
+}

@@ -8,6 +8,7 @@ import json
 import logging
 from Dashboard import Dashboard
 from rtdeState import RtdeState
+import numpy as np
 
 CONFIG = {}
 LOG = logging.getLogger(__name__)
@@ -85,21 +86,75 @@ def mm_to_m(position_mm):
     return position_m
 
 
-def move_to_position_mm(client, pose_mm_rad, speed=None, accel=None):
+def move_to_position_mm(client, rtde_state, pose_mm_rad, speed=None, accel=None, interpolate_steps=0,
+                        wait_for_enter=False):
     """
     Sends a 'movel' command with a pose in mm/rad.
-    Automatically converts mm to meters for the command.
+    If interpolate_steps > 1, it gets the current pose from RTDE
+    and sends 'interpolate_steps' blended movel commands.
+    If wait_for_enter=True, it waits for user input before each step.
     """
-    pose_m_rad = mm_to_m(pose_mm_rad)
-    pos_str = "p[" + ",".join([f"{pos:.6f}" for pos in pose_m_rad]) + "]"
-
     speed = speed if speed is not None else CONFIG.get("default_speed_ms", 0.1)
     accel = accel if accel is not None else CONFIG.get("default_accel_mss", 0.5)
 
-    script = f"movel({pos_str}, a={accel}, v={speed})\n"
+    if interpolate_steps <= 1:
+        # Original behavior: one single move
+        pose_m_rad = mm_to_m(pose_mm_rad)
+        pos_str = "p[" + ",".join([f"{pos:.6f}" for pos in pose_m_rad]) + "]"
+        script = f"movel({pos_str}, a={accel}, v={speed})\n"
+        LOG.info(f"Sending single move command: {script.strip()}")
+        return client.send_script(script)
 
-    LOG.info(f"Sending move command: {script.strip()}")
-    return client.send_script(script)
+    # --- Interpolated move logic ---
+    try:
+        # 1. Get Target Pose (in meters)
+        target_pose_m = mm_to_m(pose_mm_rad)
+
+        # 2. Get Current Pose (in meters) from RTDE
+        state = rtde_state.receive()
+        if state is None or not hasattr(state, 'actual_TCP_pose'):
+            LOG.error("Cannot interpolate: Failed to get current TCP from RTDE.")
+            return False
+
+        start_pose_m = list(state.actual_TCP_pose)
+        LOG.info(f"Interpolating move from {start_pose_m} to {target_pose_m} in {interpolate_steps} steps.")
+
+        # 3. Generate intermediate poses using numpy.linspace
+        num_points = interpolate_steps + 1
+        waypoints_m = []
+        for i in range(6):  # X, Y, Z, Rx, Ry, Rz tengelyekre
+            interp_axis = np.linspace(start_pose_m[i], target_pose_m[i], num=num_points)
+            waypoints_m.append(interp_axis)
+
+        # 4. Send all intermediate 'movel' commands
+        all_ok = True
+        for i in range(1, num_points):  # Start from 1 (first interpolated point)
+            pose_step_m = [waypoints_m[j][i] for j in range(6)]
+
+            # --- ÚJ RÉSZ: VÁRAKOZÁS AZ ENTERRE ---
+            LOG.info(f"Preparing interpolated step {i}/{interpolate_steps}...")
+            if wait_for_enter:
+                try:
+                    input(f"  ==> Press ENTER to execute step {i}/{interpolate_steps}...")
+                except KeyboardInterrupt:
+                    LOG.warning("Move sequence cancelled by user.")
+                    return False
+            # --- ÚJ RÉSZ VÉGE ---
+
+            pos_str = "p[" + ",".join([f"{pos:.6f}" for pos in pose_step_m]) + "]"
+            script = f"movel({pos_str}, a={accel}, v={speed})\n"
+
+            LOG.debug(f"Sending interpolated move ({i}/{interpolate_steps}): {script.strip()}")
+            if not client.send_script(script):
+                LOG.error(f"Failed at interpolated step {i}.")
+                all_ok = False
+                break
+
+        return all_ok
+
+    except Exception as e:
+        LOG.error(f"Error during move interpolation: {e}")
+        return False
 
 
 def check_dashboard_status():
@@ -248,32 +303,90 @@ def main():
         LOG.critical("Critical Error: Failed to load configuration.")
         sys.exit(1)
 
-    # Connect to the movement port (keep connection open)
+    # 1. Connect to Secondary port (30002)
     client = URScriptClient(CONFIG["robot_ip"], CONFIG["secondary_port"])
     if not client.connect():
         LOG.critical("Critical Error: Failed to connect to Secondary port (30002).")
         sys.exit(1)
 
+    # 2. Connect to RTDE (30004) and keep it alive
+    state_monitor = None
+    try:
+        state_monitor = RtdeState(
+            CONFIG["robot_ip"],
+            CONFIG["rtde_config_file"]
+        )
+        state_monitor.initialize()
+        LOG.info("RTDE Monitor connected and initialized (30004).")
+    except Exception as e:
+        LOG.critical(f"Critical Error: Failed to connect RTDE: {e}")
+        client.disconnect()
+        sys.exit(1)
+
+    # --- Main Loop ---
     try:
         while True:
-            print("UR Robot Controller CLI")
+            print("\n" + "=" * 30)
+            print("      UR Robot Controller CLI")
+            print("=" * 30)
             print("1. Get Full Status (Dashboard + RTDE)")
             print("2. Start Drawing (from trajectory.json)")
-            print("3. Return to Home Position")
+            print("3. Go Home (Fast Interpolated, 10 steps)")
+            print("4. Safe Home Move (10 steps, manual confirm)")  # ÚJ MENÜPONT
             print("0. Exit")
-            choice = input("Select (0-3): ")
+            print("=" * 30)
+            choice = input("Select (0-4): ")  # Frissítve 0-4 -re
 
             if choice == '1':
+                # ... (Ez a rész változatlan) ...
                 check_dashboard_status()
-                check_rtde_status()
+                LOG.info("RTDE Status (30004) Check [Live]")
+                try:
+                    state = state_monitor.receive()
+                    if state is not None:
+                        LOG.info("RTDE Status")
+                        if hasattr(state, 'actual_TCP_pose'):
+                            tcp_m_rad = [f"{p:.3f}" for p in state.actual_TCP_pose]
+                            LOG.info(f"  Actual TCP (m/rad): {tcp_m_rad}")
+                        if hasattr(state, 'actual_q'):
+                            joints_rad = [f"{q:.3f}" for q in state.actual_q]
+                            LOG.info(f"  Actual Joints (rad): {joints_rad}")
+                    else:
+                        LOG.warning("No data received from RTDE.")
+                except Exception as e:
+                    LOG.error(f"RTDE error: {e}")
 
             elif choice == '2':
-                execute_drawing(client)
+                # Pass both client and rtde_state
+                execute_drawing(client, state_monitor)
 
             elif choice == '3':
-                LOG.info("Moving to Home position")
-                move_to_position_mm(client, CONFIG["home_position_mm"])
-                time.sleep(CONFIG.get("move_wait_time_s", 5))
+                LOG.info("Moving to Home position (fast, interpolated)")
+                # A 'wait_for_enter' itt alapértelmezetten False,
+                # így ez a mozgás gyors lesz, megállás nélkül.
+                move_to_position_mm(
+                    client,
+                    state_monitor,
+                    CONFIG["home_position_mm"],
+                    interpolate_steps=10
+                    # wait_for_enter=False (ez az alapértelmezett)
+                )
+                time.sleep(CONFIG.get("move_wait_time_s", 3))
+
+            # --- ÚJ MENÜPONT KEZELÉSE ---
+            elif choice == '4':
+                LOG.info("Starting SAFE Home move (10 steps, manual confirm)")
+                # Itt a 'wait_for_enter'-t True-ra állítjuk!
+                move_to_position_mm(
+                    client,
+                    state_monitor,
+                    CONFIG["home_position_mm"],
+                    interpolate_steps=10,
+                    wait_for_enter=True  # A lényegi különbség!
+                )
+                LOG.info("Safe Home move complete.")
+                time.sleep(1)  # Rövid várakozás a végén
+            # --- ÚJ MENÜPONT VÉGE ---
 
             elif choice == '0':
                 LOG.info("Exiting")
@@ -285,8 +398,14 @@ def main():
     except KeyboardInterrupt:
         LOG.warning("Program interrupted by user")
     finally:
+        # Disconnect *both* clients
+        if state_monitor:
+            state_monitor.con.send_pause()
+            state_monitor.con.disconnect()
+            LOG.info("RTDE Monitor disconnected.")
+
         client.disconnect()
-        LOG.info("Drawing is finished.")
+        LOG.info("Program finished.")
 
 
 if __name__ == "__main__":

@@ -5,11 +5,11 @@
   "rtde_port": 30004,
   "rtde_config_file": "rtdeState.xml",
 
-  "home_position_mm": [-37.0, -295.0, -42.0, 2.2, 2.2, 0.0],
+  "home_position_mm": [-121.25, -392.31, -77.32, 2.2, 2.2, 0.0],
 
   "pen_orientation_rad": [2.2, 2.2, 0.0],
 
-  "drawing_height_mm": -100.0,
+  "drawing_height_mm": -143.4,
   "safe_travel_height_offset_mm": 50.0,
 
   "default_speed_ms": 0.1,
@@ -23,9 +23,9 @@
   },
 
   "paper_corners_robot_mm": {
-    "top_left": [-150.0, -200.0, -100.0],
-    "top_right": [150.0, -200.0, -100.0],
-    "bottom_right": [150.0, -400.0, -100.0],
-    "bottom_left": [-150.0, -400.0, -100.0]
+    "top_left": [-150.0, -200.0, -143.4],
+    "top_right": [150.0, -200.0, -143.4],
+    "bottom_right": [150.0, -400.0, -143.4],
+    "bottom_left": [-77.6, -433.3, -143.4]
   }
 }

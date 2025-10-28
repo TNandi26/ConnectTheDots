@@ -1,0 +1,61 @@
+{
+  "paths": {
+    "pictures_dir": "../../Pictures",
+    "output_dir": "Output_pictures",
+    "config_dir": "Output_pictures/config",
+    "segments_dir": "Output_pictures/Segments",
+    "segments_grid_dir": "Output_pictures/Segments/SegmentsGrid",
+    "segments_overlap_dir": "Output_pictures/Segments/SegmentsOverlap",
+    "dot_viz_dir": "Output_pictures/Segments/Segment_dot_visualizations",
+    "number_viz_dir": "Output_pictures/number_visualizations",
+    "number_debug_dir": "Output_pictures/number_debug"
+  },
+  "filenames": {
+    "detected_circles": "detected_circles.json",
+    "detected_numbers": "detected_numbers.json",
+    "global_dots": "global_dot_coordinates.json",
+    "global_numbers": "global_numbers.json",
+    "pairing": "pairing.json",
+    "grid_segments_meta": "grid_segments.json",
+    "overlap_segments_meta": "overlap_segments.json",
+    "main_with_dots": "Output_pictures/main_image_with_dots.jpg",
+    "main_with_numbers": "Output_pictures/main_image_with_numbers.jpg",
+    "pairing_viz": "Output_pictures/pairing_visualization.jpg",
+    "merged_result": "merged_result.jpg"
+  },
+  "segmentation": {
+    "grid_cols": 5,
+    "overlap_cols": 4,
+    "overlap_x": 0.6,
+    "overlap_y": 0.6
+  },
+  "circle_detection": {
+    "adaptive_blockSize": 15,
+    "adaptive_C": 15,
+    "blob_detector": {
+      "filterByArea": true,
+      "minArea": 10,
+      "maxArea": 300,
+      "filterByCircularity": true,
+      "minCircularity": 0.5,
+      "filterByConvexity": true,
+      "minConvexity": 0.6,
+      "filterByInertia": true,
+      "minInertiaRatio": 0.3
+    },
+    "duplicate_threshold": 12,
+    "intensity_std_multiplier": 2.5
+  },
+  "number_detection": {
+    "tesseract_path": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+    "use_easyocr": true,
+    "easyocr_gpu": true,
+    "use_paddleocr": true,
+    
+    "number_search_roi_radius": 15,
+    
+    "full_image_blur_kernel": 51,
+    "full_image_adaptive_blockSize": 7,
+    "full_image_adaptive_C": 15
+  }
+}
