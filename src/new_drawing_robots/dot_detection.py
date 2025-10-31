@@ -1,19 +1,7 @@
-"""
-Circle/Dot Detection Module
-- V6 (Logika Javítva) -
-- A 'run_dot_detection_for_all_segments' most már létrehoz egy
-  teljes, "pont-barát" feldolgozott képet a 'circle_detection'
-  config alapján.
-- A végső 'main_image_with_dots.jpg' vizualizáció erre
-  a feldolgozott képre rajzolódik, nem az eredetire.
-"""
-
 import cv2
 import numpy as np
 import json
 import logging
-from collections import Counter
-from pathlib import Path
 
 def preprocess_full_image_for_dots(gray_image, config, debug_dir):
     """
@@ -21,19 +9,16 @@ def preprocess_full_image_for_dots(gray_image, config, debug_dir):
     based on 'circle_detection' parameters.
     """
     try:
-        # FONTOS: a 'circle_detection' szekcióból olvassuk!
         cfg = config['circle_detection']
         bSize = cfg['adaptive_blockSize']
         C_val = cfg['adaptive_C']
         
-        # A blur kernelt a number_detection-ből vesszük,
-        # vagy fix 51-et használunk, ha ott nincs
         blur_k = config.get('number_detection', {}).get('full_image_blur_kernel', 51)
         
         if blur_k % 2 == 0:
             blur_k += 1
             
-        logging.info(f"Teljes kép előfeldolgozása (Pontoknak)... (Blur: {blur_k}, BlockSize: {bSize}, C: {C_val})")
+        logging.info(f"Image process for dots... (Blur: {blur_k}, BlockSize: {bSize}, C: {C_val})")
         
         background = cv2.GaussianBlur(gray_image, (blur_k, blur_k), 0)
         normalized_image = cv2.divide(gray_image, background, scale=255.0)
@@ -44,23 +29,24 @@ def preprocess_full_image_for_dots(gray_image, config, debug_dir):
             cv2.THRESH_BINARY,
             bSize, C_val
         )
-        logging.info("✓ Pont-barát kép elkészült.")
         
-        # Elmentjük a debug mappába, hogy lássuk, min dolgozott
-        (debug_dir.parent / "config").mkdir(parents=True, exist_ok=True) # Biztosítjuk a config mappa létezését
+        #Save to debug dir
+        (debug_dir.parent / "config").mkdir(parents=True, exist_ok=True)
         cv2.imwrite(str(debug_dir.parent / "config" / "_full_dot_preprocessed.jpg"), clean_full_image)
         return clean_full_image
 
     except Exception as e:
-        logging.error(f"Hiba a teljes kép (pont) előfeldolgozása közben: {e}")
+        logging.error(f"Error occured during preprocess: {e}")
         return None
 
-# --- VÁLTOZATLAN (BlobDetector-t használ) ---
 def detect_dots_from_binary(binary_image, gray_image, config):
+    """
+    Using blob detector to find dots with the given configuration
+    """
     try:
         cfg = config['circle_detection']['blob_detector']
     except KeyError:
-        logging.error("A 'blob_detector' szekció hiányzik a config.json-ból!")
+        logging.error("'blob_detector' section is missing from the config.json")
         return []
     binary_inv = cv2.bitwise_not(binary_image)
     params = cv2.SimpleBlobDetector_Params()
@@ -86,7 +72,7 @@ def detect_dots_from_binary(binary_image, gray_image, config):
         all_candidates.append({ 'center': center, 'radius': radius, 'intensity': intensity })
     return all_candidates
 
-# --- VÁLTOZATLAN (process_segment) ---
+
 def process_segment(image_path, config, expected_range=None):
     segment_name = image_path.stem
     logging.info(f"Processing: {segment_name}")
@@ -104,9 +90,9 @@ def process_segment(image_path, config, expected_range=None):
         blockSize = cfg_thresh['adaptive_blockSize']
         C = cfg_thresh['adaptive_C']
     except KeyError as e:
-        logging.error(f"HIBA: A '{e.args[0]}' kulcs hiányzik a config.json 'circle_detection' szekciójából!")
+        logging.error(f"Error:'{e.args[0]}' key is missing from the config.json 'circle_detection' section")
         return None 
-    logging.info(f"Bináris kép készítése: blockSize={blockSize}, C={C}")
+    logging.info(f"Binary image: blockSize={blockSize}, C={C}")
     final_binary_image = cv2.adaptiveThreshold(
         normalized_image_uint8, 255,
         cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
@@ -141,7 +127,7 @@ def process_segment(image_path, config, expected_range=None):
     logging.info(f"{segment_name}: {len(filtered)} circles detected\n")
     return segment_data
 
-# --- VÁLTOZATLAN (convert_to_global) ---
+
 def convert_to_global(detected_json, segments_json, output_json, config):
     with open(detected_json) as f:
         detected_data = json.load(f)
@@ -210,7 +196,6 @@ def convert_to_global(detected_json, segments_json, output_json, config):
     logging.info(f"Saved to {output_json}")
     return filtered
 
-# --- FŐ FÜGGVÉNY MÓDOSÍTVA ---
 def run_dot_detection_for_all_segments(config, picture_name, expected_range=None):
     """Main entry point for dot detection pipeline"""
     base_path = config['_base_path']
@@ -248,36 +233,30 @@ def run_dot_detection_for_all_segments(config, picture_name, expected_range=None
         return
     global_circles = convert_to_global(detected_json, segments_json, global_json, config)
     
-    # === JAVÍTOTT VIZUALIZÁCIÓS LÉPÉS ===
     logging.info("Creating final 'main_with_dots.jpg' on processed image...")
     picture_path = base_path / config['paths']['pictures_dir'] / picture_name
     
     if picture_path.exists():
-        # 1. Töltsük be az eredeti képet
         original_img = cv2.imread(str(picture_path))
         gray_original = cv2.cvtColor(original_img, cv2.COLOR_BGR2GRAY)
         
-        # 2. Hozzuk létre a "pont-barát" képet (a te logikád szerint)
         dot_friendly_image = preprocess_full_image_for_dots(
-            gray_original, config, config_dir.parent / "number_debug" # debug mappa
+            gray_original, config, config_dir.parent / "number_debug"
         )
         
-        # 3. Konvertáljuk BGR-re, hogy színesen rajzolhassunk rá
         if dot_friendly_image is not None:
             main_img_base = cv2.cvtColor(dot_friendly_image, cv2.COLOR_GRAY2BGR)
         else:
-            logging.warning("Nem sikerült létrehozni a pont-barát képet, az eredetire rajzolunk.")
-            main_img_base = original_img # Visszaállás az eredetire hiba esetén
+            logging.warning("Failed to create dot-friendly image, drawing on original.")
+            main_img_base = original_img
 
-        # 4. Rajzoljuk a pontokat a feldolgozott képre
         for circle in global_circles:
             x = circle["global_coordinates"]["x"]
             y = circle["global_coordinates"]["y"]
             r = circle["radius"]
-            cv2.circle(main_img_base, (x, y), 3, (0, 0, 255), -1)  # Piros közép
-            cv2.circle(main_img_base, (x, y), r, (0, 255, 0), 2)   # Zöld keret
+            cv2.circle(main_img_base, (x, y), 3, (0, 0, 255), -1)
+            cv2.circle(main_img_base, (x, y), r, (0, 255, 0), 2)
         
-        # 5. Mentsük el
         output_path = config['_base_path'] / config['filenames']['main_with_dots']
         cv2.imwrite(str(output_path), main_img_base)
         logging.info(f"Main image visualization saved to {output_path} (based on processed dot image)")
@@ -286,7 +265,5 @@ def run_dot_detection_for_all_segments(config, picture_name, expected_range=None
     
     logging.info("Dot detection completed\n")
 
-
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
-    print("dot_detection.py (v6 - Javított vizualizáció) - Készen áll a futtatásra (a fő szkriptből hívva).")

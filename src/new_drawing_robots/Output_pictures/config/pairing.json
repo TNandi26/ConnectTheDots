@@ -1,0 +1,1007 @@
+{
+  "pairing_method": "Iterative Erase (V9) + Conf Filter (V7)",
+  "min_confidence_threshold_used": 60,
+  "total_pairs": 50,
+  "pairings": [
+    {
+      "dot_id": 51,
+      "dot_coordinates": {
+        "x": 920,
+        "y": 265
+      },
+      "number_info": {
+        "dot_id": 51,
+        "number": 1,
+        "global_coordinates": {
+          "x": 916,
+          "y": 269
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 5.656854249492381
+      }
+    },
+    {
+      "dot_id": 1,
+      "dot_coordinates": {
+        "x": 346,
+        "y": 183
+      },
+      "number_info": {
+        "dot_id": 1,
+        "number": 34,
+        "global_coordinates": {
+          "x": 350,
+          "y": 184
+        },
+        "confidence": 79,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 4.123105625617661
+      }
+    },
+    {
+      "dot_id": 2,
+      "dot_coordinates": {
+        "x": 289,
+        "y": 177
+      },
+      "number_info": {
+        "dot_id": 2,
+        "number": 3,
+        "global_coordinates": {
+          "x": 293,
+          "y": 181
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 5.656854249492381
+      }
+    },
+    {
+      "dot_id": 3,
+      "dot_coordinates": {
+        "x": 663,
+        "y": 188
+      },
+      "number_info": {
+        "dot_id": 3,
+        "number": 90,
+        "global_coordinates": {
+          "x": 656,
+          "y": 179
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 11.40175425099138
+      }
+    },
+    {
+      "dot_id": 4,
+      "dot_coordinates": {
+        "x": 685,
+        "y": 159
+      },
+      "number_info": {
+        "dot_id": 4,
+        "number": 91,
+        "global_coordinates": {
+          "x": 676,
+          "y": 159
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.0
+      }
+    },
+    {
+      "dot_id": 5,
+      "dot_coordinates": {
+        "x": 709,
+        "y": 129
+      },
+      "number_info": {
+        "dot_id": 5,
+        "number": 32,
+        "global_coordinates": {
+          "x": 700,
+          "y": 128
+        },
+        "confidence": 98,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.055385138137417
+      }
+    },
+    {
+      "dot_id": 7,
+      "dot_coordinates": {
+        "x": 727,
+        "y": 107
+      },
+      "number_info": {
+        "dot_id": 7,
+        "number": 93,
+        "global_coordinates": {
+          "x": 729,
+          "y": 97
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 10.198039027185569
+      }
+    },
+    {
+      "dot_id": 9,
+      "dot_coordinates": {
+        "x": 815,
+        "y": 93
+      },
+      "number_info": {
+        "dot_id": 9,
+        "number": 10,
+        "global_coordinates": {
+          "x": 817,
+          "y": 102
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.219544457292887
+      }
+    },
+    {
+      "dot_id": 10,
+      "dot_coordinates": {
+        "x": 760,
+        "y": 88
+      },
+      "number_info": {
+        "dot_id": 10,
+        "number": 94,
+        "global_coordinates": {
+          "x": 759,
+          "y": 79
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.055385138137417
+      }
+    },
+    {
+      "dot_id": 11,
+      "dot_coordinates": {
+        "x": 794,
+        "y": 75
+      },
+      "number_info": {
+        "dot_id": 11,
+        "number": 95,
+        "global_coordinates": {
+          "x": 794,
+          "y": 65
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 10.0
+      }
+    },
+    {
+      "dot_id": 12,
+      "dot_coordinates": {
+        "x": 831,
+        "y": 69
+      },
+      "number_info": {
+        "dot_id": 12,
+        "number": 96,
+        "global_coordinates": {
+          "x": 823,
+          "y": 60
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 12.041594578792296
+      }
+    },
+    {
+      "dot_id": 13,
+      "dot_coordinates": {
+        "x": 842,
+        "y": 31
+      },
+      "number_info": {
+        "dot_id": 13,
+        "number": 97,
+        "global_coordinates": {
+          "x": 843,
+          "y": 21
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 10.04987562112089
+      }
+    },
+    {
+      "dot_id": 22,
+      "dot_coordinates": {
+        "x": 119,
+        "y": 255
+      },
+      "number_info": {
+        "dot_id": 22,
+        "number": 78,
+        "global_coordinates": {
+          "x": 110,
+          "y": 256
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.055385138137417
+      }
+    },
+    {
+      "dot_id": 23,
+      "dot_coordinates": {
+        "x": 146,
+        "y": 237
+      },
+      "number_info": {
+        "dot_id": 23,
+        "number": 79,
+        "global_coordinates": {
+          "x": 138,
+          "y": 229
+        },
+        "confidence": 65,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 11.313708498984761
+      }
+    },
+    {
+      "dot_id": 40,
+      "dot_coordinates": {
+        "x": 618,
+        "y": 248
+      },
+      "number_info": {
+        "dot_id": 40,
+        "number": 2,
+        "global_coordinates": {
+          "x": 610,
+          "y": 254
+        },
+        "confidence": 100,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 10.0
+      }
+    },
+    {
+      "dot_id": 31,
+      "dot_coordinates": {
+        "x": 444,
+        "y": 224
+      },
+      "number_info": {
+        "dot_id": 31,
+        "number": 36,
+        "global_coordinates": {
+          "x": 444,
+          "y": 215
+        },
+        "confidence": 91,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.0
+      }
+    },
+    {
+      "dot_id": 44,
+      "dot_coordinates": {
+        "x": 698,
+        "y": 248
+      },
+      "number_info": {
+        "dot_id": 44,
+        "number": 5,
+        "global_coordinates": {
+          "x": 694,
+          "y": 238
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 10.770329614269007
+      }
+    },
+    {
+      "dot_id": 36,
+      "dot_coordinates": {
+        "x": 491,
+        "y": 231
+      },
+      "number_info": {
+        "dot_id": 36,
+        "number": 87,
+        "global_coordinates": {
+          "x": 490,
+          "y": 221
+        },
+        "confidence": 80,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 10.04987562112089
+      }
+    },
+    {
+      "dot_id": 37,
+      "dot_coordinates": {
+        "x": 541,
+        "y": 228
+      },
+      "number_info": {
+        "dot_id": 37,
+        "number": 83,
+        "global_coordinates": {
+          "x": 541,
+          "y": 219
+        },
+        "confidence": 73,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.0
+      }
+    },
+    {
+      "dot_id": 50,
+      "dot_coordinates": {
+        "x": 823,
+        "y": 194
+      },
+      "number_info": {
+        "dot_id": 50,
+        "number": 21,
+        "global_coordinates": {
+          "x": 822,
+          "y": 184
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 10.04987562112089
+      }
+    },
+    {
+      "dot_id": 52,
+      "dot_coordinates": {
+        "x": 887,
+        "y": 265
+      },
+      "number_info": {
+        "dot_id": 52,
+        "number": 13,
+        "global_coordinates": {
+          "x": 883,
+          "y": 267
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 4.47213595499958
+      }
+    },
+    {
+      "dot_id": 56,
+      "dot_coordinates": {
+        "x": 931,
+        "y": 221
+      },
+      "number_info": {
+        "dot_id": 56,
+        "number": 16,
+        "global_coordinates": {
+          "x": 939,
+          "y": 218
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 8.54400374531753
+      }
+    },
+    {
+      "dot_id": 57,
+      "dot_coordinates": {
+        "x": 922,
+        "y": 201
+      },
+      "number_info": {
+        "dot_id": 57,
+        "number": 15,
+        "global_coordinates": {
+          "x": 929,
+          "y": 196
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 8.602325267042627
+      }
+    },
+    {
+      "dot_id": 59,
+      "dot_coordinates": {
+        "x": 84,
+        "y": 315
+      },
+      "number_info": {
+        "dot_id": 59,
+        "number": 76,
+        "global_coordinates": {
+          "x": 75,
+          "y": 317
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.219544457292887
+      }
+    },
+    {
+      "dot_id": 60,
+      "dot_coordinates": {
+        "x": 161,
+        "y": 313
+      },
+      "number_info": {
+        "dot_id": 60,
+        "number": 55,
+        "global_coordinates": {
+          "x": 152,
+          "y": 316
+        },
+        "confidence": 97,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.486832980505138
+      }
+    },
+    {
+      "dot_id": 62,
+      "dot_coordinates": {
+        "x": 99,
+        "y": 284
+      },
+      "number_info": {
+        "dot_id": 62,
+        "number": 77,
+        "global_coordinates": {
+          "x": 90,
+          "y": 284
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.0
+      }
+    },
+    {
+      "dot_id": 64,
+      "dot_coordinates": {
+        "x": 196,
+        "y": 268
+      },
+      "number_info": {
+        "dot_id": 64,
+        "number": 63,
+        "global_coordinates": {
+          "x": 205,
+          "y": 270
+        },
+        "confidence": 96,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.219544457292887
+      }
+    },
+    {
+      "dot_id": 67,
+      "dot_coordinates": {
+        "x": 685,
+        "y": 269
+      },
+      "number_info": {
+        "dot_id": 67,
+        "number": 4,
+        "global_coordinates": {
+          "x": 692,
+          "y": 276
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.899494936611665
+      }
+    },
+    {
+      "dot_id": 69,
+      "dot_coordinates": {
+        "x": 64,
+        "y": 416
+      },
+      "number_info": {
+        "dot_id": 69,
+        "number": 73,
+        "global_coordinates": {
+          "x": 55,
+          "y": 417
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.055385138137417
+      }
+    },
+    {
+      "dot_id": 70,
+      "dot_coordinates": {
+        "x": 112,
+        "y": 415
+      },
+      "number_info": {
+        "dot_id": 70,
+        "number": 69,
+        "global_coordinates": {
+          "x": 113,
+          "y": 405
+        },
+        "confidence": 65,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 10.04987562112089
+      }
+    },
+    {
+      "dot_id": 93,
+      "dot_coordinates": {
+        "x": 260,
+        "y": 510
+      },
+      "number_info": {
+        "dot_id": 93,
+        "number": 50,
+        "global_coordinates": {
+          "x": 259,
+          "y": 519
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.055385138137417
+      }
+    },
+    {
+      "dot_id": 74,
+      "dot_coordinates": {
+        "x": 63,
+        "y": 383
+      },
+      "number_info": {
+        "dot_id": 74,
+        "number": 74,
+        "global_coordinates": {
+          "x": 54,
+          "y": 387
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.848857801796104
+      }
+    },
+    {
+      "dot_id": 100,
+      "dot_coordinates": {
+        "x": 160,
+        "y": 703
+      },
+      "number_info": {
+        "dot_id": 100,
+        "number": 56,
+        "global_coordinates": {
+          "x": 151,
+          "y": 705
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.219544457292887
+      }
+    },
+    {
+      "dot_id": 76,
+      "dot_coordinates": {
+        "x": 73,
+        "y": 346
+      },
+      "number_info": {
+        "dot_id": 76,
+        "number": 75,
+        "global_coordinates": {
+          "x": 64,
+          "y": 349
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.486832980505138
+      }
+    },
+    {
+      "dot_id": 80,
+      "dot_coordinates": {
+        "x": 72,
+        "y": 453
+      },
+      "number_info": {
+        "dot_id": 80,
+        "number": 72,
+        "global_coordinates": {
+          "x": 62,
+          "y": 452
+        },
+        "confidence": 98,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 10.04987562112089
+      }
+    },
+    {
+      "dot_id": 91,
+      "dot_coordinates": {
+        "x": 209,
+        "y": 508
+      },
+      "number_info": {
+        "dot_id": 91,
+        "number": 58,
+        "global_coordinates": {
+          "x": 200,
+          "y": 510
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.219544457292887
+      }
+    },
+    {
+      "dot_id": 82,
+      "dot_coordinates": {
+        "x": 219,
+        "y": 446
+      },
+      "number_info": {
+        "dot_id": 82,
+        "number": 59,
+        "global_coordinates": {
+          "x": 210,
+          "y": 447
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.055385138137417
+      }
+    },
+    {
+      "dot_id": 87,
+      "dot_coordinates": {
+        "x": 715,
+        "y": 480
+      },
+      "number_info": {
+        "dot_id": 87,
+        "number": 31,
+        "global_coordinates": {
+          "x": 717,
+          "y": 489
+        },
+        "confidence": 98,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.219544457292887
+      }
+    },
+    {
+      "dot_id": 88,
+      "dot_coordinates": {
+        "x": 654,
+        "y": 449
+      },
+      "number_info": {
+        "dot_id": 88,
+        "number": 40,
+        "global_coordinates": {
+          "x": 648,
+          "y": 458
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 10.816653826391969
+      }
+    },
+    {
+      "dot_id": 90,
+      "dot_coordinates": {
+        "x": 173,
+        "y": 558
+      },
+      "number_info": {
+        "dot_id": 90,
+        "number": 57,
+        "global_coordinates": {
+          "x": 164,
+          "y": 559
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.055385138137417
+      }
+    },
+    {
+      "dot_id": 92,
+      "dot_coordinates": {
+        "x": 325,
+        "y": 550
+      },
+      "number_info": {
+        "dot_id": 92,
+        "number": 45,
+        "global_coordinates": {
+          "x": 334,
+          "y": 554
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.848857801796104
+      }
+    },
+    {
+      "dot_id": 94,
+      "dot_coordinates": {
+        "x": 331,
+        "y": 500
+      },
+      "number_info": {
+        "dot_id": 94,
+        "number": 42,
+        "global_coordinates": {
+          "x": 340,
+          "y": 505
+        },
+        "confidence": 60,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 10.295630140987
+      }
+    },
+    {
+      "dot_id": 96,
+      "dot_coordinates": {
+        "x": 783,
+        "y": 541
+      },
+      "number_info": {
+        "dot_id": 96,
+        "number": 30,
+        "global_coordinates": {
+          "x": 777,
+          "y": 550
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 10.816653826391969
+      }
+    },
+    {
+      "dot_id": 99,
+      "dot_coordinates": {
+        "x": 665,
+        "y": 621
+      },
+      "number_info": {
+        "dot_id": 99,
+        "number": 33,
+        "global_coordinates": {
+          "x": 674,
+          "y": 620
+        },
+        "confidence": 96,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.055385138137417
+      }
+    },
+    {
+      "dot_id": 102,
+      "dot_coordinates": {
+        "x": 309,
+        "y": 697
+      },
+      "number_info": {
+        "dot_id": 102,
+        "number": 19,
+        "global_coordinates": {
+          "x": 300,
+          "y": 702
+        },
+        "confidence": 69,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 10.295630140987
+      }
+    },
+    {
+      "dot_id": 104,
+      "dot_coordinates": {
+        "x": 634,
+        "y": 714
+      },
+      "number_info": {
+        "dot_id": 104,
+        "number": 38,
+        "global_coordinates": {
+          "x": 624,
+          "y": 714
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 10.0
+      }
+    },
+    {
+      "dot_id": 105,
+      "dot_coordinates": {
+        "x": 617,
+        "y": 661
+      },
+      "number_info": {
+        "dot_id": 105,
+        "number": 39,
+        "global_coordinates": {
+          "x": 607,
+          "y": 660
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 10.04987562112089
+      }
+    },
+    {
+      "dot_id": 106,
+      "dot_coordinates": {
+        "x": 754,
+        "y": 714
+      },
+      "number_info": {
+        "dot_id": 106,
+        "number": 28,
+        "global_coordinates": {
+          "x": 745,
+          "y": 715
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.055385138137417
+      }
+    },
+    {
+      "dot_id": 109,
+      "dot_coordinates": {
+        "x": 814,
+        "y": 703
+      },
+      "number_info": {
+        "dot_id": 109,
+        "number": 26,
+        "global_coordinates": {
+          "x": 823,
+          "y": 703
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 9.0
+      }
+    },
+    {
+      "dot_id": 110,
+      "dot_coordinates": {
+        "x": 779,
+        "y": 688
+      },
+      "number_info": {
+        "dot_id": 110,
+        "number": 29,
+        "global_coordinates": {
+          "x": 770,
+          "y": 682
+        },
+        "confidence": 99,
+        "methods": [
+          "easyocr"
+        ],
+        "distance": 10.816653826391969
+      }
+    }
+  ]
+}

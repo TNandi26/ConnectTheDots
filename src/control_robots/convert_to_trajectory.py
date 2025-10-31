@@ -29,14 +29,13 @@ def convert_coordinates_to_trajectory():
 
     try:
         LOG.info("Loading calibration (calibration.json)...")
-        with open("calibration.json", 'r') as f:
+        with open("src\control_robots/calibration.json", 'r') as f:
             config = json.load(f)
 
         pen_orient = np.array(config["pen_orientation_rad"])
         img_w = config["image_processing"]["warped_image_width_px"]
         img_h = config["image_processing"]["warped_image_height_px"]
 
-        # Get the calibrated drawing height
         drawing_z = config["drawing_height_mm"]
         LOG.info(f"Calibrated drawing height (Z) set to: {drawing_z} mm")
 
@@ -50,24 +49,36 @@ def convert_coordinates_to_trajectory():
         LOG.info("Corner points (TL, TR, BR, BL) loaded successfully.")
 
         LOG.info("Loading point pairs (pairing.json)...")
-        with open("../drawing_robots/Output_pictures/config/pairing.json", 'r') as f:
-            pairs = json.load(f)
+        with open("src/new_drawing_robots/Output_pictures/config/pairing.json", 'r') as f:
+            data = json.load(f)
 
+        # Ellenőrzés: a "pairings" kulcs legyen jelen
+        if "pairings" not in data:
+            LOG.error("pairing.json does not contain 'pairings' key!")
+            return
+
+        pairs = data["pairings"]
+
+        # Sort by number_info.number
         try:
-            pairs.sort(key=lambda item: item["num_value"])
+            pairs.sort(key=lambda item: item["number_info"]["number"])
         except KeyError:
-            LOG.error("Error during sorting! Are you sure 'num_value' is the key in 'pairing.json'?")
+            LOG.error("Error during sorting! Are you sure 'number_info.number' exists in all pairings?")
             return
 
         LOG.info(f"Successfully sorted {len(pairs)} points.")
 
-        #Assemble Trajectory
+        # Assemble Trajectory
         trajectory_6d = []
         for item in pairs:
             # Get pixel coordinates
-            px_coord = item["dot_coord"]
-            x_px = px_coord["x"]
-            y_px = px_coord["y"]
+            try:
+                px_coord = item["dot_coordinates"]
+                x_px = px_coord["x"]
+                y_px = px_coord["y"]
+            except KeyError as e:
+                LOG.warning(f"Skipping point due to missing coordinates: {e}")
+                continue
 
             # Calculate ratios (u, v)
             u = x_px / img_w
@@ -76,16 +87,14 @@ def convert_coordinates_to_trajectory():
             # Bilinear interpolation for 3D robot coordinates
             robot_xyz_interpolated = bilinear_interpolate(p_tl, p_tr, p_bl, p_br, u, v)
 
-            # Use X and Y from interpolation
             robot_x = robot_xyz_interpolated[0]
             robot_y = robot_xyz_interpolated[1]
 
-            # 6D Pose Assembly: [X_interp, Y_interp, Z_CALIBRATED] + [Rx, Ry, Rz]
-            # Override Z with the calibrated 'drawing_height_mm'
+            # 6D Pose: [X_interp, Y_interp, Z_CALIBRATED] + [Rx, Ry, Rz]
             pose_6d = [robot_x, robot_y, drawing_z] + list(pen_orient)
             trajectory_6d.append(pose_6d)
 
-        # 5. Save Trajectory
+        # Save Trajectory
         output_file = "trajectory.json"
         with open(output_file, 'w') as f:
             json.dump(trajectory_6d, f, indent=2)
@@ -95,7 +104,7 @@ def convert_coordinates_to_trajectory():
     except FileNotFoundError as e:
         LOG.error(f"Error: Required file not found! {e}")
     except KeyError as e:
-        LOG.error(f"Error: Key not found! Missing key from 'calibration.json' or 'pairing.json': {e}")
+        LOG.error(f"Error: Missing key in 'calibration.json' or 'pairing.json': {e}")
     except Exception as e:
         LOG.error(f"An unknown error occurred: {e}")
 

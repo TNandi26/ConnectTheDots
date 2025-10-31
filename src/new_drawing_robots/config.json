@@ -30,32 +30,37 @@
     "overlap_y": 0.6
   },
   "circle_detection": {
-    "adaptive_blockSize": 15,
+    "dot_blur_kernel": 21,
+    "adaptive_blockSize": 11,
     "adaptive_C": 15,
     "blob_detector": {
       "filterByArea": true,
       "minArea": 10,
-      "maxArea": 300,
+      "maxArea": 250,
       "filterByCircularity": true,
-      "minCircularity": 0.5,
+      "minCircularity": 0.6,
       "filterByConvexity": true,
-      "minConvexity": 0.6,
+      "minConvexity": 0.8,
       "filterByInertia": true,
-      "minInertiaRatio": 0.3
+      "minInertiaRatio": 0.6
     },
     "duplicate_threshold": 12,
-    "intensity_std_multiplier": 2.5
+    "intensity_std_multiplier": 20
   },
   "number_detection": {
     "tesseract_path": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
     "use_easyocr": true,
     "easyocr_gpu": true,
     "use_paddleocr": true,
-    
+
     "number_search_roi_radius": 15,
-    
+    "refined_ocr_padding": 5,
+
     "full_image_blur_kernel": 51,
     "full_image_adaptive_blockSize": 7,
-    "full_image_adaptive_C": 15
+    "full_image_adaptive_C": 15,
+
+    "min_confidence_threshold": 60,
+    "neighbor_check_tolerance": 3
   }
 }

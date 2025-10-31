@@ -1,189 +1,212 @@
+"""
+Dot-Number Matchmaker (V7 - Smart Filter by Confidence + "Rule 1")
+
+This script loads the pre-paired numbers from number_detection.py (V9+)
+and applies the user's requested filters:
+1. "Rule 1": Finds all "1"s, keeps the one with the HIGHEST CONFIDENCE.
+   This "1" is protected and ignores the min_confidence_threshold.
+2. Duplicate Number Filter: For all other numbers,
+   keeps only the one with the HIGHEST CONFIDENCE.
+3. Confidence Filter: Discards all remaining numbers below
+   'min_confidence_threshold'.
+"""
+
+import cv2
+import numpy as np
 import json
-import math
-import pandas as pd
-import os  # Szükséges a mappák és fájlnevek kezeléséhez
+import logging
+from pathlib import Path
+import sys
 
-
-def load_config(config_file):
-    """Betölti a megadott JSON konfigurációs fájlt."""
-    try:
-        with open(config_file, 'r', encoding='utf-8') as f:
-            config = json.load(f)
-        print(f"Konfigurációs fájl ('{config_file}') sikeresen betöltve.")
-        return config
-    except FileNotFoundError:
-        print(f"HIBA: A konfigurációs fájl nem található: {config_file}")
+def load_json(file_path):
+    """Loads JSON data from a file."""
+    if not file_path.exists():
+        logging.error(f"❌ File not found: {file_path}")
         return None
-    except json.JSONDecodeError:
-        print(f"HIBA: A konfigurációs fájl ('{config_file}') hibás formátumú.")
-        return None
-
-
-def calculate_distance(p1, p2):
-    """Két pont (mindkettő {'x': int, 'y': int} formátumú) között euklideszi távolságot számol."""
-    dx = p1['x'] - p2['x']
-    dy = p1['y'] - p2['y']
-    return math.sqrt(dx * dx + dy * dy)
-
-
-def pair_numbers_to_dots(config, expected_range):
-    """
-    Összepárosítja a SZÁMOKAT a legközelebbi PONTOKKAL a config fájl alapján.
-    Minden fájlt a megadott 'config_dir' mappából olvas és oda ment.
-    """
-
-    # 1. Fájlnevek kiolvasása a configból
     try:
-        filenames = config['filenames']
-        config_dir = config["paths"]["config_dir"]
-
-        # Bemeneti fájlok teljes elérési útjának összeállítása
-        dots_file_path = os.path.join(config_dir, filenames['global_dots'])
-        numbers_file_path = os.path.join(config_dir, filenames['global_numbers'])
-
-        # Kimeneti fájlok teljes elérési útjának összeállítása
-        output_json_name = filenames['pairing']
-        base_output_name = os.path.splitext(output_json_name)[0]
-
-        output_json_path = os.path.join(config_dir, output_json_name)
-        output_csv_path = os.path.join(config_dir, f"{base_output_name}.csv")
-        collision_json_path = os.path.join(config_dir, f"{base_output_name}_collisions.json")
-
-    except KeyError as e:
-        print(f"HIBA: Hiányzó kulcs a config['filenames'] részben: {e}")
-        return
-    except TypeError:
-        print("HIBA: A 'config' paraméter érvénytelennek tűnik (talán None?).")
-        return
-
-    # 2. Adatok betöltése a megadott elérési utakról
-    try:
-        with open(dots_file_path, 'r', encoding='utf-8') as f:
-            dots_data = json.load(f)
-        with open(numbers_file_path, 'r', encoding='utf-8') as f:
-            numbers_data = json.load(f)
-    except FileNotFoundError as e:
-        print(f"HIBA: Az adatfájl nem található: {e.filename}")
-        return
-    except json.JSONDecodeError as e:
-        print(f"HIBA: JSON formátum hiba a(z) '{e.doc}' fájlban.")
-        return
-
-    dots_list = dots_data.get('circles', [])
-    all_numbers_list = numbers_data.get('numbers', [])
-
-    if not dots_list:
-        print(f"Hiba: Nem találhatók 'circles' (pontok) adatok a(z) '{dots_file_path}' fájlban.")
-        return
-    if not all_numbers_list:
-        print(f"Hiba: Nem találhatók 'numbers' (számok) adatok a(z) '{numbers_file_path}' fájlban.")
-        return
-
-    # 3. Számok szűrése az expected_range alapján
-    valid_numbers = [
-        num for num in all_numbers_list
-        if 1 <= num.get('number', -1) <= expected_range
-    ]
-
-    print(f"Összesen betöltött pont (dot): {len(dots_list)}")
-    print(f"Összesen betöltött szám-detekció: {len(all_numbers_list)}")
-    print(f"Ebből érvényes (1-{expected_range} tartományban): {len(valid_numbers)}")
-
-    if not valid_numbers:
-        print("Hiba: Nincsenek érvényes számok a megadott tartományban. A párosítás leáll.")
-        return
-
-    # 4. Párosítás: Minden érvényes SZÁMHOZ a legközelebbi PONTOT
-    final_pairings = {}
-
-    for number_info in valid_numbers:
-        number_detection_id = number_info.get('dot_id')
-        number_coord = number_info.get('global_coordinates')
-
-        if number_detection_id is None or number_coord is None:
-            print(f"Figyelmeztetés: Hiányos adatú szám-detekciót találtam, kihagyom: {number_info}")
-            continue
-
-        best_match_dot = None
-        min_distance = float('inf')
-
-        for dot in dots_list:
-            dot_coord = dot.get('global_coordinates')
-            if dot_coord is None:
-                continue
-
-            distance = calculate_distance(number_coord, dot_coord)
-
-            if distance < min_distance:
-                min_distance = distance
-                best_match_dot = dot
-
-        if best_match_dot:
-            final_pairings[number_detection_id] = {
-                'number_detection_id': number_detection_id,
-                'number_value': number_info.get('number'),
-                'number_coords': number_coord,
-                'number_confidence': number_info.get('confidence'),
-                'matched_dot_id': best_match_dot.get('id'),
-                'matched_dot_coords': best_match_dot.get('global_coordinates'),
-                'distance': min_distance
-            }
-        else:
-            print(f"Figyelmeztetés: A {number_detection_id} azonosítójú számhoz nem található párosítható pont.")
-
-    # 5. Duplikátumok/Ütközések elemzése
-    dot_id_to_number_map = {}
-    for pairing in final_pairings.values():
-        matched_dot_id = pairing['matched_dot_id']
-        if matched_dot_id not in dot_id_to_number_map:
-            dot_id_to_number_map[matched_dot_id] = []
-        dot_id_to_number_map[matched_dot_id].append(pairing)
-
-    dot_collisions = {
-        str(dot_id): pairings_list
-        for dot_id, pairings_list in dot_id_to_number_map.items()
-        if len(pairings_list) > 1
-    }
-
-    # 6. Eredmények mentése a 'config_dir' mappába
-    final_pairings_list = list(final_pairings.values())
-
-    try:
-        # Fő párosítási fájl (JSON)
-        with open(output_json_path, 'w', encoding='utf-8') as f:
-            json.dump(final_pairings_list, f, indent=2, ensure_ascii=False)
-
-        # Ütközés riport (JSON)
-        with open(collision_json_path, 'w', encoding='utf-8') as f:
-            json.dump(dot_collisions, f, indent=2, ensure_ascii=False)
-
-        # CSV kimenet
-        df_pairings = pd.DataFrame(final_pairings_list)
-        df_pairings = df_pairings.rename(columns={
-            'number_detection_id': 'Szam_Detekcio_ID',
-            'number_value': 'Szam_Ertek',
-            'matched_dot_id': 'Hozza_Rendelt_Pont_ID',
-            'distance': 'Tavolsag',
-            'number_confidence': 'Szam_Konfidencia',
-            'number_coords': 'Szam_Koordinata',
-            'matched_dot_coords': 'Pont_Koordinata'
-        })
-        csv_columns = [
-            'Szam_Detekcio_ID', 'Szam_Ertek', 'Hozza_Rendelt_Pont_ID',
-            'Tavolsag', 'Szam_Konfidencia', 'Szam_Koordinata', 'Pont_Koordinata'
-        ]
-        csv_columns_exist = [col for col in csv_columns if col in df_pairings.columns]
-        df_pairings[csv_columns_exist].to_csv(output_csv_path, index=False, encoding='utf-8-sig')
-
-    except IOError as e:
-        print(f"HIBA: Írási hiba történt a(z) '{e.filename}' fájl mentésekor: {e}")
+        with open(file_path, 'r') as f:
+            data = json.load(f)
+        return data
     except Exception as e:
-        print(f"HIBA: Váratlan hiba a fájlmentés során: {e}")
+        logging.error(f"Error loading JSON ({file_path.name}): {e}")
+        return None
 
-    # --- Összegzés ---
-    print("\n--- ÖSSZEGZÉS (Szám -> Pont logika alapján) ---")
-    print(f"Sikeresen párosítva: {len(final_pairings_list)} érvényes szám.")
-    print(f"Azonosított pont-ütközés: {len(dot_collisions)} db")
-    print(f"\nA teljes párosítási lista elmentve: '{output_json_path}'")
-    print(f"A CSV változat elmentve: '{output_csv_path}'")
-    print(f"Az ütközések riportja elmentve: '{collision_json_path}'")
+def visualize_pairing(image_path, dots_map, pairings, output_path):
+    """Creates the pairing visualization image."""
+    image = cv2.imread(str(image_path))
+    if image is None:
+        logging.error(f"❌ Failed to load image for visualization: {image_path}")
+        return
+
+    # Draw the dots
+    for dot_id, dot_info in dots_map.items():
+         x = dot_info["global_coordinates"]["x"]
+         y = dot_info["global_coordinates"]["y"]
+         cv2.circle(image, (x, y), 3, (255, 0, 0), -1) # Blue dot
+
+    # Draw the numbers and lines
+    for pair in pairings:
+        dot_id = pair['dot_id']
+        num_info = pair['number_info']
+        
+        num_x = num_info['global_coordinates']['x']
+        num_y = num_info['global_coordinates']['y']
+        
+        dot_coord = None
+        if dot_id in dots_map:
+             dot_coord = (dots_map[dot_id]["global_coordinates"]["x"], dots_map[dot_id]["global_coordinates"]["y"])
+
+        color = (0, 165, 255) # Orange
+        if len(num_info.get('methods', [])) > 1:
+            color = (0, 255, 0) # Green
+
+        # Draw number
+        cv2.circle(image, (num_x, num_y), 5, (0, 0, 255), -1) # Red circle
+        label = f"{num_info['number']}"
+        cv2.putText(image, label, (num_x + 8, num_y - 8),
+                   cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0), 3)
+        cv2.putText(image, label, (num_x + 8, num_y - 8),
+                   cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 2)
+
+        # Draw line
+        if dot_coord:
+            cv2.line(image, dot_coord, (num_x, num_y), (150, 150, 150), 1)
+
+    cv2.imwrite(str(output_path), image)
+    logging.info(f"✓ Pairing visualization saved to: {output_path}")
+
+
+def pair_numbers_to_dots(config, picture_name):
+    """
+    Main function to FILTER pairings based on Confidence and "Rule 1".
+    """
+    logging.info("\n" + "="*60)
+    logging.info("STEP 4: Dot-Number Matching (Filter by Confidence + 'Rule 1')")
+    logging.info("="*60 + "\n")
+
+    base_path = config['_base_path']
+    config_dir = base_path / config['paths']['config_dir']
+
+    # Read confidence level from config
+    min_conf = config['number_detection'].get('min_confidence_threshold', 60) 
+    
+    logging.info(f"Minimum confidence threshold (min_confidence_threshold): {min_conf}")
+
+    # 1. Load Dots
+    dots_json_path = config_dir / config['filenames']['global_dots']
+    dots_data = load_json(dots_json_path)
+    if not dots_data or 'circles' not in dots_data:
+        logging.error("❌ Error: Failed to load dot data.")
+        return
+        
+    dots_map = {dot['id']: dot for dot in dots_data['circles']}
+    logging.info(f"✓ {len(dots_map)} dots loaded.")
+
+    # 2. Load Numbers (already paired by number_detection)
+    numbers_json_path = config_dir / config['filenames']['global_numbers']
+    numbers_data = load_json(numbers_json_path)
+    if not numbers_data or 'numbers' not in numbers_data:
+        logging.error("❌ Error: Failed to load number data (with pairings).")
+        return
+        
+    paired_numbers_from_file = numbers_data['numbers']
+    logging.info(f"✓ {len(paired_numbers_from_file)} raw pairings loaded (before filtering).")
+
+    # 3. "Rule 1" and Duplicate Filtering (By Confidence)
+    best_pair_for_number = {}
+    best_one_pair = None
+    best_one_conf = -1
+    
+    # First, search for "1"s
+    for num_info in paired_numbers_from_file:
+        if num_info['number'] == 1:
+            confidence = num_info.get('confidence', 0)
+            if confidence > best_one_conf:
+                best_one_conf = confidence
+                best_one_pair = num_info
+                
+    if best_one_pair:
+        logging.info(f"✓ 'Rule 1': Best '1' selected (Dot: {best_one_pair['dot_id']}, Conf: {best_one_conf}). This pair is protected.")
+        best_pair_for_number[1] = best_one_pair
+    else:
+        logging.info("No '1' detection found.")
+
+    # Now filter OTHER numbers (confidence + duplicate)
+    for num_info in paired_numbers_from_file:
+        number = num_info['number']
+        
+        # The '1' has already been handled
+        if number == 1:
+            continue
+            
+        confidence = num_info.get('confidence', 0)
+        dot_id = num_info['dot_id']
+        
+        # Confidence filter
+        if confidence < min_conf:
+            logging.info(f"  -> DISCARDED (low confidence): "
+                         f"Dot {dot_id} -> '{number}' (Conf: {confidence} < {min_conf})")
+            continue
+        
+        # Duplicate filter (higher confidence wins)
+        if number not in best_pair_for_number:
+            best_pair_for_number[number] = num_info
+        else:
+            existing_pair = best_pair_for_number[number]
+            existing_confidence = existing_pair.get('confidence', 0)
+            
+            if confidence > existing_confidence:
+                logging.warning(f"  -> CONFLICT: The number {number} for dot {dot_id} (Conf: {confidence}) REPLACED "
+                                f"dot {existing_pair['dot_id']} (Conf: {existing_confidence})")
+                best_pair_for_number[number] = num_info
+            else:
+                logging.warning(f"  -> CONFLICT: The number {number} for dot {dot_id} (Conf: {confidence}) LOST "
+                                f"to dot {existing_pair['dot_id']} (Conf: {existing_confidence})")
+
+    final_paired_numbers = list(best_pair_for_number.values())
+    logging.info(f"✓ {len(final_paired_numbers)} unique pairings remain after filtering.")
+
+    # 4. Create Pairing List
+    pairing_list = []
+    found_dot_ids = set()
+    for num_info in final_paired_numbers:
+        dot_id = num_info.get('dot_id')
+        if dot_id not in dots_map:
+            logging.warning(f"Number ({num_info['number']}) with invalid dot_id ({dot_id})!")
+            continue
+        dot_info = dots_map[dot_id]
+        pairing_list.append({
+            "dot_id": dot_id,
+            "dot_coordinates": dot_info["global_coordinates"],
+            "number_info": num_info
+        })
+        found_dot_ids.add(dot_id)
+        
+    missing_dots = len(dots_map) - len(found_dot_ids)
+    logging.info(f"Total of {len(pairing_list)} FINAL pairings created.")
+    if missing_dots > 0:
+        logging.warning(f"{missing_dots} dots remain unpaired.")
+
+    # 5. Save pairing.json
+    pairing_json_path = config_dir / config['filenames']['pairing']
+    try:
+        with open(pairing_json_path, 'w') as f:
+            json.dump({
+                "pairing_method": "Iterative Erase (V9) + Conf Filter (V7)",
+                "min_confidence_threshold_used": min_conf,
+                "total_pairs": len(pairing_list),
+                "pairings": pairing_list
+            }, f, indent=2)
+        logging.info(f"✓ Final pairing list saved to: {pairing_json_path}")
+    except Exception as e:
+        logging.error(f"Error saving pairing.json: {e}")
+
+    # 6. Create Visualization
+    image_path = base_path / config['paths']['pictures_dir'] / picture_name
+    viz_output_path = base_path / config['filenames']['pairing_viz']
+    visualize_pairing(image_path, dots_map, pairing_list, viz_output_path)
+
+
+if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
+    print("matchmaker.py (V7 - Smart Filter by Conf + Rule 1) - Ready to be run from orchestrator.py.")

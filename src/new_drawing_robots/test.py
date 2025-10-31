@@ -1,7 +1,7 @@
 import cv2
 import os
 
-image = cv2.imread(r'C:\ConnectTheDots\Pictures\lo_Color_2.png')
+image = cv2.imread(r'C:\ConnectTheDots\Pictures\lo.jpg')
 if image is None:
     print("Hiba: A kép nem található!")
 else:
